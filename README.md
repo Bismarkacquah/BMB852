@@ -2,22 +2,19 @@
 
 This repository contains all assignments and projects for the BMB852 Bioinformatics course.
 
-All course materials are available at:
+## Course Structure
 
-- [Course Website](#)
+Weekly assignments are organized in separate folders for easy navigation and management.
 
-## Tips for creating organized assignments
+### Weeks
 
-One of the first tasks we require every student to complete is learning to use git and GitHub.
+- **Week 1** - System Setup and UNIX Command Line Basics
+- **Week 2** - (Coming soon)
+- **Week 3** - (Coming soon)
 
-Mastering git, markdown, and understanding how scientific code is developed are critical skills that will benefit you throughout your career.
+## How to Use This Repository
 
-1. Give your repository a meaningful name. Keep the name short and concise.
-
-2. You only need one repository for all your submissions.
-
-3. Make sure your files have the correct file extensions. If it is a FASTA file it should end in .fa or .fasta.
-
-4. Don't use spaces in filenames. Use hyphens or underscores to separate words. For example, instead of naming a file `cell counts.txt`, name it `cell-cycle-counts.txt` or `cell_cycle_counts.txt`.
-
-5. Organize your files from the beginning by placing each submission in its own directory. Within each directory create a subdirectory for each filetype.
+1. Navigate to the week-specific folder (e.g., `Week-1/`)
+2. Review the assignment details in the README.md within that week's folder
+3. Complete the assignment and commit your work
+4. Push your changes to GitHub
