@@ -13,31 +13,74 @@ Copyright (C) 2021 Genome Research Ltd.
 ```
 
 ### Directory Structure Created
-```
-data/
-├── raw/
-│   ├── fasta/
-│   └── fastq/
-└── processed/
-results/
-└── analysis/
-scripts/
+```bash
+$ mkdir -p data/raw/{fasta,fastq}
+$ mkdir -p data/processed
+$ mkdir -p results/analysis
+$ mkdir -p scripts
 ```
 
 ### Files Created
-- data/raw/fasta/sequences.fa
-- data/raw/fastq/reads.fq
-- data/processed/trimmed-reads.fq
-- scripts/analyze.py
-- results/analysis/summary.txt
+```bash
+$ touch data/raw/fasta/sequences.fa
+$ touch data/raw/fastq/reads.fq
+$ touch data/processed/trimmed-reads.fq
+$ touch scripts/analyze.py
+$ touch results/analysis/summary.txt
+```
 
-### Path Examples
+### Directory Listing Output
+```bash
+$ ls -R
+.:
+data  results  scripts
 
-**Absolute Paths:**
-- /home/bismark/BMB852/Week-1/data/raw/fasta/sequences.fa
-- /home/bismark/BMB852/Week-1/data/raw/fastq/reads.fq
+./data:
+processed  raw
 
-**Relative Paths:**
-- data/raw/fasta/sequences.fa
-- data/raw/fastq/reads.fq
-- data/processed/trimmed-reads.fq
+./data/processed:
+trimmed-reads.fq
+
+./data/raw:
+fasta  fastq
+
+./data/raw/fasta:
+sequences.fa
+
+./data/raw/fastq:
+reads.fq
+
+./results:
+analysis
+
+./results/analysis:
+summary.txt
+
+./scripts:
+analyze.py
+```
+
+### Navigation with Absolute Paths
+```bash
+$ pwd
+/home/bismark/BMB852/Week-1
+
+$ cat /home/bismark/BMB852/Week-1/data/raw/fasta/sequences.fa
+$ cat /home/bismark/BMB852/Week-1/data/raw/fastq/reads.fq
+```
+
+### Navigation with Relative Paths
+```bash
+$ cat data/raw/fasta/sequences.fa
+$ cat data/raw/fastq/reads.fq
+$ cat data/processed/trimmed-reads.fq
+$ cat scripts/analyze.py
+
+$ cd data/raw/fasta/
+$ pwd
+/home/bismark/BMB852/Week-1/data/raw/fasta
+
+$ cd ../../..
+$ pwd
+/home/bismark/BMB852/Week-1
+```
