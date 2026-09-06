@@ -23,7 +23,7 @@ The generated Lamin-specific files are available in this project:
 
 - [Lamin GFF3](lamin_annotation.gff3)
 - [Lamin GTF](lamin_annotation.gtf)
-- [IGV screenshot](lamin_igv_annotation.png)
+- [Lamin chromosome 2 IGV screenshot](lamin_chromosome2_igv.png)
 
 The FASTA contains 1,870 sequence records with a total length of 143,726,002 bp.
 
@@ -79,10 +79,10 @@ To inspect the gene in IGV:
 
 The annotation track shows the Lam gene models and their transcript structures.
 
-![IGV Lamin annotation](lamin_igv_annotation.png)
+![Lamin chromosome 2 IGV annotation](lamin_chromosome2_igv.png)
 
 **Figure 1.** Detailed IGV view of the *Drosophila melanogaster* Lamin (`Lam`)
-gene showing its transcript isoforms and exon structures.
+gene on chromosome 2, showing its transcript isoforms and exon structures.
 
 ![IGV Lamin genome browsing](lamin_genome_browsing.png)
 
