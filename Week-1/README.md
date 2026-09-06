@@ -4,9 +4,12 @@ I used Visual Studio Code (VSC) to complete this assignment.
 
 ## Samtools Version
 
+I activated the bioinformatics Conda environment before checking the installed samtools version.
+
 ### Command
 
 ```bash
+conda activate bioinfo
 samtools --version
 ```
 
@@ -19,6 +22,8 @@ Copyright (C) 2021 Genome Research Ltd.
 ```
 
 ## Nested Directory
+
+The following commands create the nested project folders used to organize raw data, processed data, results, and scripts.
 
 ### Check the current directory
 
@@ -37,6 +42,8 @@ mkdir -p scripts
 
 ### Create the files
 
+These commands create the empty files required for the project structure.
+
 ```bash
 touch data/raw/fasta/sequences.fa
 touch data/raw/fastq/reads.fq
@@ -46,6 +53,8 @@ touch scripts/analyze.py
 ```
 
 ## Directory Structure
+
+The directory structure was verified after creating the folders and files.
 
 ### Verify the files
 
@@ -67,6 +76,7 @@ find . -type f
 ## Accessing Files Using Relative Paths
 
 These paths are relative because they start from the current project directory, `Week-1`.
+Relative paths do not begin with the drive or home-directory location.
 
 ```bash
 cat data/raw/fasta/sequences.fa
@@ -89,22 +99,30 @@ pwd
 
 ## Accessing Files Using Absolute Paths
 
+Absolute paths begin at the root of the filesystem and identify the complete location of a file.
+
 ### Check the current location
 
 ```bash
 pwd
 ```
 
+Example output:
+
+```text
+C:\Users\bxa5404\Documents\GitHub\BMB852\Week-1
+```
+
 ### Access the project files with an absolute path
 
-Replace `<project-path>` with the path printed by `pwd`.
+The following examples use the path printed by `pwd`.
 
 ```bash
-cat <project-path>/data/raw/fasta/sequences.fa
-cat <project-path>/data/raw/fastq/reads.fq
-cat <project-path>/data/processed/trimmed-reads.fq
-cat <project-path>/results/analysis/summary.txt
-cat <project-path>/scripts/analyze.py
+cat C:/Users/bxa5404/Documents/GitHub/BMB852/Week-1/data/raw/fasta/sequences.fa
+cat C:/Users/bxa5404/Documents/GitHub/BMB852/Week-1/data/raw/fastq/reads.fq
+cat C:/Users/bxa5404/Documents/GitHub/BMB852/Week-1/data/processed/trimmed-reads.fq
+cat C:/Users/bxa5404/Documents/GitHub/BMB852/Week-1/results/analysis/summary.txt
+cat C:/Users/bxa5404/Documents/GitHub/BMB852/Week-1/scripts/analyze.py
 ```
 
 ## Summary
