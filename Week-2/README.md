@@ -27,6 +27,7 @@ The generated Lamin-specific files are available in this project:
 - [Lamin chromosome 2 IGV screenshot](lamin_chromosome2_igv.png)
 - [Lamin chromosome 2 strand view](lamin_chromosome2_strand.png)
 - [Lamin chromosome 2 expanded strand view](lamin_chromosome2_strand_expanded.png)
+- [Lamin gene-density IGV view](Lamin_gene_density.png)
 
 The FASTA contains 1,870 sequence records with a total length of 143,726,002 bp.
 
@@ -108,6 +109,12 @@ colors.
 **Figure 5.** Expanded IGV view of the Lamin chromosome 2 annotation track,
 showing separate transcript and feature rows.
 
+![Lamin gene-density IGV view](Lamin_gene_density.png)
+
+**Figure 6.** Wide IGV view of the 300 kb Lamin neighborhood, showing the
+closely spaced annotated genes and transcript models used for the gene-density
+answer.
+
 ## Questions and answers
 
 ### Obtain genomic data
@@ -141,7 +148,8 @@ showing separate transcript and feature rows.
 
 	The Lamin locus is very gene-dense. `Hel25E` ends 165 bp before `Lam`, and
 	`Oscillin` begins 443 bp after it. Additional nearby genes include `CG14015`,
-	`tomb`, `Cap-D3`, and `CG14014`, which are visible in the wider IGV view.
+	`tomb`, `Cap-D3`, and `CG14014`, which are visible in the wider IGV view
+	(`NT_033779.5:5,400,000-5,700,000`, Figure 6).
 
 2. **Which coordinate was inspected?**
 
