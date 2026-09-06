@@ -25,6 +25,8 @@ The generated Lamin-specific files are available in this project:
 - [Lamin GTF](lamin_annotation.gtf)
 - [IGV Lamin annotation](lamin_igv_annotation.png)
 - [Lamin chromosome 2 IGV screenshot](lamin_chromosome2_igv.png)
+- [Lamin chromosome 2 strand view](lamin_chromosome2_strand.png)
+- [Lamin chromosome 2 expanded strand view](lamin_chromosome2_strand_expanded.png)
 
 The FASTA contains 1,870 sequence records with a total length of 143,726,002 bp.
 
@@ -94,6 +96,17 @@ genes, including `DIP-eta`, `CG7236`, `CG9171`, `rau`, `bchs`, `chic`, and `Pfas
 
 **Figure 3.** Additional IGV view of the Lamin gene on chromosome 2 at
 `NT_033779.5:5,542,480-5,546,642`.
+
+![Lamin chromosome 2 strand view](lamin_chromosome2_strand.png)
+
+**Figure 4.** Lamin chromosome 2 view with strand coloring enabled. Forward-
+and reverse-strand annotations can be distinguished by their directions and
+colors.
+
+![Lamin chromosome 2 expanded strand view](lamin_chromosome2_strand_expanded.png)
+
+**Figure 5.** Expanded IGV view of the Lamin chromosome 2 annotation track,
+showing separate transcript and feature rows.
 
 ## Questions and answers
 
