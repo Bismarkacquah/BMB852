@@ -1,0 +1,4 @@
+Week 1 setup complete.
+
+Directories created for raw FASTA input, raw FASTQ input, processed reads, scripts, and analysis output.
+The project now includes example sequence data and a simple analysis script.
