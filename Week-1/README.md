@@ -1,86 +1,112 @@
-# Week 1: System Setup and UNIX Fundamentals
+# BMB852 Assignment 1
 
-## Completion Summary
+I used Visual Studio Code (VSC) to complete this assignment.
 
-### Editor Setup
-Visual Studio Code (VS Code) installed and configured as primary code editor.
+## Samtools Version
 
-### samtools Version
+### Command
+
+```bash
+samtools --version
 ```
+
+### Output
+
+```text
 samtools 1.16.1
 Using htslib 1.16
 Copyright (C) 2021 Genome Research Ltd.
 ```
 
-### Directory Structure Created
+## Nested Directory
+
+### Check the current directory
+
 ```bash
-$ mkdir -p data/raw/{fasta,fastq}
-$ mkdir -p data/processed
-$ mkdir -p results/analysis
-$ mkdir -p scripts
+pwd
 ```
 
-### Files Created
+### Create the project directories
+
 ```bash
-$ touch data/raw/fasta/sequences.fa
-$ touch data/raw/fastq/reads.fq
-$ touch data/processed/trimmed-reads.fq
-$ touch scripts/analyze.py
-$ touch results/analysis/summary.txt
+mkdir -p data/raw/{fasta,fastq}
+mkdir -p data/processed
+mkdir -p results/analysis
+mkdir -p scripts
 ```
 
-### Directory Listing Output
+### Create the files
+
 ```bash
-$ ls -R
-.:
-data  results  scripts
-
-./data:
-processed  raw
-
-./data/processed:
-trimmed-reads.fq
-
-./data/raw:
-fasta  fastq
-
-./data/raw/fasta:
-sequences.fa
-
-./data/raw/fastq:
-reads.fq
-
-./results:
-analysis
-
-./results/analysis:
-summary.txt
-
-./scripts:
-analyze.py
+touch data/raw/fasta/sequences.fa
+touch data/raw/fastq/reads.fq
+touch data/processed/trimmed-reads.fq
+touch results/analysis/summary.txt
+touch scripts/analyze.py
 ```
 
-### Navigation with Absolute Paths
-```bash
-$ pwd
-/home/bismark/BMB852/Week-1
+## Directory Structure
 
-$ cat /home/bismark/BMB852/Week-1/data/raw/fasta/sequences.fa
-$ cat /home/bismark/BMB852/Week-1/data/raw/fastq/reads.fq
+### Verify the files
+
+```bash
+find . -type f
 ```
 
-### Navigation with Relative Paths
-```bash
-$ cat data/raw/fasta/sequences.fa
-$ cat data/raw/fastq/reads.fq
-$ cat data/processed/trimmed-reads.fq
-$ cat scripts/analyze.py
+### Output
 
-$ cd data/raw/fasta/
-$ pwd
-/home/bismark/BMB852/Week-1/data/raw/fasta
-
-$ cd ../../..
-$ pwd
-/home/bismark/BMB852/Week-1
+```text
+./README.md
+./data/raw/fasta/sequences.fa
+./data/raw/fastq/reads.fq
+./data/processed/trimmed-reads.fq
+./results/analysis/summary.txt
+./scripts/analyze.py
 ```
+
+## Accessing Files Using Relative Paths
+
+These paths are relative because they start from the current project directory, `Week-1`.
+
+```bash
+cat data/raw/fasta/sequences.fa
+cat data/raw/fastq/reads.fq
+cat data/processed/trimmed-reads.fq
+cat results/analysis/summary.txt
+cat scripts/analyze.py
+```
+
+### Move through directories with relative paths
+
+```bash
+cd data
+cd raw
+cd fasta
+pwd
+cd ../../..
+pwd
+```
+
+## Accessing Files Using Absolute Paths
+
+### Check the current location
+
+```bash
+pwd
+```
+
+### Access the project files with an absolute path
+
+Replace `<project-path>` with the path printed by `pwd`.
+
+```bash
+cat <project-path>/data/raw/fasta/sequences.fa
+cat <project-path>/data/raw/fastq/reads.fq
+cat <project-path>/data/processed/trimmed-reads.fq
+cat <project-path>/results/analysis/summary.txt
+cat <project-path>/scripts/analyze.py
+```
+
+## Summary
+
+This assignment demonstrates samtools version checking, creating nested directories and files, verifying a project structure, and navigating to files using both relative and absolute paths.
