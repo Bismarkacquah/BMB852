@@ -139,9 +139,9 @@ showing separate transcript and feature rows.
 
 1. **How tightly packed are the genes?**
 
-	At the Lamin locus, the annotated gene models occupy a compact region with
-	nearby features visible when the view is zoomed out. The exact surrounding
-	gene density should be confirmed in the IGV view.
+	The Lamin locus is very gene-dense. `Hel25E` ends 165 bp before `Lam`, and
+	`Oscillin` begins 443 bp after it. Additional nearby genes include `CG14015`,
+	`tomb`, `Cap-D3`, and `CG14014`, which are visible in the wider IGV view.
 
 2. **Which coordinate was inspected?**
 
