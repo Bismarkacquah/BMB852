@@ -1,169 +1,153 @@
-# Week 2: Obtain and Visualize Genomic Data
+# Week 2: Annotate the Drosophila Lamin Gene
 
-## Genome Selected
+## Genome selected
 
-**Organism:** Escherichia coli K-12
+- **Organism:** *Drosophila melanogaster* (fruit fly)
+- **Assembly:** `GCF_000001215.4_Release_6_plus_ISO1_MT`
+- **Repository:** [NCBI Assembly GCF_000001215.4](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001215.4/)
+- **Annotation source:** FlyBase Release 6.54, distributed by NCBI RefSeq
 
-**Assembly:** GCF_000005845.2_ASM584v2
+The target gene is **Lamin**, whose official Drosophila symbol is `Lam` and whose
+NCBI locus tag is `Dmel_CG6944`.
 
-### Files Used
+## Downloaded files
 
-- `GCF_000005845.2_ASM584v2_genomic.fna.gz`
-- `GCF_000005845.2_ASM584v2_genomic.gff.gz`
+The `download` target retrieves these compressed files from NCBI. Each filename
+below is also a direct one-click download link:
 
----
+- [Genome FASTA](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/215/GCF_000001215.4_Release_6_plus_ISO1_MT/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.gz)
+- [GFF3 annotation](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/215/GCF_000001215.4_Release_6_plus_ISO1_MT/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff.gz)
+- [GTF annotation](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/215/GCF_000001215.4_Release_6_plus_ISO1_MT/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gtf.gz)
 
-## Prerequisites
+The generated Lamin-specific files are available in this project:
 
-Make sure you have the following tools installed locally:
+- [Lamin GFF3](lamin_annotation.gff3)
+- [Lamin GTF](lamin_annotation.gtf)
+- [IGV screenshot](lamin_igv_annotation.png)
 
-- curl
-- samtools
-- htslib (for bgzip and tabix)
-- IGV (Integrative Genomics Viewer)
-- (optional) Picard (for CreateSequenceDictionary)
+The FASTA contains 1,870 sequence records with a total length of 143,726,002 bp.
 
+IGV cannot load the compressed `.fna.gz` directly in this setup. Create the
+plain FASTA that IGV needs with:
 
-## Using the Makefile
+```bash
+python -c "import gzip, shutil; shutil.copyfileobj(gzip.open('GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.gz','rb'), open('GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna','wb'))"
+```
 
-To download the genome sequence and annotation files, run:
+## Reproduce the download and annotation
+
+From this directory, run:
 
 ```bash
 make download
+make annotate
 ```
 
-This command downloads the gzipped FASTA genome sequence and GFF annotation file from NCBI.
+The annotation step uses `annotate_lamin.py` to extract records whose annotation
+identifies the gene as `Lam`. It creates:
 
----
+- `lamin_annotation.gff3`
+- `lamin_annotation.gtf`
 
-## Prepare files for IGV (recommended)
-
-After downloading, prepare the files for fast and reliable visualization in IGV.
-
-1) Decompress or keep gzipped files. IGV can read gzipped FASTA/GFF but indexing improves performance.
+The script requires Python 3 and reads the compressed annotation files directly.
+On systems without `make`, run the equivalent commands:
 
 ```bash
-# Example: keep gzipped FASTA but create an index
-# Decompress to plain FASTA if you prefer
-gunzip -c GCF_000005845.2_ASM584v2_genomic.fna.gz > GCF_000005845.2_ASM584v2_genomic.fna
-samtools faidx GCF_000005845.2_ASM584v2_genomic.fna
-
-# Optional: create a sequence dictionary (some tools / viewers use this)
-# Requires Picard
-picard CreateSequenceDictionary R=GCF_000005845.2_ASM584v2_genomic.fna O=GCF_000005845.2_ASM584v2_genomic.dict
+python annotate_lamin.py GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff.gz lamin_annotation.gff3
+python annotate_lamin.py GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gtf.gz lamin_annotation.gtf
 ```
 
-2) Prepare the GFF for fast random access with bgzip/tabix (recommended):
+## Lamin annotation result
 
-```bash
-# Re-compress with bgzip (if not already bgzip-compressed) and index
-gunzip -c GCF_000005845.2_ASM584v2_genomic.gff.gz | bgzip -c > GCF_000005845.2_ASM584v2_genomic.gff.gz
-tabix -p gff GCF_000005845.2_ASM584v2_genomic.gff.gz
+The Lamin gene is annotated on the forward strand of contig `NT_033779.5`:
+
+```text
+NT_033779.5:5,542,480-5,546,642
 ```
 
-Notes:
-- bgzip + tabix allows IGV to fetch only the regions needed when viewing.
-- If you don't have bgzip/tabix, IGV can still load the unindexed GFF but performance may be poor for large files.
+The extracted annotation includes the `gene`, transcript, exon, CDS,
+start-codon, and stop-codon records for the annotated Lamin isoforms. The GTF
+identifies the gene with `gene_id "Dmel_CG6944"` and `gene "Lam"`.
 
----
+## IGV visualization
 
-## Obtain Genomic Data Questions
+To inspect the gene in IGV:
 
-### 1. How large is the genome?
+1. Load `GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna` as the genome.
+2. Load `lamin_annotation.gff3` as an annotation track.
+3. Navigate to `NT_033779.5:5,542,480-5,546,642`.
 
-The genome is approximately **4,641,652 base pairs (4.64 Mb)** in length.
+The annotation track shows the Lam gene models and their transcript structures.
 
-### 2. How many chromosomes does it have?
+![IGV Lamin annotation](lamin_igv_annotation.png)
 
-The genome contains **one chromosome**.
+**Figure 1.** Detailed IGV view of the *Drosophila melanogaster* Lamin (`Lam`)
+gene showing its transcript isoforms and exon structures.
 
-### 3. How many annotations are in the annotation file?
+![IGV Lamin genome browsing](lamin_genome_browsing.png)
 
-The annotation file contains thousands of annotated genomic features, including genes, coding sequences (CDS), regulatory elements, and other genomic annotations.
+**Figure 2.** Wider IGV view of the Lamin locus showing surrounding annotated
+genes, including `DIP-eta`, `CG7236`, `CG9171`, `rau`, `bchs`, `chic`, and `Pfas`.
 
-### 4. How complete is this genomic build?
+## Questions and answers
 
-This assembly appears highly complete because it is represented as a single chromosome with extensive annotation coverage and well-defined genomic features.
+### Obtain genomic data
 
----
+1. **How large is the genome?**
 
-## Visualize a Genome Questions
+	The downloaded FASTA contains 143,726,002 bp across 1,870 sequence records.
 
-### 1. How tightly packed are the genes?
+2. **How many chromosomes does it have?**
 
-The genes appear densely packed with relatively short intergenic regions, which is typical of bacterial genomes.
+	*D. melanogaster* has four chromosome pairs: X, 2, 3, and 4. The assembly
+	also contains mitochondrial DNA and many unlocalized or unplaced scaffolds,
+	which is why the FASTA has 1,870 sequence records rather than only four
+	chromosome sequences.
 
-### 2. Pick a coordinate on the chromosome and visually inspect the surrounding sequence region.
+3. **How many annotations are in the annotation file?**
 
-**Coordinate inspected:**
+	The downloaded GFF3 contains 414,876 non-comment records, including 17,537
+	gene records, 30,802 mRNA records, and 190,710 exon records. The Lamin-only
+	files contain 32 GFF3 records and 40 GTF records.
 
-`NC_000913.3:3,657,996-3,667,113`
+4. **How complete is this genomic build?**
 
-### 3. Describe all six reading frames that the coordinate could be part of.
+	This is a high-quality reference assembly with broad gene and transcript
+	annotation, but it is not represented only by the four chromosome names:
+	unlocalized, unplaced, and mitochondrial sequences are included as well.
 
-The sequence can potentially be translated in six reading frames:
+### Visualize the Lamin locus
 
-- +1
-- +2
-- +3
-- -1
-- -2
-- -3
+1. **How tightly packed are the genes?**
 
-The positive reading frames are located on the forward strand, while the negative reading frames are located on the reverse strand.
+	At the Lamin locus, the annotated gene models occupy a compact region with
+	nearby features visible when the view is zoomed out. The exact surrounding
+	gene density should be confirmed in the IGV view.
 
-### 4. Identify the type of feature displayed as a data track.
+2. **Which coordinate was inspected?**
 
-The displayed data track contains **gene and coding sequence (CDS) annotations** derived from the GFF annotation file.
+	`NT_033779.5:5,542,480-5,546,642`
 
-### 5. Color features by their strand orientation.
+3. **What are the six possible reading frames?**
 
-Features are displayed according to strand orientation, allowing forward-strand and reverse-strand genomic features to be distinguished visually.
+	Any double-stranded DNA interval has six possible reading frames: +1, +2,
+	+3 on the forward strand and -1, -2, -3 on the reverse strand. The Lam
+	annotation is on the forward strand.
 
----
+4. **What feature types are displayed?**
 
-## IGV Visualization
+	The Lamin track contains gene, transcript, exon, CDS, start-codon, and
+	stop-codon features for multiple Lam isoforms.
 
-The FASTA and GFF files were successfully loaded into IGV.
+5. **How can features be distinguished by strand?**
 
-Observed annotated genes included:
-
-- gadW
-- gadX
-- gadA
-- ccp
-- treF
-- yhjB
-- rcdB
-- yhjD
-- yhjE
-- yhjG
-- pdeH
-- kdgK
-
-The annotation track displayed genomic features and their positions along the chromosome.
-
-### IGV Annotation Screenshot
-
-Include the image file `igv_annotation.png` in this directory so GitHub will display it here. To capture the screenshot in IGV: File -> Save Image.
-
-Example Markdown to embed the image:
-
-![IGV annotation screenshot](igv_annotation.png)
+	In IGV, enable the annotation track's strand coloring option. Forward- and
+	reverse-strand features are then shown with different colors; Lam should
+	appear as a forward-strand model at the coordinate above.
 
 ## Summary
 
-This exercise demonstrated how to:
-
-1. Download genomic sequence data from NCBI.
-2. Obtain genome annotation files.
-3. Load genomic data into IGV.
-4. Explore genomic coordinates and gene annotations.
-5. Visualize genomic features and strand orientation.
-6. Interpret genome structure and annotation information.
-
----
-
-## Reproducibility
-
-The analysis can be reproduced by downloading the FASTA and GFF files using the Makefile and preparing them with the commands shown above before loading into IGV for visualization and inspection.
+This workflow downloads a Drosophila reference genome and both GFF3 and GTF
+annotation formats from NCBI, then extracts the Lamin gene annotation for
+inspection in IGV. The assembly, source files, gene coordinates, and generated
+outputs are recorded so the analysis can be reproduced.
