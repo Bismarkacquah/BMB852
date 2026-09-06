@@ -82,18 +82,28 @@ Features are displayed according to strand orientation, allowing forward-strand 
 
 ## IGV Visualization
 
-The FASTA and GFF files were successfully loaded into IGV for genome visualization.
+The FASTA and GFF files were successfully loaded into IGV.
 
-Annotated genes observed during inspection included:
+Observed annotated genes included:
 
 - gadW
-- gadY
 - gadX
 - gadA
+- ccp
+- treF
+- yhjB
+- rcdB
+- yhjD
+- yhjE
+- yhjG
+- pdeH
+- kdgK
 
 The annotation track displayed genomic features and their positions along the chromosome.
 
----
+### IGV Annotation Screenshot
+
+igv_annotation.png
 
 ## Summary
 
