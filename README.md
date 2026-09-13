@@ -1,4 +1,4 @@
-# BMB852 - Bioinformatics Course Assignments
+# BMB852: Bioinformatics Course Assignments
 
 This repository contains all assignments and projects for the BMB852 Bioinformatics course.
 
@@ -8,9 +8,9 @@ Weekly assignments are organized in separate folders for easy navigation and man
 
 ### Weeks
 
-- **Week 1** - System Setup and UNIX Command Line Basics
-- **Week 2** - Bioinformatics Tools and Data Formats
-- **Week 3** - Sending Suggestions with Forking and Repository Assessment
+- **Week 1**: System Setup and UNIX Command Line Basics
+- **Week 2**: Bioinformatics Tools and Data Formats
+- **Week 3**: Sending Suggestions with Forking and Repository Assessment
 
 ## How to Use This Repository
 
