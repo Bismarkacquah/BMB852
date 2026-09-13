@@ -10,6 +10,7 @@ Weekly assignments are organized in separate folders for easy navigation and man
 
 - **Week 1** - System Setup and UNIX Command Line Basics
 - **Week 2** - Bioinformatics Tools and Data Formats
+- **Week 3** - Sending Suggestions with Forking and Repository Assessment
 
 ## How to Use This Repository
 
