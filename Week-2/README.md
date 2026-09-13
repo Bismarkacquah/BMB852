@@ -21,8 +21,8 @@ below is also a direct one-click download link:
 
 The Lamin-specific files created for this project are available here:
 
-- [Lamin GFF3](lamin_annotation.gff3)
-- [Lamin GTF](lamin_annotation.gtf)
+- [Lamin GFF3](data/lamin_annotation.gff3)
+- [Lamin GTF](data/lamin_annotation.gtf)
 - [IGV Lamin annotation](lamin_igv_annotation.png)
 - [Lamin chromosome 2 IGV screenshot](lamin_chromosome2_igv.png)
 - [Lamin chromosome 2 strand view](lamin_chromosome2_strand.png)
@@ -31,34 +31,45 @@ The Lamin-specific files created for this project are available here:
 
 The FASTA contains 1,870 sequence records with a total length of 143,726,002 bp.
 
-IGV cannot load the compressed `.fna.gz` directly in this setup. Create the
-plain FASTA that IGV needs with:
+IGV cannot load the compressed `.fna.gz` directly in this setup. The Makefile
+creates the plain FASTA in `data/` with `gunzip`. To reproduce that step by
+itself, run:
 
 ```bash
-python -c "import gzip, shutil; shutil.copyfileobj(gzip.open('GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.gz','rb'), open('GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna','wb'))"
+gunzip -kf data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.gz
 ```
 
 ## Reproduce the download and annotation
 
-From this directory, run:
+From the `Week-2` directory, run:
 
 ```bash
 make download
 make annotate
+make count
 ```
 
-The annotation step uses `annotate_lamin.py` to extract records whose annotation
-identifies the gene as `Lam`. It creates:
+The Makefile creates the `data/` directory, downloads the compressed genome and
+annotation files, creates the plain FASTA for IGV, and extracts records whose
+annotation identifies the gene as `Lam`. It creates:
 
-- `lamin_annotation.gff3`
-- `lamin_annotation.gtf`
+- `data/lamin_annotation.gff3`
+- `data/lamin_annotation.gtf`
 
-The script requires Python 3 and reads the compressed annotation files directly.
-On systems without `make`, run the equivalent commands:
+The annotation extraction is performed directly with `zcat` and `awk` inside
+the Makefile. No separate Python script is required. To run the complete
+workflow with one command, use:
 
 ```bash
-python annotate_lamin.py GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff.gz lamin_annotation.gff3
-python annotate_lamin.py GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gtf.gz lamin_annotation.gtf
+make
+```
+
+To remove the downloaded and extracted data and reproduce the workflow from
+scratch, use:
+
+```bash
+make clean
+make
 ```
 
 ## Lamin annotation result
@@ -77,8 +88,8 @@ identifies the gene with `gene_id "Dmel_CG6944"` and `gene "Lam"`.
 
 To inspect the gene in IGV:
 
-1. Load `GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna` as the genome.
-2. Load `lamin_annotation.gff3` as an annotation track.
+1. Load `data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna` as the genome.
+2. Load `data/lamin_annotation.gff3` as an annotation track.
 3. Navigate to `NT_033779.5:5,542,480-5,546,642`.
 
 The annotation track shows the Lam gene models and their transcript structures.
@@ -119,6 +130,24 @@ answer.
 
 ### Obtain genomic data
 
+The commands used to answer this section were:
+
+```bash
+# Genome size in base pairs
+awk '/^>/ { next } { bp += length($0) } END { print bp }' data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna
+
+# Number of FASTA sequence records
+grep -c '^>' data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna
+
+# Feature counts in the complete GFF3 annotation
+zcat data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff.gz | \
+	awk '!/^#/ && NF >= 3 { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | \
+	sort -k2,2nr
+```
+
+These commands produce the values reported below: 143,726,002 bp, 1,870
+FASTA records, and 414,876 non-comment GFF3 records.
+
 1. **How large is the genome?**
 
 	The downloaded FASTA contains 143,726,002 bp across 1,870 sequence records.
@@ -136,34 +165,34 @@ answer.
 	gene records, 30,802 mRNA records, and 190,710 exon records. The Lamin-only
 	files contain 32 GFF3 records and 40 GTF records.
 
-	The annotation counts for the full downloaded annotation file were obtained
-	with this command:
+The annotation counts for the full downloaded annotation file were obtained
+with this command:
 
-	```bash
-	zcat GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff.gz | \
-		awk '!/^#/ && NF >= 3 { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | \
-		sort -k2,2nr
-	```
+```bash
+zcat data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff.gz | \
+  awk '!/^#/ && NF >= 3 { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | \
+  sort -k2,2nr
+```
 
-	The command reports `TOTAL 414876`. The largest feature categories are:
+The command reports `TOTAL 414876`. The largest feature categories are:
 
-	```text
-	exon 190710
-	CDS 163319
-	mRNA 30802
-	gene 17537
-	```
+```text
+exon 190710
+CDS 163319
+mRNA 30802
+gene 17537
+```
 
-	The Lamin-only annotation counts were obtained separately with:
+The Lamin-only annotation counts were obtained separately with:
 
-	```bash
-	grep -v '^#' lamin_annotation.gff3 | awk 'NF { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | sort -k2,2nr
-	grep -v '^#' lamin_annotation.gtf | awk 'NF { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | sort -k2,2nr
-	```
+```bash
+grep -v '^#' data/lamin_annotation.gff3 | awk 'NF { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | sort -k2,2nr
+grep -v '^#' data/lamin_annotation.gtf | awk 'NF { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | sort -k2,2nr
+```
 
-	For the extracted files, these commands report 32 GFF3 records and 40 GTF
-	records. The counts include every non-comment feature row, including repeated
-	records for different Lamin transcripts.
+For the extracted files, these commands report 32 GFF3 records and 40 GTF
+records. The counts include every non-comment feature row, including repeated
+records for different Lamin transcripts.
 
 4. **How complete is this genomic build?**
 
