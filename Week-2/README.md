@@ -86,6 +86,9 @@ identifies the gene with `gene_id "Dmel_CG6944"` and `gene "Lam"`.
 
 ## IGV visualization
 
+For a clean presentation of all screenshots, see the [complete IGV screenshot
+file](screenshots.md).
+
 To inspect the gene in IGV:
 
 1. Load `data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna` as the genome.
