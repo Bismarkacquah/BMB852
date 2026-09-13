@@ -148,6 +148,14 @@ zcat data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff.gz | \
 These commands produce the values reported below: 143,726,002 bp, 1,870
 FASTA records, and 414,876 non-comment GFF3 records.
 
+The complete command record is also available through the Makefile:
+
+```bash
+make download
+make annotate
+make count
+```
+
 1. **How large is the genome?**
 
 	The downloaded FASTA contains 143,726,002 bp across 1,870 sequence records.
@@ -200,6 +208,19 @@ records for different Lamin transcripts.
 	annotation, but it is not represented only by the four chromosome names:
 	unlocalized, unplaced, and mitochondrial sequences are included as well.
 
+The chromosome and scaffold names can be listed directly from the FASTA with:
+
+```bash
+awk '/^>/ { sub(/^>/, ""); print $1 }' data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna
+```
+
+The four main chromosome names can be selected with:
+
+```bash
+awk '/^>/{ sub(/^>/, ""); print $1 }' data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna | \
+	grep -E '^(2L|2R|3L|3R|4|X|mitochondrion_genome)$'
+```
+
 ### Visualize the Lamin locus
 
 1. **How tightly packed are the genes?**
@@ -212,6 +233,19 @@ records for different Lamin transcripts.
 2. **Which coordinate was inspected?**
 
 	`NT_033779.5:5,542,480-5,546,642`
+
+The Lam records at that coordinate can be checked with:
+
+```bash
+awk -F '\t' '$1 == "NT_033779.5" && $4 <= 5546642 && $5 >= 5542480 { print }' data/lamin_annotation.gff3
+```
+
+The gene models in the surrounding 300 kb window can be listed with:
+
+```bash
+awk -F '\t' '$1 == "NT_033779.5" && $3 == "gene" && $4 <= 5700000 && $5 >= 5400000 { print $1, $4, $5, $7, $9 }' data/lamin_annotation.gff3 | \
+	sort -k2,2n
+```
 
 3. **What are the six possible reading frames?**
 
@@ -234,6 +268,11 @@ To document the six-frame result, capture a screenshot after expanding the data
 track and showing all six translation rows. The existing strand and
 expanded-locus figures document the annotation context; the six-frame
 screenshot should be added beside them when the IGV view is available.
+
+There is no terminal command for this answer. The six-frame result comes from
+the IGV interface: load the plain FASTA, navigate to the Lam coordinate,
+expand the sequence data track, and enable translation display. The screenshot
+is the reproducible evidence for this visual answer.
 
 4. **What feature types are displayed?**
 
