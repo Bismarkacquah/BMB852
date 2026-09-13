@@ -6,7 +6,7 @@ I am reviewing Lauren Magliaro's repository: [BMMB-852-lmm](repository/README.md
 
 I inspected the Week 02 and Week 03 Makefiles. The workflows download genome and annotation files from Ensembl and NCBI using `wget` or the NCBI `datasets` command. The downloaded files are not executed. The URLs should remain restricted to trusted official sources.
 
-The `clean` targets remove downloaded data directories and generated files. This is useful for reproducing a fresh download, but the README should warn users that the command deletes local data.
+The `clean` targets remove downloaded data directories and created files. This is useful for reproducing a fresh download, but the README should warn users that the command deletes local data.
 
 ## README Evaluation
 
@@ -36,7 +36,7 @@ which is a useful reproducibility check that my Lamin workflow should include.
 ## Proposed Edits
 
 - Add explicit messages when FASTA or GFF outputs already exist.
-- Remove redundant cleanup commands and keep the `clean` target focused on generated data.
+- Remove redundant cleanup commands and keep the `clean` target focused on downloaded data.
 - Put the annotation-count command in the Makefile as a named target.
 - Document required tools such as `wget`, `unzip`, `datasets`, and `awk` near the reproduction commands.
 
