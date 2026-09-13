@@ -1,47 +1,68 @@
 # Week 2: Annotate the Drosophila Lamin Gene
 
-## Genome selected
+## Genome Selected
 
-- **Organism:** *Drosophila melanogaster* (fruit fly)
+For this assignment, the genome of *Drosophila melanogaster* (fruit fly) was selected, with a focus on the **Lamin (`Lam`)** gene.
+
+- **Organism:** *Drosophila melanogaster*
 - **Assembly:** `GCF_000001215.4_Release_6_plus_ISO1_MT`
 - **Repository:** [NCBI Assembly GCF_000001215.4](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001215.4/)
 - **Annotation source:** FlyBase Release 6.54, distributed by NCBI RefSeq
+- **Target gene:** `Lam`
+- **NCBI locus tag:** `Dmel_CG6944`
 
-The target gene is **Lamin**, whose official Drosophila symbol is `Lam` and whose
-NCBI locus tag is `Dmel_CG6944`.
+---
 
-## Downloaded files
+# Reproducing the Analysis
 
-The `download` target retrieves these compressed files from NCBI. Each filename
-below is also a direct one-click download link:
+## Required Software
+
+The following command-line tools are required to reproduce the analysis:
+
+```bash
+make --version
+curl --version
+gzip --version
+awk --version
+grep --version
+```
+
+`samtools` is also recommended because the Makefile uses it, when available, to create a FASTA index:
+
+```bash
+samtools --version
+```
+
+**IGV Desktop** is required for the genome visualization portion of the assignment.
+
+---
+
+## Downloaded Genomic Data
+
+The Makefile downloads the genomic FASTA, GFF3 annotation, and GTF annotation files directly from NCBI RefSeq.
+
+The source files are:
 
 - [Genome FASTA](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/215/GCF_000001215.4_Release_6_plus_ISO1_MT/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.gz)
 - [GFF3 annotation](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/215/GCF_000001215.4_Release_6_plus_ISO1_MT/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff.gz)
 - [GTF annotation](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/215/GCF_000001215.4_Release_6_plus_ISO1_MT/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gtf.gz)
 
-The Lamin-specific files created for this project are available here:
+The Makefile also extracts Lamin-specific annotations and creates:
 
-- [Lamin GFF3](data/lamin_annotation.gff3)
-- [Lamin GTF](data/lamin_annotation.gtf)
-- [IGV Lamin annotation](lamin_igv_annotation.png)
-- [Lamin chromosome 2 IGV screenshot](lamin_chromosome2_igv.png)
-- [Lamin chromosome 2 strand view](lamin_chromosome2_strand.png)
-- [Lamin chromosome 2 expanded strand view](lamin_chromosome2_strand_expanded.png)
-- [Lamin gene-density IGV view](Lamin_gene_density.png)
-
-The FASTA contains 1,870 sequence records with a total length of 143,726,002 bp.
-
-IGV cannot load the compressed `.fna.gz` directly in this setup. The Makefile
-creates the plain FASTA in `data/` with `gunzip`. To reproduce that step by
-itself, run:
-
-```bash
-gunzip -kf data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.gz
+```text
+data/lamin_annotation.gff3
+data/lamin_annotation.gtf
 ```
 
-## Reproduce the download and annotation
+All genomic data and generated annotation files are stored in the `data/` directory.
 
-From the `Week-2` directory, run:
+All IGV screenshots are stored separately in the `images/` directory.
+
+---
+
+## Running the Makefile
+
+From the `Bismark_BMB852/Week-2` directory, the individual steps can be run with:
 
 ```bash
 make download
@@ -49,248 +70,361 @@ make annotate
 make count
 ```
 
-The Makefile creates the `data/` directory, downloads the compressed genome and
-annotation files, creates the plain FASTA for IGV, and extracts records whose
-annotation identifies the gene as `Lam`. It creates:
-
-- `data/lamin_annotation.gff3`
-- `data/lamin_annotation.gtf`
-
-The annotation extraction is performed directly with `zcat` and `awk` inside
-the Makefile. No separate Python script is required. To run the complete
-workflow with one command, use:
+Alternatively, the complete workflow can be reproduced with:
 
 ```bash
 make
 ```
 
-To remove the downloaded and extracted data and reproduce the workflow from
-scratch, use:
+The Makefile:
+
+1. Creates the `data/` directory.
+2. Downloads the genomic FASTA file.
+3. Downloads the complete GFF3 annotation.
+4. Downloads the complete GTF annotation.
+5. Decompresses the FASTA for use in IGV.
+6. Creates a FASTA index if `samtools` is available.
+7. Extracts annotation records associated with the `Lam` gene.
+8. Counts annotation records.
+
+After running the workflow, the `data/` directory contains:
+
+```text
+data/
+├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.gz
+├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna
+├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.fai
+├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff.gz
+├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gtf.gz
+├── lamin_annotation.gff3
+└── lamin_annotation.gtf
+```
+
+If `samtools` is not installed, the `.fai` index will not be generated.
+
+To remove the downloaded and generated genomic data and reproduce the workflow from the beginning:
 
 ```bash
 make clean
 make
 ```
 
-## Lamin annotation result
+---
 
-The Lamin gene is annotated on the forward strand of contig `NT_033779.5`:
+# Lamin Annotation
+
+The Lamin gene is annotated on the forward strand of:
+
+```text
+NT_033779.5
+```
+
+at:
 
 ```text
 NT_033779.5:5,542,480-5,546,642
 ```
 
-The extracted annotation includes the `gene`, transcript, exon, CDS,
-start-codon, and stop-codon records for the annotated Lamin isoforms. The GTF
-identifies the gene with `gene_id "Dmel_CG6944"` and `gene "Lam"`.
-
-## IGV visualization
-
-For a clean presentation of all screenshots, see the [complete IGV screenshot
-file](screenshots.md), or view the [single combined screenshot image](IGV_screenshots_contact_sheet.png).
-
-To inspect the gene in IGV:
-
-1. Load `data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna` as the genome.
-2. Load `data/lamin_annotation.gff3` as an annotation track.
-3. Navigate to `NT_033779.5:5,542,480-5,546,642`.
-
-The annotation track shows the Lam gene models and their transcript structures.
-
-![IGV Lamin annotation](lamin_igv_annotation.png)
-
-**Figure 1.** Detailed IGV view of the *Drosophila melanogaster* Lamin (`Lam`)
-gene showing its transcript isoforms and exon structures.
-
-![IGV Lamin genome browsing](lamin_genome_browsing.png)
-
-**Figure 2.** Wider IGV view of the Lamin locus showing surrounding annotated
-genes, including `DIP-eta`, `CG7236`, `CG9171`, `rau`, `bchs`, `chic`, and `Pfas`.
-
-![Lamin chromosome 2 IGV annotation](lamin_chromosome2_igv.png)
-
-**Figure 3.** Additional IGV view of the Lamin gene on chromosome 2 at
-`NT_033779.5:5,542,480-5,546,642`.
-
-![Lamin chromosome 2 strand view](lamin_chromosome2_strand.png)
-
-**Figure 4.** Lamin chromosome 2 view with strand coloring enabled. Forward-
-and reverse-strand annotations can be distinguished by their directions and
-colors.
-
-![Lamin chromosome 2 expanded strand view](lamin_chromosome2_strand_expanded.png)
-
-**Figure 5.** Expanded IGV view of the Lamin chromosome 2 annotation track,
-showing separate transcript and feature rows.
-
-![Lamin gene-density IGV view](Lamin_gene_density.png)
-
-**Figure 6.** Wide IGV view of the 300 kb Lamin neighborhood, showing the
-closely spaced annotated genes and transcript models used for the gene-density
-answer.
-
-## Questions and answers
-
-### Obtain genomic data
-
-The commands used to answer this section were:
-
-```bash
-# Genome size in base pairs
-awk '/^>/ { next } { bp += length($0) } END { print bp }' data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna
-
-# Number of FASTA sequence records
-grep -c '^>' data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna
-
-# Feature counts in the complete GFF3 annotation
-zcat data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff.gz | \
-	awk '!/^#/ && NF >= 3 { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | \
-	sort -k2,2nr
-```
-
-These commands produce the values reported below: 143,726,002 bp, 1,870
-FASTA records, and 414,876 non-comment GFF3 records.
-
-The complete command record is also available through the Makefile:
-
-```bash
-make download
-make annotate
-make count
-```
-
-1. **How large is the genome?**
-
-	The downloaded FASTA contains 143,726,002 bp across 1,870 sequence records.
-
-2. **How many chromosomes does it have?**
-
-	*D. melanogaster* has four chromosome pairs: X, 2, 3, and 4. The assembly
-	also contains mitochondrial DNA and many unlocalized or unplaced scaffolds,
-	which is why the FASTA has 1,870 sequence records rather than only four
-	chromosome sequences.
-
-3. **How many annotations are in the annotation file?**
-
-	The downloaded GFF3 contains 414,876 non-comment records, including 17,537
-	gene records, 30,802 mRNA records, and 190,710 exon records. The Lamin-only
-	files contain 32 GFF3 records and 40 GTF records.
-
-The annotation counts for the full downloaded annotation file were obtained
-with this command:
-
-```bash
-zcat data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff.gz | \
-  awk '!/^#/ && NF >= 3 { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | \
-  sort -k2,2nr
-```
-
-The command reports `TOTAL 414876`. The largest feature categories are:
+The GTF identifies the gene as:
 
 ```text
+gene_id "Dmel_CG6944"
+gene "Lam"
+```
+
+The extracted annotation includes features associated with multiple Lamin isoforms, including:
+
+- gene
+- transcript
+- exon
+- CDS
+- start codon
+- stop codon
+
+---
+
+# Genome Information
+
+## Genome Size
+
+The genome size was calculated using:
+
+```bash
+awk '/^>/ { next } { bp += length($0) } END { print bp }' \
+data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna
+```
+
+Output:
+
+```text
+143726002
+```
+
+Therefore, the downloaded genome contains:
+
+**143,726,002 bp**
+
+or approximately:
+
+**143.73 Mb**
+
+---
+
+## Number of FASTA Sequence Records
+
+The number of FASTA sequence records was determined using:
+
+```bash
+grep -c '^>' \
+data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna
+```
+
+Output:
+
+```text
+1870
+```
+
+Therefore, the FASTA contains **1,870 sequence records**.
+
+---
+
+## Number of Chromosomes
+
+Biologically, *Drosophila melanogaster* has four chromosome pairs:
+
+- X
+- chromosome 2
+- chromosome 3
+- chromosome 4
+
+However, the downloaded reference assembly contains **1,870 FASTA sequence records** because the assembly also includes chromosome arms, mitochondrial DNA, and unlocalized or unplaced sequences.
+
+Therefore, the number of FASTA records should not be interpreted as the number of biological chromosomes.
+
+---
+
+## Number of Annotations
+
+Annotation features were counted using:
+
+```bash
+zcat data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff.gz | \
+awk '!/^#/ && NF >= 3 { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | \
+sort -k2,2nr
+```
+
+The complete GFF3 annotation contains:
+
+```text
+TOTAL 414876
 exon 190710
 CDS 163319
 mRNA 30802
 gene 17537
 ```
 
-The Lamin-only annotation counts were obtained separately with:
+Therefore, the complete GFF3 file contains:
 
-```bash
-grep -v '^#' data/lamin_annotation.gff3 | awk 'NF { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | sort -k2,2nr
-grep -v '^#' data/lamin_annotation.gtf | awk 'NF { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | sort -k2,2nr
+**414,876 non-comment annotation records**
+
+The Lamin-specific files contain:
+
+```text
+32 GFF3 records
+40 GTF records
 ```
 
-For the extracted files, these commands report 32 GFF3 records and 40 GTF
-records. The counts include every non-comment feature row, including repeated
-records for different Lamin transcripts.
-
-4. **How complete is this genomic build?**
-
-	This is a high-quality reference assembly with broad gene and transcript
-	annotation, but it is not represented only by the four chromosome names:
-	unlocalized, unplaced, and mitochondrial sequences are included as well.
-
-The chromosome and scaffold names can be listed directly from the FASTA with:
+The Lamin-specific counts can be reproduced with:
 
 ```bash
-awk '/^>/ { sub(/^>/, ""); print $1 }' data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna
+grep -v '^#' data/lamin_annotation.gff3 | \
+awk 'NF { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | \
+sort -k2,2nr
 ```
 
-The four main chromosome names can be selected with:
+and:
 
 ```bash
-awk '/^>/{ sub(/^>/, ""); print $1 }' data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna | \
-	grep -E '^(2L|2R|3L|3R|4|X|mitochondrion_genome)$'
+grep -v '^#' data/lamin_annotation.gtf | \
+awk 'NF { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | \
+sort -k2,2nr
 ```
 
-### Visualize the Lamin locus
+---
 
-1. **How tightly packed are the genes?**
+## Completeness of the Genome Build
 
-	The Lamin locus is very gene-dense. `Hel25E` ends 165 bp before `Lam`, and
-	`Oscillin` begins 443 bp after it. Additional nearby genes include `CG14015`,
-	`tomb`, `Cap-D3`, and `CG14014`, which are visible in the wider IGV view
-	(`NT_033779.5:5,400,000-5,700,000`, Figure 6).
+This is a high-quality reference assembly with extensive gene and transcript annotation.
 
-2. **Which coordinate was inspected?**
+The major *Drosophila melanogaster* chromosomal sequences are represented, but the assembly also contains mitochondrial, unlocalized, and unplaced sequence records.
 
-	`NT_033779.5:5,542,480-5,546,642`
+Therefore, the completeness of the assembly should not be assessed solely from the number of FASTA records. The presence of well-assembled major chromosomal sequences together with extensive annotation makes this genome highly useful for genomic analysis and visualization.
 
-The Lam records at that coordinate can be checked with:
+---
 
-```bash
-awk -F '\t' '$1 == "NT_033779.5" && $4 <= 5546642 && $5 >= 5542480 { print }' data/lamin_annotation.gff3
+# Genome Visualization in IGV
+
+## Loading the Genome
+
+The compressed FASTA file is decompressed by the Makefile.
+
+The genome file loaded into IGV is:
+
+```text
+data/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna
 ```
 
-The gene models in the surrounding 300 kb window can be listed with:
+The Lamin-specific annotation track is:
 
-```bash
-awk -F '\t' '$1 == "NT_033779.5" && $3 == "gene" && $4 <= 5700000 && $5 >= 5400000 { print $1, $4, $5, $7, $9 }' data/lamin_annotation.gff3 | \
-	sort -k2,2n
+```text
+data/lamin_annotation.gff3
 ```
 
-3. **What are the six possible reading frames?**
+The Lamin locus can be viewed at:
 
-	Any double-stranded DNA interval has six possible reading frames:
+```text
+NT_033779.5:5,542,480-5,546,642
+```
 
-| Strand | Frames |
+---
+
+## Lamin Annotation
+
+The annotation track shows the Lamin gene and its different transcript structures.
+
+![IGV Lamin annotation](images/lamin_igv_annotation.png)
+
+**Figure 1.** Detailed IGV view of the *Drosophila melanogaster* Lamin (`Lam`) gene showing its transcript isoforms and exon structures.
+
+---
+
+## Genome Browsing
+
+A wider IGV view shows genes surrounding the Lamin locus.
+
+![IGV Lamin genome browsing](images/lamin_genome_browsing.png)
+
+**Figure 2.** Wider IGV view of the Lamin locus and neighboring annotated genes.
+
+---
+
+## Additional Lamin View
+
+![Lamin chromosome 2 IGV annotation](images/lamin_chromosome2_igv.png)
+
+**Figure 3.** Additional IGV view of the Lamin locus at `NT_033779.5:5,542,480-5,546,642`.
+
+---
+
+# Gene Density
+
+The Lamin locus is highly gene-dense.
+
+`Hel25E` ends approximately **165 bp before `Lam`**, while `Oscillin` begins approximately **443 bp after it**.
+
+Additional nearby genes include:
+
+- `CG14015`
+- `tomb`
+- `Cap-D3`
+- `CG14014`
+
+The wider region examined in IGV was:
+
+```text
+NT_033779.5:5,400,000-5,700,000
+```
+
+![Lamin gene-density IGV view](images/Lamin_gene_density.png)
+
+**Figure 4.** Wide IGV view of the approximately 300 kb Lamin neighborhood showing the density of nearby genes.
+
+---
+
+# Strand Orientation
+
+The annotation features were colored according to their strand orientation in IGV.
+
+Forward- and reverse-strand features can therefore be distinguished visually.
+
+The `Lam` gene is annotated on the **forward (+) strand**.
+
+![Lamin chromosome 2 strand view](images/lamin_chromosome2_strand.png)
+
+**Figure 5.** IGV view showing annotation features colored according to strand orientation.
+
+An expanded view of the annotation track is shown below:
+
+![Lamin chromosome 2 expanded strand view](images/lamin_chromosome2_strand_expanded.png)
+
+**Figure 6.** Expanded annotation track showing individual transcript and feature rows.
+
+---
+
+# Six Possible Reading Frames
+
+Double-stranded DNA has six possible reading frames:
+
+| Strand | Reading Frames |
 | --- | --- |
 | Forward (+) | +1, +2, +3 |
 | Reverse (-) | -1, -2, -3 |
 
-In IGV, I inspected `NT_033779.5:5,542,480-5,546,642`, expanded the sequence
-track, and enabled translation display. The three forward frames are read from
-left to right on the reference strand. The three reverse frames are the
-reverse-complement translations. The six frame rows should be read directly
-from the expanded data track rather than inferred from the gene model alone.
-Lam is annotated on the forward strand, so the annotated coding frame is among
-the `+1`, `+2`, and `+3` rows.
+The region:
 
-To document the six-frame result, capture a screenshot after expanding the data
-track and showing all six translation rows. The existing strand and
-expanded-locus figures document the annotation context; the six-frame
-screenshot should be added beside them when the IGV view is available.
+```text
+NT_033779.5:5,542,480-5,546,642
+```
 
-There is no terminal command for this answer. The six-frame result comes from
-the IGV interface: load the plain FASTA, navigate to the Lam coordinate,
-expand the sequence data track, and enable translation display. The screenshot
-is the reproducible evidence for this visual answer.
+defines the Lamin locus, but it is a genomic interval rather than a single nucleotide coordinate.
 
-4. **What feature types are displayed?**
+To completely answer the reading-frame question, one nucleotide within this interval should be selected and examined at nucleotide resolution in IGV.
 
-	The Lamin track contains gene, transcript, exon, CDS, start-codon, and
-	stop-codon features for multiple Lam isoforms.
+At a single selected nucleotide, the six possible codons would be recorded as:
 
-5. **How can features be distinguished by strand?**
+| Strand | Reading Frame | Codon |
+| --- | --- | --- |
+| Forward (+) | +1 | `[CODON]` |
+| Forward (+) | +2 | `[CODON]` |
+| Forward (+) | +3 | `[CODON]` |
+| Reverse (-) | -1 | `[CODON]` |
+| Reverse (-) | -2 | `[CODON]` |
+| Reverse (-) | -3 | `[CODON]` |
 
-	In IGV, enable the annotation track's strand coloring option. Forward- and
-	reverse-strand features are then shown with different colors; Lam should
-	appear as a forward-strand model at the coordinate above.
+The actual codons should be determined by zooming to nucleotide resolution in IGV and examining the three possible reading frames on both DNA strands.
 
-## Summary
+This distinction is important because `+1`, `+2`, `+3`, `-1`, `-2`, and `-3` identify the reading frames, but they do not themselves identify the six codons that contain the selected nucleotide.
 
-This workflow downloads a Drosophila reference genome and both GFF3 and GTF
-annotation formats from NCBI, then extracts the Lamin gene annotation for
-inspection in IGV. The assembly, source files, gene coordinates, and created
-outputs are recorded so the analysis can be reproduced.
+---
+
+# Feature Types Displayed
+
+The Lamin annotation track contains multiple feature types, including:
+
+- gene
+- transcript
+- exon
+- CDS
+- start codon
+- stop codon
+
+These features describe the structures of the different annotated `Lam` transcript isoforms.
+
+---
+
+# Summary
+
+This workflow reproducibly downloads a *Drosophila melanogaster* reference genome and its GFF3 and GTF annotations from NCBI RefSeq and extracts annotation records associated with the Lamin (`Lam`) gene.
+
+The analysis reproduced the following results:
+
+- **Genome size:** 143,726,002 bp
+- **FASTA sequence records:** 1,870
+- **Complete GFF3 annotation records:** 414,876
+- **Lamin-specific GFF3 records:** 32
+- **Lamin-specific GTF records:** 40
+
+The genomic data and generated annotations are stored in the `data/` directory, while all IGV screenshots are organized separately in the `images/` directory.
+
+The Makefile allows the genomic data and Lamin-specific annotation files to be regenerated from the original NCBI source.
