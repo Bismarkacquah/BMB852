@@ -26,7 +26,7 @@ annotate: download
 	zcat $(GFF_GZ) | awk 'BEGIN { IGNORECASE=1 } /^#/ || $$0 ~ /(^|[;\t ])(gene|gene_name|Name|gene_id)[= ]"?Lam"?([; ]|$$)/ { print }' > $(LAMIN_GFF)
 	zcat $(GTF_GZ) | awk 'BEGIN { IGNORECASE=1 } /^#/ || $$0 ~ /(^|[;\t ])(gene|gene_name|Name|gene_id)[= ]"?Lam"?([; ]|$$)/ { print }' > $(LAMIN_GTF)
 
-count: download
+count: annotate
 	@echo "GFF3 annotation counts"
 	zcat $(GFF_GZ) | awk '!/^#/ && NF >= 3 { count[$$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | sort -k2,2nr
 	@echo "Lamin-only GFF3 records: $$(grep -v '^#' $(LAMIN_GFF) 2>/dev/null | awk 'NF { n++ } END { print n + 0 }')"
