@@ -136,7 +136,25 @@ answer.
 	gene records, 30,802 mRNA records, and 190,710 exon records. The Lamin-only
 	files contain 32 GFF3 records and 40 GTF records.
 
-	The annotation counts were obtained with these commands:
+	The annotation counts for the full downloaded annotation file were obtained
+	with this command:
+
+	```bash
+	zcat GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff.gz | \
+		awk '!/^#/ && NF >= 3 { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | \
+		sort -k2,2nr
+	```
+
+	The command reports `TOTAL 414876`. The largest feature categories are:
+
+	```text
+	exon 190710
+	CDS 163319
+	mRNA 30802
+	gene 17537
+	```
+
+	The Lamin-only annotation counts were obtained separately with:
 
 	```bash
 	grep -v '^#' lamin_annotation.gff3 | awk 'NF { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | sort -k2,2nr
