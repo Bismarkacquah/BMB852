@@ -38,4 +38,6 @@ detail about the biological inspection performed after downloading.
 
 ## Pull Request
 
-I would submit these suggestions as a pull request to the forked repository after confirming the proposed Makefile changes. No pull request was created as part of this local review.
+[Susan Sharpe review pull request](https://github.com/susansharpe/appbio-2026/pull/1)
+
+The pull request adds existing-file messages and a reproducible GFF3 count target.
