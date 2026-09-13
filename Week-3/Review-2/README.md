@@ -42,4 +42,6 @@ which is a useful reproducibility check that my Lamin workflow should include.
 
 ## Pull Request
 
-I would submit these changes as a pull request to the forked repository after testing the Makefile from a clean directory. No pull request was created as part of this local review.
+[Lauren Magliaro review pull request](https://github.com/lmm683/BMMB-852-lmm/pull/2)
+
+The pull request adds existing-file messages and a reproducible GFF3 annotation summary target.
