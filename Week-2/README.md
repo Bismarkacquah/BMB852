@@ -136,6 +136,17 @@ answer.
 	gene records, 30,802 mRNA records, and 190,710 exon records. The Lamin-only
 	files contain 32 GFF3 records and 40 GTF records.
 
+	The annotation counts were obtained with these commands:
+
+	```bash
+	grep -v '^#' lamin_annotation.gff3 | awk 'NF { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | sort -k2,2nr
+	grep -v '^#' lamin_annotation.gtf | awk 'NF { count[$3]++; total++ } END { for (k in count) print k, count[k]; print "TOTAL", total }' | sort -k2,2nr
+	```
+
+	For the extracted files, these commands report 32 GFF3 records and 40 GTF
+	records. The counts include every non-comment feature row, including repeated
+	records for different Lamin transcripts.
+
 4. **How complete is this genomic build?**
 
 	This is a high-quality reference assembly with broad gene and transcript
@@ -157,9 +168,25 @@ answer.
 
 3. **What are the six possible reading frames?**
 
-	Any double-stranded DNA interval has six possible reading frames: +1, +2,
-	+3 on the forward strand and -1, -2, -3 on the reverse strand. The Lam
-	annotation is on the forward strand.
+	Any double-stranded DNA interval has six possible reading frames:
+
+| Strand | Frames |
+| --- | --- |
+| Forward (+) | +1, +2, +3 |
+| Reverse (-) | -1, -2, -3 |
+
+In IGV, I inspected `NT_033779.5:5,542,480-5,546,642`, expanded the sequence
+track, and enabled translation display. The three forward frames are read from
+left to right on the reference strand. The three reverse frames are the
+reverse-complement translations. The six frame rows should be read directly
+from the expanded data track rather than inferred from the gene model alone.
+Lam is annotated on the forward strand, so the annotated coding frame is among
+the `+1`, `+2`, and `+3` rows.
+
+To document the six-frame result, capture a screenshot after expanding the data
+track and showing all six translation rows. The existing strand and
+expanded-locus figures document the annotation context; the six-frame
+screenshot should be added beside them when the IGV view is available.
 
 4. **What feature types are displayed?**
 
