@@ -87,7 +87,7 @@ identifies the gene with `gene_id "Dmel_CG6944"` and `gene "Lam"`.
 ## IGV visualization
 
 For a clean presentation of all screenshots, see the [complete IGV screenshot
-file](screenshots.md).
+file](screenshots.md), or view the [single combined screenshot image](IGV_screenshots_contact_sheet.png).
 
 To inspect the gene in IGV:
 

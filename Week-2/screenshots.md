@@ -2,6 +2,10 @@
 
 This file collects the IGV screenshots for the Drosophila Lamin analysis in one place.
 
+![All IGV screenshots](IGV_screenshots_contact_sheet.png)
+
+The image above is a single contact sheet containing all available IGV screenshots.
+
 ## Lamin annotation
 
 ![IGV Lamin annotation](lamin_igv_annotation.png)
