@@ -19,7 +19,7 @@ below is also a direct one-click download link:
 - [GFF3 annotation](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/215/GCF_000001215.4_Release_6_plus_ISO1_MT/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff.gz)
 - [GTF annotation](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/215/GCF_000001215.4_Release_6_plus_ISO1_MT/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gtf.gz)
 
-The generated Lamin-specific files are available in this project:
+The Lamin-specific files created for this project are available here:
 
 - [Lamin GFF3](lamin_annotation.gff3)
 - [Lamin GTF](lamin_annotation.gtf)
@@ -176,5 +176,5 @@ answer.
 
 This workflow downloads a Drosophila reference genome and both GFF3 and GTF
 annotation formats from NCBI, then extracts the Lamin gene annotation for
-inspection in IGV. The assembly, source files, gene coordinates, and generated
+inspection in IGV. The assembly, source files, gene coordinates, and created
 outputs are recorded so the analysis can be reproduced.
