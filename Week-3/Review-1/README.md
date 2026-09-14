@@ -6,17 +6,17 @@ I am reviewing Susan Sharpe's repository: [appbio-2026](repository/README.md).
 
 I inspected the Week 02 Makefile and README instructions. The workflow downloads FASTA and GFF3 files from NCBI E-utilities with `curl`; it does not execute downloaded files. The URLs point to NCBI, a trusted source for this assignment.
 
-The `clean` target removes only the local `fasta/` and `gff/` directories. That is appropriate for a disposable data-download directory, but users should understand that it deletes downloaded data.
+The `clean` target removes only the local `fasta/` and `gff/` directories. This is appropriate for a disposable data-download workspace, but the README should clearly state that it deletes local downloaded data.
 
 ## README Evaluation
 
-The README clearly identifies the TMV accession, explains genome completeness, documents the expected output files, and records the IGV observations. The embedded reading-frame images make the visualization result easy to inspect.
+The README clearly identifies the TMV accession, explains genome completeness, documents the expected output files, and records the IGV observations. The embedded reading-frame images make the visualization easy to inspect and interpret.
 
-The Makefile is concise and reproducible. It creates separate output directories, uses explicit accession-based filenames, and uses `curl --fail --location --retry 3`. The main improvement I would suggest is adding a small `count` target for the GFF3 feature count described in the README, so the documented check is also available through `make`.
+The Makefile is concise and reproducible. It creates separate output directories, uses explicit accession-based filenames, and includes `curl --fail --location --retry 3`. The main improvement I would suggest is adding a small `count` target for the GFF3 feature count described in the README so the documented validation is also available through `make`.
 
-## Code used to generate this assessment
+## Evidence and reproducible commands
 
-The download workflow in the reviewed repository is defined in `repository/week3/Makefile`:
+The reviewed repository's workflow is defined in `repository/week3/Makefile`:
 
 ```make
 SHELL := /bin/sh
@@ -57,7 +57,7 @@ The annotation count used in the review was checked with:
 awk '!/^#/ && NF { n++ } END { print n }' gff/NC_001367.1.gff3
 ```
 
-This returns `13`, matching the expected one region, six gene, and six CDS features once comment and directive lines are excluded.
+This returns `13`, matching the expected total of one region feature, six gene features, and six CDS features once comment and directive lines are excluded.
 
 ## Comparison With My Week 2 Lamin Analysis
 
