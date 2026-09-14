@@ -14,6 +14,51 @@ The README clearly identifies the TMV accession, explains genome completeness, d
 
 The Makefile is concise and reproducible. It creates separate output directories, uses explicit accession-based filenames, and uses `curl --fail --location --retry 3`. The main improvement I would suggest is adding a small `count` target for the GFF3 feature count described in the README, so the documented check is also available through `make`.
 
+## Code used to generate this assessment
+
+The download workflow in the reviewed repository is defined in `repository/week3/Makefile`:
+
+```make
+SHELL := /bin/sh
+
+ACCESSION := NC_001367.1
+
+FASTA_URL := https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=$(ACCESSION)&rettype=fasta&retmode=text
+GFF_URL := https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=$(ACCESSION)&rettype=gff3&retmode=text
+
+FASTA_DIR := fasta
+GFF_DIR := gff
+
+FASTA := $(FASTA_DIR)/$(ACCESSION).fasta
+GFF := $(GFF_DIR)/$(ACCESSION).gff3
+
+.PHONY: all genome clean
+
+all: genome
+
+genome: $(FASTA) $(GFF)
+
+$(FASTA_DIR):
+	mkdir -p $@
+
+$(GFF_DIR):
+	mkdir -p $@
+
+$(FASTA): | $(FASTA_DIR)
+	curl --fail --location --retry 3 --output $@ '$(FASTA_URL)'
+
+$(GFF): | $(GFF_DIR)
+	curl --fail --location --retry 3 --output $@ '$(GFF_URL)'
+```
+
+The annotation count used in the review was checked with:
+
+```sh
+awk '!/^#/ && NF { n++ } END { print n }' gff/NC_001367.1.gff3
+```
+
+This returns `13`, matching the expected one region, six gene, and six CDS features once comment and directive lines are excluded.
+
 ## Comparison With My Week 2 Lamin Analysis
 
 My Week 2 analysis downloads *Zygosaccharomyces bailii* FASTA and GFF3 files
