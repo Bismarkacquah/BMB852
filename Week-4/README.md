@@ -139,4 +139,3 @@ fastqc --threads 2 --outdir results/qc/trimmed data/trimmed/lamin_DRR303595_R1.t
 
 These commands are intentionally represented in the Makefile so the workflow
 can be rerun without copying commands manually.
-
