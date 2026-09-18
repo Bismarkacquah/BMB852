@@ -23,7 +23,7 @@ ENA_LAMIN_QUERY := $(ENA_API)/search?result=read_run&query=tax_tree(7227)%20AND%
 
 .PHONY: all help versions check-tools check-curl check-sra check-fastqc check-fastp metadata download qc-raw trim qc-trimmed clean
 
-all: metadata qc-trimmed
+all: metadata versions qc-trimmed
 
 help:
 	@echo "Week 4 FASTQ workflow"
@@ -38,12 +38,15 @@ help:
 	@echo "  make qc-trimmed        Run FastQC on trimmed reads"
 	@echo "  make clean             Remove generated data and reports"
 
-versions:
-	@echo "curl:       $$(curl --version | awk 'NR == 1 {print $$2}')"
-	@echo "fastq-dump: $$(fastq-dump --version 2>&1 | awk 'NR == 1 {print $$NF}')"
-	@echo "fastqc:     $$(fastqc --version 2>&1)"
-	@echo "fastp:      $$(fastp --version 2>&1 | awk 'NR == 1 {print $$NF}')"
-	@echo "make:       $$(make --version | awk 'NR == 1 {print $$3}')"
+versions: check-tools
+	mkdir -p $(REPORT_DIR)
+	@{ \
+		echo "curl:       $$(curl --version | awk 'NR == 1 {print $$2}')"; \
+		echo "fastq-dump: $$(fastq-dump --version 2>&1 | awk 'NR == 1 {print $$NF}')"; \
+		echo "fastqc:     $$(fastqc --version 2>&1)"; \
+		echo "fastp:      $$(fastp --version 2>&1 | awk 'NR == 1 {print $$NF}')"; \
+		echo "make:       $$(make --version | awk 'NR == 1 {print $$3}')"; \
+	} | tee $(REPORT_DIR)/versions.txt
 
 check-tools: check-curl check-sra check-fastqc check-fastp
 	@echo "All required tools are available."
@@ -67,7 +70,8 @@ metadata: check-curl
 
 download: check-sra
 	mkdir -p $(RAW_DIR)
-	@if [[ -s "$(RAW_R1)" && -s "$(RAW_R2)" ]]; then \
+	@set -euo pipefail; \
+	if [[ -s "$(RAW_R1)" && -s "$(RAW_R2)" ]]; then \
 		echo "Raw FASTQ files already exist; nothing to download."; \
 	else \
 		$(SRA_TOOL) --split-files --gzip --maxSpotId $(N) --outdir $(RAW_DIR) $(ACCESSION); \
