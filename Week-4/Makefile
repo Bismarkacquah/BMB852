@@ -21,9 +21,32 @@ ENA_API := https://www.ebi.ac.uk/ena/portal/api
 ENA_RUN_INFO := $(ENA_API)/filereport?accession=$(ACCESSION)&result=read_run&fields=run_accession,study_accession,sample_accession,experiment_accession,library_name,instrument_platform,instrument_model,library_strategy,library_source,library_layout,read_count,base_count,fastq_ftp&format=tsv
 ENA_LAMIN_QUERY := $(ENA_API)/search?result=read_run&query=tax_tree(7227)%20AND%20description=%22lamin%22&fields=run_accession,study_accession,experiment_accession,instrument_platform,instrument_model,library_strategy,library_layout,read_count,base_count&format=tsv&limit=100
 
-.PHONY: all check-curl check-sra check-fastqc check-fastp metadata download qc-raw trim qc-trimmed clean
+.PHONY: all help versions check-tools check-curl check-sra check-fastqc check-fastp metadata download qc-raw trim qc-trimmed clean
 
 all: metadata qc-trimmed
+
+help:
+	@echo "Week 4 FASTQ workflow"
+	@echo "  make                   Run metadata, download, raw QC, trimming, and trimmed QC"
+	@echo "  make N=100000          Limit the run to N sequencing spots"
+	@echo "  make versions          Show installed tool versions"
+	@echo "  make check-tools       Verify required commands are available"
+	@echo "  make metadata          Download ENA metadata only"
+	@echo "  make download          Download the raw paired FASTQ subset"
+	@echo "  make qc-raw            Run FastQC on raw reads"
+	@echo "  make trim              Trim reads and write fastp reports"
+	@echo "  make qc-trimmed        Run FastQC on trimmed reads"
+	@echo "  make clean             Remove generated data and reports"
+
+versions:
+	@echo "curl:       $$(curl --version | awk 'NR == 1 {print $$2}')"
+	@echo "fastq-dump: $$(fastq-dump --version 2>&1 | awk 'NR == 1 {print $$NF}')"
+	@echo "fastqc:     $$(fastqc --version 2>&1)"
+	@echo "fastp:      $$(fastp --version 2>&1 | awk 'NR == 1 {print $$NF}')"
+	@echo "make:       $$(make --version | awk 'NR == 1 {print $$3}')"
+
+check-tools: check-curl check-sra check-fastqc check-fastp
+	@echo "All required tools are available."
 
 check-curl:
 	@command -v curl >/dev/null 2>&1 || { echo "Error: curl is required."; exit 1; }
