@@ -180,3 +180,223 @@ fastqc --threads 2 --outdir results/qc/trimmed data/trimmed/lamin_DRR303595_R1.t
 
 These commands are intentionally represented in the Makefile so the workflow
 can be rerun without copying commands manually.
+
+## What each part of the code does
+
+### 1. Selecting the run and output locations
+
+```make
+SHELL := /bin/bash
+ACCESSION ?= DRR303595
+N ?= 100000
+THREADS ?= 2
+SRA_TOOL ?= fastq-dump
+```
+
+- `SHELL` tells `make` to run recipes with Bash. This is required because the
+  download recipe uses Bash's `[[ ... ]]` conditional syntax.
+- `ACCESSION` stores the SRA/ENA run identifier. `?=` gives it a default while
+  allowing an override such as `make ACCESSION=SRR6667399`.
+- `N` controls the number of spots downloaded. A spot is the sequencing
+  observation; for paired-end data, one spot produces an R1/R2 read pair.
+- `THREADS` controls how many CPU threads FastQC uses.
+- `SRA_TOOL` names the SRA Toolkit program used for conversion to FASTQ.
+
+The output-directory variables keep raw data, trimmed data, and reports
+separate:
+
+```make
+RAW_DIR := data/raw
+TRIMMED_DIR := data/trimmed
+RAW_QC_DIR := results/qc/raw
+TRIMMED_QC_DIR := results/qc/trimmed
+REPORT_DIR := results
+```
+
+The filename variables use the accession in each name, making it clear which
+run produced a file:
+
+```make
+RAW_R1 := $(RAW_DIR)/lamin_$(ACCESSION)_R1.fastq.gz
+RAW_R2 := $(RAW_DIR)/lamin_$(ACCESSION)_R2.fastq.gz
+TRIMMED_R1 := $(TRIMMED_DIR)/lamin_$(ACCESSION)_R1.trimmed.fastq.gz
+TRIMMED_R2 := $(TRIMMED_DIR)/lamin_$(ACCESSION)_R2.trimmed.fastq.gz
+```
+
+`R1` and `R2` are the two mates of a paired-end read. The `.gz` suffix means
+the FASTQ files are gzip-compressed.
+
+### 2. Querying ENA metadata
+
+```make
+ENA_API := https://www.ebi.ac.uk/ena/portal/api
+
+ENA_RUN_INFO := $(ENA_API)/filereport?accession=$(ACCESSION)&result=read_run&fields=run_accession,study_accession,sample_accession,experiment_accession,library_name,instrument_platform,instrument_model,library_strategy,library_source,library_layout,read_count,base_count,fastq_ftp&format=tsv
+
+ENA_LAMIN_QUERY := $(ENA_API)/search?result=read_run&query=tax_tree(7227)%20AND%20description=%22lamin%22&fields=run_accession,study_accession,experiment_accession,instrument_platform,instrument_model,library_strategy,library_layout,read_count,base_count&format=tsv&limit=100
+```
+
+- `ENA_API` is the base URL for the European Nucleotide Archive API.
+- `ENA_RUN_INFO` requests metadata for the selected accession.
+- `result=read_run` asks for sequencing-run records.
+- `fields=...` limits the response to useful fields such as platform, layout,
+  read count, and base count.
+- `format=tsv` requests a tab-separated file that is easy to inspect.
+- `ENA_LAMIN_QUERY` searches taxonomy ID `7227` (*Drosophila*) for records whose
+  description contains “lamin”.
+- `%20` represents a space and `%22` represents quotation marks in the URL.
+- `limit=100` prevents an unbounded search response.
+
+The corresponding Make target is:
+
+```make
+metadata: check-curl
+	mkdir -p $(REPORT_DIR)
+	curl --fail --location --retry 3 --output $(REPORT_DIR)/ena_$(ACCESSION).tsv "$(ENA_RUN_INFO)"
+	curl --fail --location --retry 3 --output $(REPORT_DIR)/ena_lamin_search.tsv "$(ENA_LAMIN_QUERY)"
+```
+
+`mkdir -p` creates `results/` if needed and does not fail when it already
+exists. For each `curl` command:
+
+- `--fail` makes HTTP errors return a failure status.
+- `--location` follows redirects.
+- `--retry 3` retries transient network failures.
+- `--output` writes the response to a named file instead of printing it.
+
+### 3. Checking required programs
+
+```make
+check-curl:
+	@command -v curl >/dev/null 2>&1 || { echo "Error: curl is required."; exit 1; }
+```
+
+`command -v` checks whether a program is available on `PATH`. Redirecting
+standard output and error keeps the check quiet. If the program is missing,
+the block prints an actionable error and exits with a nonzero status.
+`check-sra`, `check-fastqc`, and `check-fastp` use the same pattern for their
+respective tools.
+
+### 4. Downloading only a controlled subset
+
+```make
+download: check-sra
+	mkdir -p $(RAW_DIR)
+	@if [[ -s "$(RAW_R1)" && -s "$(RAW_R2)" ]]; then \
+		echo "Raw FASTQ files already exist; nothing to download."; \
+	else \
+		$(SRA_TOOL) --split-files --gzip --maxSpotId $(N) --outdir $(RAW_DIR) $(ACCESSION); \
+		mv "$(RAW_DIR)/$(ACCESSION)_1.fastq.gz" "$(RAW_R1)"; \
+		mv "$(RAW_DIR)/$(ACCESSION)_2.fastq.gz" "$(RAW_R2)"; \
+	fi
+```
+
+The target first checks for the SRA Toolkit. It then creates `data/raw/`.
+The `[[ -s file ]]` tests verify that both existing files are present and
+non-empty; if so, the expensive download is skipped.
+
+When the files are absent, the SRA command does the following:
+
+- `--split-files` separates paired reads into `_1` and `_2` files.
+- `--gzip` writes compressed FASTQ files.
+- `--maxSpotId $(N)` limits the download to the first `N` spots.
+- `--outdir $(RAW_DIR)` places the temporary output in `data/raw/`.
+- `$(ACCESSION)` identifies the SRA run.
+
+The two `mv` commands rename the Toolkit's generic accession-based files to
+descriptive Lamin filenames. This is why the final files are named
+`lamin_DRR303595_R1.fastq.gz` and `lamin_DRR303595_R2.fastq.gz`.
+
+### 5. Running FastQC on raw reads
+
+```make
+qc-raw: download check-fastqc
+	mkdir -p $(RAW_QC_DIR)
+	fastqc --threads $(THREADS) --outdir $(RAW_QC_DIR) $(RAW_R1) $(RAW_R2)
+```
+
+The prerequisite list means `make qc-raw` first completes `download` and
+checks FastQC. FastQC then examines both raw mates:
+
+- `--threads 2` uses the configured number of CPU threads.
+- `--outdir results/qc/raw` stores the raw-read reports separately.
+- The final two arguments are the R1 and R2 input files.
+
+FastQC creates an HTML report for visual inspection and a ZIP archive
+containing the underlying summary data.
+
+### 6. Trimming adapters and low-quality reads
+
+```make
+trim: qc-raw check-fastp
+	mkdir -p $(TRIMMED_DIR) $(REPORT_DIR)
+	fastp \
+		--in1 $(RAW_R1) \
+		--in2 $(RAW_R2) \
+		--out1 $(TRIMMED_R1) \
+		--out2 $(TRIMMED_R2) \
+		--detect_adapter_for_pe \
+		--html $(REPORT_DIR)/fastp_$(ACCESSION).html \
+		--json $(REPORT_DIR)/fastp_$(ACCESSION).json
+```
+
+The `trim` target depends on the raw QC step, so raw reads are always checked
+before they are changed. `fastp` receives paired inputs with `--in1` and
+`--in2`, and writes paired outputs with `--out1` and `--out2`.
+
+- `--detect_adapter_for_pe` detects adapters for paired-end data.
+- Adapter sequence is removed when detected.
+- Low-quality or unusably short reads are filtered according to fastp's
+  defaults.
+- `--html` creates a human-readable report.
+- `--json` creates a machine-readable report containing the same statistics.
+
+The output files remain paired: R1 and R2 are filtered together so the mate
+relationship is preserved.
+
+### 7. Running FastQC after trimming
+
+```make
+qc-trimmed: trim
+	mkdir -p $(TRIMMED_QC_DIR)
+	fastqc --threads $(THREADS) --outdir $(TRIMMED_QC_DIR) $(TRIMMED_R1) $(TRIMMED_R2)
+```
+
+This target depends on `trim`, then runs the same FastQC analysis on the
+trimmed mates. Keeping raw and trimmed reports in different directories makes
+the before/after comparison direct and prevents one report set from
+overwriting the other.
+
+### 8. Target dependency order
+
+```make
+.PHONY: all ... metadata download qc-raw trim qc-trimmed clean
+
+all: metadata qc-trimmed
+```
+
+`.PHONY` marks workflow names as actions rather than files. The `all` target
+runs metadata collection and the complete raw-QC, trimming, and trimmed-QC
+chain:
+
+```text
+all
+├── metadata
+└── qc-trimmed
+    └── trim
+        └── qc-raw
+            └── download
+```
+
+Therefore, `make N=100000` executes the workflow in a predictable order.
+
+### 9. Cleaning generated data
+
+```make
+clean:
+	rm -rf data results
+```
+
+This removes only the workflow's generated `data/` and `results/` directories.
+It is useful for a fresh rerun, but it permanently deletes downloaded FASTQ
+files and reports, so it should be used deliberately.
