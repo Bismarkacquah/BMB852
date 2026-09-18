@@ -13,7 +13,8 @@ NovaSeq 6000 run, so the workflow produces separate R1 and R2 FASTQ files.
 
 ## Evidence from ENA and SRA
 
-The selected run is documented by the ENA run report:
+The selected run is documented by the
+[ENA run report](https://www.ebi.ac.uk/ena/browser/view/DRR303595):
 
 - Run: `DRR303595`
 - Study: `PRJDB11874`
@@ -25,7 +26,8 @@ The selected run is documented by the ENA run report:
 - Layout: paired-end
 - Reported data: 111,781,950 read pairs and 33,534,585,000 bases
 
-The run page reports that the complete experiment is approximately 10 GB.
+The [SRA run page](https://trace.ncbi.nlm.nih.gov/Traces/?run=DRR303595)
+reports that the complete experiment is approximately 10 GB.
 Only a controlled subset is downloaded for this assignment.
 
 To compare the broader public Lamin evidence, the ENA API query
@@ -63,6 +65,7 @@ versions. If `micromamba` is available:
 
 ```bash
 micromamba create -y -f environment.yml
+micromamba run -n bmb852-week4 make check-tools
 micromamba run -n bmb852-week4 make versions
 ```
 
@@ -99,7 +102,8 @@ make versions
 ```
 
 `check-tools` fails early with a clear message if a required command is
-missing. `versions` records the software versions used for the run.
+missing. `versions` prints the software versions and saves them to
+`results/versions.txt` during a workflow run.
 
 ### 4. Run a small smoke test
 
@@ -127,6 +131,7 @@ and the later QC stages regenerate reports from the existing files.
 ```text
 results/ena_DRR303595.tsv                  ENA metadata for the selected run
 results/ena_lamin_search.tsv               Broader Lamin search results
+results/versions.txt                       Tool versions used for the run
 results/fastp_DRR303595.html               Interactive trimming report
 results/fastp_DRR303595.json               Machine-readable trimming report
 results/qc/raw/*_fastqc.html               FastQC reports before trimming
@@ -148,7 +153,8 @@ make N=100000 THREADS=2
 ```
 
 The run used `DRR303595`, `fastq-dump`, FastQC 0.12.1, fastp 1.3.7, SRA
-Toolkit 3.4.1, GNU Make 4.4.1, and two FastQC threads.
+Toolkit 3.4.1, GNU Make 4.4.1, and two FastQC threads. A fresh run also writes
+these versions to `results/versions.txt`.
 
 ## Reproducible workflow
 
@@ -174,6 +180,7 @@ The workflow performs these steps:
 6. Runs FastQC again and writes post-trimming reports under
    `results/qc/trimmed/`.
 7. Saves a `fastp` HTML and JSON summary under `results/`.
+8. Saves the tool versions under `results/versions.txt`.
 
 The Makefile is generic for another paired-end SRA/ENA run:
 
@@ -385,6 +392,24 @@ the block prints an actionable error and exits with a nonzero status.
 `check-sra`, `check-fastqc`, and `check-fastp` use the same pattern for their
 respective tools.
 
+The `versions` target records the exact command-line tools used:
+
+```make
+versions: check-tools
+	mkdir -p $(REPORT_DIR)
+	@{ \
+		echo "curl:       $$(curl --version | awk 'NR == 1 {print $$2}')"; \
+		echo "fastq-dump: $$(fastq-dump --version 2>&1 | awk 'NR == 1 {print $$NF}')"; \
+		echo "fastqc:     $$(fastqc --version 2>&1)"; \
+		echo "fastp:      $$(fastp --version 2>&1 | awk 'NR == 1 {print $$NF}')"; \
+		echo "make:       $$(make --version | awk 'NR == 1 {print $$3}')"; \
+	} | tee $(REPORT_DIR)/versions.txt
+```
+
+The `@` suppresses the recipe itself while preserving its output. The braces
+group the five version lines, and `tee` prints them to the terminal while also
+writing `results/versions.txt`.
+
 ### 4. Downloading only a controlled subset
 
 ```make
@@ -480,7 +505,7 @@ overwriting the other.
 ```make
 .PHONY: all ... metadata download qc-raw trim qc-trimmed clean
 
-all: metadata qc-trimmed
+all: metadata versions qc-trimmed
 ```
 
 `.PHONY` marks workflow names as actions rather than files. The `all` target
@@ -490,6 +515,7 @@ chain:
 ```text
 all
 ├── metadata
+├── versions
 └── qc-trimmed
     └── trim
         └── qc-raw
@@ -497,6 +523,24 @@ all
 ```
 
 Therefore, `make N=100000` executes the workflow in a predictable order.
+
+## Reproducibility checklist
+
+Before considering a rerun complete, verify:
+
+```bash
+make check-tools
+make versions
+test -s results/ena_DRR303595.tsv
+test -s data/raw/lamin_DRR303595_R1.fastq.gz
+test -s data/raw/lamin_DRR303595_R2.fastq.gz
+test -s results/fastp_DRR303595.html
+test -s results/qc/raw/lamin_DRR303595_R1_fastqc.html
+test -s results/qc/trimmed/lamin_DRR303595_R1.trimmed_fastqc.html
+```
+
+The `test -s` checks confirm that expected files exist and are non-empty. The
+same checks can be repeated for R2 and the remaining reports.
 
 ### 9. Cleaning generated data
 
@@ -508,3 +552,12 @@ clean:
 This removes only the workflow's generated `data/` and `results/` directories.
 It is useful for a fresh rerun, but it permanently deletes downloaded FASTQ
 files and reports, so it should be used deliberately.
+
+## Scope and limitations
+
+This workflow analyzes the first 100,000 spots rather than the complete public
+run. The subset is appropriate for a reproducible teaching workflow, but it is
+not a substitute for processing all 111,781,950 reported read pairs. The QC
+conclusions therefore describe this sampled subset. The experiment is
+DamID-Lamin rather than RNA-seq, so the reads should not be interpreted as
+direct measurements of Lamin transcript abundance.
