@@ -42,6 +42,114 @@ The exact metadata commands are automated by the `metadata` Make target:
 make metadata
 ```
 
+## Quick start for a new user
+
+The commands below reproduce the workflow from a clean Ubuntu, WSL, or course
+Linux environment. The repository does not commit sequencing reads or reports;
+they are generated locally because the complete public run is approximately
+10 GB.
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Bismarkacquah/BMB852.git
+cd BMB852/Week-4
+```
+
+### 2. Create the software environment
+
+The pinned [`environment.yml`](environment.yml) records the tested tool
+versions. If `micromamba` is available:
+
+```bash
+micromamba create -y -f environment.yml
+micromamba run -n bmb852-week4 make versions
+```
+
+If the environment already exists, use:
+
+```bash
+micromamba update -y -n bmb852-week4 -f environment.yml
+```
+
+Conda users can use the same file:
+
+```bash
+conda env create -f environment.yml
+conda activate bmb852-week4
+make versions
+```
+
+The environment includes:
+
+| Tool | Pinned version | Purpose |
+| --- | --- | --- |
+| SRA Toolkit | 3.4.1 | Convert the SRA run to FASTQ |
+| FastQC | 0.12.1 | Generate raw and trimmed read QC reports |
+| fastp | 1.3.7 | Detect adapters and filter/trim reads |
+| GNU Make | 4.4.1 | Run the workflow in dependency order |
+| curl | 8.22.0 | Download ENA metadata |
+
+### 3. Verify the installation
+
+```bash
+make help
+make check-tools
+make versions
+```
+
+`check-tools` fails early with a clear message if a required command is
+missing. `versions` records the software versions used for the run.
+
+### 4. Run a small smoke test
+
+Use a small value first to confirm that the SRA Toolkit, network connection,
+paired-end layout, and output permissions all work:
+
+```bash
+make clean
+make N=1000
+```
+
+This creates a small set of reports quickly. If the smoke test succeeds, run
+the assignment-sized subset:
+
+```bash
+make clean
+make N=100000
+```
+
+The command is safe to rerun. Existing non-empty raw FASTQ files are reused,
+and the later QC stages regenerate reports from the existing files.
+
+### 5. Find the results
+
+```text
+results/ena_DRR303595.tsv                  ENA metadata for the selected run
+results/ena_lamin_search.tsv               Broader Lamin search results
+results/fastp_DRR303595.html               Interactive trimming report
+results/fastp_DRR303595.json               Machine-readable trimming report
+results/qc/raw/*_fastqc.html               FastQC reports before trimming
+results/qc/trimmed/*_fastqc.html           FastQC reports after trimming
+data/raw/*.fastq.gz                        Downloaded paired reads
+data/trimmed/*.fastq.gz                    Filtered and trimmed paired reads
+```
+
+Open the HTML reports in a browser. The raw and trimmed FastQC reports should
+be compared side by side, and the fastp HTML report should be used to report
+how many reads and bases were retained or removed.
+
+### Reproduce the exact tested run
+
+The results documented below were generated with:
+
+```bash
+make N=100000 THREADS=2
+```
+
+The run used `DRR303595`, `fastq-dump`, FastQC 0.12.1, fastp 1.3.7, SRA
+Toolkit 3.4.1, GNU Make 4.4.1, and two FastQC threads.
+
 ## Reproducible workflow
 
 The Makefile uses the SRA Toolkit to download only the first `N` spots from
