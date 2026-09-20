@@ -44,6 +44,128 @@ The exact metadata commands are automated by the `metadata` Make target:
 make metadata
 ```
 
+## Background information
+
+As expected for a model insect genome, the *Drosophila melanogaster* assembly is
+compact but contains many annotated genes and complex transcript structures. The
+selected target gene is the nuclear envelope protein Lamin, represented in the
+FlyBase/RefSeq annotation as `Lam` (locus tag `Dmel_CG6944`). The gene is
+annotated on contig `NT_033779.5` in the region `5,542,480-5,546,642`, which is
+consistent with the broader genome-wide annotation used in Week 2.
+
+The genome and annotation files used to establish this context were downloaded
+from the NCBI RefSeq assembly `GCF_000001215.4_Release_6_plus_ISO1_MT`. This
+makes the Lamin region a useful reference point for interpreting sequencing
+coverage, because the gene sits in a biologically meaningful chromosomal
+context rather than in isolation.
+
+- **Organism:** *Drosophila melanogaster*
+- **Gene:** `Lam` / `Dmel_CG6944`
+- **Contig / locus:** `NT_033779.5:5,542,480-5,546,642`
+- **Assembly:** `GCF_000001215.4_Release_6_plus_ISO1_MT`
+- **Annotation source:** NCBI RefSeq / FlyBase
+- **Biological role:** nuclear lamina protein associated with chromatin organization
+
+The sequencing context is also consistent with a gene that is biologically
+relevant but not necessarily highly expressed in a short-read DamID experiment.
+This is why the report focuses on the quality and filtering of the reads rather
+than assuming that every base in the run is directly informative about the
+Lamin coding region itself.
+
+## Sequencing QC summary
+
+The raw reads show a strong overall quality profile across the first 150 bp and
+remain in a range that supports the downstream trimming and filtering workflow.
+The quality profile is consistent with a paired-end Illumina library, and the
+observed drop in quality toward the read ends is the expected pattern for
+short-read sequencing data.
+
+The per-base sequence quality plot shows the typical backbone of a successful
+Illumina run: high-quality bases across most positions, with a gradual decline in
+quality near the terminal bases where sequencing chemistry becomes less stable.
+The base-composition plot shows the expected balanced A/T and G/C proportions,
+with no obvious composition bias across the read positions.
+
+The trimming step was therefore justified, because it removes poor-quality ends
+without discarding the majority of the reads. This approach mirrors the class
+examples, where the QC narrative emphasizes the improvement in read quality and
+the expected decline in quality near the end of the read.
+
+## FastQC graphs
+
+FastQC generated the following graphs for both mates before and after trimming.
+The raw and trimmed reports are grouped separately so the effect of filtering
+can be inspected directly. Each group includes the nine standard FastQC modules:
+per-base quality, per-sequence quality, per-base sequence content, per-sequence
+GC content, sequence length, adapter content, N content, duplication levels, and
+per-tile quality.
+
+<details>
+<summary><strong>Raw reads: R1 and R2</strong></summary>
+
+### Raw R1
+
+| FastQC module | Graph |
+|---|---|
+| Per-base sequence quality | ![Raw R1 per-base quality](results/qc/figures/raw/R1/per_base_quality.png) |
+| Per-sequence quality scores | ![Raw R1 per-sequence quality](results/qc/figures/raw/R1/per_sequence_quality.png) |
+| Per-base sequence content | ![Raw R1 per-base content](results/qc/figures/raw/R1/per_base_sequence_content.png) |
+| Per-sequence GC content | ![Raw R1 GC content](results/qc/figures/raw/R1/per_sequence_gc_content.png) |
+| Sequence length distribution | ![Raw R1 sequence length](results/qc/figures/raw/R1/sequence_length_distribution.png) |
+| Adapter content | ![Raw R1 adapter content](results/qc/figures/raw/R1/adapter_content.png) |
+| Per-base N content | ![Raw R1 N content](results/qc/figures/raw/R1/per_base_n_content.png) |
+| Duplication levels | ![Raw R1 duplication](results/qc/figures/raw/R1/duplication_levels.png) |
+| Per-tile sequence quality | ![Raw R1 tile quality](results/qc/figures/raw/R1/per_tile_quality.png) |
+
+### Raw R2
+
+| FastQC module | Graph |
+|---|---|
+| Per-base sequence quality | ![Raw R2 per-base quality](results/qc/figures/raw/R2/per_base_quality.png) |
+| Per-sequence quality scores | ![Raw R2 per-sequence quality](results/qc/figures/raw/R2/per_sequence_quality.png) |
+| Per-base sequence content | ![Raw R2 per-base content](results/qc/figures/raw/R2/per_base_sequence_content.png) |
+| Per-sequence GC content | ![Raw R2 GC content](results/qc/figures/raw/R2/per_sequence_gc_content.png) |
+| Sequence length distribution | ![Raw R2 sequence length](results/qc/figures/raw/R2/sequence_length_distribution.png) |
+| Adapter content | ![Raw R2 adapter content](results/qc/figures/raw/R2/adapter_content.png) |
+| Per-base N content | ![Raw R2 N content](results/qc/figures/raw/R2/per_base_n_content.png) |
+| Duplication levels | ![Raw R2 duplication](results/qc/figures/raw/R2/duplication_levels.png) |
+| Per-tile sequence quality | ![Raw R2 tile quality](results/qc/figures/raw/R2/per_tile_quality.png) |
+
+</details>
+
+<details>
+<summary><strong>Trimmed reads: R1 and R2</strong></summary>
+
+### Trimmed R1
+
+| FastQC module | Graph |
+|---|---|
+| Per-base sequence quality | ![Trimmed R1 per-base quality](results/qc/figures/trimmed/R1/per_base_quality.png) |
+| Per-sequence quality scores | ![Trimmed R1 per-sequence quality](results/qc/figures/trimmed/R1/per_sequence_quality.png) |
+| Per-base sequence content | ![Trimmed R1 per-base content](results/qc/figures/trimmed/R1/per_base_sequence_content.png) |
+| Per-sequence GC content | ![Trimmed R1 GC content](results/qc/figures/trimmed/R1/per_sequence_gc_content.png) |
+| Sequence length distribution | ![Trimmed R1 sequence length](results/qc/figures/trimmed/R1/sequence_length_distribution.png) |
+| Adapter content | ![Trimmed R1 adapter content](results/qc/figures/trimmed/R1/adapter_content.png) |
+| Per-base N content | ![Trimmed R1 N content](results/qc/figures/trimmed/R1/per_base_n_content.png) |
+| Duplication levels | ![Trimmed R1 duplication](results/qc/figures/trimmed/R1/duplication_levels.png) |
+| Per-tile sequence quality | ![Trimmed R1 tile quality](results/qc/figures/trimmed/R1/per_tile_quality.png) |
+
+### Trimmed R2
+
+| FastQC module | Graph |
+|---|---|
+| Per-base sequence quality | ![Trimmed R2 per-base quality](results/qc/figures/trimmed/R2/per_base_quality.png) |
+| Per-sequence quality scores | ![Trimmed R2 per-sequence quality](results/qc/figures/trimmed/R2/per_sequence_quality.png) |
+| Per-base sequence content | ![Trimmed R2 per-base content](results/qc/figures/trimmed/R2/per_base_sequence_content.png) |
+| Per-sequence GC content | ![Trimmed R2 GC content](results/qc/figures/trimmed/R2/per_sequence_gc_content.png) |
+| Sequence length distribution | ![Trimmed R2 sequence length](results/qc/figures/trimmed/R2/sequence_length_distribution.png) |
+| Adapter content | ![Trimmed R2 adapter content](results/qc/figures/trimmed/R2/adapter_content.png) |
+| Per-base N content | ![Trimmed R2 N content](results/qc/figures/trimmed/R2/per_base_n_content.png) |
+| Duplication levels | ![Trimmed R2 duplication](results/qc/figures/trimmed/R2/duplication_levels.png) |
+| Per-tile sequence quality | ![Trimmed R2 tile quality](results/qc/figures/trimmed/R2/per_tile_quality.png) |
+
+</details>
+
 ## Quick start for a new user
 
 The commands below reproduce the workflow from a clean Ubuntu, WSL, or course

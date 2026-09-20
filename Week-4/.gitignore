@@ -1,2 +1,6 @@
 data/
-results/
+results/*
+!results/qc/
+results/qc/*
+!results/qc/figures/
+!results/qc/figures/**
