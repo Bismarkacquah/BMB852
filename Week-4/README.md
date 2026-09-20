@@ -100,71 +100,59 @@ per-base quality, per-sequence quality, per-base sequence content, per-sequence
 GC content, sequence length, adapter content, N content, duplication levels, and
 per-tile quality.
 
-<details>
-<summary><strong>Raw reads: R1 and R2</strong></summary>
+### Per-base sequence quality
 
-### Raw R1
+| Raw R1 | Raw R2 | Trimmed R1 | Trimmed R2 |
+|---|---|---|---|
+| <img src="results/qc/figures/raw/R1/per_base_quality.png" width="250"> | <img src="results/qc/figures/raw/R2/per_base_quality.png" width="250"> | <img src="results/qc/figures/trimmed/R1/per_base_quality.png" width="250"> | <img src="results/qc/figures/trimmed/R2/per_base_quality.png" width="250"> |
 
-| FastQC module | Graph |
-|---|---|
-| Per-base sequence quality | ![Raw R1 per-base quality](results/qc/figures/raw/R1/per_base_quality.png) |
-| Per-sequence quality scores | ![Raw R1 per-sequence quality](results/qc/figures/raw/R1/per_sequence_quality.png) |
-| Per-base sequence content | ![Raw R1 per-base content](results/qc/figures/raw/R1/per_base_sequence_content.png) |
-| Per-sequence GC content | ![Raw R1 GC content](results/qc/figures/raw/R1/per_sequence_gc_content.png) |
-| Sequence length distribution | ![Raw R1 sequence length](results/qc/figures/raw/R1/sequence_length_distribution.png) |
-| Adapter content | ![Raw R1 adapter content](results/qc/figures/raw/R1/adapter_content.png) |
-| Per-base N content | ![Raw R1 N content](results/qc/figures/raw/R1/per_base_n_content.png) |
-| Duplication levels | ![Raw R1 duplication](results/qc/figures/raw/R1/duplication_levels.png) |
-| Per-tile sequence quality | ![Raw R1 tile quality](results/qc/figures/raw/R1/per_tile_quality.png) |
+### Per-sequence quality scores
 
-### Raw R2
+| Raw R1 | Raw R2 | Trimmed R1 | Trimmed R2 |
+|---|---|---|---|
+| <img src="results/qc/figures/raw/R1/per_sequence_quality.png" width="250"> | <img src="results/qc/figures/raw/R2/per_sequence_quality.png" width="250"> | <img src="results/qc/figures/trimmed/R1/per_sequence_quality.png" width="250"> | <img src="results/qc/figures/trimmed/R2/per_sequence_quality.png" width="250"> |
 
-| FastQC module | Graph |
-|---|---|
-| Per-base sequence quality | ![Raw R2 per-base quality](results/qc/figures/raw/R2/per_base_quality.png) |
-| Per-sequence quality scores | ![Raw R2 per-sequence quality](results/qc/figures/raw/R2/per_sequence_quality.png) |
-| Per-base sequence content | ![Raw R2 per-base content](results/qc/figures/raw/R2/per_base_sequence_content.png) |
-| Per-sequence GC content | ![Raw R2 GC content](results/qc/figures/raw/R2/per_sequence_gc_content.png) |
-| Sequence length distribution | ![Raw R2 sequence length](results/qc/figures/raw/R2/sequence_length_distribution.png) |
-| Adapter content | ![Raw R2 adapter content](results/qc/figures/raw/R2/adapter_content.png) |
-| Per-base N content | ![Raw R2 N content](results/qc/figures/raw/R2/per_base_n_content.png) |
-| Duplication levels | ![Raw R2 duplication](results/qc/figures/raw/R2/duplication_levels.png) |
-| Per-tile sequence quality | ![Raw R2 tile quality](results/qc/figures/raw/R2/per_tile_quality.png) |
+### Per-base sequence content
 
-</details>
+| Raw R1 | Raw R2 | Trimmed R1 | Trimmed R2 |
+|---|---|---|---|
+| <img src="results/qc/figures/raw/R1/per_base_sequence_content.png" width="250"> | <img src="results/qc/figures/raw/R2/per_base_sequence_content.png" width="250"> | <img src="results/qc/figures/trimmed/R1/per_base_sequence_content.png" width="250"> | <img src="results/qc/figures/trimmed/R2/per_base_sequence_content.png" width="250"> |
 
-<details>
-<summary><strong>Trimmed reads: R1 and R2</strong></summary>
+### Per-sequence GC content
 
-### Trimmed R1
+| Raw R1 | Raw R2 | Trimmed R1 | Trimmed R2 |
+|---|---|---|---|
+| <img src="results/qc/figures/raw/R1/per_sequence_gc_content.png" width="250"> | <img src="results/qc/figures/raw/R2/per_sequence_gc_content.png" width="250"> | <img src="results/qc/figures/trimmed/R1/per_sequence_gc_content.png" width="250"> | <img src="results/qc/figures/trimmed/R2/per_sequence_gc_content.png" width="250"> |
 
-| FastQC module | Graph |
-|---|---|
-| Per-base sequence quality | ![Trimmed R1 per-base quality](results/qc/figures/trimmed/R1/per_base_quality.png) |
-| Per-sequence quality scores | ![Trimmed R1 per-sequence quality](results/qc/figures/trimmed/R1/per_sequence_quality.png) |
-| Per-base sequence content | ![Trimmed R1 per-base content](results/qc/figures/trimmed/R1/per_base_sequence_content.png) |
-| Per-sequence GC content | ![Trimmed R1 GC content](results/qc/figures/trimmed/R1/per_sequence_gc_content.png) |
-| Sequence length distribution | ![Trimmed R1 sequence length](results/qc/figures/trimmed/R1/sequence_length_distribution.png) |
-| Adapter content | ![Trimmed R1 adapter content](results/qc/figures/trimmed/R1/adapter_content.png) |
-| Per-base N content | ![Trimmed R1 N content](results/qc/figures/trimmed/R1/per_base_n_content.png) |
-| Duplication levels | ![Trimmed R1 duplication](results/qc/figures/trimmed/R1/duplication_levels.png) |
-| Per-tile sequence quality | ![Trimmed R1 tile quality](results/qc/figures/trimmed/R1/per_tile_quality.png) |
+### Sequence length distribution
 
-### Trimmed R2
+| Raw R1 | Raw R2 | Trimmed R1 | Trimmed R2 |
+|---|---|---|---|
+| <img src="results/qc/figures/raw/R1/sequence_length_distribution.png" width="250"> | <img src="results/qc/figures/raw/R2/sequence_length_distribution.png" width="250"> | <img src="results/qc/figures/trimmed/R1/sequence_length_distribution.png" width="250"> | <img src="results/qc/figures/trimmed/R2/sequence_length_distribution.png" width="250"> |
 
-| FastQC module | Graph |
-|---|---|
-| Per-base sequence quality | ![Trimmed R2 per-base quality](results/qc/figures/trimmed/R2/per_base_quality.png) |
-| Per-sequence quality scores | ![Trimmed R2 per-sequence quality](results/qc/figures/trimmed/R2/per_sequence_quality.png) |
-| Per-base sequence content | ![Trimmed R2 per-base content](results/qc/figures/trimmed/R2/per_base_sequence_content.png) |
-| Per-sequence GC content | ![Trimmed R2 GC content](results/qc/figures/trimmed/R2/per_sequence_gc_content.png) |
-| Sequence length distribution | ![Trimmed R2 sequence length](results/qc/figures/trimmed/R2/sequence_length_distribution.png) |
-| Adapter content | ![Trimmed R2 adapter content](results/qc/figures/trimmed/R2/adapter_content.png) |
-| Per-base N content | ![Trimmed R2 N content](results/qc/figures/trimmed/R2/per_base_n_content.png) |
-| Duplication levels | ![Trimmed R2 duplication](results/qc/figures/trimmed/R2/duplication_levels.png) |
-| Per-tile sequence quality | ![Trimmed R2 tile quality](results/qc/figures/trimmed/R2/per_tile_quality.png) |
+### Adapter content
 
-</details>
+| Raw R1 | Raw R2 | Trimmed R1 | Trimmed R2 |
+|---|---|---|---|
+| <img src="results/qc/figures/raw/R1/adapter_content.png" width="250"> | <img src="results/qc/figures/raw/R2/adapter_content.png" width="250"> | <img src="results/qc/figures/trimmed/R1/adapter_content.png" width="250"> | <img src="results/qc/figures/trimmed/R2/adapter_content.png" width="250"> |
+
+### Per-base N content
+
+| Raw R1 | Raw R2 | Trimmed R1 | Trimmed R2 |
+|---|---|---|---|
+| <img src="results/qc/figures/raw/R1/per_base_n_content.png" width="250"> | <img src="results/qc/figures/raw/R2/per_base_n_content.png" width="250"> | <img src="results/qc/figures/trimmed/R1/per_base_n_content.png" width="250"> | <img src="results/qc/figures/trimmed/R2/per_base_n_content.png" width="250"> |
+
+### Duplication levels
+
+| Raw R1 | Raw R2 | Trimmed R1 | Trimmed R2 |
+|---|---|---|---|
+| <img src="results/qc/figures/raw/R1/duplication_levels.png" width="250"> | <img src="results/qc/figures/raw/R2/duplication_levels.png" width="250"> | <img src="results/qc/figures/trimmed/R1/duplication_levels.png" width="250"> | <img src="results/qc/figures/trimmed/R2/duplication_levels.png" width="250"> |
+
+### Per-tile sequence quality
+
+| Raw R1 | Raw R2 | Trimmed R1 | Trimmed R2 |
+|---|---|---|---|
+| <img src="results/qc/figures/raw/R1/per_tile_quality.png" width="250"> | <img src="results/qc/figures/raw/R2/per_tile_quality.png" width="250"> | <img src="results/qc/figures/trimmed/R1/per_tile_quality.png" width="250"> | <img src="results/qc/figures/trimmed/R2/per_tile_quality.png" width="250"> |
 
 ## Quick start for a new user
 
