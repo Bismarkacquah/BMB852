@@ -91,6 +91,19 @@ without discarding the majority of the reads. This approach mirrors the class
 examples, where the QC narrative emphasizes the improvement in read quality and
 the expected decline in quality near the end of the read.
 
+## Insert-size distribution
+
+The paired-end fastp analysis estimated the insert-size distribution for the
+Lamin library. The most frequent observed insert size was **264 bp**. This is a
+fastp paired-end overlap estimate, not a FastQC module, and it describes the
+distance between the paired R1 and R2 reads.
+
+![Lamin insert-size distribution](results/qc/figures/lamin_insert_size_distribution.svg)
+
+*Figure: Insert-size distribution for the Lamin paired-end reads. The peak is
+264 bp. The complete interactive version is available in the
+[fastp HTML report](results/fastp_DRR303595.html).* 
+
 ## FastQC graphs
 
 FastQC generated the following graphs for read 1 before and after trimming.
