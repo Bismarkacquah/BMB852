@@ -102,7 +102,7 @@ distance between the paired R1 and R2 reads.
 
 *Figure: Insert-size distribution for the Lamin paired-end reads. The peak is
 264 bp. The complete interactive version is available in the
-[fastp HTML report](results/fastp_DRR303595.html).* 
+[fastp HTML report](results/fastp_DRR303595.html).*
 
 ## FastQC graphs
 
