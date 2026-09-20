@@ -104,6 +104,19 @@ distance between the paired R1 and R2 reads.
 264 bp. The complete interactive version is available in the
 [fastp HTML report](results/fastp_DRR303595.html).*
 
+## Fastp quality curves
+
+The fastp report also compares the quality of each base position before and
+after filtering. The Lamin reads remain high quality across most of the 150 bp
+read, with the expected decline near the read end. The after-filtering panel
+shows the quality profile of the retained reads.
+
+![Lamin fastp quality before and after filtering](results/qc/figures/lamin_fastp_quality_before_after.svg)
+
+*Figure: Fastp quality curves for Lamin read 1 before and after filtering. The
+interactive report also contains the quality-score histograms and the paired
+read 2 plots.*
+
 ## FastQC graphs
 
 FastQC generated the following graphs for read 1 before and after trimming.
