@@ -98,9 +98,9 @@ The raw and trimmed reports are shown side by side so the effect of filtering
 can be inspected directly. Each group includes the eight informative FastQC modules:
 per-base quality, per-sequence quality, per-base sequence content, per-sequence
 GC content, sequence length, adapter content, N content, and duplication levels.
-The per-tile module was excluded because the SRA-converted FASTQ headers do not
-contain usable tile identifiers; FastQC therefore renders it as a uniform blue
-panel rather than an interpretable graph.
+The per-tile module was excluded from the figure gallery because this controlled
+100,000-spot subset is concentrated in a single tile (`1101`). FastQC therefore
+renders a uniform blue heatmap with no meaningful across-tile comparison.
 
 ### Per-base sequence quality
 
