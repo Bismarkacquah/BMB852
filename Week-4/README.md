@@ -132,6 +132,8 @@ renders a uniform blue heatmap with no meaningful across-tile comparison.
 
 **Raw R1**
 
+Freshly regenerated with FastQC 0.12.1 from the downloaded raw FASTQ file.
+
 <img src="results/qc/figures/raw/R1/per_base_quality.png" width="700">
 
 **Trimmed R1**
