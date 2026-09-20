@@ -104,9 +104,13 @@ renders a uniform blue heatmap with no meaningful across-tile comparison.
 
 ### Per-base sequence quality
 
-| Raw R1 | Trimmed R1 |
-|---|---|
-| <img src="results/qc/figures/raw/R1/per_base_quality.png" width="300"> | <img src="results/qc/figures/trimmed/R1/per_base_quality.png" width="300"> |
+**Raw R1**
+
+<img src="results/qc/figures/raw/R1/per_base_quality.png" width="700">
+
+**Trimmed R1**
+
+<img src="results/qc/figures/trimmed/R1/per_base_quality.png" width="700">
 
 ### Per-sequence quality scores
 
