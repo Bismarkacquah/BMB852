@@ -95,10 +95,12 @@ the expected decline in quality near the end of the read.
 
 FastQC generated the following graphs for read 1 before and after trimming.
 The raw and trimmed reports are shown side by side so the effect of filtering
-can be inspected directly. Each group includes the nine standard FastQC modules:
+can be inspected directly. Each group includes the eight informative FastQC modules:
 per-base quality, per-sequence quality, per-base sequence content, per-sequence
-GC content, sequence length, adapter content, N content, duplication levels, and
-per-tile quality.
+GC content, sequence length, adapter content, N content, and duplication levels.
+The per-tile module was excluded because the SRA-converted FASTQ headers do not
+contain usable tile identifiers; FastQC therefore renders it as a uniform blue
+panel rather than an interpretable graph.
 
 ### Per-base sequence quality
 
@@ -147,12 +149,6 @@ per-tile quality.
 | Raw R1 | Trimmed R1 |
 |---|---|
 | <img src="results/qc/figures/raw/R1/duplication_levels.png" width="300"> | <img src="results/qc/figures/trimmed/R1/duplication_levels.png" width="300"> |
-
-### Per-tile sequence quality
-
-| Raw R1 | Trimmed R1 |
-|---|---|
-| <img src="results/qc/figures/raw/R1/per_tile_quality.png" width="300"> | <img src="results/qc/figures/trimmed/R1/per_tile_quality.png" width="300"> |
 
 ## Quick start for a new user
 
