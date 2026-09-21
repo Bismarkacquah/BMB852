@@ -8,4 +8,5 @@ dependencies:
   - fastqc=0.12.1
   - make=4.4.1
   - seqkit=2.10.0
+  - sequali=1.0.2
   - sra-tools=3.4.1
