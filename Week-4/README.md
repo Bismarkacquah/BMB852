@@ -11,6 +11,21 @@ The selected experiment is the ENA/SRA run **DRR303595**, from a study of
 Lamin-bound regions in *D. melanogaster* muscle. It is a paired-end Illumina
 NovaSeq 6000 run, so the workflow produces separate R1 and R2 FASTQ files.
 
+## Assignment requirements covered
+
+1. **Assess experimental evidence:** ENA/SRA metadata, platform, layout, and
+	Lamin experimental context are documented above.
+2. **Download a FASTQ subset:** the Makefile accepts a generic `ACCESSION` and
+	limits the download with `N`.
+3. **Organize data by type:** raw reads are stored in `data/raw/`, and cleaned
+	reads are stored in `data/trimmed/` with descriptive Lamin filenames.
+4. **Run raw QC:** FastQC reports are written to `results/qc/raw/`.
+5. **Apply a QC method:** fastp detects adapters, filters low-quality reads, and
+	writes an HTML and JSON report.
+6. **Run trimmed QC:** FastQC reports are written to `results/qc/trimmed/`.
+7. **Discuss the difference:** the results section compares retained reads,
+	Q30 rates, adapter removal, sequence length, and FastQC warnings.
+
 ## Evidence from ENA and SRA
 
 The selected run is documented by the
