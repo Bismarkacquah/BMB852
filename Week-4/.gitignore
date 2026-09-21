@@ -1,4 +1,6 @@
 data/
+fastq/
+.tools/
 results/*
 !results/qc/
 results/qc/*
