@@ -148,6 +148,9 @@ GC content, sequence length, adapter content, N content, and duplication levels.
 The per-tile module was excluded from the figure gallery because this controlled
 100,000-spot subset is concentrated in a single tile (`1101`). FastQC therefore
 renders a uniform blue heatmap with no meaningful across-tile comparison.
+FastQC is run with `--nogroup`, which preserves individual base positions and
+allows the per-base quality plot to show more than 30 separate bars for these
+150 bp reads.
 
 ### Per-base sequence quality
 
@@ -467,7 +470,7 @@ The complete computational workflow is in
 
 ```bash
 fastq-dump --split-files --gzip --maxSpotId 100000 --outdir data/raw DRR303595
-fastqc --threads 2 --outdir results/qc/raw data/raw/lamin_DRR303595_R1.fastq.gz data/raw/lamin_DRR303595_R2.fastq.gz
+fastqc --nogroup --threads 2 --outdir results/qc/raw data/raw/lamin_DRR303595_R1.fastq.gz data/raw/lamin_DRR303595_R2.fastq.gz
 fastp \
   --in1 data/raw/lamin_DRR303595_R1.fastq.gz \
   --in2 data/raw/lamin_DRR303595_R2.fastq.gz \
@@ -476,7 +479,7 @@ fastp \
   --detect_adapter_for_pe \
   --html results/fastp_DRR303595.html \
   --json results/fastp_DRR303595.json
-fastqc --threads 2 --outdir results/qc/trimmed data/trimmed/lamin_DRR303595_R1.trimmed.fastq.gz data/trimmed/lamin_DRR303595_R2.trimmed.fastq.gz
+fastqc --nogroup --threads 2 --outdir results/qc/trimmed data/trimmed/lamin_DRR303595_R1.trimmed.fastq.gz data/trimmed/lamin_DRR303595_R2.trimmed.fastq.gz
 ```
 
 These commands are intentionally represented in the Makefile so the workflow
