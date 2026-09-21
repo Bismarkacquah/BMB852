@@ -282,6 +282,33 @@ Open the HTML reports in a browser. The raw and trimmed FastQC reports should
 be compared side by side, and the fastp HTML report should be used to report
 how many reads and bases were retained or removed.
 
+### Open the Lamin quality-check reports
+
+From the `Week-4` directory, open the raw FASTQ quality reports:
+
+```bash
+open results/qc/raw/lamin_DRR303595_R1_fastqc.html
+open results/qc/raw/lamin_DRR303595_R2_fastqc.html
+```
+
+On Windows PowerShell, use:
+
+```powershell
+Start-Process results/qc/raw/lamin_DRR303595_R1_fastqc.html
+Start-Process results/qc/raw/lamin_DRR303595_R2_fastqc.html
+```
+
+To open the reports after trimming:
+
+```bash
+open results/qc/trimmed/lamin_DRR303595_R1.trimmed_fastqc.html
+open results/qc/trimmed/lamin_DRR303595_R2.trimmed_fastqc.html
+```
+
+The raw reports show the original Lamin reads. The trimmed reports show the
+same QC modules after adapter and quality trimming, allowing a direct before
+and after comparison.
+
 ### Reproduce the exact tested run
 
 The results documented below were generated with:
