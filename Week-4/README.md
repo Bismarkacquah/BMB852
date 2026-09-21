@@ -66,6 +66,12 @@ context rather than in isolation.
 - **Annotation source:** NCBI RefSeq / FlyBase
 - **Biological role:** nuclear lamina protein associated with chromatin organization
 
+The standalone genomic sequence used for the Lamin reference context is
+available as the [4,163 bp Lamin FASTA](../Week-2/data/lamin_gene.fasta).
+The Week 4 sequencing data are separate paired-end FASTQ reads from the
+`DRR303595` Lamin DamID experiment; they are downloaded reproducibly with the
+Makefile below rather than stored in GitHub.
+
 The sequencing context is also consistent with a gene that is biologically
 relevant but not necessarily highly expressed in a short-read DamID experiment.
 This is why the report focuses on the quality and filtering of the reads rather
