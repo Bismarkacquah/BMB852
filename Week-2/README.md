@@ -21,6 +21,7 @@ below is also a direct one-click download link:
 
 The Lamin-specific files created for this project are available here:
 
+- [Lamin genomic sequence, 4,163 bp](data/lamin_gene.fasta)
 - [Lamin GFF3](data/lamin_annotation.gff3)
 - [Lamin GTF](data/lamin_annotation.gtf)
 - [IGV Lamin annotation](lamin_igv_annotation.png)
@@ -63,6 +64,15 @@ workflow with one command, use:
 ```bash
 make
 ```
+
+To regenerate the standalone Lamin sequence from the downloaded reference:
+
+```bash
+python extract_lamin_gene.py
+```
+
+This extracts `NT_033779.5:5,542,480-5,546,642` and writes the 4,163 bp
+sequence to `data/lamin_gene.fasta`.
 
 To remove the downloaded and extracted data and reproduce the workflow from
 scratch, use:
