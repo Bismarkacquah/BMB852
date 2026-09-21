@@ -169,28 +169,30 @@ FastQC reported the following module outcomes:
 
 ## Interpretation
 
-The fixed 251 bp length in both mates is consistent with the metadata and shows
-that this subset was not trimmed. Both mates pass the N-content, sequence
-length, and duplication modules. However, the per-base quality failures and
-the adapter-content failure in read 1 indicate that this raw subset should be
-trimmed or filtered before downstream analysis.
+Both read files contain 251 bp reads, which matches the information reported for
+this MiSeq run. The raw data passed the N-content, length, and duplication
+checks, but the quality plots and adapter results show that the reads need some
+cleaning before they are used for further analysis.
 
-For this dataset, the key questions are:
+The main points I checked were:
 
-1. Do per-base quality scores remain high across the 251 positions?
-2. Are GC-content and base-composition profiles consistent across the reads?
-3. Is adapter content detected near the read ends?
-4. Are duplication or overrepresented-sequence warnings present?
-5. Do read 1 and read 2 show comparable quality?
+1. Whether quality stayed high across the full read length.
+2. Whether the GC and base-composition plots looked consistent.
+3. Whether adapter sequence appeared near the read ends.
+4. Whether there were duplication or overrepresented-sequence problems.
+5. Whether R1 and R2 had similar quality profiles.
 
-The reports answer these questions as follows: per-base quality is not
-acceptable across all positions; base composition and GC profiles need
-investigation; adapter content is detected, especially in read 1; no
-duplication warning was reported; and read 1 and read 2 are broadly similar
-but not identical. Trimming improved the quality and adapter modules in both
-mates, at the cost of discarding 10.8% of read pairs and producing variable
-lengths. The persistent base-composition and GC warnings should be investigated
-before downstream analysis.
+The raw reports showed problems with per-base quality and adapter content,
+especially in R1. The two mates were broadly similar, although their quality
+profiles were not identical. Duplication was not flagged, but the GC,
+base-composition, and overrepresented-sequence results still deserve a closer
+look.
+
+After trimming, 892 of the 1,000 pairs remained. Quality and adapter checks
+then passed for both mates. The trade-off is that the reads now have different
+lengths, which is expected after removing adapters and low-quality ends. The
+remaining composition and GC warnings should still be considered before
+downstream analysis.
 
 ## Reproducibility checklist
 
