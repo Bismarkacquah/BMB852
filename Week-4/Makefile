@@ -12,6 +12,8 @@ TRIMMED_DIR := data/trimmed
 RAW_QC_DIR := results/qc/raw
 TRIMMED_QC_DIR := results/qc/trimmed
 REPORT_DIR := results
+RAW_STATS := $(REPORT_DIR)/seqkit_raw_stats.tsv
+TRIMMED_STATS := $(REPORT_DIR)/seqkit_trimmed_stats.tsv
 
 RAW_R1 := $(RAW_DIR)/lamin_$(ACCESSION)_R1.fastq.gz
 RAW_R2 := $(RAW_DIR)/lamin_$(ACCESSION)_R2.fastq.gz
@@ -22,9 +24,9 @@ ENA_API := https://www.ebi.ac.uk/ena/portal/api
 ENA_RUN_INFO := $(ENA_API)/filereport?accession=$(ACCESSION)&result=read_run&fields=run_accession,study_accession,sample_accession,experiment_accession,library_name,instrument_platform,instrument_model,library_strategy,library_source,library_layout,read_count,base_count,fastq_ftp&format=tsv
 ENA_LAMIN_QUERY := $(ENA_API)/search?result=read_run&query=tax_tree(7227)%20AND%20description=%22lamin%22&fields=run_accession,study_accession,experiment_accession,instrument_platform,instrument_model,library_strategy,library_layout,read_count,base_count&format=tsv&limit=100
 
-.PHONY: all help versions check-tools check-curl check-sra check-fastqc check-fastp metadata download qc-raw trim qc-trimmed clean
+.PHONY: all help versions check-tools check-curl check-sra check-fastqc check-fastp check-seqkit metadata download stats stats-trimmed qc-raw trim qc-trimmed clean
 
-all: metadata versions qc-trimmed
+all: metadata versions stats-trimmed qc-trimmed
 
 help:
 	@echo "Week 4 FASTQ workflow"
@@ -35,7 +37,9 @@ help:
 	@echo "  make metadata          Download ENA metadata only"
 	@echo "  make download          Download the raw paired FASTQ subset"
 	@echo "  make qc-raw            Run FastQC on raw reads"
+	@echo "  make stats             Write seqkit statistics for raw reads"
 	@echo "  make trim              Trim reads and write fastp reports"
+	@echo "  make stats-trimmed     Write seqkit statistics for trimmed reads"
 	@echo "  make qc-trimmed        Run FastQC on trimmed reads"
 	@echo "  make clean             Remove generated data and reports"
 
@@ -46,10 +50,11 @@ versions: check-tools
 		echo "fastq-dump: $$(fastq-dump --version 2>&1 | awk 'NR == 1 {print $$NF}')"; \
 		echo "fastqc:     $$(fastqc --version 2>&1)"; \
 		echo "fastp:      $$(fastp --version 2>&1 | awk 'NR == 1 {print $$NF}')"; \
+		echo "seqkit:     $$(seqkit version 2>&1 | awk 'NR == 1 {print $$NF}')"; \
 		echo "make:       $$(make --version | awk 'NR == 1 {print $$3}')"; \
 	} | tee $(REPORT_DIR)/versions.txt
 
-check-tools: check-curl check-sra check-fastqc check-fastp
+check-tools: check-curl check-sra check-fastqc check-fastp check-seqkit
 	@echo "All required tools are available."
 
 check-curl:
@@ -64,10 +69,17 @@ check-fastqc:
 check-fastp:
 	@command -v fastp >/dev/null 2>&1 || { echo "Error: fastp is required."; exit 1; }
 
+check-seqkit:
+	@command -v seqkit >/dev/null 2>&1 || { echo "Error: seqkit is required."; exit 1; }
+
 metadata: check-curl
 	mkdir -p $(REPORT_DIR)
 	curl --fail --location --retry 3 --output $(REPORT_DIR)/ena_$(ACCESSION).tsv "$(ENA_RUN_INFO)"
 	curl --fail --location --retry 3 --output $(REPORT_DIR)/ena_lamin_search.tsv "$(ENA_LAMIN_QUERY)"
+
+stats: download check-seqkit
+	mkdir -p $(REPORT_DIR)
+	seqkit stats --tabular $(RAW_R1) $(RAW_R2) | tee $(RAW_STATS)
 
 download: check-sra
 	mkdir -p $(RAW_DIR)
@@ -94,6 +106,10 @@ trim: qc-raw check-fastp
 		--detect_adapter_for_pe \
 		--html $(REPORT_DIR)/fastp_$(ACCESSION).html \
 		--json $(REPORT_DIR)/fastp_$(ACCESSION).json
+
+stats-trimmed: trim check-seqkit
+	mkdir -p $(REPORT_DIR)
+	seqkit stats --tabular $(TRIMMED_R1) $(TRIMMED_R2) | tee $(TRIMMED_STATS)
 
 qc-trimmed: trim
 	mkdir -p $(TRIMMED_QC_DIR)
