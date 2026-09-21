@@ -219,57 +219,53 @@ allows the per-base quality plot to show more than 30 separate bars for these
 
 ### Per-base sequence quality
 
-**Raw R1**
-
 Freshly regenerated with FastQC 0.12.1 from the downloaded raw FASTQ file.
 
-<img src="results/qc/figures/raw/R1/per_base_quality.png" width="700">
-
-**Trimmed R1**
-
-<img src="results/qc/figures/trimmed/R1/per_base_quality.png" width="700">
+| **Raw R1** | **Trimmed R1** |
+|---|---|
+| <img src="results/qc/figures/raw/R1/per_base_quality.png" width="500"> | <img src="results/qc/figures/trimmed/R1/per_base_quality.png" width="500"> |
 
 ### Per-sequence quality scores
 
-| Raw R1 | Trimmed R1 |
+| **Raw R1** | **Trimmed R1** |
 |---|---|
-| <img src="results/qc/figures/raw/R1/per_sequence_quality.png" width="300"> | <img src="results/qc/figures/trimmed/R1/per_sequence_quality.png" width="300"> |
+| <img src="results/qc/figures/raw/R1/per_sequence_quality.png" width="500"> | <img src="results/qc/figures/trimmed/R1/per_sequence_quality.png" width="500"> |
 
 ### Per-base sequence content
 
-| Raw R1 | Trimmed R1 |
+| **Raw R1** | **Trimmed R1** |
 |---|---|
-| <img src="results/qc/figures/raw/R1/per_base_sequence_content.png" width="300"> | <img src="results/qc/figures/trimmed/R1/per_base_sequence_content.png" width="300"> |
+| <img src="results/qc/figures/raw/R1/per_base_sequence_content.png" width="500"> | <img src="results/qc/figures/trimmed/R1/per_base_sequence_content.png" width="500"> |
 
 ### Per-sequence GC content
 
-| Raw R1 | Trimmed R1 |
+| **Raw R1** | **Trimmed R1** |
 |---|---|
-| <img src="results/qc/figures/raw/R1/per_sequence_gc_content.png" width="300"> | <img src="results/qc/figures/trimmed/R1/per_sequence_gc_content.png" width="300"> |
+| <img src="results/qc/figures/raw/R1/per_sequence_gc_content.png" width="500"> | <img src="results/qc/figures/trimmed/R1/per_sequence_gc_content.png" width="500"> |
 
 ### Sequence length distribution
 
-| Raw R1 | Trimmed R1 |
+| **Raw R1** | **Trimmed R1** |
 |---|---|
-| <img src="results/qc/figures/raw/R1/sequence_length_distribution.png" width="300"> | <img src="results/qc/figures/trimmed/R1/sequence_length_distribution.png" width="300"> |
+| <img src="results/qc/figures/raw/R1/sequence_length_distribution.png" width="500"> | <img src="results/qc/figures/trimmed/R1/sequence_length_distribution.png" width="500"> |
 
 ### Adapter content
 
-| Raw R1 | Trimmed R1 |
+| **Raw R1** | **Trimmed R1** |
 |---|---|
-| <img src="results/qc/figures/raw/R1/adapter_content.png" width="300"> | <img src="results/qc/figures/trimmed/R1/adapter_content.png" width="300"> |
+| <img src="results/qc/figures/raw/R1/adapter_content.png" width="500"> | <img src="results/qc/figures/trimmed/R1/adapter_content.png" width="500"> |
 
 ### Per-base N content
 
-| Raw R1 | Trimmed R1 |
+| **Raw R1** | **Trimmed R1** |
 |---|---|
-| <img src="results/qc/figures/raw/R1/per_base_n_content.png" width="300"> | <img src="results/qc/figures/trimmed/R1/per_base_n_content.png" width="300"> |
+| <img src="results/qc/figures/raw/R1/per_base_n_content.png" width="500"> | <img src="results/qc/figures/trimmed/R1/per_base_n_content.png" width="500"> |
 
 ### Duplication levels
 
-| Raw R1 | Trimmed R1 |
+| **Raw R1** | **Trimmed R1** |
 |---|---|
-| <img src="results/qc/figures/raw/R1/duplication_levels.png" width="300"> | <img src="results/qc/figures/trimmed/R1/duplication_levels.png" width="300"> |
+| <img src="results/qc/figures/raw/R1/duplication_levels.png" width="500"> | <img src="results/qc/figures/trimmed/R1/duplication_levels.png" width="500"> |
 
 ## Quick start for a new user
 
