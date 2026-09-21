@@ -4,6 +4,7 @@ SHELL := /bin/bash
 ACCESSION ?= DRR303595
 N ?= 100000
 THREADS ?= 2
+FASTQC_OPTIONS ?= --nogroup
 
 SRA_TOOL ?= fastq-dump
 RAW_DIR := data/raw
@@ -81,7 +82,7 @@ download: check-sra
 
 qc-raw: download check-fastqc
 	mkdir -p $(RAW_QC_DIR)
-	fastqc --threads $(THREADS) --outdir $(RAW_QC_DIR) $(RAW_R1) $(RAW_R2)
+	fastqc $(FASTQC_OPTIONS) --threads $(THREADS) --outdir $(RAW_QC_DIR) $(RAW_R1) $(RAW_R2)
 
 trim: qc-raw check-fastp
 	mkdir -p $(TRIMMED_DIR) $(REPORT_DIR)
@@ -96,7 +97,7 @@ trim: qc-raw check-fastp
 
 qc-trimmed: trim
 	mkdir -p $(TRIMMED_QC_DIR)
-	fastqc --threads $(THREADS) --outdir $(TRIMMED_QC_DIR) $(TRIMMED_R1) $(TRIMMED_R2)
+	fastqc $(FASTQC_OPTIONS) --threads $(THREADS) --outdir $(TRIMMED_QC_DIR) $(TRIMMED_R1) $(TRIMMED_R2)
 
 clean:
 	rm -rf data results
