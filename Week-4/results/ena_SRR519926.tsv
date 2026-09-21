@@ -1,0 +1,2 @@
+run_accession	study_accession	sample_accession	experiment_accession	library_name	instrument_platform	instrument_model	library_strategy	library_source	library_layout	read_count	base_count	fastq_ftp
+SRR519926	PRJNA40075	SAMN00839313	SRX158902	Solexa-80888	ILLUMINA	Illumina MiSeq	WGS	GENOMIC	PAIRED	400596	201099192	ftp.sra.ebi.ac.uk/vol1/fastq/SRR519/SRR519926/SRR519926_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR519/SRR519926/SRR519926_2.fastq.gz
