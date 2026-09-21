@@ -11,6 +11,15 @@ The selected experiment is the ENA/SRA run **DRR303595**, from a study of
 Lamin-bound regions in *D. melanogaster* muscle. It is a paired-end Illumina
 NovaSeq 6000 run, so the workflow produces separate R1 and R2 FASTQ files.
 
+## Quality-control tools
+
+Several tools can assess FASTQ quality. This workflow uses `fastp` for paired-end
+adapter trimming and quality filtering, `FastQC` for the standard visual QC
+modules, `Sequali` for additional paired-end metrics, and `MultiQC` to combine
+the reports into one summary page. `cutadapt` and Trimmomatic are alternative
+trimming tools, but they are not run in this workflow so the before/after
+comparison has one clearly defined trimming method.
+
 ## Assignment requirements covered
 
 1. **Assess experimental evidence:** ENA/SRA metadata, platform, layout, and
@@ -36,6 +45,51 @@ length reports:
 make sequali-raw
 make sequali-trimmed
 ```
+
+### Quality control with fastp
+
+The paired-end `fastp` command trims adapters and low-quality read ends while
+preserving the pairing between R1 and R2:
+
+```bash
+fastp \
+	--in1 data/raw/lamin_DRR303595_R1.fastq.gz \
+	--in2 data/raw/lamin_DRR303595_R2.fastq.gz \
+	--out1 data/trimmed/lamin_DRR303595_R1.trimmed.fastq.gz \
+	--out2 data/trimmed/lamin_DRR303595_R2.trimmed.fastq.gz \
+	--detect_adapter_for_pe \
+	--cut_tail \
+	--cut_mean_quality 20 \
+	--length_required 30 \
+	--html results/fastp_DRR303595.html \
+	--json results/fastp_DRR303595.json
+```
+
+The `Makefile` runs the same paired-end operation through `make trim`.
+
+### MultiQC report aggregation
+
+After FastQC and Sequali finish, aggregate their reports into one browser-ready
+summary:
+
+```bash
+make multiqc
+```
+
+Open the result with:
+
+```bash
+open results/multiqc/multiqc_report.html
+```
+
+On Windows PowerShell:
+
+```powershell
+Start-Process results/multiqc/multiqc_report.html
+```
+
+The MultiQC report aggregates report files; it does not merge or modify the
+underlying FASTQ reads.
 
 ## Evidence from ENA and SRA
 
@@ -311,6 +365,7 @@ results/sequali_raw.html                   Sequali report for raw paired reads
 results/sequali_raw.json                   Sequali metrics for raw paired reads
 results/sequali_trimmed.html               Sequali report for trimmed paired reads
 results/sequali_trimmed.json               Sequali metrics for trimmed paired reads
+results/multiqc/multiqc_report.html        Combined MultiQC summary report
 results/qc/raw/*_fastqc.html               FastQC reports before trimming
 results/qc/trimmed/*_fastqc.html           FastQC reports after trimming
 data/raw/*.fastq.gz                        Downloaded paired reads
