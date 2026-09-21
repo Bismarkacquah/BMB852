@@ -14,6 +14,10 @@ TRIMMED_QC_DIR := results/qc/trimmed
 REPORT_DIR := results
 RAW_STATS := $(REPORT_DIR)/seqkit_raw_stats.tsv
 TRIMMED_STATS := $(REPORT_DIR)/seqkit_trimmed_stats.tsv
+SEQUALI_RAW_HTML := $(REPORT_DIR)/sequali_raw.html
+SEQUALI_RAW_JSON := $(REPORT_DIR)/sequali_raw.json
+SEQUALI_TRIMMED_HTML := $(REPORT_DIR)/sequali_trimmed.html
+SEQUALI_TRIMMED_JSON := $(REPORT_DIR)/sequali_trimmed.json
 
 RAW_R1 := $(RAW_DIR)/lamin_$(ACCESSION)_R1.fastq.gz
 RAW_R2 := $(RAW_DIR)/lamin_$(ACCESSION)_R2.fastq.gz
@@ -24,9 +28,9 @@ ENA_API := https://www.ebi.ac.uk/ena/portal/api
 ENA_RUN_INFO := $(ENA_API)/filereport?accession=$(ACCESSION)&result=read_run&fields=run_accession,study_accession,sample_accession,experiment_accession,library_name,instrument_platform,instrument_model,library_strategy,library_source,library_layout,read_count,base_count,fastq_ftp&format=tsv
 ENA_LAMIN_QUERY := $(ENA_API)/search?result=read_run&query=tax_tree(7227)%20AND%20description=%22lamin%22&fields=run_accession,study_accession,experiment_accession,instrument_platform,instrument_model,library_strategy,library_layout,read_count,base_count&format=tsv&limit=100
 
-.PHONY: all help versions check-tools check-curl check-sra check-fastqc check-fastp check-seqkit metadata download stats stats-trimmed qc-raw trim qc-trimmed clean
+.PHONY: all help versions check-tools check-curl check-sra check-fastqc check-fastp check-seqkit check-sequali metadata download stats stats-trimmed qc-raw trim qc-trimmed sequali-raw sequali-trimmed clean
 
-all: metadata versions stats-trimmed qc-trimmed
+all: metadata versions stats-trimmed qc-trimmed sequali-trimmed
 
 help:
 	@echo "Week 4 FASTQ workflow"
@@ -40,6 +44,8 @@ help:
 	@echo "  make stats             Write seqkit statistics for raw reads"
 	@echo "  make trim              Trim reads and write fastp reports"
 	@echo "  make stats-trimmed     Write seqkit statistics for trimmed reads"
+	@echo "  make sequali-raw      Run Sequali on raw paired reads"
+	@echo "  make sequali-trimmed  Run Sequali on trimmed paired reads"
 	@echo "  make qc-trimmed        Run FastQC on trimmed reads"
 	@echo "  make clean             Remove generated data and reports"
 
@@ -51,10 +57,11 @@ versions: check-tools
 		echo "fastqc:     $$(fastqc --version 2>&1)"; \
 		echo "fastp:      $$(fastp --version 2>&1 | awk 'NR == 1 {print $$NF}')"; \
 		echo "seqkit:     $$(seqkit version 2>&1 | awk 'NR == 1 {print $$NF}')"; \
+		echo "sequali:    $$(sequali --version 2>&1 | awk 'NR == 1 {print $$NF}')"; \
 		echo "make:       $$(make --version | awk 'NR == 1 {print $$3}')"; \
 	} | tee $(REPORT_DIR)/versions.txt
 
-check-tools: check-curl check-sra check-fastqc check-fastp check-seqkit
+check-tools: check-curl check-sra check-fastqc check-fastp check-seqkit check-sequali
 	@echo "All required tools are available."
 
 check-curl:
@@ -71,6 +78,9 @@ check-fastp:
 
 check-seqkit:
 	@command -v seqkit >/dev/null 2>&1 || { echo "Error: seqkit is required."; exit 1; }
+
+check-sequali:
+	@command -v sequali >/dev/null 2>&1 || { echo "Error: sequali is required."; exit 1; }
 
 metadata: check-curl
 	mkdir -p $(REPORT_DIR)
@@ -110,6 +120,14 @@ trim: qc-raw check-fastp
 stats-trimmed: trim check-seqkit
 	mkdir -p $(REPORT_DIR)
 	seqkit stats --tabular $(TRIMMED_R1) $(TRIMMED_R2) | tee $(TRIMMED_STATS)
+
+sequali-raw: download check-sequali
+	mkdir -p $(REPORT_DIR)
+	sequali --threads $(THREADS) --html $(SEQUALI_RAW_HTML) --json $(SEQUALI_RAW_JSON) $(RAW_R1) $(RAW_R2)
+
+sequali-trimmed: trim check-sequali
+	mkdir -p $(REPORT_DIR)
+	sequali --threads $(THREADS) --html $(SEQUALI_TRIMMED_HTML) --json $(SEQUALI_TRIMMED_JSON) $(TRIMMED_R1) $(TRIMMED_R2)
 
 qc-trimmed: trim
 	mkdir -p $(TRIMMED_QC_DIR)

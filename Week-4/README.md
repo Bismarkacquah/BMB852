@@ -28,6 +28,15 @@ NovaSeq 6000 run, so the workflow produces separate R1 and R2 FASTQ files.
 8. **Discuss the difference:** the results section compares retained reads,
 	Q30 rates, adapter removal, sequence length, and FastQC warnings.
 
+Sequali is also run as a second QC method because it provides additional
+paired-end metrics, including insert-size, adapter, duplication, and sequence
+length reports:
+
+```bash
+make sequali-raw
+make sequali-trimmed
+```
+
 ## Evidence from ENA and SRA
 
 The selected run is documented by the
@@ -298,6 +307,10 @@ results/ena_lamin_search.tsv               Broader Lamin search results
 results/versions.txt                       Tool versions used for the run
 results/fastp_DRR303595.html               Interactive trimming report
 results/fastp_DRR303595.json               Machine-readable trimming report
+results/sequali_raw.html                   Sequali report for raw paired reads
+results/sequali_raw.json                   Sequali metrics for raw paired reads
+results/sequali_trimmed.html               Sequali report for trimmed paired reads
+results/sequali_trimmed.json               Sequali metrics for trimmed paired reads
 results/qc/raw/*_fastqc.html               FastQC reports before trimming
 results/qc/trimmed/*_fastqc.html           FastQC reports after trimming
 data/raw/*.fastq.gz                        Downloaded paired reads
@@ -393,6 +406,8 @@ make qc-raw
 make trim
 make stats-trimmed
 make qc-trimmed
+make sequali-raw
+make sequali-trimmed
 ```
 
 To remove downloaded reads and generated reports:
