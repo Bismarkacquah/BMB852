@@ -19,11 +19,13 @@ NovaSeq 6000 run, so the workflow produces separate R1 and R2 FASTQ files.
 	limits the download with `N`.
 3. **Organize data by type:** raw reads are stored in `data/raw/`, and cleaned
 	reads are stored in `data/trimmed/` with descriptive Lamin filenames.
-4. **Run raw QC:** FastQC reports are written to `results/qc/raw/`.
-5. **Apply a QC method:** fastp detects adapters, filters low-quality reads, and
+4. **Summarize the reads:** `seqkit stats` writes read counts, lengths, and base
+	counts for the raw and trimmed files.
+5. **Run raw QC:** FastQC reports are written to `results/qc/raw/`.
+6. **Apply a QC method:** fastp detects adapters, filters low-quality reads, and
 	writes an HTML and JSON report.
-6. **Run trimmed QC:** FastQC reports are written to `results/qc/trimmed/`.
-7. **Discuss the difference:** the results section compares retained reads,
+7. **Run trimmed QC:** FastQC reports are written to `results/qc/trimmed/`.
+8. **Discuss the difference:** the results section compares retained reads,
 	Q30 rates, adapter removal, sequence length, and FastQC warnings.
 
 ## Evidence from ENA and SRA
@@ -386,8 +388,10 @@ To run individual stages:
 ```bash
 make metadata
 make download N=100000
+make stats
 make qc-raw
 make trim
+make stats-trimmed
 make qc-trimmed
 ```
 
