@@ -1,0 +1,9 @@
+snapshotDirectory C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/results/igv
+genome C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/physcomitrium_forward_genes.bed
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/physcomitrium_reverse_genes.bed
+goto CM009316.1:1-113135
+snapshot physcomitrium_strand_colored.png
+goto CM009316.1:10020-10090
+snapshot physcomitrium_six_frame_region.png
+exit
