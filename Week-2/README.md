@@ -285,6 +285,67 @@ detail.
 This scale shows many labeled genes and their relative spacing without reducing
 the annotation to an unreadable chromosome-wide strip.
 
+### Expanded dense-coordinate analysis
+
+To make the gene-spacing analysis more informative, I selected the densest
+one-megabase interval found in the annotation:
+
+```text
+CM009317.1:10,924,622-11,924,622
+```
+
+This interval contains **126 annotated genes**: 59 on the forward strand and
+67 on the reverse strand. The largest internal gap between neighboring genes is
+35,006 bp. This is a better overview coordinate than a whole-chromosome view
+because it shows many gene models while keeping their labels and exon patterns
+visible.
+
+![Dense Physcomitrium strand overview](results/igv/physcomitrium_dense_strands_1Mb.png)
+
+**Figure 7B.** The complete one-megabase dense interval with separate forward
+and reverse annotation tracks.
+
+![Dense forward-strand zoom](results/igv/physcomitrium_dense_forward_zoom.png)
+
+**Figure 7C.** The first half of the dense interval, showing forward-strand
+features and nearby transcript models.
+
+![Dense reverse-strand zoom](results/igv/physcomitrium_dense_reverse_zoom.png)
+
+**Figure 7D.** The second half of the interval, showing reverse-strand
+features and nearby transcript models.
+
+### Answers from the expanded coordinate
+
+**How tightly packed are the genes?**
+
+They are tightly packed in this selected region: 126 genes occur across 1 Mb,
+or approximately one annotated gene every 7.9 kb on average. The actual gaps
+vary because genes have different lengths and some are close together while
+others are separated by larger noncoding intervals.
+
+**What do the blue and pink tracks show?**
+
+The forward and reverse tracks separate genes by strand orientation. In the
+selected interval, 59 genes are forward-oriented and 67 are reverse-oriented.
+The arrows and transcript directions should be read together with the labels;
+the two tracks do not represent expression or read abundance.
+
+**What type of feature is shown?**
+
+The tracks come from the genome-wide GFF3 annotation. They show gene, mRNA,
+exon, and CDS features. The thick blocks represent annotated features and the
+connecting lines represent transcript structure across introns. Because no BAM
+file has been loaded, these images contain annotation only and no quantitative
+coverage signal.
+
+**What is the main conclusion?**
+
+The moss genome is not uniformly organized. Some regions are gene-dense, like
+this 1 Mb interval, while other parts contain much larger gene-free gaps. A
+genome-wide overview is useful for context, but zoomed intervals are needed to
+interpret gene names, exon structure, and strand direction clearly.
+
 ![Physcomitrium expanded strand view](results/igv/physcomitrium_strand_expanded.png)
 
 **Figure 8.** Expanded 300 kb view of the beginning of `CM009316.1`, showing
