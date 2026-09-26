@@ -1,0 +1,15 @@
+snapshotDirectory C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/results/igv
+genome C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/physcomitrium_dense_forward.gff3
+setColor 0,102,204
+goto CM009317.1:10924622-11924622
+expand
+snapshot physcomitrium_dense_forward_blue_1Mb.png
+new
+genome C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/physcomitrium_dense_reverse.gff3
+setColor 255,105,180
+goto CM009317.1:10924622-11924622
+expand
+snapshot physcomitrium_dense_reverse_pink_1Mb.png
+exit
