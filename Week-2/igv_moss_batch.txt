@@ -8,4 +8,8 @@ goto CM009316.1:1-113135
 snapshot physcomitrium_gene_neighborhood_100kb.png
 goto CM009316.1:70000-102000
 snapshot physcomitrium_strand_view.png
+goto CM009336.1:14390000-14780000
+snapshot physcomitrium_noncoding_gap.png
+goto CM009316.1:10020-10090
+snapshot physcomitrium_exon_intron_sequence.png
 exit
