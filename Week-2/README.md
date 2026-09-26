@@ -225,6 +225,67 @@ the `PHYPA_000001` neighborhood.
 **Figure 3.** The 70-102 kb region, where forward- and reverse-strand genes
 appear in opposite directions.
 
+![Physcomitrium noncoding gap](results/igv/physcomitrium_noncoding_gap.png)
+
+**Figure 4.** The largest gene-free interval found in the annotation:
+371,597 bp between `PHYPA_026480` and `PHYPA_026481` on `CM009336.1`.
+
+![Physcomitrium exon and intron sequence](results/igv/physcomitrium_exon_intron_sequence.png)
+
+**Figure 5.** A 72 bp sequence-level view around `CM009316.1:10,020-10,090`.
+IGV displays the reference bases and the annotation track at nucleotide scale.
+
+### IGV questions and answers
+
+**Q1. How are the genes spaced?**
+
+The spacing is uneven. In the first 113 kb of `CM009316.1`, ten genes are
+annotated, with several short gaps and a larger gap before `PHYPA_000009`.
+Across the assembly, the largest gap between neighboring annotated genes is
+371,597 bp on `CM009336.1`. This is a genuine annotation gap in the current
+GFF3, although it could also contain unannotated or non-coding sequence.
+
+**Q2. What happens at a small selected region?**
+
+At `CM009316.1:8,931-13,135`, `PHYPA_000001` is annotated on the forward
+strand. It contains multiple exons and CDS segments, so the gene model becomes
+more detailed as the IGV view is zoomed in. The gene is annotated as a
+protein-coding locus, but its product is listed as a hypothetical protein in
+this assembly annotation.
+
+**Q3. Can an intron be translated as a gene?**
+
+The sequence-level view shows why this question needs caution. DNA can be read
+in three forward frames and three reverse-complement frames, but a translated
+open reading frame is not automatically a real gene. An intron may contain a
+short accidental open reading frame without having a promoter, transcript, or
+validated protein product. For this analysis, the annotated exon/CDS structure
+is stronger evidence than a short translation found only by chance.
+
+**Q4. What data are visible in IGV?**
+
+The current screenshots contain the reference sequence, the genome-wide GFF3
+annotation, and the BED region track. There is no BAM coverage track yet,
+because Week 4 has quality-controlled FASTQ files but they have not been
+aligned. Therefore these images show genome structure and annotation, not read
+depth or variant evidence.
+
+**Q5. What do the strand directions show?**
+
+The arrows in the annotation track indicate transcription direction. Genes
+`PHYPA_000001` through `PHYPA_000006` in the selected neighborhood are on the
+forward strand, while `PHYPA_000007` and `PHYPA_000008` are on the reverse
+strand. `PHYPA_000009` and `PHYPA_000010` are also reverse-strand genes near the
+end of the neighborhood.
+
+**Q6. What is the overall conclusion?**
+
+The moss genome is densely annotated in some regions but also contains broad
+gene-poor intervals. The GFF3 provides useful exon, transcript, CDS, and strand
+information, but it does not provide quantitative evidence by itself. The next
+step would be to map the trimmed Week-4 reads to this same assembly and add the
+resulting BAM and coverage tracks to IGV.
+
 ## Downstream analysis
 
 The matching reference can now support the Week-4 reads for:
