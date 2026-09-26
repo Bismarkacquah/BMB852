@@ -12,9 +12,14 @@ goto CM009336.1:14390000-14780000
 snapshot physcomitrium_noncoding_gap.png
 goto CM009316.1:10020-10090
 snapshot physcomitrium_exon_intron_sequence.png
-load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/data/GCA_000002425.2_Phypa_V3_genomic.gff
 goto CM009316.1:1-30242098
 snapshot physcomitrium_genome_browsing.png
 goto CM009316.1:1-300000
 snapshot physcomitrium_strand_expanded.png
+goto CM009316.1:1-25000
+expand
+snapshot physcomitrium_gene_neighborhood_zoomed.png
+goto CM009316.1:65000-102000
+expand
+snapshot physcomitrium_strand_zoomed.png
 exit
