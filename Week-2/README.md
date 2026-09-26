@@ -273,6 +273,33 @@ IGV displays the reference bases and the annotation track at nucleotide scale.
 reverse-strand genes are pink. The separate BED tracks make the orientation
 comparison explicit.
 
+![Physcomitrium genome browsing](results/igv/physcomitrium_genome_browsing.png)
+
+**Figure 7.** Broad genome-browsing view of the largest reference sequence,
+`CM009316.1`, which is 30,242,098 bp long. At this scale, individual gene
+models merge into annotation patterns rather than being readable one by one.
+
+![Physcomitrium expanded strand view](results/igv/physcomitrium_strand_expanded.png)
+
+**Figure 8.** Expanded 300 kb view of the beginning of `CM009316.1`, showing
+the local pattern of gene models and strand directions in more detail.
+
+### Correspondence with the previous analysis
+
+| Previous Lamin analysis | Physcomitrium replacement |
+| --- | --- |
+| Lamin close annotation view | `PHYPA_000001` close gene view |
+| Lamin broad genome browsing | `CM009316.1:1-30,242,098` genome view |
+| Chromosome-region inspection | `CM009316.1:8,931-13,135` gene interval |
+| Strand-colored view | Blue forward and pink reverse tracks |
+| Expanded strand view | `CM009316.1:1-300,000` neighborhood |
+| Gene-density view | 10 genes within +/-100 kb of `PHYPA_000001` |
+| Sequence/codon view | Six translations at `CM009316.1:10,020-10,090` |
+
+The moss images show the same types of evidence as the earlier Lamin images,
+but the coordinates, gene names, annotations, and conclusions come from the
+*Physcomitrium patens* assembly.
+
 ### IGV questions and answers
 
 **Q1. How are the genes spaced?**
