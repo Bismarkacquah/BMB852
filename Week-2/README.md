@@ -205,6 +205,26 @@ The IGV analysis is annotation-based because Week 4 currently contains FASTQ
 quality-control data, not aligned BAM files. Coverage tracks can be added after
 the trimmed reads are mapped to this same Physcomitrium assembly.
 
+### Generated IGV screenshots
+
+The following screenshots were generated with IGV 2.18.4 in batch mode using
+the reference FASTA, genome-wide GFF3, and BED region track described above.
+
+![PHYPA_000001 gene view](results/igv/physcomitrium_PHYPA_000001_gene.png)
+
+**Figure 1.** Close view of `PHYPA_000001` at `CM009316.1:8,931-13,135`.
+The blue annotation track shows the gene model and directional feature arrows.
+
+![PHYPA_000001 neighborhood](results/igv/physcomitrium_gene_neighborhood_100kb.png)
+
+**Figure 2.** The first 113 kb of `CM009316.1`, showing the annotated genes in
+the `PHYPA_000001` neighborhood.
+
+![Physcomitrium strand view](results/igv/physcomitrium_strand_view.png)
+
+**Figure 3.** The 70-102 kb region, where forward- and reverse-strand genes
+appear in opposite directions.
+
 ## Downstream analysis
 
 The matching reference can now support the Week-4 reads for:
