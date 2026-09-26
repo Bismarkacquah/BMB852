@@ -83,31 +83,37 @@ read pair was removed for being too short, so pairing was preserved.
 | Raw | [FastQC report](results/qc/raw/ERR12643030_1_fastqc.html) | [FastQC report](results/qc/raw/ERR12643030_2_fastqc.html) |
 | Trimmed | [FastQC report](results/qc/trimmed/ERR12643030_1.trimmed_fastqc.html) | [FastQC report](results/qc/trimmed/ERR12643030_2.trimmed_fastqc.html) |
 
-The full-size PNG graphs are under `results/qc/figures/err12643030/`. They show
-raw and trimmed comparisons for per-base quality, per-sequence quality, base
-composition, GC content, sequence length, adapter content, and N content.
+The full-size PNG graphs are under `results/qc/figures/err12643030/`. The
+tables below show every available FastQC graph directly. Click any graph to
+open its full-resolution PNG.
 
 ### Read 1 figures
 
-| Module | Raw | Trimmed |
+| Module | Raw R1 | Trimmed R1 |
 | --- | --- | --- |
-| Per-base quality | [raw](results/qc/figures/err12643030/raw/R1/per_base_quality.png) | [trimmed](results/qc/figures/err12643030/trimmed/R1/per_base_quality.png) |
-| Per-sequence quality | [raw](results/qc/figures/err12643030/raw/R1/per_sequence_quality.png) | [trimmed](results/qc/figures/err12643030/trimmed/R1/per_sequence_quality.png) |
-| Base composition | [raw](results/qc/figures/err12643030/raw/R1/per_base_sequence_content.png) | [trimmed](results/qc/figures/err12643030/trimmed/R1/per_base_sequence_content.png) |
-| GC content | [raw](results/qc/figures/err12643030/raw/R1/per_sequence_gc_content.png) | [trimmed](results/qc/figures/err12643030/trimmed/R1/per_sequence_gc_content.png) |
-| Sequence length | [raw](results/qc/figures/err12643030/raw/R1/sequence_length_distribution.png) | [trimmed](results/qc/figures/err12643030/trimmed/R1/sequence_length_distribution.png) |
-| Adapter content | [raw](results/qc/figures/err12643030/raw/R1/adapter_content.png) | [trimmed](results/qc/figures/err12643030/trimmed/R1/adapter_content.png) |
+| Per-base quality | [<img src="results/qc/figures/err12643030/raw/R1/per_base_quality.png" width="100%">](results/qc/figures/err12643030/raw/R1/per_base_quality.png) | [<img src="results/qc/figures/err12643030/trimmed/R1/per_base_quality.png" width="100%">](results/qc/figures/err12643030/trimmed/R1/per_base_quality.png) |
+| Per-sequence quality | [<img src="results/qc/figures/err12643030/raw/R1/per_sequence_quality.png" width="100%">](results/qc/figures/err12643030/raw/R1/per_sequence_quality.png) | [<img src="results/qc/figures/err12643030/trimmed/R1/per_sequence_quality.png" width="100%">](results/qc/figures/err12643030/trimmed/R1/per_sequence_quality.png) |
+| Base composition | [<img src="results/qc/figures/err12643030/raw/R1/per_base_sequence_content.png" width="100%">](results/qc/figures/err12643030/raw/R1/per_base_sequence_content.png) | [<img src="results/qc/figures/err12643030/trimmed/R1/per_base_sequence_content.png" width="100%">](results/qc/figures/err12643030/trimmed/R1/per_base_sequence_content.png) |
+| GC content | [<img src="results/qc/figures/err12643030/raw/R1/per_sequence_gc_content.png" width="100%">](results/qc/figures/err12643030/raw/R1/per_sequence_gc_content.png) | [<img src="results/qc/figures/err12643030/trimmed/R1/per_sequence_gc_content.png" width="100%">](results/qc/figures/err12643030/trimmed/R1/per_sequence_gc_content.png) |
+| Sequence length | [<img src="results/qc/figures/err12643030/raw/R1/sequence_length_distribution.png" width="100%">](results/qc/figures/err12643030/raw/R1/sequence_length_distribution.png) | [<img src="results/qc/figures/err12643030/trimmed/R1/sequence_length_distribution.png" width="100%">](results/qc/figures/err12643030/trimmed/R1/sequence_length_distribution.png) |
+| Adapter content | [<img src="results/qc/figures/err12643030/raw/R1/adapter_content.png" width="100%">](results/qc/figures/err12643030/raw/R1/adapter_content.png) | [<img src="results/qc/figures/err12643030/trimmed/R1/adapter_content.png" width="100%">](results/qc/figures/err12643030/trimmed/R1/adapter_content.png) |
+| N content | [<img src="results/qc/figures/err12643030/raw/R1/per_base_n_content.png" width="100%">](results/qc/figures/err12643030/raw/R1/per_base_n_content.png) | [<img src="results/qc/figures/err12643030/trimmed/R1/per_base_n_content.png" width="100%">](results/qc/figures/err12643030/trimmed/R1/per_base_n_content.png) |
+| Duplication | [<img src="results/qc/figures/err12643030/raw/R1/duplication_levels.png" width="100%">](results/qc/figures/err12643030/raw/R1/duplication_levels.png) | [<img src="results/qc/figures/err12643030/trimmed/R1/duplication_levels.png" width="100%">](results/qc/figures/err12643030/trimmed/R1/duplication_levels.png) |
+| Per-tile quality | [<img src="results/qc/figures/err12643030/raw/R1/per_tile_quality.png" width="100%">](results/qc/figures/err12643030/raw/R1/per_tile_quality.png) | [<img src="results/qc/figures/err12643030/trimmed/R1/per_tile_quality.png" width="100%">](results/qc/figures/err12643030/trimmed/R1/per_tile_quality.png) |
 
 ### Read 2 figures
 
-| Module | Raw | Trimmed |
+| Module | Raw R2 | Trimmed R2 |
 | --- | --- | --- |
-| Per-base quality | [raw](results/qc/figures/err12643030/raw/R2/per_base_quality.png) | [trimmed](results/qc/figures/err12643030/trimmed/R2/per_base_quality.png) |
-| Per-sequence quality | [raw](results/qc/figures/err12643030/raw/R2/per_sequence_quality.png) | [trimmed](results/qc/figures/err12643030/trimmed/R2/per_sequence_quality.png) |
-| Base composition | [raw](results/qc/figures/err12643030/raw/R2/per_base_sequence_content.png) | [trimmed](results/qc/figures/err12643030/trimmed/R2/per_base_sequence_content.png) |
-| GC content | [raw](results/qc/figures/err12643030/raw/R2/per_sequence_gc_content.png) | [trimmed](results/qc/figures/err12643030/trimmed/R2/per_sequence_gc_content.png) |
-| Sequence length | [raw](results/qc/figures/err12643030/raw/R2/sequence_length_distribution.png) | [trimmed](results/qc/figures/err12643030/trimmed/R2/sequence_length_distribution.png) |
-| Adapter content | [raw](results/qc/figures/err12643030/raw/R2/adapter_content.png) | [trimmed](results/qc/figures/err12643030/trimmed/R2/adapter_content.png) |
+| Per-base quality | [<img src="results/qc/figures/err12643030/raw/R2/per_base_quality.png" width="100%">](results/qc/figures/err12643030/raw/R2/per_base_quality.png) | [<img src="results/qc/figures/err12643030/trimmed/R2/per_base_quality.png" width="100%">](results/qc/figures/err12643030/trimmed/R2/per_base_quality.png) |
+| Per-sequence quality | [<img src="results/qc/figures/err12643030/raw/R2/per_sequence_quality.png" width="100%">](results/qc/figures/err12643030/raw/R2/per_sequence_quality.png) | [<img src="results/qc/figures/err12643030/trimmed/R2/per_sequence_quality.png" width="100%">](results/qc/figures/err12643030/trimmed/R2/per_sequence_quality.png) |
+| Base composition | [<img src="results/qc/figures/err12643030/raw/R2/per_base_sequence_content.png" width="100%">](results/qc/figures/err12643030/raw/R2/per_base_sequence_content.png) | [<img src="results/qc/figures/err12643030/trimmed/R2/per_base_sequence_content.png" width="100%">](results/qc/figures/err12643030/trimmed/R2/per_base_sequence_content.png) |
+| GC content | [<img src="results/qc/figures/err12643030/raw/R2/per_sequence_gc_content.png" width="100%">](results/qc/figures/err12643030/raw/R2/per_sequence_gc_content.png) | [<img src="results/qc/figures/err12643030/trimmed/R2/per_sequence_gc_content.png" width="100%">](results/qc/figures/err12643030/trimmed/R2/per_sequence_gc_content.png) |
+| Sequence length | [<img src="results/qc/figures/err12643030/raw/R2/sequence_length_distribution.png" width="100%">](results/qc/figures/err12643030/raw/R2/sequence_length_distribution.png) | [<img src="results/qc/figures/err12643030/trimmed/R2/sequence_length_distribution.png" width="100%">](results/qc/figures/err12643030/trimmed/R2/sequence_length_distribution.png) |
+| Adapter content | [<img src="results/qc/figures/err12643030/raw/R2/adapter_content.png" width="100%">](results/qc/figures/err12643030/raw/R2/adapter_content.png) | [<img src="results/qc/figures/err12643030/trimmed/R2/adapter_content.png" width="100%">](results/qc/figures/err12643030/trimmed/R2/adapter_content.png) |
+| N content | [<img src="results/qc/figures/err12643030/raw/R2/per_base_n_content.png" width="100%">](results/qc/figures/err12643030/raw/R2/per_base_n_content.png) | [<img src="results/qc/figures/err12643030/trimmed/R2/per_base_n_content.png" width="100%">](results/qc/figures/err12643030/trimmed/R2/per_base_n_content.png) |
+| Duplication | [<img src="results/qc/figures/err12643030/raw/R2/duplication_levels.png" width="100%">](results/qc/figures/err12643030/raw/R2/duplication_levels.png) | [<img src="results/qc/figures/err12643030/trimmed/R2/duplication_levels.png" width="100%">](results/qc/figures/err12643030/trimmed/R2/duplication_levels.png) |
+| Per-tile quality | [<img src="results/qc/figures/err12643030/raw/R2/per_tile_quality.png" width="100%">](results/qc/figures/err12643030/raw/R2/per_tile_quality.png) | [<img src="results/qc/figures/err12643030/trimmed/R2/per_tile_quality.png" width="100%">](results/qc/figures/err12643030/trimmed/R2/per_tile_quality.png) |
 
 ## Interpretation
 
