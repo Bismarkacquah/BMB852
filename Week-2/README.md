@@ -235,6 +235,12 @@ appear in opposite directions.
 **Figure 5.** A 72 bp sequence-level view around `CM009316.1:10,020-10,090`.
 IGV displays the reference bases and the annotation track at nucleotide scale.
 
+![Physcomitrium colored strand view](results/igv/physcomitrium_strand_colored.png)
+
+**Figure 6.** Strand-colored annotation view. Forward-strand genes are blue and
+reverse-strand genes are pink. The separate BED tracks make the orientation
+comparison explicit.
+
 ### IGV questions and answers
 
 **Q1. How are the genes spaced?**
@@ -261,6 +267,23 @@ open reading frame is not automatically a real gene. An intron may contain a
 short accidental open reading frame without having a promoter, transcript, or
 validated protein product. For this analysis, the annotated exon/CDS structure
 is stronger evidence than a short translation found only by chance.
+
+For the selected sequence `CM009316.1:10,020-10,090`, the six possible reading
+frames are:
+
+```text
+Forward +1: WIDGFISFT*MTEVEMMKERFAK
+Forward +2: GLMASFHLLK*QRWR**KSGLPS
+Forward +3: D*WLHFIYLNDRGGDDERAVCQV
+Reverse -1: NLANRSFIISTSVI*VNEMKPSI
+Reverse -2: TWQTALSSSPPLSFK*MK*SHQS
+Reverse -3: LGKPLFHHLHLCHLSK*NEAINP
+```
+
+The asterisks represent stop codons. These six translations show what each
+frame could encode, but they do not prove that the region is a real gene. The
+GFF3 annotation and transcript evidence are stronger evidence for deciding
+which sequence is biologically meaningful.
 
 **Q4. What data are visible in IGV?**
 
