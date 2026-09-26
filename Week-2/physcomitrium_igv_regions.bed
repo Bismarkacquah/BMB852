@@ -1,0 +1,3 @@
+track name="Physcomitrium patens example regions" description="Representative gene and 200 kb neighborhood from GCA_000002425.2_Phypa_V3"
+CM009316.1	8930	13135	PHYPA_000001	0	+
+CM009316.1	0	113135	PHYPA_000001_plus_minus_100kb	0	+

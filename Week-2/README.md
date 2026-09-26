@@ -130,6 +130,81 @@ samtools faidx data/GCA_000002425.2_Phypa_V3_genomic.fna
 The annotation is genome-wide, so a browser view can be opened at any annotated
 moss gene or scaffold rather than only at the old Drosophila Lamin locus.
 
+## IGV analysis
+
+The following example replaces the earlier Lamin-centered IGV analysis with a
+real annotated moss locus. The representative feature is `PHYPA_000001` on
+the largest assembled sequence, `CM009316.1`.
+
+### Files to load
+
+In IGV, load these files:
+
+1. `data/GCA_000002425.2_Phypa_V3_genomic.fna` as the genome
+2. `data/GCA_000002425.2_Phypa_V3_genomic.gff` as the annotation track
+3. `physcomitrium_igv_regions.bed` as the example-region track
+
+The BED file marks both the gene and its 200 kb neighborhood. If IGV asks for
+an index, create one with `samtools faidx` or use IGV's reference-management
+option to index the FASTA locally.
+
+### Representative gene view
+
+Navigate to:
+
+```text
+CM009316.1:8,931-13,135
+```
+
+This interval contains gene `PHYPA_000001`, annotated on the forward strand.
+The GFF3 track shows its gene model and child transcript, exon, and CDS
+features. Zooming in reveals the exon structure; zooming out shows how the
+transcript features are arranged within the gene interval.
+
+### Strand view
+
+The same chromosome contains genes on both strands. In the first 113 kb of
+`CM009316.1`, the annotation includes:
+
+| Gene | Coordinates | Strand |
+| --- | --- | --- |
+| `PHYPA_000001` | 8,931-13,135 | + |
+| `PHYPA_000002` | 16,796-21,548 | + |
+| `PHYPA_000003` | 29,286-36,549 | + |
+| `PHYPA_000004` | 39,546-47,674 | + |
+| `PHYPA_000005` | 50,338-53,342 | + |
+| `PHYPA_000006` | 63,062-66,241 | + |
+| `PHYPA_000007` | 72,037-74,718 | - |
+| `PHYPA_000008` | 75,317-77,458 | - |
+| `PHYPA_000009` | 93,934-99,543 | - |
+| `PHYPA_000010` | 99,578-100,614 | - |
+
+This gives the IGV view a useful biological question: nearby genes are not all
+oriented in the same direction. The arrows and transcript models show the
+forward and reverse strands directly.
+
+### Gene-density view
+
+There are **10 annotated genes within +/-100 kb** of `PHYPA_000001`. The genes
+are distributed across the neighborhood rather than forming one continuous
+coding block, and the final two reverse-strand genes are closely spaced near
+100 kb. This is the genome-wide equivalent of the earlier local gene-density
+analysis, but it uses moss annotation and coordinates.
+
+For a wider IGV view, navigate to:
+
+```text
+CM009316.1:1-113,135
+```
+
+Then compare the annotation at whole-neighborhood, gene, and exon scales. IGV
+will show the long chromosome as a broad coordinate range and the GFF3 track as
+individual gene and transcript models.
+
+The IGV analysis is annotation-based because Week 4 currently contains FASTQ
+quality-control data, not aligned BAM files. Coverage tracks can be added after
+the trimmed reads are mapped to this same Physcomitrium assembly.
+
 ## Downstream analysis
 
 The matching reference can now support the Week-4 reads for:
