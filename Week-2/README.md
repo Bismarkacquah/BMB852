@@ -290,19 +290,37 @@ The broad views above provide context, but the following tighter views are the
 ones to use when reading labels and exon structure. They avoid compressing too
 many genes into a single image.
 
+![Ultra-zoomed PHYPA_000001 view](results/igv/physcomitrium_PHYPA_000001_ultra_zoom.png)
+
+**Figure 9.** Full `PHYPA_000001` locus at `CM009316.1:8,900-13,200`.
+
+![PHYPA_000001 exon detail](results/igv/physcomitrium_PHYPA_000001_exon_detail.png)
+
+**Figure 10.** Exon and intron detail at `CM009316.1:9,500-10,750`.
+
+![Forward-strand detail](results/igv/physcomitrium_forward_strand_detail.png)
+
+**Figure 11.** Forward-strand neighborhood at `CM009316.1:65,000-78,000`,
+including `PHYPA_000006` through `PHYPA_000008`.
+
+![Reverse-strand detail](results/igv/physcomitrium_reverse_strand_detail.png)
+
+**Figure 12.** Reverse-strand neighborhood at `CM009316.1:93,000-101,000`,
+including `PHYPA_000009` and `PHYPA_000010`.
+
 ![Zoomed Physcomitrium gene neighborhood](results/igv/physcomitrium_gene_neighborhood_zoomed.png)
 
-**Figure 9.** Zoomed 25 kb view showing `PHYPA_000001`, `PHYPA_000002`, their
+**Figure 13.** Zoomed 25 kb view showing `PHYPA_000001`, `PHYPA_000002`, their
 transcript models, and the surrounding annotation track.
 
 ![Zoomed Physcomitrium strand view](results/igv/physcomitrium_strand_zoomed.png)
 
-**Figure 10.** Zoomed 37 kb view of `CM009316.1:65,000-102,000`, showing the
+**Figure 14.** Zoomed 37 kb view of `CM009316.1:65,000-102,000`, showing the
 forward and reverse gene models around `PHYPA_000007` through `PHYPA_000010`.
 
-For the assignment screenshots, Figures 1, 5, 6, 9, and 10 provide the clearest
-detail. Figures 2, 7, and 8 are overview images and are included only to show
-the larger genomic context.
+For the assignment screenshots, Figures 9-12 provide the clearest detail.
+Figures 2, 7, 8, 13, and 14 are overview images and are included to show the
+larger genomic context.
 
 ### Correspondence with the previous analysis
 
