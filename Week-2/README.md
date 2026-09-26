@@ -300,19 +300,24 @@ This interval contains **126 annotated genes**: 59 on the forward strand and
 because it shows many gene models while keeping their labels and exon patterns
 visible.
 
-![Dense Physcomitrium strand overview](results/igv/physcomitrium_dense_strands_1Mb.png)
+![Dense forward-strand genes](results/igv/physcomitrium_dense_forward_blue_1Mb.png)
 
-**Figure 7B.** The complete one-megabase dense interval with separate forward
-and reverse annotation tracks.
+**Figure 7B. Dense forward-strand gene landscape.** The one-megabase interval
+with forward-strand annotation shown in blue.
+
+![Dense reverse-strand genes](results/igv/physcomitrium_dense_reverse_pink_1Mb.png)
+
+**Figure 7C. Dense reverse-strand gene landscape.** The same one-megabase
+interval with reverse-strand annotation shown in pink.
 
 ![Dense forward-strand zoom](results/igv/physcomitrium_dense_forward_zoom.png)
 
-**Figure 7C.** The first half of the dense interval, showing forward-strand
+**Figure 7D.** The first half of the dense interval, showing forward-strand
 features and nearby transcript models.
 
 ![Dense reverse-strand zoom](results/igv/physcomitrium_dense_reverse_zoom.png)
 
-**Figure 7D.** The second half of the interval, showing reverse-strand
+**Figure 7E.** The second half of the interval, showing reverse-strand
 features and nearby transcript models.
 
 ### Answers from the expanded coordinate
@@ -345,6 +350,19 @@ The moss genome is not uniformly organized. Some regions are gene-dense, like
 this 1 Mb interval, while other parts contain much larger gene-free gaps. A
 genome-wide overview is useful for context, but zoomed intervals are needed to
 interpret gene names, exon structure, and strand direction clearly.
+
+### Assignment question count
+
+The assignment has **four genome-browsing questions**:
+
+1. How tightly packed are the genes?
+2. What sequence is present at a selected coordinate?
+3. What are the six possible reading frames at that coordinate?
+4. What type of feature is shown in the annotation track?
+
+The earlier genome-download section adds four background questions about genome
+size, chromosome/sequence records, annotation counts, and assembly completeness.
+Together, the README answers eight required question areas.
 
 ![Physcomitrium expanded strand view](results/igv/physcomitrium_strand_expanded.png)
 
