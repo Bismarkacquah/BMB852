@@ -18,6 +18,46 @@ FastQC measures technical sequencing quality. It does not identify genes or
 prove that a read belongs to a particular biological pathway. Those questions
 require a later mapping and annotation workflow.
 
+## Background information
+
+*Physcomitrium patens* has a much smaller public sequencing record than common
+human, mouse, or *Drosophila* datasets, but it is still well represented in
+public archives. An ENA search for taxonomy ID `3218` returned **2,387 public
+sequencing runs** on 26 September 2026. These are run records, not 2,387
+different genome assemblies; several runs can belong to the same study or
+sample.
+
+The public records are varied:
+
+| Category | Public runs |
+| --- | ---: |
+| Genomic source | 451 |
+| Genomic single-cell source | 14 |
+| Paired-end layout | 1,313 |
+| Single-end layout | 1,074 |
+| Illumina platform | 1,952 |
+| Oxford Nanopore platform | 11 |
+| WGS strategy | 87 |
+| WGA strategy | 143 |
+| RNA-seq strategy | 1,586 |
+| ChIP-seq strategy | 158 |
+
+This shows why the accession must be checked instead of choosing a dataset only
+by species name. The selected run, `ERR8982185`, is one of the paired-end,
+Illumina, genomic WGS records. That makes it appropriate for read-quality
+assessment and possible whole-genome mapping after a matching moss reference
+assembly is obtained.
+
+The counts were collected with the ENA Portal API:
+
+```text
+https://www.ebi.ac.uk/ena/portal/api/search?result=read_run&query=tax_eq(3218)
+```
+
+The public-data summary describes archive availability, not the quality of all
+2,387 runs. FastQC results in this report come only from the first 1,000 spots
+of `ERR8982185`.
+
 ## Selected experiment
 
 The selected run is [ERR8982185](https://www.ebi.ac.uk/ena/browser/view/ERR8982185).
