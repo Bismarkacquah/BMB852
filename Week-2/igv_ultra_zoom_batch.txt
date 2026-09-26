@@ -1,0 +1,16 @@
+snapshotDirectory C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/results/igv
+genome C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/data/GCA_000002425.2_Phypa_V3_genomic.gff
+goto CM009316.1:8900-13200
+expand
+snapshot physcomitrium_PHYPA_000001_ultra_zoom.png
+goto CM009316.1:9500-10750
+expand
+snapshot physcomitrium_PHYPA_000001_exon_detail.png
+goto CM009316.1:65000-78000
+expand
+snapshot physcomitrium_forward_strand_detail.png
+goto CM009316.1:93000-101000
+expand
+snapshot physcomitrium_reverse_strand_detail.png
+exit
