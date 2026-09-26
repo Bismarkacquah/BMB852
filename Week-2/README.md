@@ -284,6 +284,26 @@ models merge into annotation patterns rather than being readable one by one.
 **Figure 8.** Expanded 300 kb view of the beginning of `CM009316.1`, showing
 the local pattern of gene models and strand directions in more detail.
 
+### Zoomed views for detailed inspection
+
+The broad views above provide context, but the following tighter views are the
+ones to use when reading labels and exon structure. They avoid compressing too
+many genes into a single image.
+
+![Zoomed Physcomitrium gene neighborhood](results/igv/physcomitrium_gene_neighborhood_zoomed.png)
+
+**Figure 9.** Zoomed 25 kb view showing `PHYPA_000001`, `PHYPA_000002`, their
+transcript models, and the surrounding annotation track.
+
+![Zoomed Physcomitrium strand view](results/igv/physcomitrium_strand_zoomed.png)
+
+**Figure 10.** Zoomed 37 kb view of `CM009316.1:65,000-102,000`, showing the
+forward and reverse gene models around `PHYPA_000007` through `PHYPA_000010`.
+
+For the assignment screenshots, Figures 1, 5, 6, 9, and 10 provide the clearest
+detail. Figures 2, 7, and 8 are overview images and are included only to show
+the larger genomic context.
+
 ### Correspondence with the previous analysis
 
 | Previous Lamin analysis | Physcomitrium replacement |
