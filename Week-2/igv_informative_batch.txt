@@ -1,0 +1,7 @@
+snapshotDirectory C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/results/igv
+genome C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/data/GCA_000002425.2_Phypa_V3_genomic.gff
+goto CM009316.1:1-1000000
+expand
+snapshot physcomitrium_informative_1Mb.png
+exit

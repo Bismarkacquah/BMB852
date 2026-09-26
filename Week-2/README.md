@@ -279,6 +279,12 @@ genes are blue and reverse-strand genes are pink.
 This remains an overview, while Figures 9–12 provide the readable gene-level
 detail.
 
+![Physcomitrium informative gene spacing](results/igv/physcomitrium_informative_1Mb.png)
+
+**Figure 7A.** Informative gene-spacing view of `CM009316.1:1-1,000,000`.
+This scale shows many labeled genes and their relative spacing without reducing
+the annotation to an unreadable chromosome-wide strip.
+
 ![Physcomitrium expanded strand view](results/igv/physcomitrium_strand_expanded.png)
 
 **Figure 8.** Expanded 300 kb view of the beginning of `CM009316.1`, showing
