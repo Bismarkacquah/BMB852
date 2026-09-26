@@ -1,0 +1,14 @@
+snapshotDirectory C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/results/igv
+genome C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/physcomitrium_dense_forward.gff3
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/physcomitrium_dense_reverse.gff3
+goto CM009317.1:10924622-11924622
+expand
+snapshot physcomitrium_dense_strands_1Mb.png
+goto CM009317.1:10924622-11424622
+expand
+snapshot physcomitrium_dense_forward_zoom.png
+goto CM009317.1:11424622-11924622
+expand
+snapshot physcomitrium_dense_reverse_zoom.png
+exit
