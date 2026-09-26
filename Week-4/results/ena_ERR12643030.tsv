@@ -1,2 +1,0 @@
-run_accession	scientific_name	tax_id	study_accession	sample_accession	experiment_accession	instrument_platform	instrument_model	library_strategy	library_source	library_layout	read_count	base_count	fastq_ftp
-ERR12643030	Drosophila melanogaster	7227	PRJEB72380	SAMEA115178120	ERX12017357	ILLUMINA	NextSeq 2000	WGS	GENOMIC	PAIRED	21937570	2435070270	ftp.sra.ebi.ac.uk/vol1/fastq/ERR126/030/ERR12643030/ERR12643030_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR126/030/ERR12643030/ERR12643030_2.fastq.gz

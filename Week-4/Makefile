@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 
 # Override ACCESSION and N on the command line for another paired-end SRA run.
-ACCESSION ?= ERR12643030
+ACCESSION ?= ERR8982185
 N ?= 1000
 THREADS ?= 2
 FASTQC_OPTIONS ?= --nogroup
