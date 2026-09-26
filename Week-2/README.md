@@ -9,6 +9,38 @@ Drosophila analysis has been replaced with a genome-wide moss analysis.
 The reference assembly is **GCA_000002425.2_Phypa_V3**, also known as the
 Phypa V3 assembly. The genome and its annotation come from NCBI RefSeq.
 
+### Quick genome summary
+
+I selected the moss *Physcomitrium patens*, a non-model plant often used in
+plant development research.
+
+- Assembly: `GCA_000002425.2_Phypa_V3`
+- Genome size: approximately **471.9 Mb** across **357 sequence records**
+- Annotation: **374,631 GFF3 records** and **31,306 annotated genes**
+- Main features: 162,252 exons, 149,462 CDS records, and 31,251 mRNAs
+- Average genome-wide spacing: approximately **15.1 kb per annotated gene**
+- Data source: NCBI RefSeq
+
+The assembly includes chromosome-level sequences as well as additional
+scaffolds and organellar records, so the 357 sequence records should not be
+interpreted as 357 chromosomes. The annotation is detailed, but the large
+gene-free intervals seen in IGV show that it is not appropriate to assume every
+base is coding or that every noncoding region is fully annotated.
+
+### Why this model organism is relevant
+
+*Physcomitrium patens* is useful because it is a moss with a relatively compact,
+well-annotated plant genome and strong public sequencing support. It is used to
+study plant development, gene regulation, genome structure, and stress
+responses. Because it is a non-flowering plant, it also helps researchers
+compare conserved genes and pathways with those of flowering plants.
+
+This assembly is directly relevant to Week 4 because the sequencing reads are
+also from *P. patens*. Using the same organism and assembly makes later mapping,
+coverage, variant, and gene-level analyses biologically meaningful. The genome
+is large enough to show realistic gene-density patterns while remaining
+practical for a teaching workflow.
+
 ## Reference data
 
 - Organism: *Physcomitrium patens*
