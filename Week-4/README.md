@@ -8,6 +8,16 @@ summarized with SeqKit, trimmed with Cutadapt, and compared with FastQC before
 and after trimming. The run was selected because it is an uncommon organism
 with paired-end Illumina WGS data and approximately 150 bp reads.
 
+In plain terms, this report asks three questions:
+
+1. What sequencing experiment was used?
+2. Were the downloaded reads technically reliable?
+3. Did trimming improve the reads without removing most of the data?
+
+FastQC measures technical sequencing quality. It does not identify genes or
+prove that a read belongs to a particular biological pathway. Those questions
+require a later mapping and annotation workflow.
+
 ## Selected experiment
 
 The selected run is [ERR8982185](https://www.ebi.ac.uk/ena/browser/view/ERR8982185).
@@ -59,6 +69,20 @@ make stats-trimmed
 make qc-trimmed
 ```
 
+### What each step does
+
+- `fastq-dump` retrieves the first 1,000 sequencing spots and separates the
+  paired reads into R1 and R2 files.
+- `seqkit stats` counts reads and bases and reports minimum, average, and
+  maximum read lengths.
+- `fastqc` checks the raw reads and creates one HTML report for each mate.
+- `cutadapt` removes Illumina adapter sequences, trims bases below Q20 at the
+  read ends, and removes pairs shorter than 30 bp.
+- The second FastQC run checks whether the cleaned reads improved.
+
+The raw files are kept unchanged. The trimmed files are separate so that the
+before-and-after comparison remains reproducible.
+
 ## Read statistics
 
 The raw subset contains 1,000 reads in each mate file. The reads are about
@@ -90,6 +114,19 @@ The raw reads remain unchanged, and pairing is preserved in the trimmed files.
 
 The complete gallery is shown below. Each graph links to its full-resolution
 PNG under `results/qc/figures/err8982185/`.
+
+### How to read the gallery
+
+In each table, the left graph is the raw read and the right graph is the
+trimmed read. R1 and R2 are the two mates from the same paired-end experiment.
+The yellow boxes in the per-base quality graph show the middle 50% of quality
+values at each position; the red line is the median and the whiskers show the
+wider spread. The graph reaches about 151 positions because these reads are
+about 151 bp long.
+
+FastQC labels a module as PASS, WARN, or FAIL. A warning means the result needs
+context, and a failure means it should be investigated. Neither label alone
+proves that the entire sequencing experiment is unusable.
 
 ### Read 1 figures
 
@@ -130,6 +167,70 @@ The remaining composition, GC, duplication, and tile results should be checked
 before mapping. The old Drosophila reference from Week 2 must not be used for
 this dataset. Any future mapping or coverage analysis requires a matching
 *Physcomitrium patens* reference assembly and annotation.
+
+### What the individual modules mean
+
+- **Per-base sequence quality:** shows the quality distribution at every base
+  position. The yellow box contains the middle 50% of quality values, the red
+  line is the median, and the whiskers show the wider spread. The x-axis reaches
+  about 151 bp because these reads are about 151 bp long.
+- **Per-sequence quality:** shows how many reads have each average quality
+  score. A peak toward the high-quality end means most complete reads are
+  reliable.
+- **Per-base sequence content:** shows the percentage of A, C, G, and T at each
+  position. Unexpected shifts can indicate library bias, primer effects, or
+  another non-random sequence feature.
+- **GC content:** compares the GC distribution of the reads with the expected
+  profile. A shifted or unusually broad distribution can reflect real genome
+  composition, mixed material, contamination, or technical bias.
+- **Sequence length distribution:** shows whether reads have one fixed length or
+  a mixture of lengths. Trimming normally makes this distribution more varied.
+- **Adapter content:** estimates how much adapter sequence remains at each
+  position. A reduction after Cutadapt shows that adapter removal worked.
+- **N content:** shows positions where the sequencer could not confidently call
+  A, C, G, or T. High N content means uncertain bases.
+- **Duplication levels:** shows how often identical sequences occur. Some
+  duplication can be expected in a small subset, so it should be interpreted
+  with the library type and sampling depth.
+- **Per-tile quality:** checks whether one part of the sequencing flow cell has
+  unusually low quality. It is a technical check and does not measure gene
+  function or biological quality.
+
+### Before and after trimming
+
+The raw subset contained 1,000 pairs. Cutadapt detected adapter sequence in 34
+R1 reads and 33 R2 reads. After adapter and quality trimming, 997 pairs
+remained, so 99.7% of the pairs passed the minimum-length filter. Three pairs
+were removed because they became shorter than 30 bp.
+
+The important result is that most of the data was retained while adapter and
+low-quality sequence were removed. The trimmed files are not supposed to have
+exactly the same length distribution as the raw files; variable lengths are an
+expected result of removing poor-quality ends. The raw files are preserved so
+the comparison can be repeated.
+
+### Correct reference for future analysis
+
+Week 2 contains a *Drosophila melanogaster* assembly because that earlier work
+focused on the Lamin gene. That assembly is not appropriate for these reads:
+this Week-4 run is *Physcomitrium patens*. Mapping moss reads to Drosophila
+would produce misleading alignment and coverage results.
+
+Before mapping, obtain a *Physcomitrium patens* reference FASTA and matching
+annotation from NCBI or Ensembl Plants. The FASTA, annotation, and index files
+must all come from the same assembly release. The correct downstream sequence
+is:
+
+```text
+Physcomitrium reference FASTA + annotation
+        -> FASTA and aligner indexes
+        -> map the trimmed R1/R2 reads
+        -> check alignment rate and coverage
+        -> interpret reads with the moss annotation
+```
+
+FastQC is complete without the reference genome. The matching reference is
+needed for later mapping, coverage, variant, or gene-level analysis.
 
 ## Reproducibility checklist
 
