@@ -1,0 +1,2 @@
+run_accession	scientific_name	tax_id	study_accession	sample_accession	experiment_accession	instrument_platform	instrument_model	library_strategy	library_source	library_layout	read_count	base_count	fastq_ftp
+ERR8982185	Physcomitrium patens	3218	PRJEB51295	SAMEA13207856	ERX8525940	ILLUMINA	Illumina NovaSeq 6000	WGS	GENOMIC	PAIRED	115685656	17415839111	ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/005/ERR8982185/ERR8982185_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/005/ERR8982185/ERR8982185_2.fastq.gz
