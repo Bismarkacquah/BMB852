@@ -1,0 +1,7 @@
+snapshotDirectory C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/results/igv
+genome C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/physcomitrium_dense_both_strands_rgb.bed
+goto CM009317.1:10924622-11924622
+expand
+snapshot physcomitrium_dense_both_strands_combined.png
+exit

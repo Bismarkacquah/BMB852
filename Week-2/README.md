@@ -300,15 +300,11 @@ This interval contains **126 annotated genes**: 59 on the forward strand and
 because it shows many gene models while keeping their labels and exon patterns
 visible.
 
-![Dense forward-strand genes](results/igv/physcomitrium_dense_forward_blue_1Mb.png)
+![Combined dense strand view](results/igv/physcomitrium_dense_both_strands_combined.png)
 
-**Figure 7B. Dense forward-strand gene landscape.** The one-megabase interval
-with forward-strand annotation shown in blue.
-
-![Dense reverse-strand genes](results/igv/physcomitrium_dense_reverse_pink_1Mb.png)
-
-**Figure 7C. Dense reverse-strand gene landscape.** The same one-megabase
-interval with reverse-strand annotation shown in pink.
+**Figure 7B. Combined dense-strand gene landscape.** One IGV pane showing the
+full one-megabase interval, with forward-strand features in blue and
+reverse-strand features in pink.
 
 ![Dense forward-strand zoom](results/igv/physcomitrium_dense_forward_zoom.png)
 
