@@ -242,42 +242,42 @@ the trimmed reads are mapped to this same Physcomitrium assembly.
 The following screenshots were generated with IGV 2.18.4 in batch mode using
 the reference FASTA, genome-wide GFF3, and BED region track described above.
 
-![PHYPA_000001 gene view](results/igv/physcomitrium_PHYPA_000001_gene.png)
+![PHYPA_000001 gene view](results/igv/physcomitrium_PHYPA_000001_gene_x4.png)
 
-**Figure 1.** Close view of `PHYPA_000001` at `CM009316.1:8,931-13,135`.
+**Figure 1.** Four-times tighter view of `PHYPA_000001` at
+`CM009316.1:9,500-10,550`, showing the central exon structure clearly.
 The blue annotation track shows the gene model and directional feature arrows.
 
-![PHYPA_000001 neighborhood](results/igv/physcomitrium_gene_neighborhood_100kb.png)
+![PHYPA_000001 neighborhood](results/igv/physcomitrium_gene_neighborhood_x4.png)
 
-**Figure 2.** The first 113 kb of `CM009316.1`, showing the annotated genes in
-the `PHYPA_000001` neighborhood.
+**Figure 2.** Four-times tighter 28 kb view of the `PHYPA_000001` neighborhood,
+showing `PHYPA_000001` and `PHYPA_000002` with readable transcript models.
 
-![Physcomitrium strand view](results/igv/physcomitrium_strand_view.png)
+![Physcomitrium strand view](results/igv/physcomitrium_strand_view_x4.png)
 
-**Figure 3.** The 70-102 kb region, where forward- and reverse-strand genes
-appear in opposite directions.
+**Figure 3.** Four-times tighter 8 kb view of `CM009316.1:70,000-78,000`,
+showing reverse-strand genes `PHYPA_000007` and `PHYPA_000008`.
 
-![Physcomitrium noncoding gap](results/igv/physcomitrium_noncoding_gap.png)
+![Physcomitrium noncoding gap](results/igv/physcomitrium_noncoding_gap_x4.png)
 
-**Figure 4.** The largest gene-free interval found in the annotation:
-371,597 bp between `PHYPA_026480` and `PHYPA_026481` on `CM009336.1`.
+**Figure 4.** Four-times tighter 900 kb section of the largest gene-free
+interval on `CM009336.1`, between `PHYPA_026480` and `PHYPA_026481`.
 
 ![Physcomitrium exon and intron sequence](results/igv/physcomitrium_exon_intron_sequence.png)
 
 **Figure 5.** A 72 bp sequence-level view around `CM009316.1:10,020-10,090`.
 IGV displays the reference bases and the annotation track at nucleotide scale.
 
-![Physcomitrium colored strand view](results/igv/physcomitrium_strand_colored.png)
+![Physcomitrium colored strand view](results/igv/physcomitrium_strand_colored_x4.png)
 
-**Figure 6.** Strand-colored annotation view. Forward-strand genes are blue and
-reverse-strand genes are pink. The separate BED tracks make the orientation
-comparison explicit.
+**Figure 6.** Four-times tighter 28 kb strand-colored view. Forward-strand
+genes are blue and reverse-strand genes are pink.
 
-![Physcomitrium genome browsing](results/igv/physcomitrium_genome_browsing.png)
+![Physcomitrium genome browsing](results/igv/physcomitrium_genome_browsing_x4.png)
 
-**Figure 7.** Broad genome-browsing view of the largest reference sequence,
-`CM009316.1`, which is 30,242,098 bp long. At this scale, individual gene
-models merge into annotation patterns rather than being readable one by one.
+**Figure 7.** Four-times tighter 7.56 Mb genome-browsing view of `CM009316.1`.
+This remains an overview, while Figures 9–12 provide the readable gene-level
+detail.
 
 ![Physcomitrium expanded strand view](results/igv/physcomitrium_strand_expanded.png)
 
