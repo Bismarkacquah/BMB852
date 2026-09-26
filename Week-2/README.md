@@ -431,11 +431,16 @@ GFF3, although it could also contain unannotated or non-coding sequence.
 
 **Q2. What happens at a small selected region?**
 
-At `CM009316.1:8,931-13,135`, `PHYPA_000001` is annotated on the forward
-strand. It contains multiple exons and CDS segments, so the gene model becomes
-more detailed as the IGV view is zoomed in. The gene is annotated as a
-protein-coding locus, but its product is listed as a hypothetical protein in
-this assembly annotation.
+At `CM009316.1:10,020-10,090`, the selected 72 bp interval overlaps the
+forward-strand gene `PHYPA_000001`. The IGV sequence view shows the reference
+bases, the transcript model, and the translated amino-acid sequence. This
+interval is part of an annotated coding region whose product is listed as a
+hypothetical protein in this assembly annotation.
+
+![Question 2 selected coordinate](results/igv/figure2_selected_coordinate.png)
+
+**Figure 15.** IGV sequence view of the selected 72 bp coordinate inside
+`PHYPA_000001`.
 
 **Q3. Can an intron be translated as a gene?**
 
