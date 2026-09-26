@@ -1,0 +1,23 @@
+snapshotDirectory C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/results/igv
+genome C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/data/GCA_000002425.2_Phypa_V3_genomic.gff
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/physcomitrium_igv_regions.bed
+goto CM009316.1:9500-10550
+expand
+snapshot physcomitrium_PHYPA_000001_gene_x4.png
+goto CM009316.1:1-28000
+expand
+snapshot physcomitrium_gene_neighborhood_x4.png
+goto CM009316.1:70000-78000
+expand
+snapshot physcomitrium_strand_view_x4.png
+goto CM009336.1:14000000-14900000
+snapshot physcomitrium_noncoding_gap_x4.png
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/physcomitrium_forward_genes.bed
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/physcomitrium_reverse_genes.bed
+goto CM009316.1:1-28000
+expand
+snapshot physcomitrium_strand_colored_x4.png
+goto CM009316.1:1-7560000
+snapshot physcomitrium_genome_browsing_x4.png
+exit
