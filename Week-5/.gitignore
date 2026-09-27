@@ -1,2 +1,12 @@
-bam/
-coverage/
+bam/*.bam
+bam/*.bai
+coverage/*
+!coverage/README.md
+fasta/*
+!fasta/README.md
+bam/*.review.sam
+scripts/*.log
+!coverage/ERR8982185.coverage.tsv
+!coverage/ERR8982185.depth_summary.json
+scripts/igv_local_batch.txt
+scripts/__pycache__/
