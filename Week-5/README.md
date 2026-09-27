@@ -52,8 +52,8 @@ make all THREADS=2
 ```
 
 Required tools are `bwa`, `samtools`, and GNU Make. Run `make check-tools`
-before starting. The current Windows environment does not have `bwa` or
-`samtools` installed, so the BAM has not been claimed as complete yet.
+before starting. The alignment was executed in WSL Ubuntu after installing
+these tools.
 
 The alignment command is intentionally simple and reproducible:
 
@@ -117,7 +117,7 @@ flagstat` reported:
 These results are a technical demonstration, not a 10x genome-wide analysis.
 The low subset size explains why many large IGV regions show no visible reads.
 
-## IGV result
+## IGV results
 
 The successful mapped-read view is at:
 
@@ -136,6 +136,47 @@ indexed, so IGV can navigate to this region directly.
 1,502 bp region of `CM009316.1`. The earlier gene-density coordinate is useful
 for annotation context, but it is too broad for displaying individual reads
 and had no mapped reads in this small subset.
+
+![Week 5 BAM at PHYPA_000001](results/igv/week5_PHYPA_000001_bam.png)
+
+**Figure 2.** BAM view at the annotated `PHYPA_000001` locus. This view is
+useful for comparing mapped reads with the genome annotation, although this
+small subset produced little or no coverage at this particular locus.
+
+![Week 5 BAM in dense region](results/igv/week5_dense_region_bam.png)
+
+**Figure 3.** BAM view at the dense one-megabase annotation region. The region
+contains many annotated genes, but the small read subset does not provide
+uniform coverage across the whole interval.
+
+## Assignment answers
+
+**How many reads were selected?**
+
+The Week-4 trimmed subset contained 997 read pairs, or 1,998 individual reads.
+The 10x calculation requires approximately 16,122 pairs for this 471.9 Mb
+genome, so the current BAM is a small workflow demonstration rather than a
+10x genome-wide dataset.
+
+**What percentage of reads aligned?**
+
+`samtools flagstat` reported 1,517 mapped reads out of 1,998 total reads,
+which is **75.93%**. The properly paired count was 1,450 reads, or **72.72%**.
+
+**What do the alignments look like?**
+
+The mapped-read IGV view shows paired gray read blocks with colored bases where
+read sequence differs from the reference. Repeated differences across several
+reads are more consistent with true variation, while isolated differences may
+be sequencing errors or alignment artifacts. The BAM contains no duplicates in
+this subset.
+
+**Is coverage uniform?**
+
+No. Coverage is uneven because only 997 pairs were analyzed against a large
+471.9 Mb genome. Some loci show aligned reads while other regions show little or
+no coverage. A larger subset near the estimated 16,122 pairs would be needed
+for a meaningful genome-wide uniformity assessment.
 
 ## IGV visualization
 
