@@ -74,54 +74,6 @@ To remove generated reference data and start again:
 make clean
 ```
 
-## Genome-wide results
-
-The downloaded FASTA contains **471,852,792 bp** across **357 sequence
-records**. These records include the principal chromosomes, organellar
-sequences, and additional assembled scaffolds.
-
-The GFF3 contains **374,631 non-comment feature records**. The main feature
-categories are:
-
-| Feature | Count |
-| --- | ---: |
-| Exon | 162,252 |
-| CDS | 149,462 |
-| Gene | 31,306 |
-| mRNA | 31,251 |
-| Region | 357 |
-| Pseudogene | 3 |
-
-These counts describe the complete annotation file. They are not counts of
-unique genes only: one gene can have several transcripts, exons, and CDS rows.
-
-## Questions and answers
-
-### 1. How large is the genome?
-
-The reference FASTA contains 471,852,792 bp. This is the total length of all
-357 sequence records in the assembly.
-
-### 2. How many sequence records are present?
-
-There are 357 FASTA records. A sequence record can represent a chromosome,
-scaffold, organelle, or another assembled sequence, so this number is not the
-same as the number of biological chromosomes.
-
-### 3. How many annotations are present?
-
-The GFF3 contains 374,631 non-comment records. The largest categories are
-162,252 exons, 149,462 CDS records, 31,306 genes, and 31,251 mRNAs.
-
-### 4. Why use this genome for Week 4?
-
-Week 4 uses *Physcomitrium patens* WGS reads from accession `ERR8982185`.
-Using this matching assembly avoids the major error of mapping moss reads to
-the unrelated *Drosophila melanogaster* genome. The same organism and assembly
-should be used for the FASTA, annotation, and any alignment indexes.
-
-## Useful commands
-
 Genome size and sequence-record count:
 
 ```bash
@@ -216,7 +168,7 @@ connecting lines represent transcript structure across introns. The DNA and
 amino-acid rows show reference and translated sequence. No BAM file is loaded,
 so the images do not show read coverage, expression, or variant data.
 
-![Combined strand annotation](results/igv/physcomitrium_dense_both_strands_combined.png)
+![Figure 3: Strand annotation](results/igv/figure3_strand_annotation.png)
 
 **Figure 3.** Combined annotation view with forward-strand features in blue and
 reverse-strand features in pink.
@@ -296,55 +248,6 @@ The IGV analysis is annotation-based because Week 4 currently contains FASTQ
 quality-control data, not aligned BAM files. Coverage tracks can be added after
 the trimmed reads are mapped to this same Physcomitrium assembly.
 
-### Generated IGV screenshots
-
-The following screenshots were generated with IGV 2.18.4 in batch mode using
-the reference FASTA, genome-wide GFF3, and BED region track described above.
-
-![PHYPA_000001 gene view](results/igv/physcomitrium_PHYPA_000001_gene_x4.png)
-
-**Figure 1.** Four-times tighter view of `PHYPA_000001` at
-`CM009316.1:9,500-10,550`, showing the central exon structure clearly.
-The blue annotation track shows the gene model and directional feature arrows.
-
-![PHYPA_000001 neighborhood](results/igv/physcomitrium_gene_neighborhood_x4.png)
-
-**Figure 2.** Four-times tighter 28 kb view of the `PHYPA_000001` neighborhood,
-showing `PHYPA_000001` and `PHYPA_000002` with readable transcript models.
-
-![Physcomitrium strand view](results/igv/physcomitrium_strand_view_x4.png)
-
-**Figure 3.** Four-times tighter 8 kb view of `CM009316.1:70,000-78,000`,
-showing reverse-strand genes `PHYPA_000007` and `PHYPA_000008`.
-
-![Physcomitrium noncoding gap](results/igv/physcomitrium_noncoding_gap_x4.png)
-
-**Figure 4.** Four-times tighter 900 kb section of the largest gene-free
-interval on `CM009336.1`, between `PHYPA_026480` and `PHYPA_026481`.
-
-![Physcomitrium exon and intron sequence](results/igv/physcomitrium_exon_intron_sequence.png)
-
-**Figure 5.** A 72 bp sequence-level view around `CM009316.1:10,020-10,090`.
-IGV displays the reference bases and the annotation track at nucleotide scale.
-
-![Physcomitrium colored strand view](results/igv/physcomitrium_strand_colored_x4.png)
-
-**Figure 6.** Four-times tighter 28 kb strand-colored view. Forward-strand
-genes are blue and reverse-strand genes are pink.
-
-![Figure 1: Physcomitrium genome browsing](results/igv/figure1_genome_browsing.png)
-
-**Figure 1. Genome browsing and gene spacing.** Four-times tighter 7.56 Mb
-view of `CM009316.1`, showing many annotated genes and their spacing.
-This remains an overview, while Figures 9–12 provide the readable gene-level
-detail.
-
-![Physcomitrium informative gene spacing](results/igv/physcomitrium_informative_1Mb.png)
-
-**Figure 7A.** Informative gene-spacing view of `CM009316.1:1-1,000,000`.
-This scale shows many labeled genes and their relative spacing without reducing
-the annotation to an unreadable chromosome-wide strip.
-
 ### Expanded dense-coordinate analysis
 
 To make the gene-spacing analysis more informative, I selected the densest
@@ -359,22 +262,6 @@ This interval contains **126 annotated genes**: 59 on the forward strand and
 35,006 bp. This is a better overview coordinate than a whole-chromosome view
 because it shows many gene models while keeping their labels and exon patterns
 visible.
-
-![Combined dense strand view](results/igv/physcomitrium_dense_both_strands_combined.png)
-
-**Figure 7B. Combined dense-strand gene landscape.** One IGV pane showing the
-full one-megabase interval, with forward-strand features in blue and
-reverse-strand features in pink.
-
-![Dense forward-strand zoom](results/igv/physcomitrium_dense_forward_zoom.png)
-
-**Figure 7D.** The first half of the dense interval, showing forward-strand
-features and nearby transcript models.
-
-![Dense reverse-strand zoom](results/igv/physcomitrium_dense_reverse_zoom.png)
-
-**Figure 7E.** The second half of the interval, showing reverse-strand
-features and nearby transcript models.
 
 ### Answers from the expanded coordinate
 
@@ -420,49 +307,6 @@ The earlier genome-download section adds four background questions about genome
 size, chromosome/sequence records, annotation counts, and assembly completeness.
 Together, the README answers eight required question areas.
 
-![Physcomitrium expanded strand view](results/igv/physcomitrium_strand_expanded.png)
-
-**Figure 8.** Expanded 300 kb view of the beginning of `CM009316.1`, showing
-the local pattern of gene models and strand directions in more detail.
-
-### Zoomed views for detailed inspection
-
-The broad views above provide context, but the following tighter views are the
-ones to use when reading labels and exon structure. They avoid compressing too
-many genes into a single image.
-
-![Ultra-zoomed PHYPA_000001 view](results/igv/physcomitrium_PHYPA_000001_ultra_zoom.png)
-
-**Figure 9.** Full `PHYPA_000001` locus at `CM009316.1:8,900-13,200`.
-
-![PHYPA_000001 exon detail](results/igv/physcomitrium_PHYPA_000001_exon_detail.png)
-
-**Figure 10.** Exon and intron detail at `CM009316.1:9,500-10,750`.
-
-![Forward-strand detail](results/igv/physcomitrium_forward_strand_detail.png)
-
-**Figure 11.** Forward-strand neighborhood at `CM009316.1:65,000-78,000`,
-including `PHYPA_000006` through `PHYPA_000008`.
-
-![Reverse-strand detail](results/igv/physcomitrium_reverse_strand_detail.png)
-
-**Figure 12.** Reverse-strand neighborhood at `CM009316.1:93,000-101,000`,
-including `PHYPA_000009` and `PHYPA_000010`.
-
-![Zoomed Physcomitrium gene neighborhood](results/igv/physcomitrium_gene_neighborhood_zoomed.png)
-
-**Figure 13.** Zoomed 25 kb view showing `PHYPA_000001`, `PHYPA_000002`, their
-transcript models, and the surrounding annotation track.
-
-![Zoomed Physcomitrium strand view](results/igv/physcomitrium_strand_zoomed.png)
-
-**Figure 14.** Zoomed 37 kb view of `CM009316.1:65,000-102,000`, showing the
-forward and reverse gene models around `PHYPA_000007` through `PHYPA_000010`.
-
-For the assignment screenshots, Figures 9-12 provide the clearest detail.
-Figures 2, 7, 8, 13, and 14 are overview images and are included to show the
-larger genomic context.
-
 ### Correspondence with the previous analysis
 
 | Previous Lamin analysis | Physcomitrium replacement |
@@ -496,11 +340,6 @@ forward-strand gene `PHYPA_000001`. The IGV sequence view shows the reference
 bases, the transcript model, and the translated amino-acid sequence. This
 interval is part of an annotated coding region whose product is listed as a
 hypothetical protein in this assembly annotation.
-
-![Question 2 selected coordinate](results/igv/figure2_selected_coordinate.png)
-
-**Figure 15.** IGV sequence view of the selected 72 bp coordinate inside
-`PHYPA_000001`.
 
 **Q3. Can an intron be translated as a gene?**
 
