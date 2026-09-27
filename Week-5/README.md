@@ -2,16 +2,15 @@
 
 ## Organism
 
-The organism is the moss *Physcomitrium patens*. Week 5 uses the same reference
-assembly and trimmed paired-end reads established in Weeks 2 and 4.
+The organism is the moss *Physcomitrium patens*. Week 5 reuses the reference
+assembly from Week 2 and the trimmed paired-end reads from Week 4.
 
 - Assembly: `GCA_000002425.2_Phypa_V3`
 - Genome: `../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna`
 - Annotation: `../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.gff`
 - Reads: `../Week-4/data/trimmed/ERR8982185_1.trimmed.fastq.gz` and `_2.trimmed.fastq.gz`
 
-The reference, annotation, and reads all come from *P. patens*, so the alignment
-is biologically appropriate.
+The reference, annotation, and reads all come from *P. patens*.
 
 ## Coverage target
 
@@ -26,6 +25,23 @@ is:
 The available teaching subset contains 997 trimmed pairs, so this BAM is a
 workflow demonstration rather than a 10x genome-wide analysis.
 
+## Folder layout
+
+The Week-5 directory is organized like this:
+
+```text
+Week-5/
+├── bam/          BAM, BAI, and flagstat outputs; generated locally
+├── coverage/     coverage and depth tables; generated locally
+├── screenshots/  IGV screenshots
+├── scripts/      IGV batch scripts
+├── Makefile      reproducible workflow
+└── README.md     assignment report
+```
+
+The large BAM and coverage files are ignored by Git. They can be recreated with
+the Makefile.
+
 ## Makefile
 
 Run from the `Week-5` directory:
@@ -37,22 +53,47 @@ make estimate
 make all THREADS=2
 ```
 
-The Makefile performs these steps:
+The workflow code is in [Makefile](Makefile).
 
-1. Build a BWA reference index.
-2. Align paired FASTQ reads with `bwa mem`.
-3. Sort the alignments with `samtools sort`.
-4. Index the BAM with `samtools index`.
-5. Write `samtools flagstat` statistics.
-6. Write per-contig coverage with `samtools coverage`.
-7. Write per-position depth with `samtools depth -aa`.
+### What each part does
 
-The main code is in [Makefile](Makefile). The IGV batch commands are in
-`scripts/`.
+- `REFERENCE` points to the Week-2 moss FASTA.
+- `ANNOTATION` points to the Week-2 GFF3 annotation.
+- `READ1` and `READ2` point to the Week-4 trimmed paired reads.
+- `BAM_DIR` and `COVERAGE_DIR` organize generated outputs.
+- `BAM`, `STATS`, `DEPTH`, and `COVERAGE` name output files.
+- `THREADS ?= 2` sets two threads unless another value is supplied.
+- `BWA` and `SAMTOOLS` allow the tool names to be overridden.
+- `check-tools` verifies that BWA, Samtools, and Make are installed.
+- `check-inputs` verifies the reference, annotation, and reads exist.
+- `estimate` prints the read-pair calculation for 10x coverage.
+- `index` builds the BWA reference index.
+- `align` maps reads with BWA and pipes the SAM output to Samtools sort.
+- `sort` checks that the sorted BAM exists.
+- `index-bam` creates the `.bai` index required by IGV.
+- `stats` writes the Samtools flagstat report.
+- `coverage` writes one summary row per reference sequence.
+- `depth` writes one row per reference position.
+- `all` runs the statistics, coverage, and depth targets.
+- `dirs` creates the BAM, coverage, screenshots, and scripts folders.
+- `clean` removes generated BAM and coverage folders.
 
-## Run confirmation
+The central alignment command is:
 
-The completed local outputs are organized as:
+```bash
+bwa mem -t 2 \
+  ../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna \
+  ../Week-4/data/trimmed/ERR8982185_1.trimmed.fastq.gz \
+  ../Week-4/data/trimmed/ERR8982185_2.trimmed.fastq.gz \
+  | samtools sort -@ 2 -o bam/ERR8982185.sorted.bam
+```
+
+The pipe sends aligner output directly to sorting and avoids a large temporary
+SAM file.
+
+## Run outputs
+
+After `make all THREADS=2`, the local output files are:
 
 ```text
 bam/ERR8982185.sorted.bam
@@ -61,9 +102,6 @@ bam/ERR8982185.flagstat.txt
 coverage/ERR8982185.coverage.tsv
 coverage/ERR8982185.depth.tsv
 ```
-
-The large BAM and coverage files remain local and are ignored by Git. The
-reproducible Makefile, README, scripts, and screenshots are published.
 
 ## BAM statistics
 
@@ -79,23 +117,23 @@ The `samtools flagstat` report gave:
 ```
 
 About 75.93% of the reads mapped to the matching moss reference. The properly
-paired percentage was 72.72%. The mapping rate should be interpreted cautiously
-because only 997 pairs were analyzed.
+paired percentage was 72.72%.
 
 ## Coverage results
 
 Coverage was calculated with:
 
 ```bash
-samtools coverage bam/ERR8982185.sorted.bam > coverage/ERR8982185.coverage.tsv
-samtools depth -aa bam/ERR8982185.sorted.bam > coverage/ERR8982185.depth.tsv
+samtools coverage bam/ERR8982185.sorted.bam \
+  > coverage/ERR8982185.coverage.tsv
+samtools depth -aa bam/ERR8982185.sorted.bam \
+  > coverage/ERR8982185.depth.tsv
 ```
 
 The genome-wide covered fraction was approximately **0.043%**, with a
 length-weighted mean depth of approximately **0.00045x**. Coverage is therefore
-very uneven: some small regions contain reads, while most of the 471.9 Mb
-reference has no reads in this teaching subset. A larger dataset near 16,122
-pairs is needed for a meaningful 10x genome-wide assessment.
+very uneven because the 997-pair subset is far below the approximately 16,122
+pairs estimated for 10x coverage.
 
 ## IGV visualization
 
@@ -105,37 +143,35 @@ Load these files in IGV:
 2. BAM: `bam/ERR8982185.sorted.bam`
 3. Annotation: `../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.gff`
 
-### BAM alignment view
+### Figure 1: mapped-read view
 
 Coordinate: `CM009316.1:617,500-619,000`
 
 ![Mapped BAM reads](screenshots/week5_mapped_read_detail.png)
 
-**Figure 1.** Mapped paired reads and sequence differences in IGV. Gray blocks
-are aligned reads; colored bases indicate differences from the reference.
+Gray blocks are aligned reads. Colored bases show differences from the reference.
 
-### Gene-locus view
+### Figure 2: annotated gene locus
 
 Coordinate: `CM009316.1:8,931-13,135`
 
 ![BAM at PHYPA_000001](screenshots/week5_PHYPA_000001_bam.png)
 
-**Figure 2.** BAM and annotation at the `PHYPA_000001` locus from Week 2.
+This view compares the BAM reads with the `PHYPA_000001` annotation.
 
-### Dense-region view
+### Figure 3: dense genome region
 
 Coordinate: `CM009317.1:10,924,622-11,924,622`
 
 ![BAM at dense region](screenshots/week5_dense_region_bam.png)
 
-**Figure 3.** BAM view at the dense one-megabase moss region. The annotation is
-dense, but the small subset does not provide uniform read coverage.
+This region contains 126 annotated genes, but the small read subset does not
+provide uniform coverage.
 
 ## Summary
 
 The reads were aligned to the matching *P. patens* reference and produced a
-sorted, indexed BAM. The alignment rate was 75.93%, with 72.72% properly paired.
-The low coverage is expected because only 997 pairs were used against a 471.9
-Mb genome. IGV confirms that reads are present at supported coordinates and
-shows sequence differences relative to the reference. The final 10x analysis
-requires approximately 16,122 paired reads.
+sorted, indexed BAM. The alignment rate was 75.93%, and 72.72% of reads were
+properly paired. The subset is too small for 10x genome-wide coverage, so the
+observed coverage is sparse and uneven. The BAM and IGV views show where reads
+mapped and where their sequences differ from the reference.
