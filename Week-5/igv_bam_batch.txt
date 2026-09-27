@@ -1,0 +1,9 @@
+snapshotDirectory C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-5/results/igv
+genome C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/physcomitrium_dense_both_strands_rgb.bed
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-5/results/alignments/ERR8982185.sorted.bam
+goto CM009316.1:8931-13135
+snapshot week5_PHYPA_000001_bam.png
+goto CM009317.1:10924622-11924622
+snapshot week5_dense_region_bam.png
+exit
