@@ -132,6 +132,11 @@ The blue and pink features show that genes occur on both strands.
 The broad `CM009316.1` view shows many annotated genes and their relative
 spacing. Forward-strand features are blue and reverse-strand features are pink.
 
+![Figure 6: Dense gene spacing](results/igv/figure6_gene_density.png)
+
+**Figure 6.** Dense one-megabase gene-spacing view with many labeled moss genes.
+This supports the estimate of gene-to-gene spacing in Question 1.
+
 ### Question 2: Selected coordinate
 
 I selected `CM009316.1:10,020-10,090`, a 72 bp interval inside the
@@ -177,6 +182,16 @@ so the images do not show read coverage, expression, or variant data.
 
 **Figure 3.** Combined annotation view with forward-strand features in blue and
 reverse-strand features in pink.
+
+![Figure 7: Noncoding interval](results/igv/figure7_noncoding_gap.png)
+
+**Figure 7.** Large gene-poor interval between annotated moss genes. This shows
+why the genome is not uniformly coding across its entire length.
+
+![Figure 8: Gene structure](results/igv/figure8_gene_structure.png)
+
+**Figure 8.** Detailed `PHYPA_000001` structure showing transcript, exon, and
+CDS organization for the annotation-feature discussion.
 
 ![Figure 5: Annotation features](results/igv/figure5_annotation_features.png)
 
