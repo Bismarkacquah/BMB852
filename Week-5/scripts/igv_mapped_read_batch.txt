@@ -1,7 +1,7 @@
-snapshotDirectory C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-5/results/igv
-genome C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna
+snapshotDirectory C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-5/screenshots
+genome C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna
 load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/physcomitrium_dense_both_strands_rgb.bed
-load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-5/results/alignments/ERR8982185.sorted.bam
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-5/bam/ERR8982185.sorted.bam
 goto CM009316.1:617500-619000
 snapshot week5_mapped_read_detail.png
 exit

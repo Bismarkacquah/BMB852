@@ -1,0 +1,13 @@
+new
+snapshotDirectory C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-5/screenshots
+genome C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/data/GCA_000002425.2_Phypa_V3_genomic.gff
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-5/bam/ERR8982185.sorted.bam
+maxPanelHeight 500
+goto CM009336.1:3475540-3475640
+snapshot week5_zoom_mismatches.png
+goto CM009316.1:618250-618310
+snapshot week5_zoom_read_end.png
+goto CM009336.1:3475450-3475530
+snapshot week5_zoom_depth4.png
+exit
