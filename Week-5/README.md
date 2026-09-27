@@ -78,10 +78,9 @@ The completed workflow generated these local files locally:
 results/alignments/ERR8982185.sorted.bam
 results/alignments/ERR8982185.sorted.bam.bai
 results/alignments/ERR8982185.flagstat.txt
-results/coverage/ERR8982185.depth.tsv
-results/coverage/ERR8982185.coverage.tsv
-```
-
+IGV screenshots will be generated after the final depth calculation finishes.
+The BAM, BAM index, and annotation-loading instructions are retained so the
+visualization can be redone with the completed coverage results.
 The BAM and depth table are intentionally kept local because they are generated
 binary/large outputs. The Makefile, README, commands, and IGV screenshot are
 published in the repository.
@@ -95,9 +94,6 @@ The `samtools flagstat` output reported:
 1517 reads mapped (75.93%)
 1450 reads properly paired (72.72%)
 33 singleton reads (1.65%)
-0 duplicate reads
-4 supplementary alignments
-```
 
 Approximately 75.93% of the reads aligned to the matching moss reference. The
 properly paired percentage was 72.72%. The mapping rate is reasonable for a
@@ -111,9 +107,6 @@ The per-contig coverage summary is generated with:
 ```bash
 samtools coverage results/alignments/ERR8982185.sorted.bam \
   > results/coverage/ERR8982185.coverage.tsv
-```
-
-The per-contig `samtools coverage` summary showed that the genome-wide coverage
 was extremely sparse for this small subset. The estimated covered fraction was
 approximately **0.043%**, with a length-weighted mean depth of approximately
 **0.00045x** across the full 471.9 Mb reference.
