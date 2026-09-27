@@ -174,11 +174,11 @@ The genes are unevenly spaced in the selected moss region. Some neighboring
 genes are close together, while other intervals contain larger noncoding gaps.
 The blue and pink features show that genes occur on both strands.
 
-![Figure 1: Physcomitrium gene spacing](results/igv/figure1_gene_spacing_strands.png)
+![Figure 1: Physcomitrium gene spacing](results/igv/figure1_genome_browsing.png)
 
-**Figure 1.** Gene spacing and strand orientation in
-`CM009317.1:8,023,428-8,541,067`. Forward-strand features are blue and
-reverse-strand features are pink.
+**Figure 1.** Genome browsing and gene spacing in *Physcomitrium patens*.
+The broad `CM009316.1` view shows many annotated genes and their relative
+spacing. Forward-strand features are blue and reverse-strand features are pink.
 
 ### Question 2: Selected coordinate
 
@@ -332,9 +332,10 @@ IGV displays the reference bases and the annotation track at nucleotide scale.
 **Figure 6.** Four-times tighter 28 kb strand-colored view. Forward-strand
 genes are blue and reverse-strand genes are pink.
 
-![Physcomitrium genome browsing](results/igv/physcomitrium_genome_browsing_x4.png)
+![Figure 1: Physcomitrium genome browsing](results/igv/figure1_genome_browsing.png)
 
-**Figure 7.** Four-times tighter 7.56 Mb genome-browsing view of `CM009316.1`.
+**Figure 1. Genome browsing and gene spacing.** Four-times tighter 7.56 Mb
+view of `CM009316.1`, showing many annotated genes and their spacing.
 This remains an overview, while Figures 9–12 provide the readable gene-level
 detail.
 
