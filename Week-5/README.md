@@ -1,38 +1,34 @@
-# Assignment 5: Generate a BAM file for *Physcomitrium patens*
+# Assignment 5: BAM alignment of *Physcomitrium patens*
 
 ## Organism
 
-This assignment uses the same *Physcomitrium patens* genome and sequencing
-reads established in Weeks 2 and 4.
+The organism is the moss *Physcomitrium patens*. Week 5 uses the same reference
+assembly and trimmed paired-end reads established in Weeks 2 and 4.
 
 - Assembly: `GCA_000002425.2_Phypa_V3`
 - Genome: `../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna`
 - Annotation: `../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.gff`
-- Read 1: `../Week-4/data/trimmed/ERR8982185_1.trimmed.fastq.gz`
-- Read 2: `../Week-4/data/trimmed/ERR8982185_2.trimmed.fastq.gz`
+- Reads: `../Week-4/data/trimmed/ERR8982185_1.trimmed.fastq.gz` and `_2.trimmed.fastq.gz`
 
-The reads are paired-end Illumina WGS data from *P. patens*. The reference and
-reads are reused directly rather than copied into Week 5.
+The reference, annotation, and reads all come from *P. patens*, so the alignment
+is biologically appropriate.
 
-This is an appropriate pairing because the genome, annotation, and sequencing
-reads all come from the same organism and assembly.
-
-## Coverage planning
+## Coverage target
 
 The genome is approximately 471,852,792 bp. Each trimmed read pair contributes
-about 292,665 bases. To estimate the number of pairs needed for 10x coverage:
+about 292,665 bases. The estimated number of read pairs needed for 10x coverage
+is:
 
 ```text
 10 x 471,852,792 / 292,665 = approximately 16,122 read pairs
 ```
 
-The current Week-4 teaching subset contains 997 trimmed pairs, so it is much
-smaller than the estimated 10x requirement. The BAM produced here is therefore
-a workflow demonstration, not a complete genome-wide coverage experiment.
+The available teaching subset contains 997 trimmed pairs, so this BAM is a
+workflow demonstration rather than a 10x genome-wide analysis.
 
 ## Makefile
 
-The Makefile automates the alignment process:
+Run from the `Week-5` directory:
 
 ```bash
 make check-tools
@@ -41,149 +37,105 @@ make estimate
 make all THREADS=2
 ```
 
-The complete workflow is in [Makefile](Makefile). It defines the reference,
-annotation, paired FASTQ files, BAM name, statistics file, and coverage files
-before running the dependent alignment steps.
+The Makefile performs these steps:
 
-The important commands executed by the Makefile are:
+1. Build a BWA reference index.
+2. Align paired FASTQ reads with `bwa mem`.
+3. Sort the alignments with `samtools sort`.
+4. Index the BAM with `samtools index`.
+5. Write `samtools flagstat` statistics.
+6. Write per-contig coverage with `samtools coverage`.
+7. Write per-position depth with `samtools depth -aa`.
 
-```bash
-bwa index ../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna
+The main code is in [Makefile](Makefile). The IGV batch commands are in
+`scripts/`.
 
-bwa mem -t 2 \
-  ../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna \
-  ../Week-4/data/trimmed/ERR8982185_1.trimmed.fastq.gz \
-  ../Week-4/data/trimmed/ERR8982185_2.trimmed.fastq.gz \
-  | samtools sort -@ 2 \
-  -o results/alignments/ERR8982185.sorted.bam
+## Run confirmation
 
-samtools index results/alignments/ERR8982185.sorted.bam
-samtools flagstat results/alignments/ERR8982185.sorted.bam \
-  > results/alignments/ERR8982185.flagstat.txt
-
-samtools depth -aa results/alignments/ERR8982185.sorted.bam \
-  > results/coverage/ERR8982185.depth.tsv
-```
-
-`bwa index` prepares the reference for fast alignment. `bwa mem` aligns the
-paired reads. `samtools sort` creates a coordinate-sorted BAM, `samtools index`
-creates the `.bai` index required by IGV, `flagstat` summarizes alignment
-status, and `depth` reports coverage at each reference position.
-
-## Run the Makefile
-
-The completed workflow generated these local files locally:
+The completed local outputs are organized as:
 
 ```text
-results/alignments/ERR8982185.sorted.bam
-results/alignments/ERR8982185.sorted.bam.bai
-results/alignments/ERR8982185.flagstat.txt
-IGV screenshots will be generated after the final depth calculation finishes.
-The BAM, BAM index, and annotation-loading instructions are retained so the
-visualization can be redone with the completed coverage results.
-The BAM and depth table are intentionally kept local because they are generated
-binary/large outputs. The Makefile, README, commands, and IGV screenshot are
-published in the repository.
+bam/ERR8982185.sorted.bam
+bam/ERR8982185.sorted.bam.bai
+bam/ERR8982185.flagstat.txt
+coverage/ERR8982185.coverage.tsv
+coverage/ERR8982185.depth.tsv
+```
 
-## BAM file statistics
+The large BAM and coverage files remain local and are ignored by Git. The
+reproducible Makefile, README, scripts, and screenshots are published.
 
-The `samtools flagstat` output reported:
+## BAM statistics
+
+The `samtools flagstat` report gave:
 
 ```text
 1998 reads in total
 1517 reads mapped (75.93%)
 1450 reads properly paired (72.72%)
 33 singleton reads (1.65%)
+0 duplicate reads
+4 supplementary alignments
+```
 
-Approximately 75.93% of the reads aligned to the matching moss reference. The
-properly paired percentage was 72.72%. The mapping rate is reasonable for a
-small teaching subset, but it should not be interpreted as a complete estimate
-of the full experiment because only 997 pairs were processed.
+About 75.93% of the reads mapped to the matching moss reference. The properly
+paired percentage was 72.72%. The mapping rate should be interpreted cautiously
+because only 997 pairs were analyzed.
 
 ## Coverage results
 
-The per-contig coverage summary is generated with:
+Coverage was calculated with:
 
 ```bash
-samtools coverage results/alignments/ERR8982185.sorted.bam \
-  > results/coverage/ERR8982185.coverage.tsv
-was extremely sparse for this small subset. The estimated covered fraction was
-approximately **0.043%**, with a length-weighted mean depth of approximately
-**0.00045x** across the full 471.9 Mb reference.
+samtools coverage bam/ERR8982185.sorted.bam > coverage/ERR8982185.coverage.tsv
+samtools depth -aa bam/ERR8982185.sorted.bam > coverage/ERR8982185.depth.tsv
+```
 
-Coverage is therefore not uniform. Some small regions contain aligned reads,
-while most of the reference has zero coverage. This is expected because the
-assignment subset is far below the approximately 16,122 pairs needed for 10x
-coverage.
+The genome-wide covered fraction was approximately **0.043%**, with a
+length-weighted mean depth of approximately **0.00045x**. Coverage is therefore
+very uneven: some small regions contain reads, while most of the 471.9 Mb
+reference has no reads in this teaching subset. A larger dataset near 16,122
+pairs is needed for a meaningful 10x genome-wide assessment.
 
 ## IGV visualization
 
-IGV was opened with the matching moss FASTA, the Week-5 sorted BAM, and the
-Week-2 annotation. The BAM index allows IGV to navigate to specific regions.
+Load these files in IGV:
 
-### Mapped-read view
+1. Genome: `../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna`
+2. BAM: `bam/ERR8982185.sorted.bam`
+3. Annotation: `../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.gff`
 
-Coordinate:
+### BAM alignment view
 
-```text
-CM009316.1:617,500-619,000
-```
+Coordinate: `CM009316.1:617,500-619,000`
 
-This coordinate was selected because the BAM contains mapped reads there.
-Gray read blocks show alignments, while colored bases show differences between
-reads and the reference. Repeated differences across many reads may represent
-real variation; isolated differences may be sequencing errors or alignment
-artifacts.
+![Mapped BAM reads](screenshots/week5_mapped_read_detail.png)
 
-![Mapped BAM reads in IGV](results/igv/week5_mapped_read_detail.png)
+**Figure 1.** Mapped paired reads and sequence differences in IGV. Gray blocks
+are aligned reads; colored bases indicate differences from the reference.
 
-**Figure 1.** Week-5 BAM alignment view at a region containing mapped paired
-reads.
+### Gene-locus view
 
-### Annotation-locus view
+Coordinate: `CM009316.1:8,931-13,135`
 
-Coordinate:
+![BAM at PHYPA_000001](screenshots/week5_PHYPA_000001_bam.png)
 
-```text
-CM009316.1:8,931-13,135
-```
-
-This is the `PHYPA_000001` example locus used in Week 2. The annotation is
-useful for comparing reads with gene structure, although the small subset did
-not produce strong coverage at this locus.
-
-![BAM at PHYPA_000001](results/igv/week5_PHYPA_000001_bam.png)
-
-**Figure 2.** BAM and moss annotation view at the `PHYPA_000001` locus.
+**Figure 2.** BAM and annotation at the `PHYPA_000001` locus from Week 2.
 
 ### Dense-region view
 
-Coordinate:
+Coordinate: `CM009317.1:10,924,622-11,924,622`
 
-```text
-CM009317.1:10,924,622-11,924,622
-```
+![BAM at dense region](screenshots/week5_dense_region_bam.png)
 
-This is the dense one-megabase annotation region from Week 2. It contains 126
-annotated genes, but the small Week-5 subset does not provide uniform read
-coverage across the interval.
-
-![BAM at dense annotation region](results/igv/week5_dense_region_bam.png)
-
-**Figure 3.** BAM view at the dense moss annotation region.
+**Figure 3.** BAM view at the dense one-megabase moss region. The annotation is
+dense, but the small subset does not provide uniform read coverage.
 
 ## Summary
 
-- The matching moss genome and Week-4 reads were used consistently.
-- The BAM is sorted and indexed for IGV.
-- 75.93% of reads mapped and 72.72% were properly paired.
-- The subset is far too small to provide 10x genome-wide coverage.
-- Coverage is highly uneven, with only about 0.043% of the reference covered.
-- IGV shows mapped reads and sequence differences at supported coordinates.
-- A larger read subset is required for meaningful genome-wide coverage analysis.
-
-Overall, the reads align to the matching moss genome, but this small subset is
-not large enough for uniform genome-wide coverage. The BAM and IGV views show
-where the reads aligned and where sequence differences occur. The final
-10x-oriented analysis should use approximately 16,122 paired reads rather than
-the 997-pair teaching subset used here.
+The reads were aligned to the matching *P. patens* reference and produced a
+sorted, indexed BAM. The alignment rate was 75.93%, with 72.72% properly paired.
+The low coverage is expected because only 997 pairs were used against a 471.9
+Mb genome. IGV confirms that reads are present at supported coordinates and
+shows sequence differences relative to the reference. The final 10x analysis
+requires approximately 16,122 paired reads.
