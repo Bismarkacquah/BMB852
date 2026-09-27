@@ -160,6 +160,11 @@ The asterisks represent stop codons. These translations show possible reading
 frames, but they do not prove that the sequence is an independently functioning
 gene. The GFF3 annotation and transcript evidence are stronger evidence.
 
+![Figure 4: Six reading frames](results/igv/figure4_six_reading_frames.png)
+
+**Figure 4.** IGV sequence-level view used to inspect the selected coding region
+and its translated frame.
+
 ### Question 4: Annotation features
 
 The IGV annotation track comes from the GFF3 file. It shows `gene`, `mRNA`,
@@ -172,6 +177,11 @@ so the images do not show read coverage, expression, or variant data.
 
 **Figure 3.** Combined annotation view with forward-strand features in blue and
 reverse-strand features in pink.
+
+![Figure 5: Annotation features](results/igv/figure5_annotation_features.png)
+
+**Figure 5.** Zoomed annotation view showing gene, transcript, exon, intron,
+and CDS structure for `PHYPA_000001`.
 
 ## IGV analysis
 
