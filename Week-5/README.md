@@ -2,8 +2,9 @@
 
 ## Organism
 
-The organism is the moss *Physcomitrium patens*. Week 5 reuses the reference
-assembly from Week 2 and the trimmed paired-end reads from Week 4.
+This assignment examines whole-genome reads from the moss
+*Physcomitrium patens*. The alignment uses the matching reference assembly
+and the paired-end reads trimmed in Week 4.
 
 - Assembly: `GCA_000002425.2_Phypa_V3`
 - Genome: `fasta/GCA_000002425.2_Phypa_V3_genomic.fna`
@@ -74,12 +75,9 @@ check an exact copy. Gzip container metadata can differ between fresh runs
 even when decompressed read sequences agree. The [Samtools version record](provenance/samtools-version.txt)
 records the alignment-processing version used during validation.
 
-The workflow was tested from reference indexing through alignment, BAM
-validation, coverage summaries, mismatch audits, and IGV batch generation
-using the existing local inputs. A second `make all` correctly skipped
-completed outputs, and the regenerated statistics matched the report. A full
-fresh-download run and Conda environment creation have not been tested here;
-they depend on access to NCBI and package repositories.
+Rebuilding the alignment from the existing inputs produced the same statistics.
+A second `make all` skipped the completed outputs. The fresh-download and
+Conda installation steps have not been tested end to end.
 
 The [complete code walkthrough](CODE_WALKTHROUGH.md) includes every line of
 the setup, analysis, summary, and IGV scripts with explanations. Input download
@@ -101,7 +99,7 @@ SHELL := /bin/bash
 .DEFAULT_GOAL := all
 # Remove incomplete target files after a failed recipe.
 .DELETE_ON_ERROR:
-# Fixed inputs match the submitted moss analysis.
+# Moss reference and trimmed paired-end inputs.
 REFERENCE := fasta/GCA_000002425.2_Phypa_V3_genomic.fna
 ANNOTATION := ../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.gff
 READ1 := ../Week-4/data/trimmed/ERR8982185_1.trimmed.fastq.gz
@@ -320,11 +318,10 @@ covered describe different quantities.
 
 ## IGV visualization
 
-The screenshots were generated in IGV 2.19.8 using this assignment's
-*Physcomitrium patens* FASTA, BAM, and full GFF annotation. There are now
-**9 saved images**: three base-level close-ups, three wider reviewed views, and three earlier
-images retained for reference. This report displays the four most relevant
-images; the other five remain in the folder pending review of the GitHub page.
+The four views below show the moss BAM against its matching FASTA reference
+and GFF annotation in IGV 2.19.8. They cover a mismatch cluster, two differences
+near a read end, a region with four overlapping reads, and an uncovered gene
+locus.
 
 ### Load the FASTA and BAM
 
@@ -366,8 +363,7 @@ base call. The other reads at these positions match the reference.
 | 3,475,610 | T > A | 1 / 3 | 12 |
 | 3,475,620 | G > T | 1 / 3 | 12 |
 
-This is a cluster on one read, not a repeated mismatch across independent
-reads. Low base quality and limited supporting reads make it weak evidence
+All five differences occur on the same read. Low base quality and limited supporting reads make it weak evidence
 for a true variant. These observations are not variant calls.
 
 ### Base-level analysis: read-end mismatches
@@ -396,7 +392,7 @@ More overlapping reads do not necessarily mean more mismatches.
 
 Run the generated `scripts/igv_local_batch.txt` in IGV through
 **Tools > Run Batch Script**.
-The zoomed views preserve the original read sequences and quality shading.
+IGV shades the bases by their quality scores.
 
 The [mismatch audit](bam/ERR8982185.zoom_mismatches.tsv) records mismatches
 from the two selected neighborhoods, including read names and quality scores.
@@ -423,7 +419,7 @@ Coordinate: `CM009316.1:8,931-13,135`
 
 ![Moss gene locus with annotation and empty BAM track](screenshots/week5_moss_gene_locus.png)
 
-The full GFF annotation is now loaded at the selected `PHYPA_000001` locus.
+The GFF track shows annotations at the `PHYPA_000001` locus.
 The annotation track contains features, while the BAM and coverage tracks
 are empty in this interval. This is consistent with the small WGS subset;
 absence of mapped reads here does not establish a gene deletion or lack of
@@ -460,17 +456,17 @@ accompany the report.
 
 ## Summary
 
-Overall, 75.88% of the primary reads from *Physcomitrium patens* run
+75.88% of the primary reads from *Physcomitrium patens* run
 `ERR8982185` aligned to the moss reference genome, and 72.72% were properly
 paired. Coverage was sparse: only about 0.043% of the genome was covered,
 with an average depth of 0.000451x across the entire reference and 1.048x
 across covered bases. This reflects the small teaching subset of 997 read
 pairs. In IGV, the gray blocks show mapped reads, while colored bases mark
-differences from the reference. The selected views show mismatches at base resolution, a region reaching
-4x depth, and an annotated gene locus with no mapped reads.
+differences from the reference. The close-ups show individual mismatches,
+a region reaching 4x depth, and an annotated locus without mapped reads.
 Base-level inspection found low-quality mismatches (Q8-Q12) supported by
 only one read at each inspected position. Other overlapping reads in the
 cluster match the reference. These differences are weak evidence for true
-variation and should not be reported as confirmed variants. The workflow
-demonstrates successful alignment and visualization, but more sequencing data
-would be needed for a 10x genome-wide analysis and reliable variant assessment.
+variation and should not be reported as confirmed variants. More reads
+are needed to reach 10x genome-wide coverage and assess possible variants
+reliably.

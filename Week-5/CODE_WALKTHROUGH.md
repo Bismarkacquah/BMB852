@@ -1,8 +1,7 @@
-# Complete code walkthrough
+# Workflow code and notes
 
-Run commands from `Week-5`. Comments immediately preceding a command, or
-following a Python statement, explain its purpose. Blank lines separate steps.
-The README describes the biological results; this guide explains execution.
+Run commands from `Week-5`. The comments explain the commands used to prepare the inputs, align the
+reads, calculate coverage, and generate the IGV views.
 
 ## environment.yml
 
@@ -40,7 +39,7 @@ SHELL := /bin/bash
 .DEFAULT_GOAL := all
 # Remove incomplete target files after a failed recipe.
 .DELETE_ON_ERROR:
-# Fixed inputs match the submitted moss analysis.
+# Moss reference and trimmed paired-end inputs.
 REFERENCE := fasta/GCA_000002425.2_Phypa_V3_genomic.fna
 ANNOTATION := ../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.gff
 READ1 := ../Week-4/data/trimmed/ERR8982185_1.trimmed.fastq.gz
@@ -129,10 +128,10 @@ audit: $(BAM).bai $(REFERENCE).fai
 set -euo pipefail
 # Resolve this script's directory and enter Week-5 regardless of the launch directory.
 cd "$(dirname "$0")/.."
-# Pin the moss assembly and run used in the submitted analysis.
+# Assembly and sequencing run.
 assembly=GCA_000002425.2_Phypa_V3
 run=ERR8982185
-# The report uses the first 1,000 sequencing spots, not the full run.
+# Use the first 1,000 sequencing spots.
 spots=1000
 # NCBI provides both reference sequence and annotation for this assembly.
 base="https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/002/425/$assembly"
@@ -215,7 +214,7 @@ print(json.dumps(result, indent=2))  # Show the same results in the terminal.
 ## scripts/prepare_igv.py
 
 ```python
-"""Create a portable batch script for the four report images."""
+"""Create an IGV batch script for the four selected regions."""
 import argparse  # Accept a host-visible directory when using WSL with Windows IGV.
 from pathlib import Path  # Resolve the local checkout.
 parser = argparse.ArgumentParser()  # Define the command interface.

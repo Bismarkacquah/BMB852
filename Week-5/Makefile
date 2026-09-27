@@ -5,7 +5,7 @@ SHELL := /bin/bash
 .DEFAULT_GOAL := all
 # Remove incomplete target files after a failed recipe.
 .DELETE_ON_ERROR:
-# Fixed inputs match the submitted moss analysis.
+# Moss reference and trimmed paired-end inputs.
 REFERENCE := fasta/GCA_000002425.2_Phypa_V3_genomic.fna
 ANNOTATION := ../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.gff
 READ1 := ../Week-4/data/trimmed/ERR8982185_1.trimmed.fastq.gz

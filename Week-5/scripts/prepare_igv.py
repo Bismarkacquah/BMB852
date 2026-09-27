@@ -1,4 +1,4 @@
-"""Create a portable batch script for the four report images."""
+"""Create an IGV batch script for the four selected regions."""
 import argparse  # Accept a host-visible directory when using WSL with Windows IGV.
 from pathlib import Path  # Resolve the local checkout.
 parser = argparse.ArgumentParser()  # Define the command interface.
