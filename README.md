@@ -12,6 +12,7 @@ Weekly assignments are organized in separate folders for easy navigation and man
 - **Week 2**: Bioinformatics Tools and Data Formats
 - **Week 3**: Sending Suggestions with Forking and Repository Assessment
 - **Week 4**: Obtaining FASTQ data and evaluating read quality
+- **[Week 5](Week-5/)**: BAM alignment and coverage analysis
 
 ## How to Use This Repository
 

@@ -1,0 +1,12 @@
+{
+  "genome_bases": 471852792,
+  "covered_bases": 202923,
+  "sum_depth": 212689,
+  "covered_percent": 0.04300557365357287,
+  "mean_depth_genome": 0.0004507528695517393,
+  "mean_depth_covered": 1.0481266293125964,
+  "max_depth": 4,
+  "trimmed_pairs": 997,
+  "trimmed_bases": 291554,
+  "read_pairs_for_10x": 16135510
+}
