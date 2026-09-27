@@ -1,0 +1,13 @@
+new
+snapshotDirectory C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-5/screenshots
+genome C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-2/data/GCA_000002425.2_Phypa_V3_genomic.gff
+load C:/Users/bxa5404/appbio-2026.worktrees/BMB852/Week-5/bam/ERR8982185.sorted.bam
+maxPanelHeight 500
+goto CM009316.1:618100-618560
+snapshot week5_moss_read_pair.png
+goto CM009336.1:3475350-3475750
+snapshot week5_moss_max_depth.png
+goto CM009316.1:8931-13135
+snapshot week5_moss_gene_locus.png
+exit
