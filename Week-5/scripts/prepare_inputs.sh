@@ -3,10 +3,10 @@
 set -euo pipefail
 # Resolve this script's directory and enter Week-5 regardless of the launch directory.
 cd "$(dirname "$0")/.."
-# Pin the moss assembly and run used in the submitted analysis.
+# Assembly and sequencing run.
 assembly=GCA_000002425.2_Phypa_V3
 run=ERR8982185
-# The report uses the first 1,000 sequencing spots, not the full run.
+# Use the first 1,000 sequencing spots.
 spots=1000
 # NCBI provides both reference sequence and annotation for this assembly.
 base="https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/002/425/$assembly"
