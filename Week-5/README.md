@@ -34,6 +34,7 @@ subset should therefore be downloaded before running the full alignment if a
 The Makefile provides these stages:
 
 ```bash
+make check-tools
 make check-inputs
 make estimate
 make index
@@ -50,8 +51,25 @@ Or run the complete BAM/statistics workflow with:
 make all THREADS=2
 ```
 
-Required tools are `bwa`, `samtools`, and GNU Make. The commands are not run in
-this Windows environment yet because `bwa` and `samtools` are not installed.
+Required tools are `bwa`, `samtools`, and GNU Make. Run `make check-tools`
+before starting. The current Windows environment does not have `bwa` or
+`samtools` installed, so the BAM has not been claimed as complete yet.
+
+The alignment command is intentionally simple and reproducible:
+
+```bash
+bwa index ../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna
+bwa mem -t 2 ../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.fna \
+   ../Week-4/data/trimmed/ERR8982185_1.trimmed.fastq.gz \
+   ../Week-4/data/trimmed/ERR8982185_2.trimmed.fastq.gz \
+   | samtools sort -@ 2 -o results/alignments/ERR8982185.sorted.bam
+samtools index results/alignments/ERR8982185.sorted.bam
+samtools flagstat results/alignments/ERR8982185.sorted.bam \
+   > results/alignments/ERR8982185.flagstat.txt
+```
+
+The Makefile runs the same stages through dependencies, so `make all` is the
+preferred reproducible command.
 
 ## Output files
 
@@ -110,7 +128,8 @@ properly oriented, and whether coverage is even across the region.
 
 The README should include:
 
-1. The calculation explaining the selected number of read pairs.
+1. The calculation explaining the selected number of read pairs and the fact
+   that 997 available pairs are below the 10x target.
 2. The alignment percentage from `samtools flagstat`.
 3. A discussion of mismatches, errors, or variation visible in IGV.
 4. A discussion of whether coverage is uniform.
