@@ -476,6 +476,12 @@ because Week 4 has quality-controlled FASTQ files but they have not been
 aligned. Therefore these images show genome structure and annotation, not read
 depth or variant evidence.
 
+The visible annotation features are `gene`, `mRNA`, `exon`, and `CDS` records.
+In the close sequence view, the colored DNA letters are the reference bases and
+the amino-acid row is the predicted translation supplied by IGV. The blue and
+pink tracks in the dense view distinguish forward- and reverse-strand gene
+features; they do not represent expression levels or read abundance.
+
 **Q5. What do the strand directions show?**
 
 The arrows in the annotation track indicate transcription direction. Genes
