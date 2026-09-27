@@ -104,6 +104,39 @@ sampling depth can create peaks and gaps. The Week-4 subset is too small for a
 meaningful genome-wide coverage conclusion, so the 10x-sized subset should be
 used for the final interpretation.
 
+### Results from the completed subset
+
+The current 997-pair subset produced 1,998 reads in the BAM. `samtools
+flagstat` reported:
+
+- 1,517 reads mapped: **75.93%**
+- 1,450 reads properly paired: **72.72%**
+- 33 singleton reads: **1.65%**
+- 0 duplicate reads
+
+These results are a technical demonstration, not a 10x genome-wide analysis.
+The low subset size explains why many large IGV regions show no visible reads.
+
+## IGV result
+
+The successful mapped-read view is at:
+
+```text
+CM009316.1:617,500-619,000
+```
+
+This coordinate was selected from an actual mapped read in the BAM. The gray
+read blocks show aligned paired reads, and the small colored bases indicate
+sequence differences or mismatches relative to the reference. The BAM is
+indexed, so IGV can navigate to this region directly.
+
+![Week 5 mapped BAM in IGV](results/igv/week5_mapped_read_detail.png)
+
+**Figure 1.** Week-5 BAM visualization showing mapped paired reads at a
+1,502 bp region of `CM009316.1`. The earlier gene-density coordinate is useful
+for annotation context, but it is too broad for displaying individual reads
+and had no mapped reads in this small subset.
+
 ## IGV visualization
 
 After the BAM and index are created, open IGV and load:
