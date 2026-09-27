@@ -1,6 +1,6 @@
 # Assignment 5: Generate a BAM file for *Physcomitrium patens*
 
-## Organism and input data
+## Organism
 
 This assignment uses the same *Physcomitrium patens* genome and sequencing
 reads established in Weeks 2 and 4.
@@ -13,6 +13,9 @@ reads established in Weeks 2 and 4.
 
 The reads are paired-end Illumina WGS data from *P. patens*. The reference and
 reads are reused directly rather than copied into Week 5.
+
+This is an appropriate pairing because the genome, annotation, and sequencing
+reads all come from the same organism and assembly.
 
 ## Coverage planning
 
@@ -27,7 +30,7 @@ The current Week-4 teaching subset contains 997 trimmed pairs, so it is much
 smaller than the estimated 10x requirement. The BAM produced here is therefore
 a workflow demonstration, not a complete genome-wide coverage experiment.
 
-## Makefile workflow
+## Makefile
 
 The Makefile automates the alignment process:
 
@@ -37,6 +40,10 @@ make check-inputs
 make estimate
 make all THREADS=2
 ```
+
+The complete workflow is in [Makefile](Makefile). It defines the reference,
+annotation, paired FASTQ files, BAM name, statistics file, and coverage files
+before running the dependent alignment steps.
 
 The important commands executed by the Makefile are:
 
@@ -63,22 +70,23 @@ paired reads. `samtools sort` creates a coordinate-sorted BAM, `samtools index`
 creates the `.bai` index required by IGV, `flagstat` summarizes alignment
 status, and `depth` reports coverage at each reference position.
 
-## Output files
+## Run the Makefile
 
-The workflow generated these local files:
+The completed workflow generated these local files locally:
 
 ```text
 results/alignments/ERR8982185.sorted.bam
 results/alignments/ERR8982185.sorted.bam.bai
 results/alignments/ERR8982185.flagstat.txt
 results/coverage/ERR8982185.depth.tsv
+results/coverage/ERR8982185.coverage.tsv
 ```
 
 The BAM and depth table are intentionally kept local because they are generated
 binary/large outputs. The Makefile, README, commands, and IGV screenshot are
 published in the repository.
 
-## BAM statistics
+## BAM file statistics
 
 The `samtools flagstat` output reported:
 
@@ -97,6 +105,13 @@ small teaching subset, but it should not be interpreted as a complete estimate
 of the full experiment because only 997 pairs were processed.
 
 ## Coverage results
+
+The per-contig coverage summary is generated with:
+
+```bash
+samtools coverage results/alignments/ERR8982185.sorted.bam \
+  > results/coverage/ERR8982185.coverage.tsv
+```
 
 The per-contig `samtools coverage` summary showed that the genome-wide coverage
 was extremely sparse for this small subset. The estimated covered fraction was
@@ -164,7 +179,7 @@ coverage across the interval.
 
 **Figure 3.** BAM view at the dense moss annotation region.
 
-## Assignment conclusions
+## Summary
 
 - The matching moss genome and Week-4 reads were used consistently.
 - The BAM is sorted and indexed for IGV.
@@ -173,3 +188,9 @@ coverage across the interval.
 - Coverage is highly uneven, with only about 0.043% of the reference covered.
 - IGV shows mapped reads and sequence differences at supported coordinates.
 - A larger read subset is required for meaningful genome-wide coverage analysis.
+
+Overall, the reads align to the matching moss genome, but this small subset is
+not large enough for uniform genome-wide coverage. The BAM and IGV views show
+where the reads aligned and where sequence differences occur. The final
+10x-oriented analysis should use approximately 16,122 paired reads rather than
+the 997-pair teaching subset used here.

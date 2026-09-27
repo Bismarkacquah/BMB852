@@ -9,6 +9,7 @@ INDEX := $(REFERENCE)
 BAM := $(RESULTS)/alignments/ERR8982185.sorted.bam
 STATS := $(RESULTS)/alignments/ERR8982185.flagstat.txt
 DEPTH := $(RESULTS)/coverage/ERR8982185.depth.tsv
+COVERAGE := $(RESULTS)/coverage/ERR8982185.coverage.tsv
 THREADS ?= 2
 BWA ?= bwa
 SAMTOOLS ?= samtools
@@ -17,7 +18,7 @@ SAMTOOLS ?= samtools
 TARGET_COVERAGE ?= 10
 READ_PAIRS_FOR_10X ?= 16122
 
-.PHONY: help check-tools check-inputs dirs estimate index align sort index-bam stats depth all clean
+.PHONY: help check-tools check-inputs dirs estimate index align sort index-bam stats coverage depth all clean
 
 help:
 	@echo "Week 5 Physcomitrium downstream analysis"
@@ -28,6 +29,7 @@ help:
 	@echo "  make index         Build the aligner reference index"
 	@echo "  make align         Align trimmed paired reads"
 	@echo "  make all           Build, sort, index, and summarize the BAM"
+	@echo "  make coverage      Write per-contig coverage summary"
 
 check-tools:
 	@command -v $(BWA) >/dev/null 2>&1 || { echo "Error: $(BWA) is required."; exit 1; }
@@ -67,7 +69,10 @@ stats: index-bam
 depth: index-bam
 	$(SAMTOOLS) depth -aa $(BAM) > $(DEPTH)
 
-all: stats depth
+coverage: index-bam
+	$(SAMTOOLS) coverage $(BAM) > $(COVERAGE)
+
+all: stats coverage depth
 
 dirs:
 	mkdir -p $(RESULTS)/alignments $(RESULTS)/coverage $(RESULTS)/figures
