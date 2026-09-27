@@ -162,6 +162,65 @@ samtools faidx data/GCA_000002425.2_Phypa_V3_genomic.fna
 The annotation is genome-wide, so a browser view can be opened at any annotated
 moss gene or scaffold rather than only at the old Drosophila Lamin locus.
 
+## Assignment figures and answers
+
+The following section presents the required IGV work in the same order as the
+assignment questions. The longer gallery below contains additional context
+images.
+
+### Question 1: Gene spacing
+
+The genes are unevenly spaced in the selected moss region. Some neighboring
+genes are close together, while other intervals contain larger noncoding gaps.
+The blue and pink features show that genes occur on both strands.
+
+![Figure 1: Physcomitrium gene spacing](results/igv/figure1_gene_spacing_strands.png)
+
+**Figure 1.** Gene spacing and strand orientation in
+`CM009317.1:8,023,428-8,541,067`. Forward-strand features are blue and
+reverse-strand features are pink.
+
+### Question 2: Selected coordinate
+
+I selected `CM009316.1:10,020-10,090`, a 72 bp interval inside the
+forward-strand gene `PHYPA_000001`. The IGV view shows the reference bases, the
+transcript model, and the translated coding sequence.
+
+![Figure 2: Selected coordinate](results/igv/figure2_selected_coordinate.png)
+
+**Figure 2.** Reference sequence and annotation at the selected 72 bp region.
+
+### Question 3: Six reading frames
+
+The selected DNA can be read in three forward frames and three
+reverse-complement frames:
+
+```text
+Forward +1: WIDGFISFT*MTEVEMMKERFAK
+Forward +2: GLMASFHLLK*QRWR**KSGLPS
+Forward +3: D*WLHFIYLNDRGGDDERAVCQV
+Reverse -1: NLANRSFIISTSVI*VNEMKPSI
+Reverse -2: TWQTALSSSPPLSFK*MK*SHQS
+Reverse -3: LGKPLFHHLHLCHLSK*NEAINP
+```
+
+The asterisks represent stop codons. These translations show possible reading
+frames, but they do not prove that the sequence is an independently functioning
+gene. The GFF3 annotation and transcript evidence are stronger evidence.
+
+### Question 4: Annotation features
+
+The IGV annotation track comes from the GFF3 file. It shows `gene`, `mRNA`,
+`exon`, and `CDS` features. Thick blocks represent annotated features and thin
+connecting lines represent transcript structure across introns. The DNA and
+amino-acid rows show reference and translated sequence. No BAM file is loaded,
+so the images do not show read coverage, expression, or variant data.
+
+![Combined strand annotation](results/igv/physcomitrium_dense_both_strands_combined.png)
+
+**Figure 3.** Combined annotation view with forward-strand features in blue and
+reverse-strand features in pink.
+
 ## IGV analysis
 
 The following example replaces the earlier Lamin-centered IGV analysis with a
