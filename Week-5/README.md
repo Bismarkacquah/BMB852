@@ -318,6 +318,8 @@ covered describe different quantities.
 
 ## IGV visualization
 
+![IGV visualization](screenshots/week5_igv.png)
+
 The four views below show the moss BAM against its matching FASTA reference
 and GFF annotation in IGV 2.19.8. They cover a mismatch cluster, two differences
 near a read end, a region with four overlapping reads, and an uncovered gene
@@ -470,3 +472,4 @@ cluster match the reference. These differences are weak evidence for true
 variation and should not be reported as confirmed variants. More reads
 are needed to reach 10x genome-wide coverage and assess possible variants
 reliably.
+https://github.com/Bismarkacquah/BMB852/tree/main/Week-5s
