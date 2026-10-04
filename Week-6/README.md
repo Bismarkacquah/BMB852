@@ -32,11 +32,11 @@
 
 ## Sample 3: Tandem Duplication
 
-### Sample 3 Overview
-![Sample 3 Overview](Sample%203%20overview.png)
-
 ### Sample 3a Overview
 ![Sample 3a Overview](Sample%203a%20overview.png)
+
+### Sample 3b Overview
+![Sample 3b Overview](Sample%203b%20overview.png)
 
 ### Sample 3 - Colored by Pair Orientation
 ![Sample 3 by Pair Orientation](Sample%203%20overview%20%20by%20pair%20orientation.png)
