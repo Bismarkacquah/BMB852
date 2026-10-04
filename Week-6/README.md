@@ -81,10 +81,16 @@
 
 ---
 
-## Whole Genome Overview
+## Whole Genome Comparisons
 
-### All Samples Comparison
+### All Samples Overview
 ![Whole Genome Overview](Whole%20genome%20overview.png)
+
+### All Samples Comparison 1
+![Whole Genome Comparison 1](Whole%20genome%20overview%201.png)
+
+### All Samples Comparison 2
+![Whole Genome Comparison 2](Whole%20genome%20overview%202.png)
 
 ---
 
