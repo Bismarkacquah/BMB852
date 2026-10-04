@@ -1,114 +1,41 @@
-# Week 6: Evaluate Structural Variants
+# Structural Variant Analysis Results
 
-## Assignment Overview
+## Sample 1: Minimal Structural Variation (SNPs and Small Indels)
 
-In this assignment, you will visually evaluate existing alignments and identify structural variants using IGV (Integrative Genomics Viewer).
-
-Five samples have been sequenced with paired-end reads, and a BAM file has been generated for each sample. Each sample may show a different type of variation (or no variation at all).
-
-**Objective:** Visually inspect each BAM file and make your best guess at what kind of structural variation is present relative to the reference genome.
-
-**Note:** No code writing is required for this assignment.
+Sample 1 displays a relatively normal alignment pattern with minimal structural variation. The coverage histogram shows uniform read depth across the first 15.5 kb of the Ebola genome (NC_002549.1:1-15,573). The majority of reads are gray, indicating normal paired-end alignments with proper orientation. Scattered red and blue colored reads throughout the region suggest the presence of single nucleotide polymorphisms (SNPs) and small insertions/deletions, but no large-scale structural variants are evident. The consistent read orientation and coverage pattern indicate that this sample contains primarily point mutations rather than significant structural rearrangements relative to the reference genome.
 
 ---
 
-## Instructions
+## Sample 2: Multiple Structural Variants with Abnormal Insert Sizes
 
-### Step 1: Set Up IGV
-
-1. Download and install [IGV (Integrative Genomics Viewer)](http://software.broadinstitute.org/software/igv/)
-2. Open IGV
-
-### Step 2: Load the Reference Genome
-
-In IGV:
-1. Go to `Genomes → Load Genome from URL`
-2. Enter the following URL:
-   ```
-   https://data.biostarhandbook.com/courses/2026-appbio/igv/fasta/ebola-1976.fa
-   ```
-
-### Step 3: Load Each Sample BAM File
-
-For each sample, load the BAM file via `File → Load from URL` (leave the index file path empty):
-
-- **Sample 1:** https://data.biostarhandbook.com/courses/2026-appbio/igv/bam/sample_1.bam
-- **Sample 2:** https://data.biostarhandbook.com/courses/2026-appbio/igv/bam/sample_2.bam
-- **Sample 3:** https://data.biostarhandbook.com/courses/2026-appbio/igv/bam/sample_3.bam
-- **Sample 4:** https://data.biostarhandbook.com/courses/2026-appbio/igv/bam/sample_4.bam
-- **Sample 5:** https://data.biostarhandbook.com/courses/2026-appbio/igv/bam/sample_5.bam
-
-### Step 4: Analyze Each Sample
-
-Use the following IGV visual settings to help identify variants:
-
-- **View as pairs** — Shows paired-end reads together
-- **Color by strand** — Distinguishes forward and reverse reads
-- **Color by insert size** — Highlights abnormal fragment sizes (indicating deletions/inversions)
-- **Group by pair orientation** — Groups reads with similar orientations
-
-### Step 5: Document Your Findings
-
-For each sample, provide a paragraph describing:
-- The type of structural variant present (or "no variation")
-- The evidence from the alignment visualization
-- The genomic location (if applicable)
+Sample 2 exhibits extensive coloration across the entire alignment (NC_002549.1:1-18,959), with almost no gray reads visible. The reads are colored by insert size, revealing massive variation in fragment lengths throughout the region. Multiple colored blocks (blue, green, red, purple, orange, yellow) indicate reads with dramatically different insert sizes than expected. This extensive coloration pattern suggests the presence of **multiple tandem duplications and/or complex rearrangements** throughout the sequenced region. The high density of abnormally-sized read pairs indicates that large portions of this sample show significant structural variation, likely representing repeated regions or inverted sequences where reads cannot properly align with their expected insert sizes.
 
 ---
 
-## Analysis Results
+## Sample 3: Tandem Duplication
 
-### Sample 1
-
-**Structural Variant Description:**
-
-[Your analysis here]
+Sample 3 (NC_002549.1:1,509-17,081) shows clear evidence of **duplication**. The coverage histogram displays a prominent spike in the middle region (approximately 6-8 kb), indicating doubled read coverage in this area compared to flanking regions. The colored reads, primarily displayed in green and blue when grouped by pair orientation, highlight the complex read arrangements characteristic of duplicated sequences. The elevated coverage peak at this locus is the hallmark of a **tandem duplication** where a segment of the genome has been copied adjacent to itself, resulting in reads from both copies mapping to overlapping positions on the reference genome.
 
 ---
 
-### Sample 2
+## Sample 4: Inversion
 
-**Structural Variant Description:**
-
-[Your analysis here]
+Sample 4 (NC_002549.1:1-18,959) displays a distinctive **inversion** pattern. The most striking feature is the dense vertical clustering of colored reads (predominantly blue and cyan) concentrated in the 9-10 kb region, while the remainder of the alignment shows mostly gray reads. This tight vertical clustering occurs when read pairs have inverted orientation relative to the expected direction. The concentrated band of abnormally-oriented reads indicates a **localized genomic inversion** where a chromosomal segment has been flipped in orientation. The boundary between the colored cluster and surrounding gray reads marks the approximate location of the inversion breakpoints.
 
 ---
 
-### Sample 3
+## Sample 5: Complex Structural Rearrangement (Inversion or Translocation)
 
-**Structural Variant Description:**
-
-[Your analysis here]
+Sample 5 (NC_002549.1:1-18,959) shows a **complex structural rearrangement** with a dense cluster of colored reads (red, green, and blue) concentrated in the 5-8 kb region. Unlike Sample 4's tightly organized vertical band, Sample 5's cluster appears more scattered and chaotic, suggesting a more complex rearrangement. The mix of red (indicating one strand orientation) and green/blue (indicating alternative orientations) throughout the cluster indicates reads with multiple conflicting alignments. This pattern is characteristic of either a **complex inversion** with internal repeats, or possibly a more intricate rearrangement involving **segments rearranged in multiple orientations**. The abnormal pair orientations and spacing throughout this region prevent proper alignment and produce the characteristic chaotic coloration pattern.
 
 ---
 
-### Sample 4
+## Summary of Findings
 
-**Structural Variant Description:**
+- **Sample 1:** No structural variants (SNPs/small indels only)
+- **Sample 2:** Multiple structural variants with abnormal insert sizes (complex duplications)
+- **Sample 3:** Tandem duplication
+- **Sample 4:** Inversion
+- **Sample 5:** Complex inversion or multi-segment rearrangement
 
-[Your analysis here]
-
----
-
-### Sample 5
-
-**Structural Variant Description:**
-
-[Your analysis here]
-
----
-
-## Types of Structural Variants to Look For
-
-- **Deletions:** Gaps in read coverage; missing genomic regions
-- **Insertions:** Extra bases; reads extending beyond reference
-- **Inversions:** Reads oriented in opposite directions; chaotic pair alignments
-- **Duplications:** Doubled coverage; multiple reads mapping to same region
-- **Translocations:** Reads mapping to different chromosomes (rare in single-chromosome Ebola)
-- **No Variation:** Uniform coverage and consistent read orientation
-
----
-
-## Submission
-
-Once completed, commit and push this directory to GitHub. Submit the URL to your Week-6 directory.
+The five samples demonstrate a comprehensive range of genomic variations found in populations, from point mutations to large-scale structural rearrangements.
