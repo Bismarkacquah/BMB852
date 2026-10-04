@@ -81,19 +81,6 @@
 
 ---
 
-## Whole Genome Comparisons
-
-### All Samples Overview
-![Whole Genome Overview](Whole%20genome%20overview.png)
-
-### All Samples Comparison 1
-![Whole Genome Comparison 1](Whole%20genome%20overview%201.png)
-
-### All Samples Comparison 2
-![Whole Genome Comparison 2](Whole%20genome%20overview%202.png)
-
----
-
 ## Comparative Summary
 
 | Sample | Variant Type | Key Feature |
@@ -105,3 +92,16 @@
 | **5** | Complex rearrangement | Parallel red lines, organized abnormality |
 
 **Conclusion:** Five distinct patterns of genomic variation demonstrated across samples, ranging from point mutations to large structural rearrangements.
+
+---
+
+## Whole Genome Comparisons
+
+### Comparison View 1: All Samples by Insert Size Variation
+![Whole Genome Comparison 1](Whole%20genome%20overview%201.png)
+
+### Comparison View 2: All Samples by Pair Orientation
+![Whole Genome Comparison 2](Whole%20genome%20overview%202.png)
+
+### Complete Alignment Stack: All Samples Stacked
+![Complete Alignment Stack](Whole%20genome%20overview.png)
