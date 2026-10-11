@@ -1,0 +1,18 @@
+{
+  "genome_bases": 471852792,
+  "covered_bases": 188078,
+  "covered_percent": 0.039859465322396564,
+  "mean_depth_genome": 0.0004176980688502528,
+  "mean_depth_covered": 1.0479269239358138,
+  "max_depth": 4,
+  "mapping_quality_minimum": 20,
+  "base_quality_minimum": 0,
+  "overlaps_removed": false,
+  "depth_histogram": {
+    "0": 471664714,
+    "1": 179646,
+    "2": 7900,
+    "3": 482,
+    "4": 50
+  }
+}

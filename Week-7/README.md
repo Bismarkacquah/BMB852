@@ -5,6 +5,14 @@ the coordinate-sorted BAM for *Physcomitrium patens* run `ERR8982185`.
 The workflow calculates genotype likelihoods, calls SNPs and indels,
 normalizes their representation against the reference, and filters the calls.
 
+The [expanded analysis](expanded/README.md) uses 20 million read pairs from
+the same sequencing run to improve coverage and provide additional IGV views.
+It covers **96.48% of the reference**, with mean depth **8.42**,
+**24,042 PASS calls**, and **seven additional IGV screenshots**.
+The results below describe the original 1,000-pair exercise.
+
+![Expanded regional IGV coverage](expanded/screenshots/expanded_regional_overview.png)
+
 ## Inputs and provenance
 
 - Reference: `GCA_000002425.2_Phypa_V3`, the same 471,852,792-base assembly used in Week 5.

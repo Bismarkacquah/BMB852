@@ -1,0 +1,16 @@
+mkdir -p provenance
+printf '%s\n' 'PAIRS=20000000' > provenance/subset-parameters.txt.tmp
+if ! cmp -s provenance/subset-parameters.txt.tmp provenance/subset-parameters.txt; then mv provenance/subset-parameters.txt.tmp provenance/subset-parameters.txt; else rm provenance/subset-parameters.txt.tmp; fi
+mkdir -p provenance
+printf '%s\n' 'PAIRS=20000000' 'PLOIDY=1' 'MIN_DP=3' 'MIN_QUAL=20' > provenance/parameters.txt.tmp
+if ! cmp -s provenance/parameters.txt.tmp provenance/parameters.txt; then mv provenance/parameters.txt.tmp provenance/parameters.txt; else rm provenance/parameters.txt.tmp; fi
+samtools quickcheck -v bam/ERR8982185.20M.sorted.bam
+bcftools norm -f ../../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna -c e -Ov results/ERR8982185.20M.pass.vcf.gz > /dev/null
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+Lines   total/split/joined/realigned/mismatch_removed/dup_removed/skipped:	24042/0/0/0/0/0/0
+sha256sum -c provenance/inputs.sha256
+bam/ERR8982185.20M.sorted.bam: OK
+data/trimmed/ERR8982185_1.trimmed.fastq.gz: OK
+data/trimmed/ERR8982185_2.trimmed.fastq.gz: OK
+results/ERR8982185.20M.filtered.vcf.gz: OK
+results/ERR8982185.20M.pass.vcf.gz: OK

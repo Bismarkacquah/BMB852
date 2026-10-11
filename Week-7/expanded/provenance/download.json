@@ -1,0 +1,28 @@
+{
+  "run": "ERR8982185",
+  "pairs": 20000000,
+  "selection": "first N records of each ENA mate file",
+  "transfer": "ordered HTTP byte ranges, four workers per mate",
+  "mates": [
+    {
+      "mate": 1,
+      "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/005/ERR8982185/ERR8982185_1.fastq.gz",
+      "records": 20000000,
+      "bases": 3014616752,
+      "read_id_sha256": "3799a069afdca35bf0bbc38c03848a41ac1885130739d8772f9d29ee6a5edc80",
+      "path": "data/raw/ERR8982185_1.fastq.gz",
+      "compressed_sha256": "5b2ca7ca2bb74413b4ef31f484e4c2941af31c15e13fd724e3a4e9b493563223",
+      "compressed_bytes": 2076106351
+    },
+    {
+      "mate": 2,
+      "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/005/ERR8982185/ERR8982185_2.fastq.gz",
+      "records": 20000000,
+      "bases": 3007076824,
+      "read_id_sha256": "3799a069afdca35bf0bbc38c03848a41ac1885130739d8772f9d29ee6a5edc80",
+      "path": "data/raw/ERR8982185_2.fastq.gz",
+      "compressed_sha256": "ee26cdf076e455847d9f68ea65abb3147490e619f4702f31d9df6a54dbd4a814",
+      "compressed_bytes": 2223270197
+    }
+  ]
+}

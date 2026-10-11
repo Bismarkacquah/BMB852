@@ -1,0 +1,9 @@
+data/
+bam/*.bam
+bam/*.bai
+*.part
+scripts/igv_local_batch.txt
+scripts/igv_local_session.xml
+provenance/bwa.log
+provenance/sort.log
+pipeline.log
