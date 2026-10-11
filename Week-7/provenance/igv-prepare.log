@@ -1,0 +1,29 @@
+mkdir -p provenance
+printf '%s\n' 'PLOIDY=1' 'MIN_MQ=20' 'MIN_BQ=20' 'MIN_QUAL=20' 'MIN_DP=3' 'BAM=../Week-5/bam/ERR8982185.sorted.bam' 'REFERENCE=../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna' > provenance/parameters.txt.tmp
+if ! cmp -s provenance/parameters.txt.tmp provenance/parameters.txt; then mv provenance/parameters.txt.tmp provenance/parameters.txt; else rm provenance/parameters.txt.tmp; fi
+/opt/miniforge3/envs/bioinfo/bin/bcftools
+/opt/bmb852/week5/bin/samtools
+/opt/bmb852/week5/bin/python3
+test -s ../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna
+test -s ../Week-5/bam/ERR8982185.sorted.bam
+samtools quickcheck -v ../Week-5/bam/ERR8982185.sorted.bam
+mkdir -p results provenance
+{ bcftools --version; samtools --version; } > provenance/tool-versions.txt
+bcftools mpileup -Ou -f ../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna -q 20 -Q 20 -d 1000 -a FORMAT/DP,FORMAT/AD ../Week-5/bam/ERR8982185.sorted.bam 2> provenance/mpileup.log | bcftools call -mv --ploidy 1 -Oz -o results/ERR8982185.raw.vcf.gz 2> provenance/call.log
+bcftools norm -f ../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna -c e -m -any -Oz -o results/ERR8982185.normalized.vcf.gz results/ERR8982185.raw.vcf.gz 2> provenance/normalization.log
+bcftools filter -s LowQualOrDepth -e 'QUAL<20 || FMT/DP<3' -Oz -o results/ERR8982185.filtered.vcf.gz results/ERR8982185.normalized.vcf.gz
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+bcftools view -Ov -o results/ERR8982185.vcf results/ERR8982185.filtered.vcf.gz
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+bcftools view -f PASS -Ov -o results/ERR8982185.pass.vcf results/ERR8982185.filtered.vcf.gz
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+bcftools index -f results/ERR8982185.filtered.vcf.gz
+bcftools stats results/ERR8982185.raw.vcf.gz > results/raw.stats.txt
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+bcftools stats results/ERR8982185.pass.vcf > results/pass.stats.txt
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+python3 scripts/summarize_vcf.py results/ERR8982185.raw.vcf.gz results/ERR8982185.filtered.vcf.gz results/ERR8982185.pass.vcf --output results/summary.json
+mkdir -p provenance
+sha256sum ../Week-5/bam/ERR8982185.sorted.bam ../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna results/ERR8982185.raw.vcf.gz results/ERR8982185.filtered.vcf.gz results/ERR8982185.vcf results/ERR8982185.pass.vcf > provenance/inputs.sha256
+python3 scripts/prepare_igv.py --igv-root "C:/Users/bisma/Desktop/BMMB852/.github-week7"
+/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-7/scripts/igv_local_batch.txt
