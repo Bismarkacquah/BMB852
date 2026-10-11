@@ -4,20 +4,14 @@ This repository contains all assignments and projects for the BMB852 Bioinformat
 
 ## Course Structure
 
-Weekly assignments are organized in separate folders for easy navigation and management.
+Each folder contains that week's assignment, results, and supporting files.
 
 ### Weeks
 
-- **Week 1**: System Setup and UNIX Command Line Basics
-- **Week 2**: Bioinformatics Tools and Data Formats
-- **Week 3**: Sending Suggestions with Forking and Repository Assessment
-- **Week 4**: Obtaining FASTQ data and evaluating read quality
+- **[Week 1](Week-1/)**: System Setup and UNIX Command Line Basics
+- **[Week 2](Week-2/)**: Bioinformatics Tools and Data Formats
+- **[Week 3](Week-3/)**: Sending Suggestions with Forking and Repository Assessment
+- **[Week 4](Week-4/)**: Obtaining FASTQ data and evaluating read quality
 - **[Week 5](Week-5/)**: BAM alignment and coverage analysis
-- **[Week 7](Week-7/)**: Generate a VCF from the Week 5 BAM
-
-## How to Use This Repository
-
-1. Navigate to the week-specific folder (e.g., `Week-1/`)
-2. Review the assignment details in the README.md within that week's folder
-3. Complete the assignment and commit your work
-4. Push your changes to GitHub
+- **[Week 6](Week-6/)**: Structural variant analysis
+- **[Week 7](Week-7/)**: Variant calling, IGV views, and VCF statistics
