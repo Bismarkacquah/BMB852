@@ -62,8 +62,16 @@ normalized candidate and its filter label; the
 
 I loaded the reference, BAM, filtered VCF, and PASS VCF in IGV 2.19.8.
 The upper tracks show the calls, followed by coverage and aligned reads.
-Gray read segments match the reference, colored bases show mismatches,
-and purple markers indicate insertions.
+The horizontal read bars are colored by strand: pink for positive (+) and
+blue/purple for negative (-). Colored DNA letters still show mismatches,
+and the small purple insertion markers have a different meaning from the
+blue/purple read background. This follows the
+[IGV color key](https://igv.org/doc/desktop/UserGuide/tracks/alignments/viewing_alignments_basics/).
+
+The [main report's statistics graphs](../README.md#graphs-from-the-statistics-report)
+show Ts/Tv by quality, SNP substitution types, indel lengths, and depth at
+PASS sites. They were generated from
+[sample-level VCF statistics](results/pass.sample.stats.txt) with `make plots`.
 
 For the close-ups, I chose calls with usable depth near 20, QUAL >= 50,
 MQ >= 50, at least eight alternate observations, and an alternate fraction
@@ -160,6 +168,7 @@ then run these commands from `Week-7/expanded`:
 make all THREADS=4 SORT_THREADS=2
 make stats
 make validate
+make plots
 make igv
 # For Windows IGV when running the analysis in WSL:
 make igv IGV_ROOT=C:/path/to/BMB852

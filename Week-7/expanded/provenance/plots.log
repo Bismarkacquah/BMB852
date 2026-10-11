@@ -1,0 +1,2 @@
+Parsing bcftools stats output: results/pass.sample.stats.txt
+Plotting graphs: python3 plot.py

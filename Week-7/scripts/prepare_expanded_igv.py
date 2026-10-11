@@ -81,7 +81,7 @@ commands = [
     f'load {root}/Week-7/expanded/results/ERR8982185.20M.filtered.vcf.gz',
     f'load {root}/Week-7/expanded/results/ERR8982185.20M.pass.vcf.gz',
     f'load {root}/Week-7/expanded/bam/ERR8982185.20M.sorted.bam',
-    'maxPanelHeight 800', 'setSequenceShowTranslation false',
+    'maxPanelHeight 800', 'setSequenceShowTranslation false', 'colorBy READ_STRAND',
     'goto CM009322.1:3189400-3191050',
     'snapshot expanded_original_snp_cluster.png',
     'goto CM009322.1:3189480-3189585',

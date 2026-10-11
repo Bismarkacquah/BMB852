@@ -17,12 +17,19 @@ PLOIDY ?= 1
 MIN_DP ?= 3
 MIN_QUAL ?= 20
 
-.PHONY: all download align variants stats coverage validate igv FORCE
+.PHONY: all download align variants stats plots coverage validate igv FORCE
 all: $(BAM).bai results/flagstat.txt results/coverage.tsv results/depth-summary.json $(FILTERED).csi $(PASS).csi $(FILTERED).tbi $(PASS).tbi results/summary.json results/raw.stats.txt results/pass.stats.txt provenance/inputs.sha256
 download: provenance/download.json
 align: $(BAM).bai
 variants: $(FILTERED).csi $(PASS).csi
 stats: results/raw.stats.txt results/pass.stats.txt
+plots: plots/pass/.complete
+results/pass.sample.stats.txt: $(PASS)
+	bcftools stats -s - -d 0,1100,1 $< > $@
+plots/pass/.complete: results/pass.sample.stats.txt
+	mkdir -p provenance
+	plot-vcfstats -P -p plots/pass -t ERR8982185_PASS $< > provenance/plots.log 2>&1
+	touch $@
 coverage: results/depth-summary.json
 provenance/parameters.txt: FORCE
 	mkdir -p provenance
