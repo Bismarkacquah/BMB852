@@ -136,12 +136,80 @@ The complete [PASS statistics](expanded/results/pass.stats.txt),
 [raw statistics](expanded/results/raw.stats.txt), and
 [summary](expanded/results/summary.json) are included in the repository.
 
+### Graphs from the statistics report
+
+These graphs were generated from the expanded PASS VCF with BCFtools
+`plot-vcfstats`. To recreate them from `Week-7/expanded`, run `make plots`.
+The commands behind that target are:
+
+```bash
+bcftools stats -s - -d 0,1100,1 \
+  results/ERR8982185.20M.pass.vcf.gz > results/pass.sample.stats.txt
+plot-vcfstats -P -p plots/pass -t ERR8982185_PASS \
+  results/pass.sample.stats.txt
+```
+
+`-s -` includes the sample's genotype statistics, which are needed for the
+depth distribution. `-P` skips the combined PDF and produces image panels.
+This uses the [BCFtools plotting workflow](https://samtools.github.io/bcftools/bcftools.html#plot-vcfstats).
+
+**Transitions and transversions by call quality.** SNPs are sorted from
+highest to lowest QUAL. The solid line gives the cumulative Ts/Tv ratio;
+the dashed line gives the ratio within successive 1% bins. The highest-quality
+subset has a higher ratio than the complete set, which ends at about 0.97.
+The variation across bins shows why the overall ratio alone is not enough
+to judge every call.
+
+![Transition/transversion ratio by QUAL](expanded/plots/pass/tstv_by_qual.0.png)
+
+**SNP substitution types.** Each bar counts a reference-to-alternate change.
+The darker bars are transitions (A>G, C>T, G>A, and T>C), while the lighter
+bars are transversions. These categories sum to 19,576 passing SNPs.
+
+![Counts of the twelve SNP substitution types](expanded/plots/pass/substitutions.0.png)
+
+**Indel lengths.** Negative lengths represent deletions and positive lengths
+represent insertions. Most calls are short, especially one-base changes.
+The longer, less common indels are visible in the tails of the distribution.
+
+![Length distribution of passing indels](expanded/plots/pass/indels.0.png)
+
+**Depth at passing variant sites.** The black line shows the percentage of
+genotypes at each depth, and the orange line shows the cumulative percentage.
+About 66.47% have usable depth 3-9, with a long tail of much deeper calls.
+The plotting tool displays roughly the first 99% of the depth distribution;
+the full values are in [pass.sample.stats.txt](expanded/results/pass.sample.stats.txt).
+This is depth at PASS variant sites, not genome-wide coverage, so it should
+not be read as a second estimate of the mean genome depth of 8.42.
+
+![Genotype depth distribution at passing variant sites](expanded/plots/pass/depth.0.png)
+
 ## Alignment support in IGV
 
 I loaded the reference FASTA, expanded BAM, filtered VCF, and PASS VCF in
 IGV 2.19.8. The VCF tracks sit above the coverage and read alignments.
 Colored bases show mismatches to the reference, and purple markers show
 insertions. The [expanded report](expanded/README.md) includes all seven views.
+
+The horizontal read bars are now colored by **read strand**, as in the
+example: pink is the positive strand and blue/purple is the negative strand.
+Their pointed ends indicate direction. These colors describe how the reads
+align, rather than whether a read contains a variant.
+
+| IGV feature | Meaning |
+|---|---|
+| Pink horizontal read | Positive (+) strand |
+| Blue/purple horizontal read | Negative (-) strand |
+| Colored DNA letters | A: green; C: blue; G: orange/yellow; T: red |
+| Small purple `I` or number | Insertion; a number gives its length |
+| Black gap within a read | Deletion relative to the reference |
+
+To select this view manually, right-click the BAM alignments and choose
+**Color alignments by > Read strand**. The batch script uses
+`colorBy READ_STRAND`. Seeing alternate support on both strand colors is
+useful when checking for strand bias, although an image is not a formal
+strand-bias test. The symbols and colors follow the
+[IGV alignment guide](https://igv.org/doc/desktop/UserGuide/tracks/alignments/viewing_alignments_basics/).
 
 ### Regional coverage
 
@@ -228,6 +296,7 @@ cd expanded
 make all THREADS=4 SORT_THREADS=2
 make stats
 make validate
+make plots
 make igv
 ```
 

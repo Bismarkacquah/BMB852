@@ -7,3 +7,9 @@ scripts/igv_local_session.xml
 provenance/bwa.log
 provenance/sort.log
 pipeline.log
+# Keep the four report panels; recreate other plots and intermediates with Make.
+plots/pass/*
+!plots/pass/tstv_by_qual.0.png
+!plots/pass/substitutions.0.png
+!plots/pass/indels.0.png
+!plots/pass/depth.0.png
