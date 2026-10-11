@@ -84,3 +84,8 @@ audit: $(BAM).bai $(REFERENCE).fai
 	python3 scripts/audit_mismatches.py
 	samtools mpileup -B -Q 0 -f $(REFERENCE) -r CM009336.1:3475540-3475640 $(BAM) > bam/ERR8982185.zoom.pileup.txt
 	samtools mpileup -B -Q 0 -f $(REFERENCE) -r CM009316.1:618250-618310 $(BAM) > bam/ERR8982185.read_end.pileup.txt
+
+# Week 7 extends this workflow using the same sorted BAM and reference.
+.PHONY: variants
+variants: $(BAM).bai $(REFERENCE).fai
+	$(MAKE) -C ../Week-7 all THREADS=$(THREADS)
