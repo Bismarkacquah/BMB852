@@ -1,0 +1,393 @@
+[
+  {
+    "path": "results/ERR8982185.20M.raw.vcf.gz",
+    "samples": [
+      "ERR8982185"
+    ],
+    "records": 32651,
+    "snp_records": 27494,
+    "indel_records": 5157,
+    "other_records": 0,
+    "filters": {
+      ".": 32651
+    },
+    "min_dp": 1,
+    "max_dp": 1024,
+    "mean_dp": 47.51695200759548,
+    "min_qual": 3.22223,
+    "max_qual": 228.43,
+    "top_calls": [
+      {
+        "chrom": "CM009334.1",
+        "pos": 8568974,
+        "ref": "C",
+        "alt": "T",
+        "qual": 228.43,
+        "filter": ".",
+        "dp": 963,
+        "gt": "1",
+        "ad": "3,958"
+      },
+      {
+        "chrom": "CM009334.1",
+        "pos": 8569110,
+        "ref": "T",
+        "alt": "C",
+        "qual": 228.43,
+        "filter": ".",
+        "dp": 888,
+        "gt": "1",
+        "ad": "1,886"
+      },
+      {
+        "chrom": "CM009317.1",
+        "pos": 15766777,
+        "ref": "G",
+        "alt": "A",
+        "qual": 228.429,
+        "filter": ".",
+        "dp": 910,
+        "gt": "1",
+        "ad": "1,908"
+      },
+      {
+        "chrom": "CM009334.1",
+        "pos": 389170,
+        "ref": "A",
+        "alt": "C",
+        "qual": 228.429,
+        "filter": ".",
+        "dp": 660,
+        "gt": "1",
+        "ad": "1,658"
+      },
+      {
+        "chrom": "CM009336.1",
+        "pos": 3476711,
+        "ref": "C",
+        "alt": "T",
+        "qual": 228.429,
+        "filter": ".",
+        "dp": 871,
+        "gt": "1",
+        "ad": "1,869"
+      },
+      {
+        "chrom": "CM009334.1",
+        "pos": 8569291,
+        "ref": "A",
+        "alt": "G",
+        "qual": 228.428,
+        "filter": ".",
+        "dp": 984,
+        "gt": "1",
+        "ad": "2,981"
+      },
+      {
+        "chrom": "CM009317.1",
+        "pos": 15763470,
+        "ref": "A",
+        "alt": "G",
+        "qual": 228.427,
+        "filter": ".",
+        "dp": 830,
+        "gt": "1",
+        "ad": "2,827"
+      },
+      {
+        "chrom": "CM009317.1",
+        "pos": 15767231,
+        "ref": "T",
+        "alt": "C",
+        "qual": 228.427,
+        "filter": ".",
+        "dp": 948,
+        "gt": "1",
+        "ad": "2,945"
+      },
+      {
+        "chrom": "CM009319.1",
+        "pos": 4639147,
+        "ref": "A",
+        "alt": "G",
+        "qual": 228.427,
+        "filter": ".",
+        "dp": 964,
+        "gt": "1",
+        "ad": "2,961"
+      },
+      {
+        "chrom": "CM009319.1",
+        "pos": 4639461,
+        "ref": "A",
+        "alt": "G",
+        "qual": 228.427,
+        "filter": ".",
+        "dp": 835,
+        "gt": "1",
+        "ad": "2,832"
+      }
+    ]
+  },
+  {
+    "path": "results/ERR8982185.20M.filtered.vcf.gz",
+    "samples": [
+      "ERR8982185"
+    ],
+    "records": 32651,
+    "snp_records": 27494,
+    "indel_records": 5157,
+    "other_records": 0,
+    "filters": {
+      "PASS": 24042,
+      "LowQualOrDepth": 8609
+    },
+    "min_dp": 1,
+    "max_dp": 1024,
+    "mean_dp": 47.51695200759548,
+    "min_qual": 3.22223,
+    "max_qual": 228.43,
+    "top_calls": [
+      {
+        "chrom": "CM009334.1",
+        "pos": 8568974,
+        "ref": "C",
+        "alt": "T",
+        "qual": 228.43,
+        "filter": "PASS",
+        "dp": 963,
+        "gt": "1",
+        "ad": "3,958"
+      },
+      {
+        "chrom": "CM009334.1",
+        "pos": 8569110,
+        "ref": "T",
+        "alt": "C",
+        "qual": 228.43,
+        "filter": "PASS",
+        "dp": 888,
+        "gt": "1",
+        "ad": "1,886"
+      },
+      {
+        "chrom": "CM009317.1",
+        "pos": 15766777,
+        "ref": "G",
+        "alt": "A",
+        "qual": 228.429,
+        "filter": "PASS",
+        "dp": 910,
+        "gt": "1",
+        "ad": "1,908"
+      },
+      {
+        "chrom": "CM009334.1",
+        "pos": 389170,
+        "ref": "A",
+        "alt": "C",
+        "qual": 228.429,
+        "filter": "PASS",
+        "dp": 660,
+        "gt": "1",
+        "ad": "1,658"
+      },
+      {
+        "chrom": "CM009336.1",
+        "pos": 3476711,
+        "ref": "C",
+        "alt": "T",
+        "qual": 228.429,
+        "filter": "PASS",
+        "dp": 871,
+        "gt": "1",
+        "ad": "1,869"
+      },
+      {
+        "chrom": "CM009334.1",
+        "pos": 8569291,
+        "ref": "A",
+        "alt": "G",
+        "qual": 228.428,
+        "filter": "PASS",
+        "dp": 984,
+        "gt": "1",
+        "ad": "2,981"
+      },
+      {
+        "chrom": "CM009317.1",
+        "pos": 15763470,
+        "ref": "A",
+        "alt": "G",
+        "qual": 228.427,
+        "filter": "PASS",
+        "dp": 830,
+        "gt": "1",
+        "ad": "2,827"
+      },
+      {
+        "chrom": "CM009317.1",
+        "pos": 15767231,
+        "ref": "T",
+        "alt": "C",
+        "qual": 228.427,
+        "filter": "PASS",
+        "dp": 948,
+        "gt": "1",
+        "ad": "2,945"
+      },
+      {
+        "chrom": "CM009319.1",
+        "pos": 4639147,
+        "ref": "A",
+        "alt": "G",
+        "qual": 228.427,
+        "filter": "PASS",
+        "dp": 964,
+        "gt": "1",
+        "ad": "2,961"
+      },
+      {
+        "chrom": "CM009319.1",
+        "pos": 4639461,
+        "ref": "A",
+        "alt": "G",
+        "qual": 228.427,
+        "filter": "PASS",
+        "dp": 835,
+        "gt": "1",
+        "ad": "2,832"
+      }
+    ]
+  },
+  {
+    "path": "results/ERR8982185.20M.pass.vcf.gz",
+    "samples": [
+      "ERR8982185"
+    ],
+    "records": 24042,
+    "snp_records": 19576,
+    "indel_records": 4466,
+    "other_records": 0,
+    "filters": {
+      "PASS": 24042
+    },
+    "min_dp": 3,
+    "max_dp": 1024,
+    "mean_dp": 63.44205972880792,
+    "min_qual": 20.3439,
+    "max_qual": 228.43,
+    "top_calls": [
+      {
+        "chrom": "CM009334.1",
+        "pos": 8568974,
+        "ref": "C",
+        "alt": "T",
+        "qual": 228.43,
+        "filter": "PASS",
+        "dp": 963,
+        "gt": "1",
+        "ad": "3,958"
+      },
+      {
+        "chrom": "CM009334.1",
+        "pos": 8569110,
+        "ref": "T",
+        "alt": "C",
+        "qual": 228.43,
+        "filter": "PASS",
+        "dp": 888,
+        "gt": "1",
+        "ad": "1,886"
+      },
+      {
+        "chrom": "CM009317.1",
+        "pos": 15766777,
+        "ref": "G",
+        "alt": "A",
+        "qual": 228.429,
+        "filter": "PASS",
+        "dp": 910,
+        "gt": "1",
+        "ad": "1,908"
+      },
+      {
+        "chrom": "CM009334.1",
+        "pos": 389170,
+        "ref": "A",
+        "alt": "C",
+        "qual": 228.429,
+        "filter": "PASS",
+        "dp": 660,
+        "gt": "1",
+        "ad": "1,658"
+      },
+      {
+        "chrom": "CM009336.1",
+        "pos": 3476711,
+        "ref": "C",
+        "alt": "T",
+        "qual": 228.429,
+        "filter": "PASS",
+        "dp": 871,
+        "gt": "1",
+        "ad": "1,869"
+      },
+      {
+        "chrom": "CM009334.1",
+        "pos": 8569291,
+        "ref": "A",
+        "alt": "G",
+        "qual": 228.428,
+        "filter": "PASS",
+        "dp": 984,
+        "gt": "1",
+        "ad": "2,981"
+      },
+      {
+        "chrom": "CM009317.1",
+        "pos": 15763470,
+        "ref": "A",
+        "alt": "G",
+        "qual": 228.427,
+        "filter": "PASS",
+        "dp": 830,
+        "gt": "1",
+        "ad": "2,827"
+      },
+      {
+        "chrom": "CM009317.1",
+        "pos": 15767231,
+        "ref": "T",
+        "alt": "C",
+        "qual": 228.427,
+        "filter": "PASS",
+        "dp": 948,
+        "gt": "1",
+        "ad": "2,945"
+      },
+      {
+        "chrom": "CM009319.1",
+        "pos": 4639147,
+        "ref": "A",
+        "alt": "G",
+        "qual": 228.427,
+        "filter": "PASS",
+        "dp": 964,
+        "gt": "1",
+        "ad": "2,961"
+      },
+      {
+        "chrom": "CM009319.1",
+        "pos": 4639461,
+        "ref": "A",
+        "alt": "G",
+        "qual": 228.427,
+        "filter": "PASS",
+        "dp": 835,
+        "gt": "1",
+        "ad": "2,832"
+      }
+    ]
+  }
+]

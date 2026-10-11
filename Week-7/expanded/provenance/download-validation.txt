@@ -1,0 +1,4 @@
+First 10 MiB match the independent direct range download, across the 8 MiB chunk boundary
+Mate 1: SRA prefix first-read length 53, ENA prefix first-read length 151
+Mate 2: SRA prefix first-read length 38, ENA prefix first-read length 151
+100,000 mate identifiers agree; expanded ENA subset is distinct from the original SRA prefix

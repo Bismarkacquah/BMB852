@@ -1,0 +1,114 @@
+[
+  {
+    "command": "new",
+    "response": "OK"
+  },
+  {
+    "command": "setSleepInterval 1000",
+    "response": "OK"
+  },
+  {
+    "command": "genome <REPOSITORY>/Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna",
+    "response": "OK"
+  },
+  {
+    "command": "snapshotDirectory <REPOSITORY>/Week-7/expanded/screenshots",
+    "response": "OK"
+  },
+  {
+    "command": "load <REPOSITORY>/Week-7/expanded/results/ERR8982185.20M.filtered.vcf.gz",
+    "response": "OK"
+  },
+  {
+    "command": "load <REPOSITORY>/Week-7/expanded/results/ERR8982185.20M.pass.vcf.gz",
+    "response": "OK"
+  },
+  {
+    "command": "load <REPOSITORY>/Week-7/expanded/bam/ERR8982185.20M.sorted.bam",
+    "response": "OK"
+  },
+  {
+    "command": "maxPanelHeight 800",
+    "response": "OK"
+  },
+  {
+    "command": "setSequenceShowTranslation false",
+    "response": "OK"
+  },
+  {
+    "command": "goto CM009322.1:3189400-3191050",
+    "response": "OK"
+  },
+  {
+    "command": "snapshot expanded_original_snp_cluster.png",
+    "response": "OK"
+  },
+  {
+    "command": "goto CM009322.1:3189480-3189585",
+    "response": "OK"
+  },
+  {
+    "command": "snapshot expanded_original_snp_zoom.png",
+    "response": "OK"
+  },
+  {
+    "command": "goto CM009336.1:3474325-3474390",
+    "response": "OK"
+  },
+  {
+    "command": "snapshot expanded_original_insertion.png",
+    "response": "OK"
+  },
+  {
+    "command": "goto CM009327.1:5823566-5823646",
+    "response": "OK"
+  },
+  {
+    "command": "sort base CM009327.1:5823606",
+    "response": "OK"
+  },
+  {
+    "command": "snapshot expanded_pass_variant_1.png",
+    "response": "OK"
+  },
+  {
+    "command": "goto CM009317.1:24015849-24015929",
+    "response": "OK"
+  },
+  {
+    "command": "sort base CM009317.1:24015889",
+    "response": "OK"
+  },
+  {
+    "command": "snapshot expanded_pass_variant_2.png",
+    "response": "OK"
+  },
+  {
+    "command": "goto CM009327.1:9842254-9842334",
+    "response": "OK"
+  },
+  {
+    "command": "sort base CM009327.1:9842294",
+    "response": "OK"
+  },
+  {
+    "command": "snapshot expanded_pass_variant_3.png",
+    "response": "OK"
+  },
+  {
+    "command": "goto CM009327.1:5818606-5828606",
+    "response": "OK"
+  },
+  {
+    "command": "snapshot expanded_regional_overview.png",
+    "response": "OK"
+  },
+  {
+    "command": "goto CM009327.1:5823566-5823646",
+    "response": "OK"
+  },
+  {
+    "command": "saveSession <REPOSITORY>/Week-7/expanded/scripts/igv_local_session.xml",
+    "response": "OK"
+  }
+]

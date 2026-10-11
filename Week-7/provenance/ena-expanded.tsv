@@ -1,0 +1,2 @@
+run_accession	read_count	base_count	fastq_ftp	fastq_bytes	fastq_md5
+ERR8982185	115685656	17415839111	ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/005/ERR8982185/ERR8982185_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/005/ERR8982185/ERR8982185_2.fastq.gz	5066704787;5548594672	d67a06d70f234bf8cc8c919393b3bdcf;df442aa910bb18c35d35a8d6ab93e614

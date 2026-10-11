@@ -1,0 +1,41 @@
+[
+  {
+    "chrom": "CM009327.1",
+    "pos": 5823606,
+    "ref": "A",
+    "alt": "T",
+    "qual": 225.417,
+    "mq": 60.0,
+    "dp": 20,
+    "ad": "0,20",
+    "filter": "PASS",
+    "unfiltered_pileup_depth": 21,
+    "type": "SNP"
+  },
+  {
+    "chrom": "CM009317.1",
+    "pos": 24015889,
+    "ref": "A",
+    "alt": "G",
+    "qual": 225.417,
+    "mq": 60.0,
+    "dp": 20,
+    "ad": "0,20",
+    "filter": "PASS",
+    "unfiltered_pileup_depth": 20,
+    "type": "SNP"
+  },
+  {
+    "chrom": "CM009327.1",
+    "pos": 9842294,
+    "ref": "A",
+    "alt": "AT",
+    "qual": 228.361,
+    "mq": 60.0,
+    "dp": 20,
+    "ad": "2,18",
+    "filter": "PASS",
+    "unfiltered_pileup_depth": 22,
+    "type": "indel"
+  }
+]
