@@ -2,9 +2,9 @@
 
 After the first run produced no passing variants, I increased the input to
 20 million read pairs from `ERR8982185`. The original subset was useful for
-building the workflow, but it covered too little of the moss genome for a
-meaningful comparison with the reference. This larger run provided enough
-coverage to inspect both SNPs and indels in IGV.
+building the workflow, but most of the moss genome had no reads. With more
+data, I could inspect the called SNPs and indels alongside their read support
+in IGV.
 
 The [main Week 7 report](../README.md) contains the sample information,
 Makefile changes, statistics, and discussion. This page gives the detailed
