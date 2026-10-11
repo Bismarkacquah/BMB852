@@ -110,6 +110,130 @@ The SNP transition/transversion ratio was 0.97 (9,637 transitions and 9,939
 transversions). I would not use that ratio alone to judge this call set;
 coverage, mapping, and the sample's differences from the reference also matter.
 
+## Alignment support in IGV
+
+I loaded the reference, BAM, filtered VCF, and PASS VCF in IGV 2.19.8.
+The upper tracks show the calls, followed by coverage and aligned reads.
+Gray read segments match the reference, colored bases show mismatches,
+and purple markers indicate insertions.
+
+For the close-ups, I chose calls with usable depth near 20, QUAL >= 50,
+MQ >= 50, at least eight alternate observations, and an alternate fraction
+of at least 0.8. I also checked that unfiltered depth at each selected site
+was no more than 100. These examples were chosen for inspection and do not
+represent the distribution of every call in the VCF.
+
+### Regional view: CM009327.1
+
+This 10-kb view shows reads across most of the interval, along with changes
+in depth and a local gap. Most positions have no variant marker because
+their aligned bases agree with the reference. The larger input improved
+coverage without making every covered position a variant.
+
+![Expanded 10-kb regional coverage](expanded/screenshots/expanded_regional_overview.png)
+
+### SNP 1: CM009327.1:5,823,606, A>T
+
+This call has QUAL 225.417, DP 20, and AD 0,20. All 20 usable observations
+support T. The red T bases form a consistent column beneath the VCF marker,
+with reads starting and ending at different positions. This looks more
+convincing than an isolated mismatch in a single read.
+
+![A-to-T SNP and aligned reads](expanded/screenshots/expanded_pass_variant_1.png)
+
+### SNP 2: CM009317.1:24,015,889, A>G
+
+The orange G bases line up with the called position. QUAL is 225.417,
+DP is 20, and AD is 0,20, again showing consistent alternate support.
+Both SNP examples have MQ 60. The selected calls and their measurements
+are saved in [igv-selected-variants.json](expanded/results/igv-selected-variants.json).
+
+![A-to-G SNP and aligned reads](expanded/screenshots/expanded_pass_variant_2.png)
+
+### Insertion: CM009327.1:9,842,294, A>AT
+
+The purple markers show a one-base insertion at the same position in many
+reads. QUAL is 228.361, DP is 20, and AD is 2,18, so 18 usable observations
+support the insertion and two support the reference. The repeated bases
+nearby make alignment inspection especially useful for this example.
+
+![One-base insertion and aligned reads](expanded/screenshots/expanded_pass_variant_3.png)
+
+## Revisiting the original examples
+
+The earlier A>G candidate at `CM009322.1:3,189,512` now passes with DP 917
+and AD 0,917. The T>A candidate at `CM009334.1:8,569,458` also passes, with
+DP 970 and AD 3,967. These depths are much higher than the genome average,
+so they need closer examination for repeats, mapping ambiguity, and duplicate
+reads. High depth alone does not settle whether a call is reliable.
+
+### Original SNP cluster with more reads
+
+The wider view now contains a dense pileup beneath the VCF markers. It is
+a clear visual contrast with the sparse original alignment, but this locus
+is unusually deep and should not stand in for typical genome coverage.
+
+![Expanded coverage at the original SNP cluster](expanded/screenshots/expanded_original_snp_cluster.png)
+
+### Original SNP close-up
+
+The orange G bases appear repeatedly beneath the original A>G call. This
+provides much more usable support than the two observations in the first
+run, while the unusually high depth remains a reason to check mapping.
+
+![Expanded close-up at the original SNP](expanded/screenshots/expanded_original_snp_zoom.png)
+
+### Original insertion region
+
+Purple insertion markers remain visible in some reads, but the earlier
+`CM009336.1:3,474,356 A>AAAT` call is absent from the expanded VCF in the
+inspected interval. Nearby SNPs were called instead. The image therefore
+shows an alignment feature that was not reported as that insertion by the
+expanded workflow. The calls at the original loci are listed in
+[original-loci-variants.tsv](expanded/results/original-loci-variants.tsv).
+
+![Expanded reads at the original insertion region](expanded/screenshots/expanded_original_insertion.png)
+
+## Discussion
+
+The main change was the amount of usable evidence. In the first run, each
+candidate had only one or two usable observations, so all 134 candidates
+failed the minimum depth of three. Some had fairly high QUAL scores, but
+they still had too little read support. The empty PASS VCF therefore said
+more about the small input than about whether the sample matched the reference.
+
+With the larger subset, coverage reached 96.48% and mean depth reached 8.42.
+That allowed many more positions to be assessed and produced 24,042 calls
+meeting the same thresholds. SNPs made up most of the passing calls, with
+indels accounting for nearly one fifth. The selected IGV examples show
+consistent alternate bases or insertion markers across several reads,
+which makes them reasonable candidates for further investigation.
+
+The deeper data also showed why high depth needs careful interpretation.
+The maximum depth was 24,408, far above the genome-wide average. Repeated
+sequence, reads mapping to similar regions, and duplicate reads are possible
+contributors, but this analysis does not establish the cause of that peak.
+Duplicates were not marked or removed. A large pileup can therefore provide
+many observations without the same number of independent DNA molecules.
+
+Two earlier SNPs now pass: A>G at `CM009322.1:3,189,512` and T>A at
+`CM009334.1:8,569,458`. However, their usable depths of 917 and 970 are
+unusually high, so I would examine mapping and duplication before treating
+them as especially reliable. The earlier three-base insertion at
+`CM009336.1:3,474,356` was not reported in the expanded VCF around that locus,
+even though insertion markers remain visible in some reads. That disagreement
+shows why a visible mismatch or insertion should be checked against the caller's
+usable evidence rather than accepted from the image alone.
+
+Overall, the larger input made the assignment much more informative, but
+PASS is still a filtering result. These calls may include real sample-reference
+differences and alignment or sequencing errors. Gene annotation, a check of
+strand support and duplicates, and independent validation would help identify
+the strongest biological candidates. The present results do not establish
+that any particular call is a CRISPR edit.
+
+## VCF statistics and graphs
+
 ### Run the statistics report
 
 The expanded Makefile saves reports from `bcftools stats` for both raw and
@@ -183,98 +307,6 @@ This is depth at PASS variant sites, not genome-wide coverage, so it should
 not be read as a second estimate of the mean genome depth of 8.42.
 
 ![Genotype depth distribution at passing variant sites](expanded/plots/pass/depth.0.png)
-
-## Alignment support in IGV
-
-I loaded the reference FASTA, expanded BAM, filtered VCF, and PASS VCF in
-IGV 2.19.8. The VCF tracks sit above the coverage and read alignments.
-Colored bases show mismatches to the reference, and purple markers show
-insertions. The [expanded report](expanded/README.md) includes all seven views.
-
-The horizontal read bars are now colored by **read strand**, as in the
-example: pink is the positive strand and blue/purple is the negative strand.
-Their pointed ends indicate direction. These colors describe how the reads
-align, rather than whether a read contains a variant.
-
-| IGV feature | Meaning |
-|---|---|
-| Pink horizontal read | Positive (+) strand |
-| Blue/purple horizontal read | Negative (-) strand |
-| Colored DNA letters | A: green; C: blue; G: orange/yellow; T: red |
-| Small purple `I` or number | Insertion; a number gives its length |
-| Black gap within a read | Deletion relative to the reference |
-
-To select this view manually, right-click the BAM alignments and choose
-**Color alignments by > Read strand**. The batch script uses
-`colorBy READ_STRAND`. Seeing alternate support on both strand colors is
-useful when checking for strand bias, although an image is not a formal
-strand-bias test. The symbols and colors follow the
-[IGV alignment guide](https://igv.org/doc/desktop/UserGuide/tracks/alignments/viewing_alignments_basics/).
-
-### Regional coverage
-
-This 10-kb region shows the difference that the larger read set made. Reads
-cover most of the interval, although depth varies and there is a local gap.
-Only a few variant markers appear because most aligned bases agree with
-the reference.
-
-![Expanded regional coverage in IGV](expanded/screenshots/expanded_regional_overview.png)
-
-### A supported SNP
-
-At `CM009327.1:5,823,606`, the reference base is A and the called allele is T.
-The call has QUAL 225.417, DP 20, and AD 0,20: all 20 usable observations
-support T. The red T bases line up with the VCF marker across several reads.
-This is stronger evidence than a mismatch seen in only one low-quality read.
-
-![A-to-T SNP supported by the alignments](expanded/screenshots/expanded_pass_variant_1.png)
-
-### A supported insertion
-
-At `CM009327.1:9,842,294`, the allele changes from A to AT, a one-base insertion.
-It has QUAL 228.361, DP 20, and AD 2,18. Most usable observations support the
-insertion, and the purple markers line up at the same position in IGV.
-The repeated sequence nearby is still a reason to inspect the alignment carefully.
-
-![One-base insertion supported by the alignments](expanded/screenshots/expanded_pass_variant_3.png)
-
-## Discussion
-
-The main change was the amount of usable evidence. In the first run, each
-candidate had only one or two usable observations, so all 134 candidates
-failed the minimum depth of three. Some had fairly high QUAL scores, but
-they still had too little read support. The empty PASS VCF therefore said
-more about the small input than about whether the sample matched the reference.
-
-With the larger subset, coverage reached 96.48% and mean depth reached 8.42.
-That allowed many more positions to be assessed and produced 24,042 calls
-meeting the same thresholds. SNPs made up most of the passing calls, with
-indels accounting for nearly one fifth. The selected IGV examples show
-consistent alternate bases or insertion markers across several reads,
-which makes them reasonable candidates for further investigation.
-
-The deeper data also showed why high depth needs careful interpretation.
-The maximum depth was 24,408, far above the genome-wide average. Repeated
-sequence, reads mapping to similar regions, and duplicate reads are possible
-contributors, but this analysis does not establish the cause of that peak.
-Duplicates were not marked or removed. A large pileup can therefore provide
-many observations without the same number of independent DNA molecules.
-
-Two earlier SNPs now pass: A>G at `CM009322.1:3,189,512` and T>A at
-`CM009334.1:8,569,458`. However, their usable depths of 917 and 970 are
-unusually high, so I would examine mapping and duplication before treating
-them as especially reliable. The earlier three-base insertion at
-`CM009336.1:3,474,356` was not reported in the expanded VCF around that locus,
-even though insertion markers remain visible in some reads. That disagreement
-shows why a visible mismatch or insertion should be checked against the caller's
-usable evidence rather than accepted from the image alone.
-
-Overall, the larger input made the assignment much more informative, but
-PASS is still a filtering result. These calls may include real sample-reference
-differences and alignment or sequencing errors. Gene annotation, a check of
-strand support and duplicates, and independent validation would help identify
-the strongest biological candidates. The present results do not establish
-that any particular call is a CRISPR edit.
 
 ## Reproduce the analysis
 

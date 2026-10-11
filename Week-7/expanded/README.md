@@ -62,16 +62,8 @@ normalized candidate and its filter label; the
 
 I loaded the reference, BAM, filtered VCF, and PASS VCF in IGV 2.19.8.
 The upper tracks show the calls, followed by coverage and aligned reads.
-The horizontal read bars are colored by strand: pink for positive (+) and
-blue/purple for negative (-). Colored DNA letters still show mismatches,
-and the small purple insertion markers have a different meaning from the
-blue/purple read background. This follows the
-[IGV color key](https://igv.org/doc/desktop/UserGuide/tracks/alignments/viewing_alignments_basics/).
-
-The [main report's statistics graphs](../README.md#graphs-from-the-statistics-report)
-show Ts/Tv by quality, SNP substitution types, indel lengths, and depth at
-PASS sites. They were generated from
-[sample-level VCF statistics](results/pass.sample.stats.txt) with `make plots`.
+Gray read segments match the reference, colored bases show mismatches,
+and purple markers indicate insertions.
 
 For the close-ups, I chose calls with usable depth near 20, QUAL >= 50,
 MQ >= 50, at least eight alternate observations, and an alternate fraction
@@ -158,6 +150,54 @@ for further checks, then examine strand support, mapping, and gene context.
 Passing the filter and looking consistent in IGV are useful evidence;
 independent validation would still be needed to confirm a biological change
 or connect it to CRISPR editing.
+
+## Graphs from the statistics report
+
+These graphs were generated from the expanded PASS VCF with BCFtools
+`plot-vcfstats`. To recreate them from `Week-7/expanded`, run `make plots`.
+The commands behind that target are:
+
+```bash
+bcftools stats -s - -d 0,1100,1 \
+  results/ERR8982185.20M.pass.vcf.gz > results/pass.sample.stats.txt
+plot-vcfstats -P -p plots/pass -t ERR8982185_PASS \
+  results/pass.sample.stats.txt
+```
+
+`-s -` includes the sample's genotype statistics, which are needed for the
+depth distribution. `-P` skips the combined PDF and produces image panels.
+This uses the [BCFtools plotting workflow](https://samtools.github.io/bcftools/bcftools.html#plot-vcfstats).
+
+**Transitions and transversions by call quality.** SNPs are sorted from
+highest to lowest QUAL. The solid line gives the cumulative Ts/Tv ratio;
+the dashed line gives the ratio within successive 1% bins. The highest-quality
+subset has a higher ratio than the complete set, which ends at about 0.97.
+The variation across bins shows why the overall ratio alone is not enough
+to judge every call.
+
+![Transition/transversion ratio by QUAL](plots/pass/tstv_by_qual.0.png)
+
+**SNP substitution types.** Each bar counts a reference-to-alternate change.
+The darker bars are transitions (A>G, C>T, G>A, and T>C), while the lighter
+bars are transversions. These categories sum to 19,576 passing SNPs.
+
+![Counts of the twelve SNP substitution types](plots/pass/substitutions.0.png)
+
+**Indel lengths.** Negative lengths represent deletions and positive lengths
+represent insertions. Most calls are short, especially one-base changes.
+The longer, less common indels are visible in the tails of the distribution.
+
+![Length distribution of passing indels](plots/pass/indels.0.png)
+
+**Depth at passing variant sites.** The black line shows the percentage of
+genotypes at each depth, and the orange line shows the cumulative percentage.
+About 66.47% have usable depth 3-9, with a long tail of much deeper calls.
+The plotting tool displays roughly the first 99% of the depth distribution;
+the full values are in [pass.sample.stats.txt](results/pass.sample.stats.txt).
+This is depth at PASS variant sites, not genome-wide coverage, so it should
+not be read as a second estimate of the mean genome depth of 8.42.
+
+![Genotype depth distribution at passing variant sites](plots/pass/depth.0.png)
 
 ## Reproduce these results
 
