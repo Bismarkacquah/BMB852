@@ -36,10 +36,6 @@
     "response": "OK"
   },
   {
-    "command": "colorBy READ_STRAND",
-    "response": "OK"
-  },
-  {
     "command": "goto CM009322.1:3189400-3191050",
     "response": "OK"
   },
