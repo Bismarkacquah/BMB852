@@ -17,11 +17,12 @@ PLOIDY ?= 1
 MIN_DP ?= 3
 MIN_QUAL ?= 20
 
-.PHONY: all download align variants coverage validate igv FORCE
+.PHONY: all download align variants stats coverage validate igv FORCE
 all: $(BAM).bai results/flagstat.txt results/coverage.tsv results/depth-summary.json $(FILTERED).csi $(PASS).csi $(FILTERED).tbi $(PASS).tbi results/summary.json results/raw.stats.txt results/pass.stats.txt provenance/inputs.sha256
 download: provenance/download.json
 align: $(BAM).bai
 variants: $(FILTERED).csi $(PASS).csi
+stats: results/raw.stats.txt results/pass.stats.txt
 coverage: results/depth-summary.json
 provenance/parameters.txt: FORCE
 	mkdir -p provenance
