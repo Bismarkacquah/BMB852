@@ -166,6 +166,88 @@ header; parsing and reference checks succeed. The warning is retained in the
 logs rather than hidden. Input regeneration and the analysis were executed;
 a fresh Conda environment installation was not.
 
+## Visualize the VCF and BAM in IGV
+
+The views below were generated in **IGV Desktop 2.19.8** using the same
+reference FASTA, Week 5 BAM, and Week 7 VCFs as the analysis above. The layout
+follows the VCF-plus-alignments approach in
+[Annya's Week 7 example](https://github.com/annyaa/applied-bioinfo-2026/tree/main/week07).
+These are screenshots of this repository's moss data, not the dengue data
+in that example.
+
+The upper panel contains `ERR8982185.vcf` (all candidates and their filter
+labels) and `ERR8982185.pass.vcf`. Below it are BAM coverage and aligned reads;
+the reference bases appear at the bottom. **“No Variants Found” refers to the
+empty PASS VCF**, not to the candidate VCF. Candidate bars and visible read
+mismatches do not override the `LowQualOrDepth` filter.
+
+### SNP cluster: CM009322.1
+
+This wider view spans approximately 3,189,400–3,191,050. It places several
+candidate variants above their aligned reads and illustrates the sparse
+coverage and gaps between read pairs.
+
+![Candidate SNP cluster with BAM coverage and reads](screenshots/week7_snp_cluster.png)
+
+### Zoomed SNP evidence: CM009322.1:3,189,512
+
+At the central candidate, the reference is **A** and the alternate allele is
+**G**. The orange G bases in the reads align with the candidate's VCF marker.
+The call has `QUAL=56.4147`, `FORMAT/DP=2`, and `AD=0,2`; it fails the minimum
+depth of 3. The other displayed markers include A-to-G candidates at
+3,189,557 and 3,189,577.
+
+![Zoomed A-to-G SNP candidates and their aligned read evidence](screenshots/week7_snp_zoom.png)
+
+### Insertion evidence: CM009336.1:3,474,356
+
+The normalized candidate is **A → AAAT**, a three-base insertion. IGV shows
+purple insertion markers labeled **3** in the aligned reads. The call has
+`QUAL=80.4149` and usable depth 2; it is also labeled `LowQualOrDepth`.
+Repeated sequence and the limited read support require caution even with a
+high caller quality score.
+
+![Three-base insertion candidate and purple insertion markers in the BAM](screenshots/week7_insertion.png)
+
+### Another SNP: CM009334.1:8,569,458
+
+The reference is **T** and the alternate allele is **A**. Green A bases are
+visible beneath the VCF marker. This candidate has `QUAL=48.4146` and usable
+depth 2, so it also fails the depth filter. Nearby mismatches and a deletion
+marker are visible in the reads; this image does not establish that all of
+those observations are genuine variants.
+
+![T-to-A SNP candidate shown alongside sparse read support](screenshots/week7_second_snp.png)
+
+### Recreate these views
+
+After `make all`, create a batch script with the
+[IGV preparation script](scripts/prepare_igv.py):
+
+```bash
+# Linux or macOS IGV, using native paths:
+make igv
+
+# Windows IGV with the analysis running in WSL:
+make igv IGV_ROOT=C:/path/to/BMB852
+```
+
+In IGV, select **Tools > Run Batch Script** and open
+`scripts/igv_local_batch.txt`. The script loads the reference and all three
+data files, visits the four loci, saves images to `screenshots/`, and saves
+`scripts/igv_local_session.xml`. It leaves IGV open on the zoomed SNP view.
+Both generated local files are ignored by Git because they contain paths
+specific to the checkout. Recreate them after moving the repository.
+
+For manual loading, choose **Genomes > Load Genome from File** and select
+the Week 5 FASTA. Then use **File > Load from File** for the candidate VCF,
+the sorted BAM, and the PASS VCF. Enter one of the coordinates above in the
+IGV locus box and zoom to base level. Keep the BAM's `.bai` and the FASTA's
+`.fai` beside their data files.
+
+This uses IGV's documented [batch commands](https://igv.org/doc/desktop/UserGuide/tools/batch/)
+and [VCF tracks](https://igv.org/doc/desktop/UserGuide/tracks/vcf/).
+
 ## Interpretation and limitations
 
 Week 5 used a tiny read subset: its saved report shows only 0.0430% of the

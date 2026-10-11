@@ -382,14 +382,14 @@
 ##INFO=<ID=DP4,Number=4,Type=Integer,Description="Number of high-quality ref-forward , ref-reverse, alt-forward and alt-reverse bases">
 ##INFO=<ID=MQ,Number=1,Type=Integer,Description="Average mapping quality">
 ##bcftools_callVersion=1.24+htslib-1.24
-##bcftools_callCommand=call -mv --ploidy 1 -Oz -o results/ERR8982185.raw.vcf.gz; Date=Sun Oct 11 14:26:56 2026
+##bcftools_callCommand=call -mv --ploidy 1 -Oz -o results/ERR8982185.raw.vcf.gz; Date=Sun Oct 11 14:34:01 2026
 ##bcftools_normVersion=1.24+htslib-1.24
-##bcftools_normCommand=norm -f ../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna -c e -m -any -Oz -o results/ERR8982185.normalized.vcf.gz results/ERR8982185.raw.vcf.gz; Date=Sun Oct 11 14:26:59 2026
+##bcftools_normCommand=norm -f ../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna -c e -m -any -Oz -o results/ERR8982185.normalized.vcf.gz results/ERR8982185.raw.vcf.gz; Date=Sun Oct 11 14:34:05 2026
 ##FILTER=<ID=LowQualOrDepth,Description="Set if true: QUAL<20 || FMT/DP<3">
 ##bcftools_filterVersion=1.24+htslib-1.24
-##bcftools_filterCommand=filter -s LowQualOrDepth -e 'QUAL<20 || FMT/DP<3' -Oz -o results/ERR8982185.filtered.vcf.gz results/ERR8982185.normalized.vcf.gz; Date=Sun Oct 11 14:26:59 2026
+##bcftools_filterCommand=filter -s LowQualOrDepth -e 'QUAL<20 || FMT/DP<3' -Oz -o results/ERR8982185.filtered.vcf.gz results/ERR8982185.normalized.vcf.gz; Date=Sun Oct 11 14:34:05 2026
 ##bcftools_viewVersion=1.24+htslib-1.24
-##bcftools_viewCommand=view -Ov -o results/ERR8982185.vcf results/ERR8982185.filtered.vcf.gz; Date=Sun Oct 11 14:26:59 2026
+##bcftools_viewCommand=view -Ov -o results/ERR8982185.vcf results/ERR8982185.filtered.vcf.gz; Date=Sun Oct 11 14:34:05 2026
 #CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	../Week-5/bam/ERR8982185.sorted.bam
 CM009316.1	13110800	.	T	C	11.7172	LowQualOrDepth	DP=1;SGB=-0.379885;MQ0F=0;AC=1;AN=1;DP4=0,0,1,0;MQ=60	GT:PL:DP:AD	1:41,0:1:0,1
 CM009316.1	13110802	.	G	A	8.13869	LowQualOrDepth	DP=1;SGB=-0.379885;MQ0F=0;AC=1;AN=1;DP4=0,0,1,0;MQ=60	GT:PL:DP:AD	1:37,0:1:0,1

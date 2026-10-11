@@ -382,12 +382,12 @@
 ##INFO=<ID=DP4,Number=4,Type=Integer,Description="Number of high-quality ref-forward , ref-reverse, alt-forward and alt-reverse bases">
 ##INFO=<ID=MQ,Number=1,Type=Integer,Description="Average mapping quality">
 ##bcftools_callVersion=1.24+htslib-1.24
-##bcftools_callCommand=call -mv --ploidy 1 -Oz -o results/ERR8982185.raw.vcf.gz; Date=Sun Oct 11 14:26:56 2026
+##bcftools_callCommand=call -mv --ploidy 1 -Oz -o results/ERR8982185.raw.vcf.gz; Date=Sun Oct 11 14:34:01 2026
 ##bcftools_normVersion=1.24+htslib-1.24
-##bcftools_normCommand=norm -f ../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna -c e -m -any -Oz -o results/ERR8982185.normalized.vcf.gz results/ERR8982185.raw.vcf.gz; Date=Sun Oct 11 14:26:59 2026
+##bcftools_normCommand=norm -f ../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna -c e -m -any -Oz -o results/ERR8982185.normalized.vcf.gz results/ERR8982185.raw.vcf.gz; Date=Sun Oct 11 14:34:05 2026
 ##FILTER=<ID=LowQualOrDepth,Description="Set if true: QUAL<20 || FMT/DP<3">
 ##bcftools_filterVersion=1.24+htslib-1.24
-##bcftools_filterCommand=filter -s LowQualOrDepth -e 'QUAL<20 || FMT/DP<3' -Oz -o results/ERR8982185.filtered.vcf.gz results/ERR8982185.normalized.vcf.gz; Date=Sun Oct 11 14:26:59 2026
+##bcftools_filterCommand=filter -s LowQualOrDepth -e 'QUAL<20 || FMT/DP<3' -Oz -o results/ERR8982185.filtered.vcf.gz results/ERR8982185.normalized.vcf.gz; Date=Sun Oct 11 14:34:05 2026
 ##bcftools_viewVersion=1.24+htslib-1.24
-##bcftools_viewCommand=view -f PASS -Ov -o results/ERR8982185.pass.vcf results/ERR8982185.filtered.vcf.gz; Date=Sun Oct 11 14:26:59 2026
+##bcftools_viewCommand=view -f PASS -Ov -o results/ERR8982185.pass.vcf results/ERR8982185.filtered.vcf.gz; Date=Sun Oct 11 14:34:05 2026
 #CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	../Week-5/bam/ERR8982185.sorted.bam

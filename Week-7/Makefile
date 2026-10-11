@@ -20,7 +20,7 @@ FILTERED := results/ERR8982185.filtered.vcf.gz
 ALL_VCF := results/ERR8982185.vcf
 VCF := results/ERR8982185.pass.vcf
 
-.PHONY: all setup alignment check-tools check-inputs summary validate FORCE
+.PHONY: all setup alignment check-tools check-inputs summary validate igv FORCE
 all: $(ALL_VCF) $(VCF) $(FILTERED).csi results/raw.stats.txt results/pass.stats.txt results/summary.json provenance/inputs.sha256
 setup:
 	$(MAKE) -C $(WEEK5) setup
@@ -64,6 +64,9 @@ results/summary.json: $(RAW) $(FILTERED) $(VCF) scripts/summarize_vcf.py
 	python3 scripts/summarize_vcf.py $(RAW) $(FILTERED) $(VCF) --output $@
 summary: results/summary.json
 	cat $<
+# For Windows IGV from WSL, pass IGV_ROOT=C:/path/to/BMB852.
+igv: all
+	python3 scripts/prepare_igv.py $(if $(IGV_ROOT),--igv-root "$(IGV_ROOT)")
 provenance/inputs.sha256: $(BAM) $(REFERENCE) $(RAW) $(FILTERED) $(ALL_VCF) $(VCF)
 	mkdir -p provenance
 	sha256sum $(BAM) $(REFERENCE) $(RAW) $(FILTERED) $(ALL_VCF) $(VCF) > $@

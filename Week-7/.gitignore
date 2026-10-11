@@ -1,3 +1,7 @@
 *.tmp
 setup.log
 alignment.log
+scripts/igv_local_batch.txt
+scripts/igv_local_session.xml
+*.idx
+.igv/
