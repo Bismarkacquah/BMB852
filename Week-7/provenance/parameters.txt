@@ -1,0 +1,7 @@
+PLOIDY=1
+MIN_MQ=20
+MIN_BQ=20
+MIN_QUAL=20
+MIN_DP=3
+BAM=../Week-5/bam/ERR8982185.sorted.bam
+REFERENCE=../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna

@@ -1,0 +1,279 @@
+[
+  {
+    "path": "results/ERR8982185.raw.vcf.gz",
+    "samples": [
+      "../Week-5/bam/ERR8982185.sorted.bam"
+    ],
+    "records": 134,
+    "snp_records": 130,
+    "indel_records": 4,
+    "other_records": 0,
+    "filters": {
+      ".": 134
+    },
+    "min_dp": 1,
+    "max_dp": 2,
+    "mean_dp": 1.0522388059701493,
+    "min_qual": 3.22451,
+    "max_qual": 80.4149,
+    "top_calls": [
+      {
+        "chrom": "CM009336.1",
+        "pos": 3474356,
+        "ref": "aa",
+        "alt": "aAATa",
+        "qual": 80.4149,
+        "filter": ".",
+        "dp": 2,
+        "gt": "1",
+        "ad": "0,2"
+      },
+      {
+        "chrom": "CM009322.1",
+        "pos": 3189512,
+        "ref": "A",
+        "alt": "G",
+        "qual": 56.4147,
+        "filter": ".",
+        "dp": 2,
+        "gt": "1",
+        "ad": "0,2"
+      },
+      {
+        "chrom": "CM009334.1",
+        "pos": 8569458,
+        "ref": "T",
+        "alt": "A",
+        "qual": 48.4146,
+        "filter": ".",
+        "dp": 2,
+        "gt": "1",
+        "ad": "0,2"
+      },
+      {
+        "chrom": "CM009322.1",
+        "pos": 3189557,
+        "ref": "A",
+        "alt": "G",
+        "qual": 41.4148,
+        "filter": ".",
+        "dp": 2,
+        "gt": "1",
+        "ad": "0,2"
+      },
+      {
+        "chrom": "CM009322.1",
+        "pos": 3189577,
+        "ref": "A",
+        "alt": "G",
+        "qual": 41.4148,
+        "filter": ".",
+        "dp": 2,
+        "gt": "1",
+        "ad": "0,2"
+      },
+      {
+        "chrom": "CM009322.1",
+        "pos": 3190936,
+        "ref": "G",
+        "alt": "A",
+        "qual": 41.4148,
+        "filter": ".",
+        "dp": 2,
+        "gt": "1",
+        "ad": "0,2"
+      },
+      {
+        "chrom": "CM009316.1",
+        "pos": 13110859,
+        "ref": "C",
+        "alt": "T",
+        "qual": 30.4183,
+        "filter": ".",
+        "dp": 1,
+        "gt": "1",
+        "ad": "0,1"
+      },
+      {
+        "chrom": "CM009336.1",
+        "pos": 3477267,
+        "ref": "taaaaaaa",
+        "alt": "tAaaaaaaa",
+        "qual": 14.5685,
+        "filter": ".",
+        "dp": 2,
+        "gt": "1",
+        "ad": "0,2"
+      },
+      {
+        "chrom": "CM009316.1",
+        "pos": 13110800,
+        "ref": "T",
+        "alt": "C",
+        "qual": 11.7172,
+        "filter": ".",
+        "dp": 1,
+        "gt": "1",
+        "ad": "0,1"
+      },
+      {
+        "chrom": "CM009316.1",
+        "pos": 13110814,
+        "ref": "A",
+        "alt": "C",
+        "qual": 11.7172,
+        "filter": ".",
+        "dp": 1,
+        "gt": "1",
+        "ad": "0,1"
+      }
+    ]
+  },
+  {
+    "path": "results/ERR8982185.filtered.vcf.gz",
+    "samples": [
+      "../Week-5/bam/ERR8982185.sorted.bam"
+    ],
+    "records": 134,
+    "snp_records": 130,
+    "indel_records": 4,
+    "other_records": 0,
+    "filters": {
+      "LowQualOrDepth": 134
+    },
+    "min_dp": 1,
+    "max_dp": 2,
+    "mean_dp": 1.0522388059701493,
+    "min_qual": 3.22451,
+    "max_qual": 80.4149,
+    "top_calls": [
+      {
+        "chrom": "CM009336.1",
+        "pos": 3474356,
+        "ref": "A",
+        "alt": "AAAT",
+        "qual": 80.4149,
+        "filter": "LowQualOrDepth",
+        "dp": 2,
+        "gt": "1",
+        "ad": "0,2"
+      },
+      {
+        "chrom": "CM009322.1",
+        "pos": 3189512,
+        "ref": "A",
+        "alt": "G",
+        "qual": 56.4147,
+        "filter": "LowQualOrDepth",
+        "dp": 2,
+        "gt": "1",
+        "ad": "0,2"
+      },
+      {
+        "chrom": "CM009334.1",
+        "pos": 8569458,
+        "ref": "T",
+        "alt": "A",
+        "qual": 48.4146,
+        "filter": "LowQualOrDepth",
+        "dp": 2,
+        "gt": "1",
+        "ad": "0,2"
+      },
+      {
+        "chrom": "CM009322.1",
+        "pos": 3189557,
+        "ref": "A",
+        "alt": "G",
+        "qual": 41.4148,
+        "filter": "LowQualOrDepth",
+        "dp": 2,
+        "gt": "1",
+        "ad": "0,2"
+      },
+      {
+        "chrom": "CM009322.1",
+        "pos": 3189577,
+        "ref": "A",
+        "alt": "G",
+        "qual": 41.4148,
+        "filter": "LowQualOrDepth",
+        "dp": 2,
+        "gt": "1",
+        "ad": "0,2"
+      },
+      {
+        "chrom": "CM009322.1",
+        "pos": 3190936,
+        "ref": "G",
+        "alt": "A",
+        "qual": 41.4148,
+        "filter": "LowQualOrDepth",
+        "dp": 2,
+        "gt": "1",
+        "ad": "0,2"
+      },
+      {
+        "chrom": "CM009316.1",
+        "pos": 13110859,
+        "ref": "C",
+        "alt": "T",
+        "qual": 30.4183,
+        "filter": "LowQualOrDepth",
+        "dp": 1,
+        "gt": "1",
+        "ad": "0,1"
+      },
+      {
+        "chrom": "CM009336.1",
+        "pos": 3477267,
+        "ref": "T",
+        "alt": "TA",
+        "qual": 14.5685,
+        "filter": "LowQualOrDepth",
+        "dp": 2,
+        "gt": "1",
+        "ad": "0,2"
+      },
+      {
+        "chrom": "CM009316.1",
+        "pos": 13110800,
+        "ref": "T",
+        "alt": "C",
+        "qual": 11.7172,
+        "filter": "LowQualOrDepth",
+        "dp": 1,
+        "gt": "1",
+        "ad": "0,1"
+      },
+      {
+        "chrom": "CM009316.1",
+        "pos": 13110814,
+        "ref": "A",
+        "alt": "C",
+        "qual": 11.7172,
+        "filter": "LowQualOrDepth",
+        "dp": 1,
+        "gt": "1",
+        "ad": "0,1"
+      }
+    ]
+  },
+  {
+    "path": "results/ERR8982185.pass.vcf",
+    "samples": [
+      "../Week-5/bam/ERR8982185.sorted.bam"
+    ],
+    "records": 0,
+    "snp_records": 0,
+    "indel_records": 0,
+    "other_records": 0,
+    "filters": {},
+    "min_dp": null,
+    "max_dp": null,
+    "mean_dp": null,
+    "min_qual": null,
+    "max_qual": null,
+    "top_calls": []
+  }
+]
