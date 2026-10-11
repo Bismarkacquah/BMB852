@@ -196,18 +196,17 @@ expanded workflow. The calls at the original loci are listed in
 
 ## Discussion
 
-The main change was the amount of usable evidence. In the first run, each
-candidate had only one or two usable observations, so all 134 candidates
-failed the minimum depth of three. Some had fairly high QUAL scores, but
-they still had too little read support. The empty PASS VCF therefore said
-more about the small input than about whether the sample matched the reference.
+The first run showed the limits of using only 1,000 read pairs for this
+genome. All 134 candidates had usable depth of one or two and failed the
+minimum depth of three. Even the calls with high QUAL scores lacked enough
+read support. Having no passing calls did not mean the sample was identical
+to the reference; there simply were too few reads to assess most positions.
 
-With the larger subset, coverage reached 96.48% and mean depth reached 8.42.
-That allowed many more positions to be assessed and produced 24,042 calls
-meeting the same thresholds. SNPs made up most of the passing calls, with
-indels accounting for nearly one fifth. The selected IGV examples show
-consistent alternate bases or insertion markers across several reads,
-which makes them reasonable candidates for further investigation.
+Using 20 million pairs changed that picture. Coverage reached 96.48%, mean
+depth was 8.42, and 24,042 calls passed the same filters. About four fifths
+were SNPs and one fifth were indels. In the selected IGV views, the alternate
+bases and insertion markers line up across several reads. These calls have
+much stronger support than the candidates from the small subset.
 
 The deeper data also showed why high depth needs careful interpretation.
 The maximum depth was 24,408, far above the genome-wide average. Repeated
@@ -225,12 +224,11 @@ even though insertion markers remain visible in some reads. That disagreement
 shows why a visible mismatch or insertion should be checked against the caller's
 usable evidence rather than accepted from the image alone.
 
-Overall, the larger input made the assignment much more informative, but
-PASS is still a filtering result. These calls may include real sample-reference
-differences and alignment or sequencing errors. Gene annotation, a check of
-strand support and duplicates, and independent validation would help identify
-the strongest biological candidates. The present results do not establish
-that any particular call is a CRISPR edit.
+The larger subset made it possible to inspect variation across most of the
+reference. The next step would be to check duplicates and strand support,
+annotate the calls, and validate the most promising sites. PASS means a call
+met the selected quality and depth cutoffs; it does not rule out alignment
+errors or show that a difference was caused by CRISPR editing.
 
 ## VCF statistics and graphs
 
