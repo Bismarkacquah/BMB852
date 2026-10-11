@@ -13,6 +13,7 @@ Weekly assignments are organized in separate folders for easy navigation and man
 - **Week 3**: Sending Suggestions with Forking and Repository Assessment
 - **Week 4**: Obtaining FASTQ data and evaluating read quality
 - **[Week 5](Week-5/)**: BAM alignment and coverage analysis
+- **[Week 7](Week-7/)**: Generate a VCF from the Week 5 BAM
 
 ## How to Use This Repository
 

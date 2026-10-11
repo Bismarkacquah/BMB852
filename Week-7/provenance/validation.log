@@ -1,0 +1,24 @@
+mkdir -p provenance
+printf '%s\n' 'PLOIDY=1' 'MIN_MQ=20' 'MIN_BQ=20' 'MIN_QUAL=20' 'MIN_DP=3' 'BAM=../Week-5/bam/ERR8982185.sorted.bam' 'REFERENCE=../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna' > provenance/parameters.txt.tmp
+if ! cmp -s provenance/parameters.txt.tmp provenance/parameters.txt; then mv provenance/parameters.txt.tmp provenance/parameters.txt; else rm provenance/parameters.txt.tmp; fi
+/opt/miniforge3/envs/bioinfo/bin/bcftools
+/opt/bmb852/week5/bin/samtools
+/opt/bmb852/week5/bin/python3
+test -s ../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna
+test -s ../Week-5/bam/ERR8982185.sorted.bam
+samtools quickcheck -v ../Week-5/bam/ERR8982185.sorted.bam
+bcftools view -Ov results/ERR8982185.raw.vcf.gz > /dev/null
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+bcftools norm -f ../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna -c e -Ov results/ERR8982185.vcf > /dev/null
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+Lines   total/split/joined/realigned/mismatch_removed/dup_removed/skipped:	134/0/0/0/0/0/0
+bcftools norm -f ../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna -c e -Ov results/ERR8982185.pass.vcf > /dev/null
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+Lines   total/split/joined/realigned/mismatch_removed/dup_removed/skipped:	0/0/0/0/0/0/0
+sha256sum -c provenance/inputs.sha256
+../Week-5/bam/ERR8982185.sorted.bam: OK
+../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna: OK
+results/ERR8982185.raw.vcf.gz: OK
+results/ERR8982185.filtered.vcf.gz: OK
+results/ERR8982185.vcf: OK
+results/ERR8982185.pass.vcf: OK

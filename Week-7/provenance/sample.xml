@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAMPLE_SET>
+<SAMPLE accession="SAMEA13207856" alias="E-MTAB-11497:CRIS1#1" center_name="Institut Jean-Pierre Bourgin, INRAE, AgroParisTech, Universite Paris-Saclay, 78000 Versailles, France" broker_name="ArrayExpress">
+     <IDENTIFIERS>
+          <PRIMARY_ID>SAMEA13207856</PRIMARY_ID>
+          <SECONDARY_ID>ERS10810631</SECONDARY_ID>
+          <EXTERNAL_ID namespace="BioSample">SAMEA13207856</EXTERNAL_ID>
+          <SUBMITTER_ID namespace="Institut Jean-Pierre Bourgin, INRAE, AgroParisTech, Universite Paris-Saclay, 78000 Versailles, France">E-MTAB-11497:CRIS1#1</SUBMITTER_ID>
+     </IDENTIFIERS>
+     <TITLE>CRIS1#1</TITLE>
+     <SAMPLE_NAME>
+          <TAXON_ID>3218</TAXON_ID>
+          <SCIENTIFIC_NAME>Physcomitrium patens</SCIENTIFIC_NAME>
+     </SAMPLE_NAME>
+     <DESCRIPTION>Protocols: Protonema were grown for 7days on PpNH4 medium (F. Charlot et Al, Physcomitrium patens protoplasting and protoplast transfection, in: K. Wang, F. Zhang (Eds.), Methods Mol. Biol. (Clifton, N.J.)-Protoplast Technol., Springer Nature, 2022: p. In Press). Plants were cultured as described previously in (Cove DJ et al, 2009) Plants were transformed with Crispr-Cas9 as previously described in (Collonnier C. et al, 2017) Genomics DNA was extracted from 1.5 g of fresh protonema. DNA samples were extracted using the NucleoSpin™ PlantII Kit (Macherey-Nagel) as described by the manufacturer. Kapa Hyper Prep (index 12 bases)</DESCRIPTION>
+     <SAMPLE_LINKS>
+    <SAMPLE_LINK>
+        <XREF_LINK>
+            <DB>ENA-FASTQ-FILES</DB>
+            <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERS10810631&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+        </XREF_LINK>
+    </SAMPLE_LINK>
+    <SAMPLE_LINK>
+        <XREF_LINK>
+            <DB>ENA-SUBMITTED-FILES</DB>
+            <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERS10810631&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+        </XREF_LINK>
+    </SAMPLE_LINK>
+</SAMPLE_LINKS>
+<SAMPLE_ATTRIBUTES>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-CHECKLIST</TAG>
+               <VALUE>ERC000011</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>isolate</TAG>
+               <VALUE>not applicable</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-FIRST-PUBLIC</TAG>
+               <VALUE>2022-03-03T20:47:53Z</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>cultivar</TAG>
+               <VALUE>Switzerland Gransden</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>organism</TAG>
+               <VALUE>Physcomitrium patens</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>organism</TAG>
+               <VALUE>Physcomitrium patens</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-LAST-UPDATE</TAG>
+               <VALUE>2022-03-03T20:47:53Z</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>scientific_name</TAG>
+               <VALUE>Physcomitrium patens</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>organism part</TAG>
+               <VALUE>protonema</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>age</TAG>
+               <VALUE>7</VALUE>
+               <UNITS>day</UNITS>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>developmental stage</TAG>
+               <VALUE>protonema</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>genotype</TAG>
+               <VALUE>apt- 1</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-FIRST-PUBLIC</TAG>
+               <VALUE>2022-03-03</VALUE>
+          </SAMPLE_ATTRIBUTE>
+          <SAMPLE_ATTRIBUTE>
+               <TAG>ENA-LAST-UPDATE</TAG>
+               <VALUE>2022-03-03</VALUE>
+          </SAMPLE_ATTRIBUTE>
+     </SAMPLE_ATTRIBUTES>
+</SAMPLE>
+</SAMPLE_SET>
