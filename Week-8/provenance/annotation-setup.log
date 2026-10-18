@@ -1,0 +1,5 @@
+mkdir -p annotation/data/Phypa_V3 provenance
+ln -sfn "$(realpath ../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna)" annotation/data/Phypa_V3/sequences.fa
+ln -sfn "$(realpath ../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.gff)" annotation/data/Phypa_V3/genes.gff
+printf '%s\n' 'data.dir = ./data' 'Phypa_V3.genome : Physcomitrium patens Phypa V3' > annotation/snpEff.config
+cd annotation && java -Xmx4g -jar "$(realpath ../tools/snpEff/snpEff.jar)" build -gff3 -noCheckCds -noCheckProtein -v -c snpEff.config Phypa_V3 > ../provenance/snpeff-build.log 2>&1

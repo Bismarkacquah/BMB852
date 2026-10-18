@@ -1,0 +1,240 @@
+[
+  {
+    "chrom": "CM009329.1",
+    "pos": 15055010,
+    "ref": "A",
+    "alt": "AT",
+    "effect": "frameshift_variant",
+    "impact": "HIGH",
+    "gene": "PHYPA_018940",
+    "transcript": "rna-gnl|WGS:ABEU|Pp3c14_23500V3.1",
+    "hgvs_c": "c.2411_2412insT",
+    "hgvs_p": "p.Glu804fs",
+    "warning": "",
+    "type": "indel",
+    "supported_samples": [
+      "ERR8982183",
+      "ERR8982184",
+      "ERR8982185",
+      "ERR8982186"
+    ],
+    "calls": {
+      "ERR8982183": {
+        "qual": 176.416,
+        "dp": 8,
+        "ad": [
+          0,
+          8
+        ],
+        "gt": "1",
+        "mq": 60.0
+      },
+      "ERR8982184": {
+        "qual": 208.417,
+        "dp": 9,
+        "ad": [
+          0,
+          9
+        ],
+        "gt": "1",
+        "mq": 60.0
+      },
+      "ERR8982185": {
+        "qual": 209.417,
+        "dp": 8,
+        "ad": [
+          0,
+          8
+        ],
+        "gt": "1",
+        "mq": 60.0
+      },
+      "ERR8982186": {
+        "qual": 225.417,
+        "dp": 12,
+        "ad": [
+          0,
+          12
+        ],
+        "gt": "1",
+        "mq": 60.0
+      },
+      "ERR8982187": {
+        "qual": 185.416,
+        "dp": 7,
+        "ad": [
+          0,
+          7
+        ],
+        "gt": "1",
+        "mq": 60.0
+      }
+    },
+    "unfiltered_depth_by_sample": {
+      "ERR8982183": 8,
+      "ERR8982184": 9,
+      "ERR8982185": 8,
+      "ERR8982186": 13,
+      "ERR8982187": 8
+    }
+  },
+  {
+    "chrom": "CM009330.1",
+    "pos": 8424047,
+    "ref": "A",
+    "alt": "G",
+    "effect": "missense_variant",
+    "impact": "MODERATE",
+    "gene": "PHYPA_019678",
+    "transcript": "rna-gnl|WGS:ABEU|Pp3c15_12700V3.1",
+    "hgvs_c": "c.2263A>G",
+    "hgvs_p": "p.Lys755Glu",
+    "warning": "",
+    "type": "SNP",
+    "supported_samples": [
+      "ERR8982183",
+      "ERR8982184",
+      "ERR8982185",
+      "ERR8982186",
+      "ERR8982187"
+    ],
+    "calls": {
+      "ERR8982183": {
+        "qual": 225.417,
+        "dp": 11,
+        "ad": [
+          0,
+          11
+        ],
+        "gt": "1",
+        "mq": 60.0
+      },
+      "ERR8982184": {
+        "qual": 225.417,
+        "dp": 11,
+        "ad": [
+          0,
+          11
+        ],
+        "gt": "1",
+        "mq": 60.0
+      },
+      "ERR8982185": {
+        "qual": 225.417,
+        "dp": 13,
+        "ad": [
+          0,
+          13
+        ],
+        "gt": "1",
+        "mq": 60.0
+      },
+      "ERR8982186": {
+        "qual": 225.417,
+        "dp": 16,
+        "ad": [
+          0,
+          16
+        ],
+        "gt": "1",
+        "mq": 60.0
+      },
+      "ERR8982187": {
+        "qual": 225.417,
+        "dp": 18,
+        "ad": [
+          0,
+          18
+        ],
+        "gt": "1",
+        "mq": 60.0
+      }
+    },
+    "unfiltered_depth_by_sample": {
+      "ERR8982183": 11,
+      "ERR8982184": 13,
+      "ERR8982185": 13,
+      "ERR8982186": 16,
+      "ERR8982187": 18
+    }
+  },
+  {
+    "chrom": "CM009317.1",
+    "pos": 11828535,
+    "ref": "T",
+    "alt": "C",
+    "effect": "synonymous_variant",
+    "impact": "LOW",
+    "gene": "PHYPA_002866",
+    "transcript": "rna-gnl|WGS:ABEU|Pp3c2_18051V3.1",
+    "hgvs_c": "c.510T>C",
+    "hgvs_p": "p.Leu170Leu",
+    "warning": "",
+    "type": "SNP",
+    "supported_samples": [
+      "ERR8982184",
+      "ERR8982185",
+      "ERR8982186",
+      "ERR8982187"
+    ],
+    "calls": {
+      "ERR8982183": {
+        "qual": 110.415,
+        "dp": 4,
+        "ad": [
+          0,
+          4
+        ],
+        "gt": "1",
+        "mq": 60.0
+      },
+      "ERR8982184": {
+        "qual": 183.416,
+        "dp": 9,
+        "ad": [
+          0,
+          9
+        ],
+        "gt": "1",
+        "mq": 60.0
+      },
+      "ERR8982185": {
+        "qual": 193.416,
+        "dp": 8,
+        "ad": [
+          0,
+          8
+        ],
+        "gt": "1",
+        "mq": 60.0
+      },
+      "ERR8982186": {
+        "qual": 199.416,
+        "dp": 8,
+        "ad": [
+          0,
+          8
+        ],
+        "gt": "1",
+        "mq": 60.0
+      },
+      "ERR8982187": {
+        "qual": 225.417,
+        "dp": 12,
+        "ad": [
+          0,
+          12
+        ],
+        "gt": "1",
+        "mq": 60.0
+      }
+    },
+    "unfiltered_depth_by_sample": {
+      "ERR8982183": 4,
+      "ERR8982184": 9,
+      "ERR8982185": 9,
+      "ERR8982186": 8,
+      "ERR8982187": 14
+    }
+  }
+]

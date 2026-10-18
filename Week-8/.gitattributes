@@ -1,0 +1,11 @@
+*.sh text eol=lf
+*.py text eol=lf
+Makefile text eol=lf
+*.gz -text
+*.png -text
+*.csi -text
+*.tbi -text
+# Preserve tool-produced tables and logs, including empty terminal TSV fields.
+results/** -whitespace
+provenance/** -whitespace
+samples/** -whitespace

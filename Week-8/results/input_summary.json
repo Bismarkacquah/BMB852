@@ -1,0 +1,21 @@
+{
+  "records": 24042,
+  "reference_matches": 24042,
+  "snp_records": 19576,
+  "outside_gene_records": 20935,
+  "indel_records": 4466,
+  "gene_overlapping_records": 3107,
+  "samples": [
+    "ERR8982185"
+  ],
+  "annotation_genes": 31306,
+  "genes_with_variants": 952,
+  "contigs_with_variants": 163,
+  "overlap_definition": "VCF REF span intersects GFF gene interval, inclusive coordinates; not a functional effect prediction",
+  "inputs": {
+    "../Week-7/expanded/results/ERR8982185.20M.pass.vcf.gz": "64dfe434f512ab128ab584d669ecadece14ec42341b9d440da1a594561c044e9",
+    "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna": "eda3922af8c6711133b05f3261118e5d75adebd3aebc8d47cb9e4cd8b11bc3b4",
+    "../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.gff": "e0fb0776d26b7ee3258fe01a87b7c957b7dee3a2204df35628c55700f003722f",
+    "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna.fai": "6053f0440122275dd312aab9d717ebb401544c595457cd2cb045377ddc8198f1"
+  }
+}

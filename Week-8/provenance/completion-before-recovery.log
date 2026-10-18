@@ -1,0 +1,11 @@
+mkdir -p provenance
+printf '%s\n' 'PAIRS=20000000' 'REFERENCE=../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna' 'PLOIDY=1' 'MIN_MQ=20' 'MIN_BQ=20' 'MIN_QUAL=20' 'MIN_DP=3' > provenance/pipeline-parameters.txt.tmp
+if ! cmp -s provenance/pipeline-parameters.txt.tmp provenance/pipeline-parameters.txt; then mv provenance/pipeline-parameters.txt.tmp provenance/pipeline-parameters.txt; else rm provenance/pipeline-parameters.txt.tmp; fi
+/opt/bmb852/week5/bin/python3
+/opt/bmb852/week5/bin/cutadapt
+/opt/bmb852/week5/bin/bwa
+/opt/bmb852/week5/bin/samtools
+/opt/miniforge3/envs/bioinfo/bin/bcftools
+/opt/miniforge3/envs/bioinfo/bin/java
+bash scripts/process_sample.sh ERR8982183 "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" 20000000 4
+make: *** [Makefile:38: samples/ERR8982183/ERR8982183.pass.vcf.gz] Terminated

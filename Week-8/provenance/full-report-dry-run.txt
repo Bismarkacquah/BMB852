@@ -1,0 +1,32 @@
+mkdir -p provenance
+printf '%s\n' 'PAIRS=20000000' 'REFERENCE=../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna' 'PLOIDY=1' 'MIN_MQ=20' 'MIN_BQ=20' 'MIN_QUAL=20' 'MIN_DP=3' > provenance/pipeline-parameters.txt.tmp
+if ! cmp -s provenance/pipeline-parameters.txt.tmp provenance/pipeline-parameters.txt; then mv provenance/pipeline-parameters.txt.tmp provenance/pipeline-parameters.txt; else rm provenance/pipeline-parameters.txt.tmp; fi
+for tool in python3 cutadapt bwa samtools bcftools java; do command -v $tool; done
+bash scripts/process_sample.sh ERR8982183 "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" 20000000 4
+bash scripts/process_sample.sh ERR8982184 "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" 20000000 4
+bash scripts/process_sample.sh ERR8982185 "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" 20000000 4
+bash scripts/process_sample.sh ERR8982186 "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" 20000000 4
+bash scripts/process_sample.sh ERR8982187 "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" 20000000 4
+mkdir -p results provenance
+bcftools --version > provenance/week8-tool-versions.txt
+bcftools merge -m none -Oz -o results/five_samples.vcf.gz samples/ERR8982183/ERR8982183.pass.vcf.gz samples/ERR8982184/ERR8982184.pass.vcf.gz samples/ERR8982185/ERR8982185.pass.vcf.gz samples/ERR8982186/ERR8982186.pass.vcf.gz samples/ERR8982187/ERR8982187.pass.vcf.gz 2> provenance/merge.log
+bcftools query -l results/five_samples.vcf.gz > results/merged_samples.txt
+test "$(wc -l < results/merged_samples.txt)" -eq 5
+bcftools norm -f "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" -c e -Ov results/five_samples.vcf.gz > /dev/null
+bcftools stats -s - results/five_samples.vcf.gz > results/five_samples.stats.txt
+sha256sum samples/ERR8982183/ERR8982183.pass.vcf.gz samples/ERR8982184/ERR8982184.pass.vcf.gz samples/ERR8982185/ERR8982185.pass.vcf.gz samples/ERR8982186/ERR8982186.pass.vcf.gz samples/ERR8982187/ERR8982187.pass.vcf.gz results/five_samples.vcf.gz > provenance/merged.sha256
+bcftools index -f results/five_samples.vcf.gz
+java -Xmx4g -jar tools/snpEff/snpEff.jar -c annotation/snpEff.config -dataDir "$(realpath annotation/data)" -noDownload -noStats -v Phypa_V3 results/five_samples.vcf.gz 2> provenance/snpeff-annotation.log | bcftools view -Oz -o results/five_samples.annotated.vcf.gz
+bcftools stats -s - results/five_samples.annotated.vcf.gz > results/five_samples.annotated.stats.txt
+bcftools index -f results/five_samples.annotated.vcf.gz
+bcftools index -t -f results/five_samples.annotated.vcf.gz
+python3 scripts/summarize_effects.py results/five_samples.annotated.vcf.gz --output results > provenance/effect-summary.log
+python3 scripts/analyze_multisample.py > provenance/comparison.log
+python3 scripts/collect_coverage.py --reference "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" > provenance/coverage.log
+tools/plotenv/bin/python scripts/plot_comparisons.py > provenance/figures.log
+python3 scripts/prepare_igv.py --reference "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" --gff "../Week-2/data/GCA_000002425.2_Phypa_V3_genomic.gff" > provenance/igv-prepare.log 2>&1
+bash scripts/run_igv.sh > provenance/igv-render.log 2>&1
+test -s png/05_five_sample_genotypes.png && test -s png/06_candidate_1.png && test -s png/07_regional_coverage.png
+touch igv/snapshots.complete
+python3 scripts/write_report.py
+touch results/report.complete

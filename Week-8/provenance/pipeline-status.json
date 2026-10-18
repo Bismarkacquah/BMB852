@@ -1,0 +1,7 @@
+{
+  "state": "complete",
+  "updated_utc": "2026-10-18T18:50:51.648635+00:00",
+  "stage": "five-sample analysis and IGV report",
+  "exit_code": 0,
+  "log": "provenance/completion.log"
+}

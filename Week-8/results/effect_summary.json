@@ -1,0 +1,78 @@
+{
+  "records": 39458,
+  "annotated_records": 39458,
+  "unannotated_records": 0,
+  "samples": [
+    "ERR8982183",
+    "ERR8982184",
+    "ERR8982185",
+    "ERR8982186",
+    "ERR8982187"
+  ],
+  "per_record_most_severe_impact": {
+    "MODIFIER": 37606,
+    "LOW": 708,
+    "MODERATE": 1001,
+    "HIGH": 143
+  },
+  "all_transcript_effect_counts": {
+    "upstream_gene_variant": 14172,
+    "intergenic_region": 35124,
+    "downstream_gene_variant": 14624,
+    "intron_variant": 1571,
+    "synonymous_variant": 643,
+    "disruptive_inframe_insertion": 2,
+    "missense_variant": 1002,
+    "stop_gained": 16,
+    "3_prime_UTR_variant": 429,
+    "intragenic_variant": 46,
+    "5_prime_UTR_variant": 656,
+    "frameshift_variant": 89,
+    "stop_lost": 23,
+    "splice_region_variant": 98,
+    "5_prime_UTR_premature_start_codon_gain_variant": 17,
+    "start_lost": 11,
+    "disruptive_inframe_deletion": 6,
+    "splice_acceptor_variant": 7,
+    "non_coding_transcript_variant": 3,
+    "conservative_inframe_deletion": 1,
+    "splice_donor_variant": 4,
+    "stop_retained_variant": 4,
+    "start_retained_variant": 1,
+    "conservative_inframe_insertion": 2
+  },
+  "annotation_warnings": {
+    "INFO_REALIGN_3_PRIME": 207,
+    "WARNING_TRANSCRIPT_NO_STOP_CODON": 1032,
+    "WARNING_TRANSCRIPT_NO_START_CODON": 4367,
+    "WARNING_TRANSCRIPT_INCOMPLETE": 1598,
+    "WARNING_TRANSCRIPT_MULTIPLE_STOP_CODONS": 1
+  },
+  "per_sample_site_counts": {
+    "ERR8982183": {
+      "missing": 18062,
+      "nonreference": 21396
+    },
+    "ERR8982184": {
+      "nonreference": 22438,
+      "missing": 17020
+    },
+    "ERR8982185": {
+      "missing": 15416,
+      "nonreference": 24042
+    },
+    "ERR8982186": {
+      "missing": 15449,
+      "nonreference": 24009
+    },
+    "ERR8982187": {
+      "missing": 15803,
+      "nonreference": 23655
+    }
+  },
+  "high_impact_records_by_biotype": {
+    "protein_coding": 142,
+    "pseudogene": 1
+  },
+  "interpretation": "Missing genotypes are unknown, not reference. Impacts are computational predictions. Transcript effect totals can exceed variant record counts."
+}

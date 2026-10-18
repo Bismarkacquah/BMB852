@@ -1,0 +1,4 @@
+python3 scripts/test_merge.py
+PASS: five samples, allele union, and unknown genotypes preserved
+python3 scripts/test_ann_format.py
+PASS: ANN field alignment, HGVS/warnings, idempotence, and malformed-entry rejection

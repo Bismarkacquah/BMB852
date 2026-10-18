@@ -1,0 +1,3 @@
+This is cutadapt 5.2 with Python 3.12.14
+Command line parameters: -j 4 -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT -q 20,20 -m 30 --json samples/ERR8982183/cutadapt.json -o samples/ERR8982183/read1.trimmed.fastq.gz -p samples/ERR8982183/read2.trimmed.fastq.gz samples/ERR8982183/raw/ERR8982183_1.fastq.gz samples/ERR8982183/raw/ERR8982183_2.fastq.gz
+Processing paired-end reads on 4 cores ...

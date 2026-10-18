@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Session genome="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" locus="CM009329.1:15054969-15055050" version="8">
+    <Resources>
+        <Resource path="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-7/expanded/bam/ERR8982185.20M.sorted.bam" type="bam"/>
+        <Resource path="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/results/igv_genes.bed" type="bed"/>
+        <Resource path="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982186/ERR8982186.sorted.bam" type="bam"/>
+        <Resource path="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982183/ERR8982183.sorted.bam" type="bam"/>
+        <Resource path="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982187/ERR8982187.sorted.bam" type="bam"/>
+        <Resource path="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/results/five_samples.annotated.vcf.gz" type="vcf"/>
+        <Resource path="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982184/ERR8982184.sorted.bam" type="bam"/>
+    </Resources>
+    <Panel height="100" name="DataPanel" width="1055">
+        <Track attributeKey="five_samples.annotated.vcf.gz" clazz="org.broad.igv.variant.VariantTrack" displayMode="EXPANDED" featureVisibilityWindow="99600" fontSize="10" groupByStrand="false" id="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/results/five_samples.annotated.vcf.gz" name="five_samples.annotated.vcf.gz" siteColorMode="ALLELE_FREQUENCY" visible="true"/>
+    </Panel>
+    <Panel height="142" name="Panel1792349421086" width="1055">
+        <Track attributeKey="ERR8982183.sorted.bam Coverage" autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" displayMode="EXPANDED" fontSize="10" id="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982183/ERR8982183.sorted.bam_coverage" name="ERR8982183.sorted.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="12.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="ERR8982183.sorted.bam Junctions" autoScale="true" clazz="org.broad.igv.sam.SpliceJunctionTrack" displayMode="EXPANDED" fontSize="10" groupByStrand="false" height="60" id="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982183/ERR8982183.sorted.bam_junctions" maxdepth="50" name="ERR8982183.sorted.bam Junctions" visible="false"/>
+        <Track attributeKey="ERR8982183.sorted.bam" clazz="org.broad.igv.sam.AlignmentTrack" color="185,185,185" displayMode="SQUISHED" experimentType="OTHER" fontSize="10" height="240" id="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982183/ERR8982183.sorted.bam" name="ERR8982183.sorted.bam" visible="true">
+            <RenderOptions colorOption="READ_STRAND" duplicatesOption="FILTER"/>
+        </Track>
+    </Panel>
+    <Panel height="145" name="Panel1792349422434" width="1055">
+        <Track attributeKey="ERR8982184.sorted.bam Coverage" autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" displayMode="EXPANDED" fontSize="10" id="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982184/ERR8982184.sorted.bam_coverage" name="ERR8982184.sorted.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="10.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="ERR8982184.sorted.bam Junctions" autoScale="true" clazz="org.broad.igv.sam.SpliceJunctionTrack" displayMode="EXPANDED" fontSize="10" groupByStrand="false" height="60" id="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982184/ERR8982184.sorted.bam_junctions" maxdepth="50" name="ERR8982184.sorted.bam Junctions" visible="false"/>
+        <Track attributeKey="ERR8982184.sorted.bam" clazz="org.broad.igv.sam.AlignmentTrack" color="185,185,185" displayMode="SQUISHED" experimentType="OTHER" fontSize="10" height="240" id="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982184/ERR8982184.sorted.bam" name="ERR8982184.sorted.bam" visible="true">
+            <RenderOptions colorOption="READ_STRAND" duplicatesOption="FILTER"/>
+        </Track>
+    </Panel>
+    <Panel height="142" name="Panel1792349423692" width="1055">
+        <Track attributeKey="ERR8982185.20M.sorted.bam Coverage" autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" displayMode="EXPANDED" fontSize="10" id="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-7/expanded/bam/ERR8982185.20M.sorted.bam_coverage" name="ERR8982185.20M.sorted.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="10.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="ERR8982185.20M.sorted.bam Junctions" autoScale="true" clazz="org.broad.igv.sam.SpliceJunctionTrack" displayMode="EXPANDED" fontSize="10" groupByStrand="false" height="60" id="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-7/expanded/bam/ERR8982185.20M.sorted.bam_junctions" maxdepth="50" name="ERR8982185.20M.sorted.bam Junctions" visible="false"/>
+        <Track attributeKey="ERR8982185.20M.sorted.bam" clazz="org.broad.igv.sam.AlignmentTrack" color="185,185,185" displayMode="SQUISHED" experimentType="OTHER" fontSize="10" height="240" id="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-7/expanded/bam/ERR8982185.20M.sorted.bam" name="ERR8982185.20M.sorted.bam" visible="true">
+            <RenderOptions colorOption="READ_STRAND" duplicatesOption="FILTER"/>
+        </Track>
+    </Panel>
+    <Panel height="162" name="Panel1792349424991" width="1055">
+        <Track attributeKey="ERR8982186.sorted.bam Coverage" autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" displayMode="EXPANDED" fontSize="10" id="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982186/ERR8982186.sorted.bam_coverage" name="ERR8982186.sorted.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="17.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="ERR8982186.sorted.bam Junctions" autoScale="true" clazz="org.broad.igv.sam.SpliceJunctionTrack" displayMode="EXPANDED" fontSize="10" groupByStrand="false" height="60" id="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982186/ERR8982186.sorted.bam_junctions" maxdepth="50" name="ERR8982186.sorted.bam Junctions" visible="false"/>
+        <Track attributeKey="ERR8982186.sorted.bam" clazz="org.broad.igv.sam.AlignmentTrack" color="185,185,185" displayMode="SQUISHED" experimentType="OTHER" fontSize="10" height="240" id="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982186/ERR8982186.sorted.bam" name="ERR8982186.sorted.bam" visible="true">
+            <RenderOptions colorOption="READ_STRAND" duplicatesOption="FILTER"/>
+        </Track>
+    </Panel>
+    <Panel height="190" name="Panel1792349426252" width="1055">
+        <Track attributeKey="ERR8982187.sorted.bam Coverage" autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" displayMode="EXPANDED" fontSize="10" id="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982187/ERR8982187.sorted.bam_coverage" name="ERR8982187.sorted.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="12.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="ERR8982187.sorted.bam Junctions" autoScale="true" clazz="org.broad.igv.sam.SpliceJunctionTrack" displayMode="EXPANDED" fontSize="10" groupByStrand="false" height="60" id="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982187/ERR8982187.sorted.bam_junctions" maxdepth="50" name="ERR8982187.sorted.bam Junctions" visible="false"/>
+        <Track attributeKey="ERR8982187.sorted.bam" clazz="org.broad.igv.sam.AlignmentTrack" color="185,185,185" displayMode="SQUISHED" experimentType="OTHER" fontSize="10" height="240" id="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982187/ERR8982187.sorted.bam" name="ERR8982187.sorted.bam" visible="true">
+            <RenderOptions colorOption="READ_STRAND" duplicatesOption="FILTER"/>
+        </Track>
+    </Panel>
+    <Panel height="194" name="FeaturePanel" width="1055">
+        <Track attributeKey="Reference sequence" clazz="org.broad.igv.track.SequenceTrack" displayMode="EXPANDED" fontSize="10" id="Reference sequence" name="Reference sequence" sequenceTranslationStrandValue="+" shouldShowTranslation="false" visible="true"/>
+        <Track attributeKey="igv_genes.bed" clazz="org.broad.igv.track.FeatureTrack" colorScale="ContinuousColorScale;0.0;3.0;255,255,255;0,0,178" displayMode="EXPANDED" fontSize="10" groupByStrand="false" height="180" id="/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/results/igv_genes.bed" name="igv_genes.bed" visible="true"/>
+    </Panel>
+    <PanelLayout dividerFractions="0.06504065040650407,0.241869918699187,0.40853658536585363,0.6036585365853658,0.8028455284552846,0.8617886178861789"/>
+    <HiddenAttributes>
+        <Attribute name="DATA FILE"/>
+        <Attribute name="DATA TYPE"/>
+        <Attribute name="NAME"/>
+    </HiddenAttributes>
+</Session>

@@ -1,0 +1,17 @@
+mkdir -p provenance
+printf '%s\n' 'PAIRS=20000000' 'REFERENCE=../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna' 'SAMPLES=ERR8982183 ERR8982184 ERR8982185 ERR8982186' 'PLOIDY=1' 'MIN_MQ=20' 'MIN_BQ=20' 'MIN_QUAL=20' 'MIN_DP=3' > provenance/pipeline-parameters.txt.tmp
+if ! cmp -s provenance/pipeline-parameters.txt.tmp provenance/pipeline-parameters.txt; then mv provenance/pipeline-parameters.txt.tmp provenance/pipeline-parameters.txt; else rm provenance/pipeline-parameters.txt.tmp; fi
+for tool in python3 cutadapt bwa samtools bcftools java; do command -v $tool; done
+bash scripts/process_sample.sh ERR8982183 "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" 20000000 4
+bash scripts/process_sample.sh ERR8982184 "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" 20000000 4
+bash scripts/process_sample.sh ERR8982185 "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" 20000000 4
+bash scripts/process_sample.sh ERR8982186 "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" 20000000 4
+mkdir -p results provenance
+bcftools --version > provenance/week8-tool-versions.txt
+bcftools merge -m none -Oz -o results/four_samples.vcf.gz samples/ERR8982183/ERR8982183.pass.vcf.gz samples/ERR8982184/ERR8982184.pass.vcf.gz samples/ERR8982185/ERR8982185.pass.vcf.gz samples/ERR8982186/ERR8982186.pass.vcf.gz 2> provenance/merge.log
+bcftools query -l results/four_samples.vcf.gz > results/merged_samples.txt
+test "$(wc -l < results/merged_samples.txt)" -eq 4
+bcftools norm -f "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" -c e -Ov results/four_samples.vcf.gz > /dev/null
+bcftools stats -s - results/four_samples.vcf.gz > results/four_samples.stats.txt
+sha256sum samples/ERR8982183/ERR8982183.pass.vcf.gz samples/ERR8982184/ERR8982184.pass.vcf.gz samples/ERR8982185/ERR8982185.pass.vcf.gz samples/ERR8982186/ERR8982186.pass.vcf.gz results/four_samples.vcf.gz > provenance/merged.sha256
+bcftools index -f results/four_samples.vcf.gz

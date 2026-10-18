@@ -1,0 +1,39 @@
+new
+setSleepInterval 1000
+genome /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna
+snapshotDirectory /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/png
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/results/five_samples.annotated.vcf.gz
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/results/igv_genes.bed
+maxPanelHeight 2400
+setSequenceShowTranslation false
+expand
+setTrackHeight 180 igv_genes.bed
+goto CM009329.1:15054910-15055110
+snapshot 05_five_sample_genotypes.png
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982183/ERR8982183.sorted.bam
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982184/ERR8982184.sorted.bam
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-7/expanded/bam/ERR8982185.20M.sorted.bam
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982186/ERR8982186.sorted.bam
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982187/ERR8982187.sorted.bam
+expand
+colorBy READ_STRAND
+scrollToTop
+setTrackHeight 240 ERR8982183.sorted.bam
+setTrackHeight 240 ERR8982184.sorted.bam
+setTrackHeight 240 ERR8982185.20M.sorted.bam
+setTrackHeight 240 ERR8982186.sorted.bam
+setTrackHeight 240 ERR8982187.sorted.bam
+goto CM009329.1:15054970-15055050
+sort BASE CM009329.1:15055010
+snapshot 06_candidate_1.png
+goto CM009330.1:8424007-8424087
+sort BASE CM009330.1:8424047
+snapshot 06_candidate_2.png
+goto CM009317.1:11828495-11828575
+sort BASE CM009317.1:11828535
+snapshot 06_candidate_3.png
+goto CM009329.1:15052510-15057510
+snapshot 07_regional_coverage.png
+goto CM009329.1:15054970-15055050
+saveSession /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/igv/five_samples.session.xml
+exit
