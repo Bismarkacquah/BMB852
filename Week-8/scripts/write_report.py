@@ -35,8 +35,17 @@ for filename in images:
 
 lines = ['# Week 8  -  five-sample variant analysis', '',
          '## Sequencing Data and Reference Genome', '',
+         '| Sequence information | Accession or description |', '|---|---|',
+         '| Organism | *Physcomitrium patens* (moss) |',
+         '| Sequencing study / BioProject | [PRJEB51295](https://www.ebi.ac.uk/ena/browser/view/PRJEB51295) |',
+         '| Reference genome assembly | [GCA_000002425.2](https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_000002425.2/) |',
+         '| Reference assembly name | Phypa V3 |',
+         '| Reference sequence length | 471,852,792 bp |',
+         '| Sequencing data | Paired-end whole-genome sequencing (WGS), five runs |',
+         '| Analyzed subset | First 20 million read pairs per run, 100 million pairs across five runs |', '',
+         '**Accession reminder:** The sequencing-run identifiers for these samples begin with **ERR**. They serve the same role as the **SRR** run numbers used in other datasets. **PRJEB** identifies the study, **GCA** identifies the assembled reference genome, **ERX** identifies an experiment, and **SAMEA** identifies a biological sample. Use the ERR run accessions below to retrieve the sequencing reads; the GCA accession identifies the reference used for alignment and annotation.', '',
          'I extended the Week 7 *Physcomitrium patens* analysis from one sample to five: the original CRIS1#1 sample plus four additional samples from study **PRJEB51295**. Each new sample was processed independently against the same reference, **GCA_000002425.2_Phypa_V3**, before merging and predicting transcript effects.', '',
-         '| Sample | Run | Experiment | Biosample |', '|---|---|---|---|']
+         '| Sample | Sequencing run (ERR) | Experiment (ERX) | BioSample (SAMEA) |', '|---|---|---|---|']
 for row in metadata:
     run = row['run_accession']
     title = row['sample_title'] + (' · original Week 7' if run == 'ERR8982185' else '')
