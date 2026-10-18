@@ -56,7 +56,7 @@ These figures retain labeled rectangles on actual IGV screenshots, with explanat
 
 ![Annotated frameshift evidence](png/10_annotated_candidate_1.png)
 
-**A — Genotype column:** The selected insertion appears in all five sample rows. **B — Read evidence:** The tall rectangle follows the insertion coordinate through all five BAMs. Compare insertion indicators with the usable AD/DP counts below. **C — Reference and transcript context:** The lower rectangle marks the reference sequence and nearby models used to interpret the coding consequence.
+**A  -  Genotype column:** The selected insertion appears in all five sample rows. **B  -  Read evidence:** The tall rectangle follows the insertion coordinate through all five BAMs. Compare insertion indicators with the usable AD/DP counts below. **C  -  Reference and transcript context:** The lower rectangle marks the reference sequence and nearby models used to interpret the coding consequence.
 
 Pink/purple read backgrounds indicate strand. The insertion markers identify the sequence event; their placement should be assessed with the local alignment and saved pileups. The rectangles are added to the original screenshot, whose underlying read data remain unchanged.
 
@@ -70,7 +70,7 @@ For transcript `Pp3c14_23500V3.1`, the annotation is `c.2411_2412insT`, `p.Glu80
 
 ![Annotated missense evidence](png/10_annotated_candidate_2.png)
 
-**A — Genotype column:** The selected A>G call is shown across five sample rows. **B — Read evidence:** The vertical rectangle follows this coordinate through the five BAM tracks; nearby mismatch columns represent separate positions. **C — Reference and transcript context:** The lower rectangle identifies the sequence and transcript model relevant to the predicted amino-acid substitution.
+**A  -  Genotype column:** The selected A>G call is shown across five sample rows. **B  -  Read evidence:** The vertical rectangle follows this coordinate through the five BAM tracks; nearby mismatch columns represent separate positions. **C  -  Reference and transcript context:** The lower rectangle identifies the sequence and transcript model relevant to the predicted amino-acid substitution.
 
 Pink/purple backgrounds encode read strand, while colored bases identify mismatches. Use the AD/DP counts below to quantify support. Both controls and all three CRIS samples retain this allele; the image does not establish an editing-specific effect. The boxes are presentation annotations on the original IGV output.
 
@@ -82,7 +82,7 @@ Usable ALT counts are **11, 11, 13, 16, and 18**, again with zero reference coun
 
 ![Annotated synonymous evidence](png/10_annotated_candidate_3.png)
 
-**A — Genotype column:** The boxed T>C call appears in all five sample rows. **B — Read evidence:** The tall rectangle follows the mismatch position across the five alignments. **C — Reference and transcript context:** The lower rectangle marks the reference and model used to assign the synonymous consequence.
+**A  -  Genotype column:** The boxed T>C call appears in all five sample rows. **B  -  Read evidence:** The tall rectangle follows the mismatch position across the five alignments. **C  -  Reference and transcript context:** The lower rectangle marks the reference and model used to assign the synonymous consequence.
 
 Pink/purple read backgrounds indicate strand. Compare the colored base column with the AD/DP values below, especially the lower usable support in Control#1. The allele is retained in both controls and all three CRIS samples, so it does not distinguish the groups. Rectangles are added to the original IGV screenshot without altering the underlying data.
 

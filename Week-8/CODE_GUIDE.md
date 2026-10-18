@@ -1,4 +1,4 @@
-# Week 8 — commands in chronological order
+# Week 8  -  commands in chronological order
 
 This guide explains the actual analysis, from the reference files to a five-sample IGV session. Run shell commands in Linux or WSL, from `Week-8/`. The Makefile runs the same steps and stops when a command fails. Results must come from the real inputs; the tests use temporary synthetic fixtures only.
 
@@ -21,9 +21,9 @@ flowchart LR
 ## 0. Create the software environment
 
 ```bash
+cd /path/to/BMB852/Week-8             # Replace this with your actual Week-8 directory.
 conda env create -f environment.yml   # Install the declared tools into a separate environment.
 conda activate bmmb852-week8          # Select that environment for all following commands.
-cd /path/to/BMB852/Week-8             # Replace this with your actual Week-8 directory.
 ```
 
 Create the environment while already in `Week-8/`, or pass the full path to `environment.yml`. Conda/Mamba must already be installed. The environment declares Python, BWA, SAMtools, BCFtools, cutadapt, Java, matplotlib, Make, and curl. Java runs SnpEff; an IGV installation with Java 21 and a working graphical display is needed for snapshots. Read [the tested versions](provenance/all-tool-versions.txt) and [SnpEff version](provenance/snpeff-version.txt).
