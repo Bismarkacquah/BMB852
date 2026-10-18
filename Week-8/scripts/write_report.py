@@ -116,6 +116,7 @@ lines += ['#### Regional view', '', '![Five-sample regional coverage and read al
           'The regional view spans 5 kb around the first selected example and provides context for nearby coverage changes and calls. Its coverage tracks may autoscale independently, so compare numeric depths rather than apparent bar heights alone. All snapshots are actual IGV output; no illustrative read pileups were substituted.', '',
           'Genomic REF/ALT alleles use the forward reference strand. Coding HGVS notation follows the transcript strand, so negative-strand genes can show complementary base letters.', '',
           '## Reproduce in chronological order', '',
+          'See the [reproduction guide](REPRODUCE.md) for installation, processing, and verification instructions.', '',
           'The complete commands, line-by-line option explanations, expected outputs, and full source links are in [CODE_GUIDE.md](CODE_GUIDE.md). From this folder, the main steps are:', '',
           '```bash\nconda env create -f environment.yml\nconda activate bmmb852-week8\nmake setup-reference\nmake setup-annotation\nmake test\nmake all\nmake report\n```', '',
           '`make all` independently processes the selected samples, merges, annotates, and summarizes. `make report` adds quantitative comparisons, reference coverage, figures, actual IGV snapshots, and this measured report. A working graphical display and IGV installation are required for its snapshot stage. On this workstation set `IGV_DIR=/opt/IGV_Linux_2.19.8`; elsewhere point it to your local IGV installation.', '',
@@ -135,8 +136,8 @@ insert = ['## Whole merged VCF overview', '',
           'The three IGV examples have alternate calls in both controls and all three CRIS samples; they do not distinguish treatment groups. Shared calls can reflect differences from the chosen reference. Sample-specific missing entries require common-site genotyping before biological absence can be inferred.', '']
 at = lines.index('## Results')
 lines[at:at] = insert
-lines[2:2] = ['**Detailed interpretation:** [what every result means, with boxed IGV screenshots](RESULTS_EXPLAINED.md).', '']
-lines[2:2] = ['**Start here to reproduce:** [setup, quick figure reproduction, full read processing, IGV, and verification](REPRODUCE.md).', '']
+at = lines.index('## Discussion and limits')
+lines[at+2:at+2] = ['The [results discussion](RESULTS_EXPLAINED.md) examines the sample comparisons, predicted effects, and read evidence at the three illustrated loci.', '']
 for i in range(1, len(selected)+1):
     original = f'![Five BAMs at example {i}](png/06_candidate_{i}.png)'
     if original in lines:

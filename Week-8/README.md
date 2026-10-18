@@ -1,9 +1,5 @@
 # Week 8  -  five-sample variant analysis
 
-**Start here to reproduce:** [setup, quick figure reproduction, full read processing, IGV, and verification](REPRODUCE.md).
-
-**Detailed interpretation:** [what every result means, with boxed IGV screenshots](RESULTS_EXPLAINED.md).
-
 ## Sequencing Data and Reference Genome
 
 | Sequence information | Accession or description |
@@ -217,6 +213,8 @@ Genomic REF/ALT alleles use the forward reference strand. Coding HGVS notation f
 
 ## Reproduce in chronological order
 
+See the [reproduction guide](REPRODUCE.md) for installation, processing, and verification instructions.
+
 The complete commands, line-by-line option explanations, expected outputs, and full source links are in [CODE_GUIDE.md](CODE_GUIDE.md). From this folder, the main steps are:
 
 ```bash
@@ -232,6 +230,8 @@ make report
 `make all` independently processes the selected samples, merges, annotates, and summarizes. `make report` adds quantitative comparisons, reference coverage, figures, actual IGV snapshots, and this measured report. A working graphical display and IGV installation are required for its snapshot stage. On this workstation set `IGV_DIR=/opt/IGV_Linux_2.19.8`; elsewhere point it to your local IGV installation.
 
 ## Discussion and limits
+
+The [results discussion](RESULTS_EXPLAINED.md) examines the sample comparisons, predicted effects, and read evidence at the three illustrated loci.
 
 This analysis compares retained variants and predicts their transcript consequences using the same reference as Week 7. Differences in call counts can arise from coverage, library properties, alignment quality, or filtering as well as biological variation. Prefix sampling is not random, and a haploid calling model was inferred rather than measured separately for each sample.
 
