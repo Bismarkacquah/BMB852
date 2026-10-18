@@ -131,7 +131,12 @@ for i in range(1, len(selected)+1):
     original = f'![Five BAMs at example {i}](png/06_candidate_{i}.png)'
     if original in lines:
         at = lines.index(original)
-        lines[at:at+1] = [f'![Annotated five-BAM evidence at example {i}](png/10_annotated_candidate_{i}.png)', '', f'[Original unannotated screenshot](png/06_candidate_{i}.png). Boxes A, B, and C mark the selected genotype column, corresponding read evidence, and reference/transcript context. See [detailed interpretation](RESULTS_EXPLAINED.md).']
+        lines[at:at+1] = [f'![Annotated five-BAM evidence at example {i}](png/10_annotated_candidate_{i}.png)', '',
+            '**A — Genotype column:** The boxed column marks the selected allele across five sample rows. Read the sample genotypes alongside the numerical table above.', '',
+            '**B — Read evidence:** The vertical rectangle follows the same reference position through all five BAM and coverage tracks. Compare mismatch bases or insertion markers at this position. Pink/purple read backgrounds indicate strand, while AD and DP quantify usable allele support.', '',
+            '**C — Reference and transcript context:** The lower rectangle identifies the reference sequence and nearby transcript models. Transcript overlap provides annotation context; it does not independently establish a functional effect.', '',
+            '**Interpretation:** Both controls and all three CRIS samples retain this alternate allele. It illustrates a predicted transcript consequence, without establishing a CRIS-specific mutation or causal effect.', '',
+            f'[Original unannotated screenshot](png/06_candidate_{i}.png) · [Detailed interpretation](RESULTS_EXPLAINED.md). Rectangles are added to the original IGV output; the underlying data are unchanged.']
 (root / 'README.md').write_text('\n'.join(lines))
 gallery = ['# Week 8 figures', '', 'Generated from the completed five-sample analysis. See the [main report](../README.md) for measurements and interpretation.', '',
            '| Figure | Content |', '|---|---|',
@@ -143,7 +148,7 @@ gallery = ['# Week 8 figures', '', 'Generated from the completed five-sample ana
 gallery += [f'| [06.{i}](06_candidate_{i}.png) | Actual IGV read evidence at candidate {i} |' for i in range(1, len(selected)+1)]
 gallery += ['| [07](07_regional_coverage.png) | Actual IGV regional view with five BAMs |', '']
 gallery += ['| [08](08_all_merged_variants.png) | Every merged allele across all contigs with calls |', '| [09](09_all_call_patterns.png) | All call patterns and pairwise retained-call similarities |', '']
-gallery += [f'| [10.{i}](10_annotated_candidate_{i}.png) | Boxed IGV locus and explanatory sidebar |' for i in range(1, len(selected)+1)]
+gallery += [f'| [10.{i}](10_annotated_candidate_{i}.png) | Boxed IGV locus; explanations appear below the figure in the report |' for i in range(1, len(selected)+1)]
 (root / 'png/README.md').write_text('\n'.join(gallery))
 hashes = []
 for path in [r / 'five_samples.annotated.vcf.gz', *[root / 'png' / filename for filename in images]]:
