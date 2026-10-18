@@ -33,7 +33,7 @@ for filename in images:
     assert path.is_file() and path.stat().st_size > 1000, f'Missing/empty image: {path}'
     assert path.read_bytes()[:8] == b'\x89PNG\r\n\x1a\n', f'Not a PNG: {path}'
 
-lines = ['# Week 8 — five-sample variant analysis', '',
+lines = ['# Week 8  -  five-sample variant analysis', '',
          '## Sequencing Data and Reference Genome', '',
          'I extended the Week 7 *Physcomitrium patens* analysis from one sample to five: the original CRIS1#1 sample plus four additional samples from study **PRJEB51295**. Each new sample was processed independently against the same reference, **GCA_000002425.2_Phypa_V3**, before merging and predicting transcript effects.', '',
          '| Sample | Run | Experiment | Biosample |', '|---|---|---|---|']
@@ -86,7 +86,7 @@ for i, c in enumerate(selected, 1):
               '| Sample | Original GT | Usable DP | AD (REF,ALT) | Original QUAL |', '|---|---|---:|---|---:|']
     for run, call in c['calls'].items():
         if call is None:
-            lines.append(f'| {names[run]} | missing | — | — | — |')
+            lines.append(f'| {names[run]} | missing |  -  |  -  |  -  |')
         else:
             lines.append(f'| {names[run]} | `{call["gt"]}` | {call["dp"]} | `{",".join(map(str, call["ad"]))}` | {call["qual"]:.2f} |')
     explanations = {
@@ -127,14 +127,15 @@ insert = ['## Whole merged VCF overview', '',
 at = lines.index('## Results')
 lines[at:at] = insert
 lines[2:2] = ['**Detailed interpretation:** [what every result means, with boxed IGV screenshots](RESULTS_EXPLAINED.md).', '']
+lines[2:2] = ['**Start here to reproduce:** [setup, quick figure reproduction, full read processing, IGV, and verification](REPRODUCE.md).', '']
 for i in range(1, len(selected)+1):
     original = f'![Five BAMs at example {i}](png/06_candidate_{i}.png)'
     if original in lines:
         at = lines.index(original)
         lines[at:at+1] = [f'![Annotated five-BAM evidence at example {i}](png/10_annotated_candidate_{i}.png)', '',
-            '**A — Genotype column:** The boxed column marks the selected allele across five sample rows. Read the sample genotypes alongside the numerical table above.', '',
-            '**B — Read evidence:** The vertical rectangle follows the same reference position through all five BAM and coverage tracks. Compare mismatch bases or insertion markers at this position. Pink/purple read backgrounds indicate strand, while AD and DP quantify usable allele support.', '',
-            '**C — Reference and transcript context:** The lower rectangle identifies the reference sequence and nearby transcript models. Transcript overlap provides annotation context; it does not independently establish a functional effect.', '',
+            '**A  -  Genotype column:** The boxed column marks the selected allele across five sample rows. Read the sample genotypes alongside the numerical table above.', '',
+            '**B  -  Read evidence:** The vertical rectangle follows the same reference position through all five BAM and coverage tracks. Compare mismatch bases or insertion markers at this position. Pink/purple read backgrounds indicate strand, while AD and DP quantify usable allele support.', '',
+            '**C  -  Reference and transcript context:** The lower rectangle identifies the reference sequence and nearby transcript models. Transcript overlap provides annotation context; it does not independently establish a functional effect.', '',
             '**Interpretation:** Both controls and all three CRIS samples retain this alternate allele. It illustrates a predicted transcript consequence, without establishing a CRIS-specific mutation or causal effect.', '',
             f'[Original unannotated screenshot](png/06_candidate_{i}.png) · [Detailed interpretation](RESULTS_EXPLAINED.md). Rectangles are added to the original IGV output; the underlying data are unchanged.']
 (root / 'README.md').write_text('\n'.join(lines))
