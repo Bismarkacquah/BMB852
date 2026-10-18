@@ -50,11 +50,15 @@ HIGH calls are priorities for inspection, not automatically damaging or causal. 
 
 ## 6. Annotated IGV evidence: how to read the boxes
 
-These figures add labeled rectangles and an explanatory sidebar to actual IGV screenshots. Original screenshots remain available. **A** identifies the selected genotype column, **B** follows its reference coordinate across five BAM tracks, and **C** identifies the local reference/transcript context. The rectangles are presentation overlays, not newly generated reads or a change to the VCF. Their coordinates are recorded in [the overlay manifest](provenance/igv-callout-coordinates.json).
+These figures retain labeled rectangles on actual IGV screenshots, with explanations below each image. Original screenshots remain available. The rectangles mark the evidence discussed in the text. Their coordinates are recorded in [the overlay manifest](provenance/igv-callout-coordinates.json).
 
 ### Example 1: insertion and predicted frameshift
 
 ![Annotated frameshift evidence](png/10_annotated_candidate_1.png)
+
+**A — Genotype column:** The selected insertion appears in all five sample rows. **B — Read evidence:** The tall rectangle follows the insertion coordinate through all five BAMs. Compare insertion indicators with the usable AD/DP counts below. **C — Reference and transcript context:** The lower rectangle marks the reference sequence and nearby models used to interpret the coding consequence.
+
+Pink/purple read backgrounds indicate strand. The insertion markers identify the sequence event; their placement should be assessed with the local alignment and saved pileups. The rectangles are added to the original screenshot, whose underlying read data remain unchanged.
 
 [Original screenshot](png/06_candidate_1.png). The exact allele is **CM009329.1:15,055,010 A>AT**. The A anchors a one-base T insertion. The box follows the insertion position through all five samples; insertion indicators provide a visual cue, and the read-count table supplies the quantitative evidence.
 
@@ -66,6 +70,10 @@ For transcript `Pp3c14_23500V3.1`, the annotation is `c.2411_2412insT`, `p.Glu80
 
 ![Annotated missense evidence](png/10_annotated_candidate_2.png)
 
+**A — Genotype column:** The selected A>G call is shown across five sample rows. **B — Read evidence:** The vertical rectangle follows this coordinate through the five BAM tracks; nearby mismatch columns represent separate positions. **C — Reference and transcript context:** The lower rectangle identifies the sequence and transcript model relevant to the predicted amino-acid substitution.
+
+Pink/purple backgrounds encode read strand, while colored bases identify mismatches. Use the AD/DP counts below to quantify support. Both controls and all three CRIS samples retain this allele; the image does not establish an editing-specific effect. The boxes are presentation annotations on the original IGV output.
+
 [Original screenshot](png/06_candidate_2.png). At **CM009330.1:8,424,047 A>G**, the rectangle isolates the selected mismatch column. Several nearby colored columns occur in this close-up; the selected A>G allele is the boxed coordinate, and neighboring substitutions must be interpreted as separate records.
 
 Usable ALT counts are **11, 11, 13, 16, and 18**, again with zero reference counts in the filtered AD fields. The predicted effect is `c.2263A>G`, `p.Lys755Glu`, in `PHYPA_019678`, transcript `Pp3c15_12700V3.1`. Lysine-to-glutamate changes the predicted amino acid, but the MODERATE label alone cannot establish loss or gain of function. Read backgrounds indicate strand; the colored mismatch base identifies the nucleotide difference. Both controls carry this allele, so the image does not establish editing specificity.
@@ -73,6 +81,10 @@ Usable ALT counts are **11, 11, 13, 16, and 18**, again with zero reference coun
 ### Example 3: coding replacement without a predicted amino-acid change
 
 ![Annotated synonymous evidence](png/10_annotated_candidate_3.png)
+
+**A — Genotype column:** The boxed T>C call appears in all five sample rows. **B — Read evidence:** The tall rectangle follows the mismatch position across the five alignments. **C — Reference and transcript context:** The lower rectangle marks the reference and model used to assign the synonymous consequence.
+
+Pink/purple read backgrounds indicate strand. Compare the colored base column with the AD/DP values below, especially the lower usable support in Control#1. The allele is retained in both controls and all three CRIS samples, so it does not distinguish the groups. Rectangles are added to the original IGV screenshot without altering the underlying data.
 
 [Original screenshot](png/06_candidate_3.png). The selected **CM009317.1:11,828,535 T>C** is predicted as `c.510T>C`, `p.Leu170Leu`, in gene `PHYPA_002866`, transcript `Pp3c2_18051V3.1`. The codon changes while the predicted amino acid remains leucine, which explains the LOW synonymous classification.
 

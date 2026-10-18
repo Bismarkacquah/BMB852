@@ -17,6 +17,6 @@ Generated from the completed five-sample analysis. See the [main report](../READ
 | [08](08_all_merged_variants.png) | Every merged allele across all contigs with calls |
 | [09](09_all_call_patterns.png) | All call patterns and pairwise retained-call similarities |
 
-| [10.1](10_annotated_candidate_1.png) | Boxed IGV locus and explanatory sidebar |
-| [10.2](10_annotated_candidate_2.png) | Boxed IGV locus and explanatory sidebar |
-| [10.3](10_annotated_candidate_3.png) | Boxed IGV locus and explanatory sidebar |
+| [10.1](10_annotated_candidate_1.png) | Boxed IGV locus; explanations appear below the figure in the report |
+| [10.2](10_annotated_candidate_2.png) | Boxed IGV locus; explanations appear below the figure in the report |
+| [10.3](10_annotated_candidate_3.png) | Boxed IGV locus; explanations appear below the figure in the report |

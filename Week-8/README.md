@@ -117,7 +117,15 @@ The annotated indel changes the coding reading frame in this transcript; the pre
 
 ![Annotated five-BAM evidence at example 1](png/10_annotated_candidate_1.png)
 
-[Original unannotated screenshot](png/06_candidate_1.png). Boxes A, B, and C mark the selected genotype column, corresponding read evidence, and reference/transcript context. See [detailed interpretation](RESULTS_EXPLAINED.md).
+**A — Genotype column:** The boxed column marks the selected allele across five sample rows. Read the sample genotypes alongside the numerical table above.
+
+**B — Read evidence:** The vertical rectangle follows the same reference position through all five BAM and coverage tracks. Compare mismatch bases or insertion markers at this position. Pink/purple read backgrounds indicate strand, while AD and DP quantify usable allele support.
+
+**C — Reference and transcript context:** The lower rectangle identifies the reference sequence and nearby transcript models. Transcript overlap provides annotation context; it does not independently establish a functional effect.
+
+**Interpretation:** Both controls and all three CRIS samples retain this alternate allele. It illustrates a predicted transcript consequence, without establishing a CRIS-specific mutation or causal effect.
+
+[Original unannotated screenshot](png/06_candidate_1.png) · [Detailed interpretation](RESULTS_EXPLAINED.md). Rectangles are added to the original IGV output; the underlying data are unchanged.
 
 This locus met the documented moderate-depth and alternate-support criteria in 4 sample(s). These measurements support prioritizing the locus for review; they do not by themselves prove causation. Check both read directions, read placement, local alignment context, and the separately saved [per-sample pileups](results/pileups/) before interpreting it.
 
@@ -141,7 +149,15 @@ The annotation predicts an amino-acid substitution. This classification alone do
 
 ![Annotated five-BAM evidence at example 2](png/10_annotated_candidate_2.png)
 
-[Original unannotated screenshot](png/06_candidate_2.png). Boxes A, B, and C mark the selected genotype column, corresponding read evidence, and reference/transcript context. See [detailed interpretation](RESULTS_EXPLAINED.md).
+**A — Genotype column:** The boxed column marks the selected allele across five sample rows. Read the sample genotypes alongside the numerical table above.
+
+**B — Read evidence:** The vertical rectangle follows the same reference position through all five BAM and coverage tracks. Compare mismatch bases or insertion markers at this position. Pink/purple read backgrounds indicate strand, while AD and DP quantify usable allele support.
+
+**C — Reference and transcript context:** The lower rectangle identifies the reference sequence and nearby transcript models. Transcript overlap provides annotation context; it does not independently establish a functional effect.
+
+**Interpretation:** Both controls and all three CRIS samples retain this alternate allele. It illustrates a predicted transcript consequence, without establishing a CRIS-specific mutation or causal effect.
+
+[Original unannotated screenshot](png/06_candidate_2.png) · [Detailed interpretation](RESULTS_EXPLAINED.md). Rectangles are added to the original IGV output; the underlying data are unchanged.
 
 This locus met the documented moderate-depth and alternate-support criteria in 5 sample(s). These measurements support prioritizing the locus for review; they do not by themselves prove causation. Check both read directions, read placement, local alignment context, and the separately saved [per-sample pileups](results/pileups/) before interpreting it.
 
@@ -165,7 +181,15 @@ The annotation predicts a coding change without an amino-acid substitution in th
 
 ![Annotated five-BAM evidence at example 3](png/10_annotated_candidate_3.png)
 
-[Original unannotated screenshot](png/06_candidate_3.png). Boxes A, B, and C mark the selected genotype column, corresponding read evidence, and reference/transcript context. See [detailed interpretation](RESULTS_EXPLAINED.md).
+**A — Genotype column:** The boxed column marks the selected allele across five sample rows. Read the sample genotypes alongside the numerical table above.
+
+**B — Read evidence:** The vertical rectangle follows the same reference position through all five BAM and coverage tracks. Compare mismatch bases or insertion markers at this position. Pink/purple read backgrounds indicate strand, while AD and DP quantify usable allele support.
+
+**C — Reference and transcript context:** The lower rectangle identifies the reference sequence and nearby transcript models. Transcript overlap provides annotation context; it does not independently establish a functional effect.
+
+**Interpretation:** Both controls and all three CRIS samples retain this alternate allele. It illustrates a predicted transcript consequence, without establishing a CRIS-specific mutation or causal effect.
+
+[Original unannotated screenshot](png/06_candidate_3.png) · [Detailed interpretation](RESULTS_EXPLAINED.md). Rectangles are added to the original IGV output; the underlying data are unchanged.
 
 This locus met the documented moderate-depth and alternate-support criteria in 4 sample(s). These measurements support prioritizing the locus for review; they do not by themselves prove causation. Check both read directions, read placement, local alignment context, and the separately saved [per-sample pileups](results/pileups/) before interpreting it.
 
