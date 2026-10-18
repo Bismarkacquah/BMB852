@@ -1,0 +1,15 @@
+mkdir -p provenance
+printf '%s\n' 'PAIRS=20000000' 'REFERENCE=../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna' 'SAMPLES=ERR8982183 ERR8982184 ERR8982185 ERR8982186' 'PLOIDY=1' 'MIN_MQ=20' 'MIN_BQ=20' 'MIN_QUAL=20' 'MIN_DP=3' > provenance/pipeline-parameters.txt.tmp
+if ! cmp -s provenance/pipeline-parameters.txt.tmp provenance/pipeline-parameters.txt; then mv provenance/pipeline-parameters.txt.tmp provenance/pipeline-parameters.txt; else rm provenance/pipeline-parameters.txt.tmp; fi
+/opt/bmb852/week5/bin/python3
+/opt/bmb852/week5/bin/cutadapt
+/opt/bmb852/week5/bin/bwa
+/opt/bmb852/week5/bin/samtools
+/opt/miniforge3/envs/bioinfo/bin/bcftools
+/opt/miniforge3/envs/bioinfo/bin/java
+bash scripts/process_sample.sh ERR8982183 "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" 20000000 4
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+scripts/process_sample.sh: line 35: unexpected EOF while looking for matching `"'
+make: *** [Makefile:36: samples/ERR8982183/ERR8982183.pass.vcf.gz] Error 2
+make: *** Deleting file 'samples/ERR8982183/ERR8982183.pass.vcf.gz'

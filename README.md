@@ -15,3 +15,4 @@ Each folder contains that week's assignment, results, and supporting files.
 - **[Week 5](Week-5/)**: BAM alignment and coverage analysis
 - **[Week 6](Week-6/)**: Structural variant analysis
 - **[Week 7](Week-7/)**: Variant calling, IGV views, and VCF statistics
+- **[Week 8](Week-8/)**: Five-sample variant-effect analysis

@@ -1,0 +1,91 @@
+WARNING: Unknown module: jide.common specified to --add-exports
+WARNING: Unknown module: jide.common specified to --add-exports
+WARNING: Unknown module: jide.common specified to --add-exports
+WARNING: Unknown module: jide.common specified to --add-exports
+WARNING: Unknown module: jide.common specified to --add-exports
+WARNING: package com.sun.java.swing.plaf.windows not in java.desktop
+WARNING: package sun.awt.windows not in java.desktop
+WARNING: Unknown module: jide.common specified to --add-exports
+WARNING: Unknown module: jide.common specified to --add-exports
+INFO [Oct 18,2026 14:50] [Main] Startup  IGV Version 2.19.8 06/05/2026 12:24 PM
+INFO [Oct 18,2026 14:50] [Main] Java 21.0.10-internal (build 21.0.10-internal-adhoc.rattler.src) 2026-01-20
+INFO [Oct 18,2026 14:50] [Main] Java Vendor: N/A https://openjdk.org/
+INFO [Oct 18,2026 14:50] [Main] JVM: OpenJDK 64-Bit Server VM    
+INFO [Oct 18,2026 14:50] [Main] OS: Linux 6.18.54.1-microsoft-standard-WSL2 amd64
+INFO [Oct 18,2026 14:50] [Main] IGV Directory: /home/bisma/igv
+INFO [Oct 18,2026 14:50] [OAuthUtils] Loading Google oAuth properties
+INFO [Oct 18,2026 14:50] [CommandListener] Listening on port 60151
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+INFO [Oct 18,2026 14:50] [BatchRunner] Executing batch script: igv/five_samples.batch.txt
+INFO [Oct 18,2026 14:50] [GenomeManager] Loading genome: https://raw.githubusercontent.com/igvteam/igv-genomes/refs/heads/main/json/hg38.json
+SEVERE [Oct 18,2026 14:50] [ReferenceFrame] Null chromosome: 
+INFO [Oct 18,2026 14:50] [TrackLoader] Loading resource:  https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/ncbiRefSeqSelect.txt.gz
+WARNING [Oct 18,2026 14:50] [HttpUtils] Connection to https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/ncbiRefSeqSelect.txt.gz.tbi failed, retrying with backup host
+SEVERE [Oct 18,2026 14:50] [HttpUtils] Retry failed
+SEVERE [Oct 18,2026 14:50] [HttpUtils] java.io.FileNotFoundException: File not found: https://genome-browser.s3.us-east-1.amazonaws.com/goldenPath/hg38/database/ncbiRefSeqSelect.txt.gz.tbi
+	at org.igv/org.broad.igv.util.HttpUtils.openConnection(HttpUtils.java:868)
+	at org.igv/org.broad.igv.util.HttpUtils.openConnection(HttpUtils.java:905)
+	at org.igv/org.broad.igv.util.HttpUtils.openConnection(HttpUtils.java:666)
+	at org.igv/org.broad.igv.util.HttpUtils.openConnectionHeadOrGet(HttpUtils.java:444)
+	at org.igv/org.broad.igv.util.HttpUtils.resourceAvailable(HttpUtils.java:404)
+	at org.igv/org.broad.igv.util.FileUtils.resourceExists(FileUtils.java:56)
+	at org.igv/org.broad.igv.track.TribbleFeatureSource.getFeatureSource(TribbleFeatureSource.java:107)
+	at org.igv/org.broad.igv.track.TribbleFeatureSource.getFeatureSource(TribbleFeatureSource.java:76)
+	at org.igv/org.broad.igv.track.TrackLoader.loadTribbleFile(TrackLoader.java:473)
+	at org.igv/org.broad.igv.track.TrackLoader.load(TrackLoader.java:242)
+	at org.igv/org.broad.igv.ui.IGV.load(IGV.java:1277)
+	at org.igv/org.broad.igv.feature.genome.GenomeManager.restoreGenomeTracks(GenomeManager.java:258)
+	at org.igv/org.broad.igv.feature.genome.GenomeManager.setCurrentGenome(GenomeManager.java:217)
+	at org.igv/org.broad.igv.feature.genome.GenomeManager.loadGenome(GenomeManager.java:194)
+	at org.igv/org.broad.igv.feature.genome.GenomeManager.loadGenomeById(GenomeManager.java:142)
+	at org.igv/org.broad.igv.batch.BatchRunner.runWithDefaultGenome(BatchRunner.java:98)
+	at org.igv/org.broad.igv.ui.IGV$StartupRunnable.lambda$run$1(IGV.java:1951)
+	at org.igv/org.broad.igv.ui.util.UIUtilities.invokeAndWaitOnEventThread(UIUtilities.java:164)
+	at org.igv/org.broad.igv.ui.IGV$StartupRunnable.run(IGV.java:1948)
+	at org.igv/org.broad.igv.util.LongRunningTask.call(LongRunningTask.java:73)
+	at org.igv/org.broad.igv.util.LongRunningTask.call(LongRunningTask.java:43)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+INFO [Oct 18,2026 14:50] [TrackLoader] Loading resource:  https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/ncbiRefSeqSelect.txt.gz
+WARNING [Oct 18,2026 14:50] [HttpUtils] Connection to https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/ncbiRefSeqSelect.txt.gz.tbi failed, retrying with backup host
+SEVERE [Oct 18,2026 14:50] [HttpUtils] Retry failed
+SEVERE [Oct 18,2026 14:50] [HttpUtils] java.io.FileNotFoundException: File not found: https://genome-browser.s3.us-east-1.amazonaws.com/goldenPath/hg38/database/ncbiRefSeqSelect.txt.gz.tbi
+	at org.igv/org.broad.igv.util.HttpUtils.openConnection(HttpUtils.java:868)
+	at org.igv/org.broad.igv.util.HttpUtils.openConnection(HttpUtils.java:905)
+	at org.igv/org.broad.igv.util.HttpUtils.openConnection(HttpUtils.java:666)
+	at org.igv/org.broad.igv.util.HttpUtils.openConnectionHeadOrGet(HttpUtils.java:444)
+	at org.igv/org.broad.igv.util.HttpUtils.resourceAvailable(HttpUtils.java:404)
+	at org.igv/org.broad.igv.util.FileUtils.resourceExists(FileUtils.java:56)
+	at org.igv/org.broad.igv.track.TribbleFeatureSource.getFeatureSource(TribbleFeatureSource.java:107)
+	at org.igv/org.broad.igv.track.TribbleFeatureSource.getFeatureSource(TribbleFeatureSource.java:76)
+	at org.igv/org.broad.igv.track.TrackLoader.loadTribbleFile(TrackLoader.java:473)
+	at org.igv/org.broad.igv.track.TrackLoader.load(TrackLoader.java:242)
+	at org.igv/org.broad.igv.ui.IGV.load(IGV.java:1277)
+	at org.igv/org.broad.igv.feature.genome.GenomeManager.restoreGenomeTracks(GenomeManager.java:258)
+	at org.igv/org.broad.igv.ui.IGV.newSession(IGV.java:950)
+	at org.igv/org.broad.igv.batch.CommandExecutor.execute(CommandExecutor.java:154)
+	at org.igv/org.broad.igv.batch.BatchRunner.runWithDefaultGenome(BatchRunner.java:102)
+	at org.igv/org.broad.igv.ui.IGV$StartupRunnable.lambda$run$1(IGV.java:1951)
+	at org.igv/org.broad.igv.ui.util.UIUtilities.invokeAndWaitOnEventThread(UIUtilities.java:164)
+	at org.igv/org.broad.igv.ui.IGV$StartupRunnable.run(IGV.java:1948)
+	at org.igv/org.broad.igv.util.LongRunningTask.call(LongRunningTask.java:73)
+	at org.igv/org.broad.igv.util.LongRunningTask.call(LongRunningTask.java:43)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+INFO [Oct 18,2026 14:50] [GenomeManager] Loading genome: /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna
+INFO [Oct 18,2026 14:50] [TrackLoader] Loading resource:  /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/results/five_samples.annotated.vcf.gz
+INFO [Oct 18,2026 14:50] [TrackLoader] Loading resource:  /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/results/igv_genes.bed
+INFO [Oct 18,2026 14:50] [TrackLoader] Loading resource:  /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982183/ERR8982183.sorted.bam
+INFO [Oct 18,2026 14:50] [TrackLoader] Loading resource:  /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982184/ERR8982184.sorted.bam
+INFO [Oct 18,2026 14:50] [TrackLoader] Loading resource:  /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-7/expanded/bam/ERR8982185.20M.sorted.bam
+INFO [Oct 18,2026 14:50] [TrackLoader] Loading resource:  /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982186/ERR8982186.sorted.bam
+INFO [Oct 18,2026 14:50] [TrackLoader] Loading resource:  /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/samples/ERR8982187/ERR8982187.sorted.bam
+INFO [Oct 18,2026 14:50] [ShutdownThread] Shutting down

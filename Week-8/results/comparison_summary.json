@@ -1,0 +1,83 @@
+{
+  "samples": [
+    "ERR8982183",
+    "ERR8982184",
+    "ERR8982185",
+    "ERR8982186",
+    "ERR8982187"
+  ],
+  "union_records": 39458,
+  "merged_records": 39458,
+  "union_snp_records": 32276,
+  "union_indel_records": 7182,
+  "exact_union_verified": true,
+  "sample_genotypes_verified": true,
+  "allele_identity": "CHROM, POS, REF.upper(), ALT.upper(); soft-mask letter case is ignored",
+  "observed_in_all_five": 11010,
+  "presence_patterns": {
+    "00100": 2222,
+    "00101": 831,
+    "00111": 1634,
+    "00010": 2251,
+    "11111": 11010,
+    "00001": 2316,
+    "01001": 467,
+    "10011": 421,
+    "01000": 3032,
+    "10101": 433,
+    "10111": 1550,
+    "11101": 730,
+    "10000": 1855,
+    "01010": 531,
+    "10010": 441,
+    "11000": 1195,
+    "01111": 1256,
+    "01101": 374,
+    "00110": 922,
+    "01110": 491,
+    "11010": 274,
+    "11110": 851,
+    "10110": 464,
+    "10100": 422,
+    "00011": 809,
+    "01011": 367,
+    "11100": 293,
+    "11011": 737,
+    "01100": 559,
+    "10001": 449,
+    "11001": 271
+  },
+  "sample_counts": [
+    {
+      "sample": "ERR8982183",
+      "pass_records": 21396,
+      "snps": 17613,
+      "indels": 3783
+    },
+    {
+      "sample": "ERR8982184",
+      "pass_records": 22438,
+      "snps": 18303,
+      "indels": 4135
+    },
+    {
+      "sample": "ERR8982185",
+      "pass_records": 24042,
+      "snps": 19576,
+      "indels": 4466
+    },
+    {
+      "sample": "ERR8982186",
+      "pass_records": 24009,
+      "snps": 19410,
+      "indels": 4599
+    },
+    {
+      "sample": "ERR8982187",
+      "pass_records": 23655,
+      "snps": 19291,
+      "indels": 4364
+    }
+  ],
+  "interpretation": "Presence means retained in a sample PASS VCF; absence is not a reference genotype."
+}

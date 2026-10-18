@@ -1,0 +1,52 @@
+[
+  {
+    "sample": "ERR8982183",
+    "covered_bases": 453875888,
+    "reference_bases": 471852792,
+    "percent_reference_covered": 96.19014567577254,
+    "genome_mean_depth": 8.030778208922639,
+    "primary_alignment_records": 40000000,
+    "primary_mapped_records": 32709369,
+    "primary_mapped_percent": 81.7734225
+  },
+  {
+    "sample": "ERR8982184",
+    "covered_bases": 454284601,
+    "reference_bases": 471852792,
+    "percent_reference_covered": 96.27676442783452,
+    "genome_mean_depth": 8.232287463658299,
+    "primary_alignment_records": 39996822,
+    "primary_mapped_records": 33361750,
+    "primary_mapped_percent": 83.41100200410922
+  },
+  {
+    "sample": "ERR8982185",
+    "covered_bases": 455259998,
+    "reference_bases": 471852792,
+    "percent_reference_covered": 96.48348080559838,
+    "genome_mean_depth": 8.4184139968867,
+    "primary_alignment_records": 39955128,
+    "primary_mapped_records": 29690924,
+    "primary_mapped_percent": 74.31067171152598
+  },
+  {
+    "sample": "ERR8982186",
+    "covered_bases": 454131102,
+    "reference_bases": 471852792,
+    "percent_reference_covered": 96.2442333074083,
+    "genome_mean_depth": 8.566022543211142,
+    "primary_alignment_records": 39965026,
+    "primary_mapped_records": 29995079,
+    "primary_mapped_percent": 75.05332037066609
+  },
+  {
+    "sample": "ERR8982187",
+    "covered_bases": 454765611,
+    "reference_bases": 471852792,
+    "percent_reference_covered": 96.37870511954075,
+    "genome_mean_depth": 8.072103565137468,
+    "primary_alignment_records": 39968524,
+    "primary_mapped_records": 28599524,
+    "primary_mapped_percent": 71.55511672134803
+  }
+]

@@ -1,0 +1,614 @@
+00:00:00 SnpEff version SnpEff 5.4c (build 2026-02-23 07:25), by Pablo Cingolani
+00:00:00 Command: 'ann'
+00:00:00 Reading configuration file 'annotation/snpEff.config'. Genome: 'Phypa_V3'
+00:00:00 Looking for config file: '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/snpEff.config'
+00:00:00 Reading config file: /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/snpEff.config
+00:00:00 done
+00:00:00 Reading database for genome version 'Phypa_V3' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/snpEffectPredictor.bin' (this might take a while)
+00:00:09 done
+00:00:09 Loading Motifs and PWMs
+00:00:09 Building interval forest
+00:00:09 done.
+00:00:09 Genome stats :
+#-----------------------------------------------
+# Genome name                : 'Physcomitrium patens Phypa V3'
+# Genome version             : 'Phypa_V3'
+# Genome ID                  : 'Phypa_V3[0]'
+# Has protein coding info    : true
+# Has Tr. Support Level info : true
+# Genes                      : 31312
+# Protein coding genes       : 31251
+#-----------------------------------------------
+# Transcripts                : 31254
+# Avg. transcripts per gene  : 1.00
+# TSL transcripts            : 0
+#-----------------------------------------------
+# Checked transcripts        : 
+#               AA sequences :      0 ( 0.00% )
+#              DNA sequences :      0 ( 0.00% )
+#-----------------------------------------------
+# Protein coding transcripts : 31251
+#              Length errors :    331 ( 1.06% )
+#  STOP codons in CDS errors :      1 ( 0.00% )
+#         START codon errors :   1464 ( 4.68% )
+#        STOP codon warnings :    258 ( 0.83% )
+#              UTR sequences :  24353 ( 77.92% )
+#               Total Errors :   1731 ( 5.54% )
+#-----------------------------------------------
+# Cds                        : 149462
+# Exons                      : 162252
+# Exons with sequence        : 162252
+# Exons without sequence     : 0
+# Avg. exons per transcript  : 5.19
+# WARNING                    : No mitochondrion chromosome found
+#-----------------------------------------------
+# Number of chromosomes      : 357
+# Chromosomes                : Format 'chromo_name size codon_table'
+#		'CM009316.1'	30242098	Standard
+#		'CM009317.1'	25998084	Standard
+#		'CM009318.1'	25551832	Standard
+#		'CM009319.1'	22344759	Standard
+#		'CM009320.1'	20681290	Standard
+#		'CM009321.1'	19533230	Standard
+#		'CM009322.1'	18116774	Standard
+#		'CM009323.1'	17934281	Standard
+#		'CM009324.1'	17794193	Standard
+#		'CM009325.1'	17530623	Standard
+#		'CM009326.1'	17494229	Standard
+#		'CM009327.1'	17435539	Standard
+#		'CM009328.1'	17250819	Standard
+#		'CM009329.1'	17248380	Standard
+#		'CM009330.1'	17009704	Standard
+#		'CM009331.1'	16572167	Standard
+#		'CM009332.1'	15984037	Standard
+#		'CM009333.1'	15735161	Standard
+#		'CM009334.1'	15673097	Standard
+#		'CM009336.1'	15510460	Standard
+#		'CM009335.1'	15486712	Standard
+#		'CM009337.1'	15354560	Standard
+#		'CM009338.1'	15138416	Standard
+#		'CM009339.1'	13755829	Standard
+#		'CM009340.1'	11183739	Standard
+#		'CM009341.1'	10125990	Standard
+#		'CM009342.1'	5299892	Standard
+#		'ABEU02000166.1'	171298	Standard
+#		'ABEU02000170.1'	127501	Standard
+#		'ABEU02000226.1'	117854	Standard
+#		'ABEU02000231.1'	101950	Standard
+#		'ABEU02000213.1'	88975	Standard
+#		'ABEU02000219.1'	88318	Standard
+#		'ABEU02000223.1'	86846	Standard
+#		'ABEU02000252.1'	83804	Standard
+#		'ABEU02000235.1'	79700	Standard
+#		'ABEU02000239.1'	78880	Standard
+#		'ABEU02000272.1'	66314	Standard
+#		'ABEU02000277.1'	64196	Standard
+#		'ABEU02000282.1'	59305	Standard
+#		'ABEU02000299.1'	45882	Standard
+#		'ABEU02000101.1'	41976	Standard
+#		'ABEU02000100.1'	41815	Standard
+#		'ABEU02000307.1'	40341	Standard
+#		'ABEU02000314.1'	39109	Standard
+#		'ABEU02000322.1'	37256	Standard
+#		'ABEU02000041.1'	36754	Standard
+#		'ABEU02000330.1'	32022	Standard
+#		'ABEU02000341.1'	31256	Standard
+#		'ABEU02000347.1'	29900	Standard
+#		'ABEU02000351.1'	28974	Standard
+#		'ABEU02000327.1'	28422	Standard
+#		'ABEU02000028.1'	27963	Standard
+#		'ABEU02000032.1'	27875	Standard
+#		'ABEU02000039.1'	26885	Standard
+#		'ABEU02000055.1'	24443	Standard
+#		'ABEU02000061.1'	24087	Standard
+#		'ABEU02000065.1'	23409	Standard
+#		'ABEU02000072.1'	23363	Standard
+#		'ABEU02000077.1'	23227	Standard
+#		'ABEU02000088.1'	22559	Standard
+#		'ABEU02000089.1'	22280	Standard
+#		'ABEU02000090.1'	22108	Standard
+#		'ABEU02000091.1'	21755	Standard
+#		'ABEU02000092.1'	21536	Standard
+#		'ABEU02000093.1'	20960	Standard
+#		'ABEU02000094.1'	20476	Standard
+#		'ABEU02000095.1'	19491	Standard
+#		'ABEU02000096.1'	19183	Standard
+#		'ABEU02000097.1'	18534	Standard
+#		'ABEU02000098.1'	18345	Standard
+#		'ABEU02000099.1'	17276	Standard
+#		'ABEU02000102.1'	16009	Standard
+#		'ABEU02000103.1'	15775	Standard
+#		'ABEU02000104.1'	15617	Standard
+#		'ABEU02000105.1'	15088	Standard
+#		'ABEU02000106.1'	14600	Standard
+#		'ABEU02000107.1'	14492	Standard
+#		'ABEU02000108.1'	13915	Standard
+#		'ABEU02000109.1'	13734	Standard
+#		'ABEU02000110.1'	13631	Standard
+#		'ABEU02000112.1'	13592	Standard
+#		'ABEU02000111.1'	13538	Standard
+#		'ABEU02000113.1'	13051	Standard
+#		'ABEU02000114.1'	12855	Standard
+#		'ABEU02000197.1'	12727	Standard
+#		'ABEU02000115.1'	12673	Standard
+#		'ABEU02000116.1'	12538	Standard
+#		'ABEU02000117.1'	12534	Standard
+#		'ABEU02000120.1'	12490	Standard
+#		'ABEU02000123.1'	12489	Standard
+#		'ABEU02000118.1'	12263	Standard
+#		'ABEU02000119.1'	12213	Standard
+#		'ABEU02000121.1'	11959	Standard
+#		'ABEU02000122.1'	11723	Standard
+#		'ABEU02000124.1'	11577	Standard
+#		'ABEU02000127.1'	11571	Standard
+#		'ABEU02000125.1'	11558	Standard
+#		'ABEU02000126.1'	11480	Standard
+#		'ABEU02000132.1'	11181	Standard
+#		'ABEU02000128.1'	10997	Standard
+#		'ABEU02000129.1'	10995	Standard
+#		'ABEU02000130.1'	10927	Standard
+#		'ABEU02000133.1'	10863	Standard
+#		'ABEU02000131.1'	10764	Standard
+#		'ABEU02000134.1'	10539	Standard
+#		'ABEU02000135.1'	10404	Standard
+#		'ABEU02000136.1'	10303	Standard
+#		'ABEU02000137.1'	10223	Standard
+#		'ABEU02000081.1'	10138	Standard
+#		'ABEU02000138.1'	10029	Standard
+#		'ABEU02000139.1'	9908	Standard
+#		'ABEU02000140.1'	9490	Standard
+#		'ABEU02000141.1'	9424	Standard
+#		'ABEU02000142.1'	9307	Standard
+#		'ABEU02000143.1'	9206	Standard
+#		'ABEU02000146.1'	8924	Standard
+#		'ABEU02000144.1'	8841	Standard
+#		'ABEU02000145.1'	8724	Standard
+#		'ABEU02000147.1'	8677	Standard
+#		'ABEU02000148.1'	8649	Standard
+#		'ABEU02000149.1'	8355	Standard
+#		'ABEU02000150.1'	8308	Standard
+#		'ABEU02000186.1'	8292	Standard
+#		'ABEU02000151.1'	8163	Standard
+#		'ABEU02000152.1'	8127	Standard
+#		'ABEU02000153.1'	7939	Standard
+#		'ABEU02000154.1'	7850	Standard
+#		'ABEU02000155.1'	7800	Standard
+#		'ABEU02000156.1'	7766	Standard
+#		'ABEU02000157.1'	7743	Standard
+#		'ABEU02000158.1'	7700	Standard
+#		'ABEU02000159.1'	7680	Standard
+#		'ABEU02000160.1'	7678	Standard
+#		'ABEU02000163.1'	7656	Standard
+#		'ABEU02000161.1'	7614	Standard
+#		'ABEU02000162.1'	7570	Standard
+#		'ABEU02000165.1'	7566	Standard
+#		'ABEU02000164.1'	7504	Standard
+#		'ABEU02000167.1'	7375	Standard
+#		'ABEU02000201.1'	7303	Standard
+#		'ABEU02000168.1'	7272	Standard
+#		'ABEU02000169.1'	7261	Standard
+#		'ABEU02000173.1'	7238	Standard
+#		'ABEU02000171.1'	7193	Standard
+#		'ABEU02000172.1'	7183	Standard
+#		'ABEU02000230.1'	7145	Standard
+#		'ABEU02000194.1'	7103	Standard
+#		'ABEU02000174.1'	7081	Standard
+#		'ABEU02000175.1'	7050	Standard
+#		'ABEU02000176.1'	7003	Standard
+#		'ABEU02000177.1'	6978	Standard
+#		'ABEU02000178.1'	6977	Standard
+#		'ABEU02000179.1'	6968	Standard
+#		'ABEU02000190.1'	6968	Standard
+#		'ABEU02000180.1'	6942	Standard
+#		'ABEU02000185.1'	6924	Standard
+#		'ABEU02000181.1'	6920	Standard
+#		'ABEU02000182.1'	6896	Standard
+#		'ABEU02000183.1'	6878	Standard
+#		'ABEU02000184.1'	6818	Standard
+#		'ABEU02000191.1'	6778	Standard
+#		'ABEU02000187.1'	6743	Standard
+#		'ABEU02000188.1'	6738	Standard
+#		'ABEU02000189.1'	6717	Standard
+#		'ABEU02000206.1'	6694	Standard
+#		'ABEU02000192.1'	6632	Standard
+#		'ABEU02000193.1'	6549	Standard
+#		'ABEU02000198.1'	6519	Standard
+#		'ABEU02000212.1'	6480	Standard
+#		'ABEU02000195.1'	6476	Standard
+#		'ABEU02000196.1'	6467	Standard
+#		'ABEU02000202.1'	6443	Standard
+#		'ABEU02000199.1'	6415	Standard
+#		'ABEU02000200.1'	6394	Standard
+#		'ABEU02000203.1'	6298	Standard
+#		'ABEU02000204.1'	6296	Standard
+#		'ABEU02000205.1'	6292	Standard
+#		'ABEU02000244.1'	6278	Standard
+#		'ABEU02000207.1'	6235	Standard
+#		'ABEU02000208.1'	6226	Standard
+#		'ABEU02000214.1'	6224	Standard
+#		'ABEU02000209.1'	6218	Standard
+#		'ABEU02000210.1'	6172	Standard
+#		'ABEU02000211.1'	6155	Standard
+#		'ABEU02000215.1'	6109	Standard
+#		'ABEU02000216.1'	6100	Standard
+#		'ABEU02000217.1'	6059	Standard
+#		'ABEU02000218.1'	6041	Standard
+#		'ABEU02000220.1'	6000	Standard
+#		'ABEU02000221.1'	5995	Standard
+#		'ABEU02000243.1'	5979	Standard
+#		'ABEU02000222.1'	5948	Standard
+#		'ABEU02000234.1'	5945	Standard
+#		'ABEU02000224.1'	5920	Standard
+#		'ABEU02000268.1'	5890	Standard
+#		'ABEU02000225.1'	5867	Standard
+#		'ABEU02000227.1'	5862	Standard
+#		'ABEU02000228.1'	5847	Standard
+#		'ABEU02000229.1'	5832	Standard
+#		'ABEU02000232.1'	5797	Standard
+#		'ABEU02000035.1'	5747	Standard
+#		'ABEU02000233.1'	5745	Standard
+#		'ABEU02000259.1'	5730	Standard
+#		'ABEU02000236.1'	5729	Standard
+#		'ABEU02000237.1'	5723	Standard
+#		'ABEU02000246.1'	5719	Standard
+#		'ABEU02000238.1'	5701	Standard
+#		'ABEU02000240.1'	5687	Standard
+#		'ABEU02000241.1'	5685	Standard
+#		'ABEU02000242.1'	5677	Standard
+#		'ABEU02000245.1'	5643	Standard
+#		'ABEU02000247.1'	5618	Standard
+#		'ABEU02000248.1'	5614	Standard
+#		'ABEU02000249.1'	5613	Standard
+#		'ABEU02000257.1'	5607	Standard
+#		'ABEU02000250.1'	5599	Standard
+#		'ABEU02000265.1'	5583	Standard
+#		'ABEU02000251.1'	5557	Standard
+#		'ABEU02000253.1'	5494	Standard
+#		'ABEU02000254.1'	5491	Standard
+#		'ABEU02000255.1'	5473	Standard
+#		'ABEU02000256.1'	5469	Standard
+#		'ABEU02000258.1'	5438	Standard
+#		'ABEU02000321.1'	5428	Standard
+#		'ABEU02000291.1'	5418	Standard
+#		'ABEU02000260.1'	5395	Standard
+#		'ABEU02000261.1'	5382	Standard
+#		'ABEU02000262.1'	5370	Standard
+#		'ABEU02000298.1'	5362	Standard
+#		'ABEU02000263.1'	5339	Standard
+#		'ABEU02000264.1'	5325	Standard
+#		'ABEU02000270.1'	5311	Standard
+#		'ABEU02000266.1'	5297	Standard
+#		'ABEU02000325.1'	5253	Standard
+#		'ABEU02000326.1'	5253	Standard
+#		'ABEU02000267.1'	5244	Standard
+#		'ABEU02000269.1'	5170	Standard
+#		'ABEU02000271.1'	5145	Standard
+#		'ABEU02000273.1'	5096	Standard
+#		'ABEU02000274.1'	5034	Standard
+#		'ABEU02000275.1'	5025	Standard
+#		'ABEU02000276.1'	5025	Standard
+#		'ABEU02000288.1'	5009	Standard
+#		'ABEU02000278.1'	4939	Standard
+#		'ABEU02000324.1'	4918	Standard
+#		'ABEU02000279.1'	4907	Standard
+#		'ABEU02000280.1'	4898	Standard
+#		'ABEU02000281.1'	4873	Standard
+#		'ABEU02000283.1'	4841	Standard
+#		'ABEU02000284.1'	4827	Standard
+#		'ABEU02000285.1'	4822	Standard
+#		'ABEU02000315.1'	4768	Standard
+#		'ABEU02000286.1'	4749	Standard
+#		'ABEU02000287.1'	4747	Standard
+#		'ABEU02000294.1'	4747	Standard
+#		'ABEU02000289.1'	4731	Standard
+#		'ABEU02000290.1'	4704	Standard
+#		'ABEU02000292.1'	4682	Standard
+#		'ABEU02000293.1'	4681	Standard
+#		'ABEU02000295.1'	4659	Standard
+#		'ABEU02000030.1'	4531	Standard
+#		'ABEU02000296.1'	4487	Standard
+#		'ABEU02000297.1'	4475	Standard
+#		'ABEU02000300.1'	4460	Standard
+#		'ABEU02000301.1'	4409	Standard
+#		'ABEU02000313.1'	4401	Standard
+#		'ABEU02000302.1'	4394	Standard
+#		'ABEU02000303.1'	4388	Standard
+#		'ABEU02000304.1'	4387	Standard
+#		'ABEU02000305.1'	4378	Standard
+#		'ABEU02000306.1'	4370	Standard
+#		'ABEU02000308.1'	4334	Standard
+#		'ABEU02000309.1'	4331	Standard
+#		'ABEU02000310.1'	4329	Standard
+#		'ABEU02000311.1'	4327	Standard
+#		'ABEU02000073.1'	4319	Standard
+#		'ABEU02000312.1'	4280	Standard
+#		'ABEU02000316.1'	4242	Standard
+#		'ABEU02000317.1'	4241	Standard
+#		'ABEU02000318.1'	4188	Standard
+#		'ABEU02000319.1'	4183	Standard
+#		'ABEU02000320.1'	4156	Standard
+#		'ABEU02000335.1'	4152	Standard
+#		'ABEU02000323.1'	4081	Standard
+#		'ABEU02000337.1'	4059	Standard
+#		'ABEU02000336.1'	4051	Standard
+#		'ABEU02000328.1'	4011	Standard
+#		'ABEU02000339.1'	3985	Standard
+#		'ABEU02000329.1'	3983	Standard
+#		'ABEU02000357.1'	3949	Standard
+#		'ABEU02000331.1'	3925	Standard
+#		'ABEU02000332.1'	3905	Standard
+#		'ABEU02000029.1'	3901	Standard
+#		'ABEU02000333.1'	3887	Standard
+#		'ABEU02000342.1'	3878	Standard
+#		'ABEU02000334.1'	3876	Standard
+#		'ABEU02000340.1'	3871	Standard
+#		'ABEU02000346.1'	3865	Standard
+#		'ABEU02000348.1'	3862	Standard
+#		'ABEU02000338.1'	3836	Standard
+#		'ABEU02000033.1'	3834	Standard
+#		'ABEU02000344.1'	3789	Standard
+#		'ABEU02000059.1'	3771	Standard
+#		'ABEU02000352.1'	3714	Standard
+#		'ABEU02000063.1'	3707	Standard
+#		'ABEU02000343.1'	3706	Standard
+#		'ABEU02000053.1'	3688	Standard
+#		'ABEU02000354.1'	3688	Standard
+#		'ABEU02000345.1'	3674	Standard
+#		'ABEU02000353.1'	3652	Standard
+#		'ABEU02000036.1'	3611	Standard
+#		'ABEU02000349.1'	3597	Standard
+#		'ABEU02000042.1'	3578	Standard
+#		'ABEU02000056.1'	3578	Standard
+#		'ABEU02000045.1'	3570	Standard
+#		'ABEU02000350.1'	3562	Standard
+#		'ABEU02000356.1'	3545	Standard
+#		'ABEU02000043.1'	3536	Standard
+#		'ABEU02000038.1'	3516	Standard
+#		'ABEU02000044.1'	3504	Standard
+#		'ABEU02000046.1'	3482	Standard
+#		'ABEU02000051.1'	3463	Standard
+#		'ABEU02000083.1'	3462	Standard
+#		'ABEU02000355.1'	3460	Standard
+#		'ABEU02000054.1'	3452	Standard
+#		'ABEU02000037.1'	3421	Standard
+#		'ABEU02000066.1'	3376	Standard
+#		'ABEU02000031.1'	3368	Standard
+#		'ABEU02000057.1'	3344	Standard
+#		'ABEU02000062.1'	3307	Standard
+#		'ABEU02000034.1'	3281	Standard
+#		'ABEU02000050.1'	3243	Standard
+#		'ABEU02000048.1'	3184	Standard
+#		'ABEU02000047.1'	3164	Standard
+#		'ABEU02000040.1'	3141	Standard
+#		'ABEU02000060.1'	3133	Standard
+#		'ABEU02000052.1'	3112	Standard
+#		'ABEU02000070.1'	3093	Standard
+#		'ABEU02000067.1'	3076	Standard
+#		'ABEU02000049.1'	2975	Standard
+#		'ABEU02000075.1'	2952	Standard
+#		'ABEU02000058.1'	2910	Standard
+#		'ABEU02000078.1'	2885	Standard
+#		'ABEU02000074.1'	2878	Standard
+#		'ABEU02000082.1'	2878	Standard
+#		'ABEU02000064.1'	2117	Standard
+#		'ABEU02000068.1'	2019	Standard
+#		'ABEU02000069.1'	2008	Standard
+#		'ABEU02000071.1'	1921	Standard
+#		'ABEU02000076.1'	1495	Standard
+#		'ABEU02000079.1'	1337	Standard
+#		'ABEU02000080.1'	1324	Standard
+#		'ABEU02000084.1'	1209	Standard
+#		'ABEU02000085.1'	1127	Standard
+#		'ABEU02000086.1'	1046	Standard
+#		'ABEU02000087.1'	1006	Standard
+#-----------------------------------------------
+
+00:00:10 Predicting variants
+00:00:10 Loading sequences for chromosome 'CM009316.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009316.1.bin'
+00:00:11 Building sequence tree for chromosome 'CM009316.1'
+00:00:11 Done. Loaded 1819 sequences.
+00:00:11 Loading sequences for chromosome 'CM009317.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009317.1.bin'
+00:00:12 Building sequence tree for chromosome 'CM009317.1'
+00:00:12 Done. Loaded 1636 sequences.
+00:00:12 Loading sequences for chromosome 'CM009318.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009318.1.bin'
+00:00:12 Building sequence tree for chromosome 'CM009318.1'
+00:00:12 Done. Loaded 1594 sequences.
+00:00:12 Loading sequences for chromosome 'CM009319.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009319.1.bin'
+00:00:13 Building sequence tree for chromosome 'CM009319.1'
+00:00:13 Done. Loaded 1354 sequences.
+00:00:13 Loading sequences for chromosome 'CM009320.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009320.1.bin'
+00:00:13 Building sequence tree for chromosome 'CM009320.1'
+00:00:13 Done. Loaded 1175 sequences.
+00:00:13 	10000 variants (3127 variants per second), 10000 VCF entries
+00:00:13 Loading sequences for chromosome 'CM009321.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009321.1.bin'
+00:00:14 Building sequence tree for chromosome 'CM009321.1'
+00:00:14 Done. Loaded 1255 sequences.
+00:00:14 Loading sequences for chromosome 'CM009322.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009322.1.bin'
+00:00:14 Building sequence tree for chromosome 'CM009322.1'
+00:00:14 Done. Loaded 1188 sequences.
+00:00:14 Loading sequences for chromosome 'CM009323.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009323.1.bin'
+00:00:15 Building sequence tree for chromosome 'CM009323.1'
+00:00:15 Done. Loaded 1016 sequences.
+00:00:15 Loading sequences for chromosome 'CM009324.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009324.1.bin'
+00:00:15 Building sequence tree for chromosome 'CM009324.1'
+00:00:15 Done. Loaded 1036 sequences.
+00:00:15 Loading sequences for chromosome 'CM009325.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009325.1.bin'
+00:00:15 Building sequence tree for chromosome 'CM009325.1'
+00:00:15 Done. Loaded 1069 sequences.
+00:00:15 Loading sequences for chromosome 'CM009326.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009326.1.bin'
+00:00:16 Building sequence tree for chromosome 'CM009326.1'
+00:00:16 Done. Loaded 1141 sequences.
+00:00:16 Loading sequences for chromosome 'CM009327.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009327.1.bin'
+00:00:16 Building sequence tree for chromosome 'CM009327.1'
+00:00:16 Done. Loaded 1075 sequences.
+00:00:16 	20000 variants (3231 variants per second), 20000 VCF entries
+00:00:16 Loading sequences for chromosome 'CM009328.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009328.1.bin'
+00:00:17 Building sequence tree for chromosome 'CM009328.1'
+00:00:17 Done. Loaded 926 sequences.
+00:00:17 Loading sequences for chromosome 'CM009329.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009329.1.bin'
+00:00:17 Building sequence tree for chromosome 'CM009329.1'
+00:00:17 Done. Loaded 1173 sequences.
+00:00:17 Loading sequences for chromosome 'CM009330.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009330.1.bin'
+00:00:17 Building sequence tree for chromosome 'CM009330.1'
+00:00:17 Done. Loaded 1037 sequences.
+00:00:17 Loading sequences for chromosome 'CM009331.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009331.1.bin'
+00:00:18 Building sequence tree for chromosome 'CM009331.1'
+00:00:18 Done. Loaded 1112 sequences.
+00:00:18 Loading sequences for chromosome 'CM009332.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009332.1.bin'
+00:00:18 Building sequence tree for chromosome 'CM009332.1'
+00:00:18 Done. Loaded 1015 sequences.
+00:00:18 Loading sequences for chromosome 'CM009333.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009333.1.bin'
+00:00:18 Building sequence tree for chromosome 'CM009333.1'
+00:00:18 Done. Loaded 828 sequences.
+00:00:19 Loading sequences for chromosome 'CM009334.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009334.1.bin'
+00:00:19 Building sequence tree for chromosome 'CM009334.1'
+00:00:19 Done. Loaded 907 sequences.
+00:00:19 Loading sequences for chromosome 'CM009335.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009335.1.bin'
+00:00:19 Building sequence tree for chromosome 'CM009335.1'
+00:00:19 Done. Loaded 1000 sequences.
+00:00:19 	30000 variants (3319 variants per second), 30000 VCF entries
+00:00:19 Loading sequences for chromosome 'CM009336.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009336.1.bin'
+00:00:19 Building sequence tree for chromosome 'CM009336.1'
+00:00:19 Done. Loaded 879 sequences.
+00:00:20 Loading sequences for chromosome 'CM009337.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009337.1.bin'
+00:00:20 Building sequence tree for chromosome 'CM009337.1'
+00:00:20 Done. Loaded 871 sequences.
+00:00:20 Loading sequences for chromosome 'CM009338.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009338.1.bin'
+00:00:20 Building sequence tree for chromosome 'CM009338.1'
+00:00:20 Done. Loaded 902 sequences.
+00:00:20 Loading sequences for chromosome 'CM009339.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009339.1.bin'
+00:00:20 Building sequence tree for chromosome 'CM009339.1'
+00:00:20 Done. Loaded 852 sequences.
+00:00:21 Loading sequences for chromosome 'CM009340.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009340.1.bin'
+00:00:21 Building sequence tree for chromosome 'CM009340.1'
+00:00:21 Done. Loaded 597 sequences.
+00:00:21 Loading sequences for chromosome 'CM009341.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009341.1.bin'
+00:00:21 Building sequence tree for chromosome 'CM009341.1'
+00:00:21 Done. Loaded 619 sequences.
+00:00:21 Loading sequences for chromosome 'CM009342.1' from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.CM009342.1.bin'
+00:00:21 Building sequence tree for chromosome 'CM009342.1'
+00:00:21 Done. Loaded 371 sequences.
+00:00:21 Loading sequences from file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/data/Phypa_V3/sequence.bin'
+00:00:21 Building sequence tree for chromosome 'ABEU02000296.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000126.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000124.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000265.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000228.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000308.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000091.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000277.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000167.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000118.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000082.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000235.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000339.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000322.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000083.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000181.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000223.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000213.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000040.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000088.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000112.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000061.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000037.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000306.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000084.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000089.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000282.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000136.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000245.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000211.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000303.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000166.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000039.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000210.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000328.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000048.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000318.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000094.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000054.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000098.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000177.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000065.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000311.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000071.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000111.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000051.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000186.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000076.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000103.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000031.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000299.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000169.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000096.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000276.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000170.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000160.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000188.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000312.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000034.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000161.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000327.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000286.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000298.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000220.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000102.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000172.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000095.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000307.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000351.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000074.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000079.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000219.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000190.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000115.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000200.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000062.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000134.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000090.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000156.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000285.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000341.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000239.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000287.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000148.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000072.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000060.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000226.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000202.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000348.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000053.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000330.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000032.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000057.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000064.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000123.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000178.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000109.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000231.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000272.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000092.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000132.1'
+00:00:21 Creating sequences from exon information 'ABEU02000089.1'
+00:00:21 Building sequence tree for chromosome 'ABEU02000089.1'
+00:00:21 Building sequence tree for genome sequences
+00:00:21 Done.
+00:00:21 Done. Loaded 2 sequences.
+
+WARNINGS: Some warning were detected
+Warning type	Number of warnings
+INFO_REALIGN_3_PRIME	197
+WARNING_TRANSCRIPT_INCOMPLETE	1594
+WARNING_TRANSCRIPT_INCOMPLETE&INFO_REALIGN_3_PRIME	4
+WARNING_TRANSCRIPT_MULTIPLE_STOP_CODONS	1
+WARNING_TRANSCRIPT_NO_START_CODON	4365
+WARNING_TRANSCRIPT_NO_START_CODON&INFO_REALIGN_3_PRIME	2
+WARNING_TRANSCRIPT_NO_STOP_CODON	1028
+WARNING_TRANSCRIPT_NO_STOP_CODON&INFO_REALIGN_3_PRIME	4
+
+
+00:00:21 done.
+00:00:21 Logging
+00:00:22 Checking for updates...
+00:00:22 Done.

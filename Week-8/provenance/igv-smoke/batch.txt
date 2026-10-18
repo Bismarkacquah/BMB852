@@ -1,0 +1,11 @@
+new
+setSleepInterval 1000
+genome /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna
+snapshotDirectory /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/provenance/igv-smoke
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-7/expanded/results/ERR8982185.20M.pass.vcf.gz
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-7/expanded/bam/ERR8982185.20M.sorted.bam
+maxPanelHeight 1000
+setSequenceShowTranslation false
+goto CM009327.1:5823566-5823646
+snapshot week7_real_data_smoke.png
+exit

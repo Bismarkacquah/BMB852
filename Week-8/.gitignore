@@ -1,0 +1,10 @@
+samples/*/raw/
+samples/*/*.fastq.gz
+samples/*/*.bam
+samples/*/*.bam.bai
+tools/
+annotation/data/
+*.part
+__pycache__/
+*.lock
+*.signature

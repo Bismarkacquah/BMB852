@@ -1,0 +1,2324 @@
+00:00:00 SnpEff version SnpEff 5.4c (build 2026-02-23 07:25), by Pablo Cingolani
+00:00:00 Command: 'build'
+00:00:00 Building database for 'Phypa_V3'
+00:00:00 Reading configuration file 'snpEff.config'. Genome: 'Phypa_V3'
+00:00:00 Looking for config file: '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/snpEff.config'
+00:00:00 Reading config file: /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/snpEff.config
+00:00:00 done
+00:00:00 Reading GFF3 data file  : '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/genes.gff'
+00:00:00 Reading file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/genes.gff'
+....................................................................................................
+		10000	....................................................................................................
+		20000	....................................................................................................
+		30000	....................................................................................................
+		40000	....................................................................................................
+		50000	....................................................................................................
+		60000	....................................................................................................
+		70000	....................................................................................................
+		80000	....................................................................................................
+		90000	...............WARNING_GENE_NOT_FOUND: Gene 'null' (CM009322.1:17017658-17019407) does not include 'gene-PHYPA_012621' (CM009324.1:8516487-8518673). Created new gene 'null.2' (CM009324.1:8516487-8518673). File '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/genes.gff' line 152843	'CM009324.1	Genbank	pseudogene	8516487	8518673	.	+	.	ID=gene-PHYPA_012621;Name=PHYPA_012621;gbkey=Gene;gene_biotype=pseudogene;locus_tag=PHYPA_012621;pseudo=true'
+.....................................................................................
+		100000	....................................................................................................
+		110000	....................................................................................................
+		120000	....................................................................................................
+		130000	..........................................................................WARNING_GENE_NOT_FOUND: Gene 'null' (CM009322.1:17017658-17019407) does not include 'gene-PHYPA_019016' (CM009329.1:16132440-16135906). Created new gene 'null.3' (CM009329.1:16132440-16135906). File '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/genes.gff' line 229287	'CM009329.1	Genbank	pseudogene	16132440	16135906	.	-	.	ID=gene-PHYPA_019016;Name=PHYPA_019016;Note=SNPs at ref. genome;gbkey=Gene;gene_biotype=pseudogene;locus_tag=PHYPA_019016;pseudo=true'
+..........................
+		140000	....................................................................................................
+		150000	....................................................................................................
+		160000	....................................................................................................
+		170000	....................................................................................................
+		180000	....................................................................................................
+		190000	....................................................................................................
+		200000	....................................................................................................
+		210000	....................................................................................................
+		220000	................................................00:00:11 
+	Total: 224812 markers added.
+00:00:11 Create exons from CDS (if needed): 
+00:00:11 Exons created for 0 transcripts.
+00:00:11 Deleting redundant exons (if needed): 
+00:00:12 	Total transcripts with deleted exons: 0
+00:00:12 Collapsing zero length introns (if needed): 
+00:00:12 	Total collapsed transcripts: 0
+00:00:12 	Reading sequences   :
+00:00:12 	FASTA file: '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/genomes/Phypa_V3.fa' not found.
+00:00:12 	Reading FASTA file: '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequences.fa'
+00:00:13 		Reading sequence 'CM009316.1', length: 30242098
+00:00:13 		Adding genomic sequences to genes: 
+00:00:13 	Done (1818 sequences added).
+00:00:13 		Adding genomic sequences to exons: 
+00:00:13 	Done (10376 sequences added, 0 ignored).
+00:00:14 		Reading sequence 'CM009317.1', length: 25998084
+00:00:14 		Adding genomic sequences to genes: 
+00:00:14 	Done (1635 sequences added).
+00:00:14 		Adding genomic sequences to exons: 
+00:00:14 	Done (9600 sequences added, 0 ignored).
+00:00:16 		Reading sequence 'CM009318.1', length: 25551832
+00:00:16 		Adding genomic sequences to genes: 
+00:00:16 	Done (1593 sequences added).
+00:00:16 		Adding genomic sequences to exons: 
+00:00:16 	Done (9127 sequences added, 0 ignored).
+00:00:17 		Reading sequence 'CM009319.1', length: 22344759
+00:00:17 		Adding genomic sequences to genes: 
+00:00:18 	Done (1353 sequences added).
+00:00:18 		Adding genomic sequences to exons: 
+00:00:18 	Done (7555 sequences added, 0 ignored).
+00:00:19 		Reading sequence 'CM009320.1', length: 20681290
+00:00:19 		Adding genomic sequences to genes: 
+00:00:19 	Done (1174 sequences added).
+00:00:19 		Adding genomic sequences to exons: 
+00:00:19 	Done (6668 sequences added, 0 ignored).
+00:00:20 		Reading sequence 'CM009321.1', length: 19533230
+00:00:20 		Adding genomic sequences to genes: 
+00:00:20 	Done (1254 sequences added).
+00:00:20 		Adding genomic sequences to exons: 
+00:00:20 	Done (7193 sequences added, 0 ignored).
+00:00:21 		Reading sequence 'CM009322.1', length: 18116774
+00:00:21 		Adding genomic sequences to genes: 
+00:00:21 	Done (1187 sequences added).
+00:00:21 		Adding genomic sequences to exons: 
+00:00:21 	Done (6634 sequences added, 0 ignored).
+00:00:21 		Reading sequence 'CM009323.1', length: 17934281
+00:00:21 		Adding genomic sequences to genes: 
+00:00:22 	Done (1015 sequences added).
+00:00:22 		Adding genomic sequences to exons: 
+00:00:22 	Done (5893 sequences added, 0 ignored).
+00:00:22 		Reading sequence 'CM009324.1', length: 17794193
+00:00:22 		Adding genomic sequences to genes: 
+00:00:22 	Done (1035 sequences added).
+00:00:22 		Adding genomic sequences to exons: 
+00:00:22 	Done (6594 sequences added, 0 ignored).
+00:00:23 		Reading sequence 'CM009325.1', length: 17530623
+00:00:23 		Adding genomic sequences to genes: 
+00:00:23 	Done (1068 sequences added).
+00:00:23 		Adding genomic sequences to exons: 
+00:00:23 	Done (6223 sequences added, 0 ignored).
+00:00:25 		Reading sequence 'CM009326.1', length: 17494229
+00:00:25 		Adding genomic sequences to genes: 
+00:00:25 	Done (1140 sequences added).
+00:00:25 		Adding genomic sequences to exons: 
+00:00:25 	Done (6621 sequences added, 0 ignored).
+00:00:26 		Reading sequence 'CM009327.1', length: 17435539
+00:00:26 		Adding genomic sequences to genes: 
+00:00:26 	Done (1074 sequences added).
+00:00:26 		Adding genomic sequences to exons: 
+00:00:26 	Done (5715 sequences added, 0 ignored).
+00:00:28 		Reading sequence 'CM009328.1', length: 17250819
+00:00:28 		Adding genomic sequences to genes: 
+00:00:28 	Done (925 sequences added).
+00:00:28 		Adding genomic sequences to exons: 
+00:00:28 	Done (4999 sequences added, 0 ignored).
+00:00:29 		Reading sequence 'CM009329.1', length: 17248380
+00:00:29 		Adding genomic sequences to genes: 
+00:00:29 	Done (1172 sequences added).
+00:00:29 		Adding genomic sequences to exons: 
+00:00:29 	Done (6741 sequences added, 0 ignored).
+00:00:30 		Reading sequence 'CM009330.1', length: 17009704
+00:00:30 		Adding genomic sequences to genes: 
+00:00:30 	Done (1036 sequences added).
+00:00:30 		Adding genomic sequences to exons: 
+00:00:30 	Done (6425 sequences added, 0 ignored).
+00:00:31 		Reading sequence 'CM009331.1', length: 16572167
+00:00:31 		Adding genomic sequences to genes: 
+00:00:31 	Done (1111 sequences added).
+00:00:31 		Adding genomic sequences to exons: 
+00:00:31 	Done (6432 sequences added, 0 ignored).
+00:00:31 		Reading sequence 'CM009332.1', length: 15984037
+00:00:31 		Adding genomic sequences to genes: 
+00:00:31 	Done (1014 sequences added).
+00:00:32 		Adding genomic sequences to exons: 
+00:00:32 	Done (5774 sequences added, 0 ignored).
+00:00:33 		Reading sequence 'CM009333.1', length: 15735161
+00:00:33 		Adding genomic sequences to genes: 
+00:00:33 	Done (827 sequences added).
+00:00:33 		Adding genomic sequences to exons: 
+00:00:33 	Done (4840 sequences added, 0 ignored).
+00:00:35 		Reading sequence 'CM009334.1', length: 15673097
+00:00:35 		Adding genomic sequences to genes: 
+00:00:35 	Done (906 sequences added).
+00:00:35 		Adding genomic sequences to exons: 
+00:00:35 	Done (4413 sequences added, 0 ignored).
+00:00:37 		Reading sequence 'CM009335.1', length: 15486712
+00:00:37 		Adding genomic sequences to genes: 
+00:00:37 	Done (999 sequences added).
+00:00:37 		Adding genomic sequences to exons: 
+00:00:37 	Done (5207 sequences added, 0 ignored).
+00:00:38 		Reading sequence 'CM009336.1', length: 15510460
+00:00:38 		Adding genomic sequences to genes: 
+00:00:38 	Done (878 sequences added).
+00:00:38 		Adding genomic sequences to exons: 
+00:00:38 	Done (4688 sequences added, 0 ignored).
+00:00:40 		Reading sequence 'CM009337.1', length: 15354560
+00:00:40 		Adding genomic sequences to genes: 
+00:00:40 	Done (870 sequences added).
+00:00:40 		Adding genomic sequences to exons: 
+00:00:40 	Done (5121 sequences added, 0 ignored).
+00:00:41 		Reading sequence 'CM009338.1', length: 15138416
+00:00:41 		Adding genomic sequences to genes: 
+00:00:41 	Done (901 sequences added).
+00:00:41 		Adding genomic sequences to exons: 
+00:00:42 	Done (5066 sequences added, 0 ignored).
+00:00:43 		Reading sequence 'CM009339.1', length: 13755829
+00:00:43 		Adding genomic sequences to genes: 
+00:00:43 	Done (851 sequences added).
+00:00:43 		Adding genomic sequences to exons: 
+00:00:43 	Done (4753 sequences added, 0 ignored).
+00:00:44 		Reading sequence 'CM009340.1', length: 11183739
+00:00:44 		Adding genomic sequences to genes: 
+00:00:44 	Done (596 sequences added).
+00:00:44 		Adding genomic sequences to exons: 
+00:00:44 	Done (3338 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'CM009341.1', length: 10125990
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (618 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (3433 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'CM009342.1', length: 5299892
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (370 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (2334 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000028.1', length: 27963
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (0 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (0 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000029.1', length: 3901
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (0 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (0 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000030.1', length: 4531
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (0 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (0 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000031.1', length: 3368
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (1 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (2 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000032.1', length: 27875
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (1 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (3 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000033.1', length: 3834
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (0 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (0 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000034.1', length: 3281
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (1 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (2 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000035.1', length: 5747
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (0 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (0 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000036.1', length: 3611
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (0 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (0 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000037.1', length: 3421
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (1 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (1 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000038.1', length: 3516
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (0 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (0 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000039.1', length: 26885
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (3 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (4 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000040.1', length: 3141
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (1 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (1 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000041.1', length: 36754
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (0 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (0 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000042.1', length: 3578
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (0 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (0 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000043.1', length: 3536
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (0 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (0 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000044.1', length: 3504
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (0 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (0 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000045.1', length: 3570
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (0 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:45 	Done (0 sequences added, 0 ignored).
+00:00:45 		Reading sequence 'ABEU02000046.1', length: 3482
+00:00:45 		Adding genomic sequences to genes: 
+00:00:45 	Done (0 sequences added).
+00:00:45 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000047.1', length: 3164
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000048.1', length: 3184
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (3 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (4 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000049.1', length: 2975
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000050.1', length: 3243
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000051.1', length: 3463
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (2 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000052.1', length: 3112
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000053.1', length: 3688
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (1 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000054.1', length: 3452
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (2 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (3 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000055.1', length: 24443
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000056.1', length: 3578
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000057.1', length: 3344
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (2 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000058.1', length: 2910
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000059.1', length: 3771
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000060.1', length: 3133
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (3 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000061.1', length: 24087
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (2 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (3 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000062.1', length: 3307
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (1 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000063.1', length: 3707
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000064.1', length: 2117
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (1 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000065.1', length: 23409
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (2 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (2 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000066.1', length: 3376
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000067.1', length: 3076
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000068.1', length: 2019
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000069.1', length: 2008
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000070.1', length: 3093
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000071.1', length: 1921
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (2 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000072.1', length: 23363
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (3 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (8 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000073.1', length: 4319
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000074.1', length: 2878
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (3 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000075.1', length: 2952
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000076.1', length: 1495
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (3 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000077.1', length: 23227
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000078.1', length: 2885
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000079.1', length: 1337
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (3 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000080.1', length: 1324
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000081.1', length: 10138
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000082.1', length: 2878
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (2 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000083.1', length: 3462
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (1 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000084.1', length: 1209
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (1 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000085.1', length: 1127
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000086.1', length: 1046
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000087.1', length: 1006
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000088.1', length: 22559
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (2 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (15 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000089.1', length: 22280
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (1 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000090.1', length: 22108
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (4 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (6 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000091.1', length: 21755
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (6 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000092.1', length: 21536
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (6 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (24 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000093.1', length: 20960
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000094.1', length: 20476
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (5 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000095.1', length: 19491
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (2 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000096.1', length: 19183
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (2 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000097.1', length: 18534
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000098.1', length: 18345
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (2 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (10 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000099.1', length: 17276
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000100.1', length: 41815
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000101.1', length: 41976
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000102.1', length: 16009
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (2 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000103.1', length: 15775
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (2 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (6 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000104.1', length: 15617
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000105.1', length: 15088
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000106.1', length: 14600
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000107.1', length: 14492
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000108.1', length: 13915
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000109.1', length: 13734
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (1 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000110.1', length: 13631
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000111.1', length: 13538
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (2 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (3 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000112.1', length: 13592
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (9 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000113.1', length: 13051
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000114.1', length: 12855
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000115.1', length: 12673
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (3 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (5 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000116.1', length: 12538
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000117.1', length: 12534
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000118.1', length: 12263
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (2 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (3 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000119.1', length: 12213
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000120.1', length: 12490
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000121.1', length: 11959
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000122.1', length: 11723
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000123.1', length: 12489
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (2 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (2 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000124.1', length: 11577
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (1 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000125.1', length: 11558
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000126.1', length: 11480
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (3 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000127.1', length: 11571
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000128.1', length: 10997
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000129.1', length: 10995
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000130.1', length: 10927
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000131.1', length: 10764
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000132.1', length: 11181
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (2 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000133.1', length: 10863
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000134.1', length: 10539
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (1 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000135.1', length: 10404
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000136.1', length: 10303
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (1 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000137.1', length: 10223
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000138.1', length: 10029
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000139.1', length: 9908
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000140.1', length: 9490
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000141.1', length: 9424
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000142.1', length: 9307
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000143.1', length: 9206
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000144.1', length: 8841
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000145.1', length: 8724
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000146.1', length: 8924
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000147.1', length: 8677
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000148.1', length: 8649
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (2 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (14 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000149.1', length: 8355
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000150.1', length: 8308
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000151.1', length: 8163
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000152.1', length: 8127
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000153.1', length: 7939
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000154.1', length: 7850
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000155.1', length: 7800
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (0 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:46 	Done (0 sequences added, 0 ignored).
+00:00:46 		Reading sequence 'ABEU02000156.1', length: 7766
+00:00:46 		Adding genomic sequences to genes: 
+00:00:46 	Done (1 sequences added).
+00:00:46 		Adding genomic sequences to exons: 
+00:00:47 	Done (1 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000157.1', length: 7743
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000158.1', length: 7700
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000159.1', length: 7680
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000160.1', length: 7678
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (3 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (3 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000161.1', length: 7614
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (2 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (6 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000162.1', length: 7570
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000163.1', length: 7656
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000164.1', length: 7504
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000165.1', length: 7566
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000166.1', length: 171298
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (3 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (9 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000167.1', length: 7375
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (1 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (1 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000168.1', length: 7272
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000169.1', length: 7261
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (2 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (11 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000170.1', length: 127501
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (2 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (8 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000171.1', length: 7193
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000172.1', length: 7183
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (1 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (4 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000173.1', length: 7238
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000174.1', length: 7081
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000175.1', length: 7050
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000176.1', length: 7003
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000177.1', length: 6978
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (1 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (8 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000178.1', length: 6977
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (2 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (3 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000179.1', length: 6968
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000180.1', length: 6942
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000181.1', length: 6920
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (2 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (5 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000182.1', length: 6896
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000183.1', length: 6878
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000184.1', length: 6818
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000185.1', length: 6924
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000186.1', length: 8292
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (3 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (9 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000187.1', length: 6743
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000188.1', length: 6738
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (2 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (2 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000189.1', length: 6717
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000190.1', length: 6968
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (1 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (2 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000191.1', length: 6778
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000192.1', length: 6632
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000193.1', length: 6549
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000194.1', length: 7103
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000195.1', length: 6476
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000196.1', length: 6467
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000197.1', length: 12727
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000198.1', length: 6519
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000199.1', length: 6415
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000200.1', length: 6394
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (1 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (1 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000201.1', length: 7303
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000202.1', length: 6443
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (1 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (2 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000203.1', length: 6298
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000204.1', length: 6296
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000205.1', length: 6292
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000206.1', length: 6694
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000207.1', length: 6235
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000208.1', length: 6226
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000209.1', length: 6218
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000210.1', length: 6172
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (1 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (2 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000211.1', length: 6155
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (2 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (7 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000212.1', length: 6480
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000213.1', length: 88975
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (1 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (2 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000214.1', length: 6224
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000215.1', length: 6109
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000216.1', length: 6100
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000217.1', length: 6059
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000218.1', length: 6041
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000219.1', length: 88318
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (2 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (16 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000220.1', length: 6000
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (2 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (9 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000221.1', length: 5995
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000222.1', length: 5948
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000223.1', length: 86846
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (1 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (3 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000224.1', length: 5920
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000225.1', length: 5867
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000226.1', length: 117854
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (4 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (7 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000227.1', length: 5862
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000228.1', length: 5847
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (1 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (3 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000229.1', length: 5832
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000230.1', length: 7145
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000231.1', length: 101950
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (10 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (16 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000232.1', length: 5797
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000233.1', length: 5745
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000234.1', length: 5945
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000235.1', length: 79700
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (8 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (16 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000236.1', length: 5729
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000237.1', length: 5723
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000238.1', length: 5701
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000239.1', length: 78880
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (3 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (6 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000240.1', length: 5687
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000241.1', length: 5685
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000242.1', length: 5677
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000243.1', length: 5979
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000244.1', length: 6278
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000245.1', length: 5643
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (1 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (2 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000246.1', length: 5719
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000247.1', length: 5618
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000248.1', length: 5614
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000249.1', length: 5613
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000250.1', length: 5599
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000251.1', length: 5557
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000252.1', length: 83804
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000253.1', length: 5494
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000254.1', length: 5491
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000255.1', length: 5473
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000256.1', length: 5469
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000257.1', length: 5607
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000258.1', length: 5438
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000259.1', length: 5730
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000260.1', length: 5395
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000261.1', length: 5382
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000262.1', length: 5370
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000263.1', length: 5339
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000264.1', length: 5325
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000265.1', length: 5583
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (1 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (1 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000266.1', length: 5297
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:47 	Done (0 sequences added, 0 ignored).
+00:00:47 		Reading sequence 'ABEU02000267.1', length: 5244
+00:00:47 		Adding genomic sequences to genes: 
+00:00:47 	Done (0 sequences added).
+00:00:47 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000268.1', length: 5890
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000269.1', length: 5170
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000270.1', length: 5311
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000271.1', length: 5145
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000272.1', length: 66314
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (7 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (18 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000273.1', length: 5096
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000274.1', length: 5034
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000275.1', length: 5025
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000276.1', length: 5025
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (1 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (3 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000277.1', length: 64196
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (4 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (13 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000278.1', length: 4939
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000279.1', length: 4907
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000280.1', length: 4898
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000281.1', length: 4873
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000282.1', length: 59305
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (8 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (17 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000283.1', length: 4841
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000284.1', length: 4827
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000285.1', length: 4822
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (2 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (3 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000286.1', length: 4749
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (1 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (1 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000287.1', length: 4747
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (1 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (1 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000288.1', length: 5009
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000289.1', length: 4731
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000290.1', length: 4704
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000291.1', length: 5418
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000292.1', length: 4682
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000293.1', length: 4681
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000294.1', length: 4747
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000295.1', length: 4659
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000296.1', length: 4487
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (1 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (10 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000297.1', length: 4475
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000298.1', length: 5362
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (1 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (2 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000299.1', length: 45882
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (6 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (15 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000300.1', length: 4460
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000301.1', length: 4409
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000302.1', length: 4394
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000303.1', length: 4388
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (2 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (4 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000304.1', length: 4387
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000305.1', length: 4378
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000306.1', length: 4370
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (1 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (2 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000307.1', length: 40341
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (6 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (8 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000308.1', length: 4334
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (1 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (1 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000309.1', length: 4331
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000310.1', length: 4329
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000311.1', length: 4327
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (2 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (5 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000312.1', length: 4280
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (1 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (2 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000313.1', length: 4401
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000314.1', length: 39109
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000315.1', length: 4768
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000316.1', length: 4242
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000317.1', length: 4241
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000318.1', length: 4188
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (2 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (4 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000319.1', length: 4183
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000320.1', length: 4156
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000321.1', length: 5428
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000322.1', length: 37256
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (1 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (3 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000323.1', length: 4081
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000324.1', length: 4918
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000325.1', length: 5253
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000326.1', length: 5253
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000327.1', length: 28422
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (1 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (1 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000328.1', length: 4011
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (1 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (1 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000329.1', length: 3983
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000330.1', length: 32022
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (2 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (3 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000331.1', length: 3925
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000332.1', length: 3905
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000333.1', length: 3887
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000334.1', length: 3876
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000335.1', length: 4152
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000336.1', length: 4051
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000337.1', length: 4059
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000338.1', length: 3836
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000339.1', length: 3985
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (1 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (1 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000340.1', length: 3871
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000341.1', length: 31256
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (2 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (8 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000342.1', length: 3878
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000343.1', length: 3706
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000344.1', length: 3789
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000345.1', length: 3674
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000346.1', length: 3865
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000347.1', length: 29900
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000348.1', length: 3862
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (2 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (3 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000349.1', length: 3597
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000350.1', length: 3562
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000351.1', length: 28974
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (2 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (13 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000352.1', length: 3714
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000353.1', length: 3652
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000354.1', length: 3688
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000355.1', length: 3460
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000356.1', length: 3545
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 		Reading sequence 'ABEU02000357.1', length: 3949
+00:00:48 		Adding genomic sequences to genes: 
+00:00:48 	Done (0 sequences added).
+00:00:48 		Adding genomic sequences to exons: 
+00:00:48 	Done (0 sequences added, 0 ignored).
+00:00:48 	Total: 162252 sequences added, 0 sequences ignored.
+00:00:48 Finishing up genome
+00:00:48 Adjusting transcripts: 
+00:00:48 Adjusting genes: 
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_016288' (name:'PHYPA_016288'), adjusting start coordinate from 9789084 to 9789088
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_016289' (name:'PHYPA_016289'), adjusting start coordinate from 9796930 to 9797430
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_016286' (name:'PHYPA_016286'), adjusting start coordinate from 9746971 to 9746979
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_016287' (name:'PHYPA_016287'), adjusting end coordinate from 9786947 to 9786946
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_028273' (name:'PHYPA_028273'), adjusting end coordinate from 12300247 to 12300236
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_028272' (name:'PHYPA_028272'), adjusting end coordinate from 12271374 to 12271367
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_028274' (name:'PHYPA_028274'), adjusting start coordinate from 12304109 to 12304172
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_028274' (name:'PHYPA_028274'), adjusting end coordinate from 12304487 to 12304372
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_028271' (name:'PHYPA_028271'), adjusting start coordinate from 12265750 to 12266153
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_028271' (name:'PHYPA_028271'), adjusting end coordinate from 12268143 to 12267912
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_028269' (name:'PHYPA_028269'), adjusting start coordinate from 12256731 to 12256762
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_028269' (name:'PHYPA_028269'), adjusting end coordinate from 12259424 to 12259413
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_004299' (name:'PHYPA_004299'), adjusting end coordinate from 8166737 to 8166729
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_028266' (name:'PHYPA_028266'), adjusting start coordinate from 12159040 to 12159185
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_004298' (name:'PHYPA_004298'), adjusting start coordinate from 8154884 to 8154976
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_004297' (name:'PHYPA_004297'), adjusting end coordinate from 8153699 to 8153640
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_028268' (name:'PHYPA_028268'), adjusting start coordinate from 12215427 to 12217740
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_028268' (name:'PHYPA_028268'), adjusting end coordinate from 12221777 to 12221768
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_028267' (name:'PHYPA_028267'), adjusting end coordinate from 12166370 to 12166228
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_016296' (name:'PHYPA_016296'), adjusting end coordinate from 9885631 to 9885539
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_016294' (name:'PHYPA_016294'), adjusting start coordinate from 9863027 to 9863045
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_016292' (name:'PHYPA_016292'), adjusting start coordinate from 9850894 to 9850921
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_016299' (name:'PHYPA_016299'), adjusting end coordinate from 9916456 to 9916310
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_016297' (name:'PHYPA_016297'), adjusting start coordinate from 9885882 to 9886836
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_016297' (name:'PHYPA_016297'), adjusting end coordinate from 9888707 to 9888612
+WARNING_GENE_COORDINATES: Gene 'gene-PHYPA_016298' (name:'PHYPA_016298'), adjusting end coordinate from 9901325 to 9901322
+WARNING_GENE_COORDINATES: Too many 'WARNING_GENE_COORDINATES' warnings, no further warnings will be shown.
+....................................................................................................
+		10000	.................................................................00:00:49 Adjusting chromosomes lengths: 
+00:00:49 Ranking exons: 
+....................................................................................................
+		10000	....................................................................................................
+		20000	....................................................................................................
+		30000	............00:00:49 Create UTRs from CDS (if needed): 
+....................................................................................................
+		10000	....................................................................................................
+		20000	...................................00:00:50 Correcting exons based on frame information.
+	
+....................................................................................................
+100	....................................................................................................
+200	....................................................................................................
+300	....................................................................................................
+400	....................................................................................................
+500	....................................................................................................
+600	....................................................................................................
+700	....................................................................................................
+800	....................................00:00:51 
+00:00:51 Remove empty chromosomes: 
+00:00:51 Marking as 'coding' from CDS information: 
+00:00:51 Done: 0 transcripts marked
+00:00:51 
+00:00:51 #-----------------------------------------------
+# Genome name                : 'Physcomitrium patens Phypa V3'
+# Genome version             : 'Phypa_V3'
+# Genome ID                  : 'Phypa_V3[0]'
+# Has protein coding info    : true
+# Has Tr. Support Level info : true
+# Genes                      : 31312
+# Protein coding genes       : 31251
+#-----------------------------------------------
+# Transcripts                : 31254
+# Avg. transcripts per gene  : 1.00
+# TSL transcripts            : 0
+#-----------------------------------------------
+# Checked transcripts        : 
+#               AA sequences :      0 ( 0.00% )
+#              DNA sequences :      0 ( 0.00% )
+#-----------------------------------------------
+# Protein coding transcripts : 31251
+#              Length errors :    331 ( 1.06% )
+#  STOP codons in CDS errors :      1 ( 0.00% )
+#         START codon errors :   1464 ( 4.68% )
+#        STOP codon warnings :    258 ( 0.83% )
+#              UTR sequences :  24353 ( 77.92% )
+#               Total Errors :   1731 ( 5.54% )
+#-----------------------------------------------
+# Cds                        : 149462
+# Exons                      : 162252
+# Exons with sequence        : 162252
+# Exons without sequence     : 0
+# Avg. exons per transcript  : 5.19
+# WARNING                    : No mitochondrion chromosome found
+#-----------------------------------------------
+# Number of chromosomes      : 357
+# Chromosomes                : Format 'chromo_name size codon_table'
+#		'CM009316.1'	30242098	Standard
+#		'CM009317.1'	25998084	Standard
+#		'CM009318.1'	25551832	Standard
+#		'CM009319.1'	22344759	Standard
+#		'CM009320.1'	20681290	Standard
+#		'CM009321.1'	19533230	Standard
+#		'CM009322.1'	18116774	Standard
+#		'CM009323.1'	17934281	Standard
+#		'CM009324.1'	17794193	Standard
+#		'CM009325.1'	17530623	Standard
+#		'CM009326.1'	17494229	Standard
+#		'CM009327.1'	17435539	Standard
+#		'CM009328.1'	17250819	Standard
+#		'CM009329.1'	17248380	Standard
+#		'CM009330.1'	17009704	Standard
+#		'CM009331.1'	16572167	Standard
+#		'CM009332.1'	15984037	Standard
+#		'CM009333.1'	15735161	Standard
+#		'CM009334.1'	15673097	Standard
+#		'CM009336.1'	15510460	Standard
+#		'CM009335.1'	15486712	Standard
+#		'CM009337.1'	15354560	Standard
+#		'CM009338.1'	15138416	Standard
+#		'CM009339.1'	13755829	Standard
+#		'CM009340.1'	11183739	Standard
+#		'CM009341.1'	10125990	Standard
+#		'CM009342.1'	5299892	Standard
+#		'ABEU02000166.1'	171298	Standard
+#		'ABEU02000170.1'	127501	Standard
+#		'ABEU02000226.1'	117854	Standard
+#		'ABEU02000231.1'	101950	Standard
+#		'ABEU02000213.1'	88975	Standard
+#		'ABEU02000219.1'	88318	Standard
+#		'ABEU02000223.1'	86846	Standard
+#		'ABEU02000252.1'	83804	Standard
+#		'ABEU02000235.1'	79700	Standard
+#		'ABEU02000239.1'	78880	Standard
+#		'ABEU02000272.1'	66314	Standard
+#		'ABEU02000277.1'	64196	Standard
+#		'ABEU02000282.1'	59305	Standard
+#		'ABEU02000299.1'	45882	Standard
+#		'ABEU02000101.1'	41976	Standard
+#		'ABEU02000100.1'	41815	Standard
+#		'ABEU02000307.1'	40341	Standard
+#		'ABEU02000314.1'	39109	Standard
+#		'ABEU02000322.1'	37256	Standard
+#		'ABEU02000041.1'	36754	Standard
+#		'ABEU02000330.1'	32022	Standard
+#		'ABEU02000341.1'	31256	Standard
+#		'ABEU02000347.1'	29900	Standard
+#		'ABEU02000351.1'	28974	Standard
+#		'ABEU02000327.1'	28422	Standard
+#		'ABEU02000028.1'	27963	Standard
+#		'ABEU02000032.1'	27875	Standard
+#		'ABEU02000039.1'	26885	Standard
+#		'ABEU02000055.1'	24443	Standard
+#		'ABEU02000061.1'	24087	Standard
+#		'ABEU02000065.1'	23409	Standard
+#		'ABEU02000072.1'	23363	Standard
+#		'ABEU02000077.1'	23227	Standard
+#		'ABEU02000088.1'	22559	Standard
+#		'ABEU02000089.1'	22280	Standard
+#		'ABEU02000090.1'	22108	Standard
+#		'ABEU02000091.1'	21755	Standard
+#		'ABEU02000092.1'	21536	Standard
+#		'ABEU02000093.1'	20960	Standard
+#		'ABEU02000094.1'	20476	Standard
+#		'ABEU02000095.1'	19491	Standard
+#		'ABEU02000096.1'	19183	Standard
+#		'ABEU02000097.1'	18534	Standard
+#		'ABEU02000098.1'	18345	Standard
+#		'ABEU02000099.1'	17276	Standard
+#		'ABEU02000102.1'	16009	Standard
+#		'ABEU02000103.1'	15775	Standard
+#		'ABEU02000104.1'	15617	Standard
+#		'ABEU02000105.1'	15088	Standard
+#		'ABEU02000106.1'	14600	Standard
+#		'ABEU02000107.1'	14492	Standard
+#		'ABEU02000108.1'	13915	Standard
+#		'ABEU02000109.1'	13734	Standard
+#		'ABEU02000110.1'	13631	Standard
+#		'ABEU02000112.1'	13592	Standard
+#		'ABEU02000111.1'	13538	Standard
+#		'ABEU02000113.1'	13051	Standard
+#		'ABEU02000114.1'	12855	Standard
+#		'ABEU02000197.1'	12727	Standard
+#		'ABEU02000115.1'	12673	Standard
+#		'ABEU02000116.1'	12538	Standard
+#		'ABEU02000117.1'	12534	Standard
+#		'ABEU02000120.1'	12490	Standard
+#		'ABEU02000123.1'	12489	Standard
+#		'ABEU02000118.1'	12263	Standard
+#		'ABEU02000119.1'	12213	Standard
+#		'ABEU02000121.1'	11959	Standard
+#		'ABEU02000122.1'	11723	Standard
+#		'ABEU02000124.1'	11577	Standard
+#		'ABEU02000127.1'	11571	Standard
+#		'ABEU02000125.1'	11558	Standard
+#		'ABEU02000126.1'	11480	Standard
+#		'ABEU02000132.1'	11181	Standard
+#		'ABEU02000128.1'	10997	Standard
+#		'ABEU02000129.1'	10995	Standard
+#		'ABEU02000130.1'	10927	Standard
+#		'ABEU02000133.1'	10863	Standard
+#		'ABEU02000131.1'	10764	Standard
+#		'ABEU02000134.1'	10539	Standard
+#		'ABEU02000135.1'	10404	Standard
+#		'ABEU02000136.1'	10303	Standard
+#		'ABEU02000137.1'	10223	Standard
+#		'ABEU02000081.1'	10138	Standard
+#		'ABEU02000138.1'	10029	Standard
+#		'ABEU02000139.1'	9908	Standard
+#		'ABEU02000140.1'	9490	Standard
+#		'ABEU02000141.1'	9424	Standard
+#		'ABEU02000142.1'	9307	Standard
+#		'ABEU02000143.1'	9206	Standard
+#		'ABEU02000146.1'	8924	Standard
+#		'ABEU02000144.1'	8841	Standard
+#		'ABEU02000145.1'	8724	Standard
+#		'ABEU02000147.1'	8677	Standard
+#		'ABEU02000148.1'	8649	Standard
+#		'ABEU02000149.1'	8355	Standard
+#		'ABEU02000150.1'	8308	Standard
+#		'ABEU02000186.1'	8292	Standard
+#		'ABEU02000151.1'	8163	Standard
+#		'ABEU02000152.1'	8127	Standard
+#		'ABEU02000153.1'	7939	Standard
+#		'ABEU02000154.1'	7850	Standard
+#		'ABEU02000155.1'	7800	Standard
+#		'ABEU02000156.1'	7766	Standard
+#		'ABEU02000157.1'	7743	Standard
+#		'ABEU02000158.1'	7700	Standard
+#		'ABEU02000159.1'	7680	Standard
+#		'ABEU02000160.1'	7678	Standard
+#		'ABEU02000163.1'	7656	Standard
+#		'ABEU02000161.1'	7614	Standard
+#		'ABEU02000162.1'	7570	Standard
+#		'ABEU02000165.1'	7566	Standard
+#		'ABEU02000164.1'	7504	Standard
+#		'ABEU02000167.1'	7375	Standard
+#		'ABEU02000201.1'	7303	Standard
+#		'ABEU02000168.1'	7272	Standard
+#		'ABEU02000169.1'	7261	Standard
+#		'ABEU02000173.1'	7238	Standard
+#		'ABEU02000171.1'	7193	Standard
+#		'ABEU02000172.1'	7183	Standard
+#		'ABEU02000230.1'	7145	Standard
+#		'ABEU02000194.1'	7103	Standard
+#		'ABEU02000174.1'	7081	Standard
+#		'ABEU02000175.1'	7050	Standard
+#		'ABEU02000176.1'	7003	Standard
+#		'ABEU02000177.1'	6978	Standard
+#		'ABEU02000178.1'	6977	Standard
+#		'ABEU02000179.1'	6968	Standard
+#		'ABEU02000190.1'	6968	Standard
+#		'ABEU02000180.1'	6942	Standard
+#		'ABEU02000185.1'	6924	Standard
+#		'ABEU02000181.1'	6920	Standard
+#		'ABEU02000182.1'	6896	Standard
+#		'ABEU02000183.1'	6878	Standard
+#		'ABEU02000184.1'	6818	Standard
+#		'ABEU02000191.1'	6778	Standard
+#		'ABEU02000187.1'	6743	Standard
+#		'ABEU02000188.1'	6738	Standard
+#		'ABEU02000189.1'	6717	Standard
+#		'ABEU02000206.1'	6694	Standard
+#		'ABEU02000192.1'	6632	Standard
+#		'ABEU02000193.1'	6549	Standard
+#		'ABEU02000198.1'	6519	Standard
+#		'ABEU02000212.1'	6480	Standard
+#		'ABEU02000195.1'	6476	Standard
+#		'ABEU02000196.1'	6467	Standard
+#		'ABEU02000202.1'	6443	Standard
+#		'ABEU02000199.1'	6415	Standard
+#		'ABEU02000200.1'	6394	Standard
+#		'ABEU02000203.1'	6298	Standard
+#		'ABEU02000204.1'	6296	Standard
+#		'ABEU02000205.1'	6292	Standard
+#		'ABEU02000244.1'	6278	Standard
+#		'ABEU02000207.1'	6235	Standard
+#		'ABEU02000208.1'	6226	Standard
+#		'ABEU02000214.1'	6224	Standard
+#		'ABEU02000209.1'	6218	Standard
+#		'ABEU02000210.1'	6172	Standard
+#		'ABEU02000211.1'	6155	Standard
+#		'ABEU02000215.1'	6109	Standard
+#		'ABEU02000216.1'	6100	Standard
+#		'ABEU02000217.1'	6059	Standard
+#		'ABEU02000218.1'	6041	Standard
+#		'ABEU02000220.1'	6000	Standard
+#		'ABEU02000221.1'	5995	Standard
+#		'ABEU02000243.1'	5979	Standard
+#		'ABEU02000222.1'	5948	Standard
+#		'ABEU02000234.1'	5945	Standard
+#		'ABEU02000224.1'	5920	Standard
+#		'ABEU02000268.1'	5890	Standard
+#		'ABEU02000225.1'	5867	Standard
+#		'ABEU02000227.1'	5862	Standard
+#		'ABEU02000228.1'	5847	Standard
+#		'ABEU02000229.1'	5832	Standard
+#		'ABEU02000232.1'	5797	Standard
+#		'ABEU02000035.1'	5747	Standard
+#		'ABEU02000233.1'	5745	Standard
+#		'ABEU02000259.1'	5730	Standard
+#		'ABEU02000236.1'	5729	Standard
+#		'ABEU02000237.1'	5723	Standard
+#		'ABEU02000246.1'	5719	Standard
+#		'ABEU02000238.1'	5701	Standard
+#		'ABEU02000240.1'	5687	Standard
+#		'ABEU02000241.1'	5685	Standard
+#		'ABEU02000242.1'	5677	Standard
+#		'ABEU02000245.1'	5643	Standard
+#		'ABEU02000247.1'	5618	Standard
+#		'ABEU02000248.1'	5614	Standard
+#		'ABEU02000249.1'	5613	Standard
+#		'ABEU02000257.1'	5607	Standard
+#		'ABEU02000250.1'	5599	Standard
+#		'ABEU02000265.1'	5583	Standard
+#		'ABEU02000251.1'	5557	Standard
+#		'ABEU02000253.1'	5494	Standard
+#		'ABEU02000254.1'	5491	Standard
+#		'ABEU02000255.1'	5473	Standard
+#		'ABEU02000256.1'	5469	Standard
+#		'ABEU02000258.1'	5438	Standard
+#		'ABEU02000321.1'	5428	Standard
+#		'ABEU02000291.1'	5418	Standard
+#		'ABEU02000260.1'	5395	Standard
+#		'ABEU02000261.1'	5382	Standard
+#		'ABEU02000262.1'	5370	Standard
+#		'ABEU02000298.1'	5362	Standard
+#		'ABEU02000263.1'	5339	Standard
+#		'ABEU02000264.1'	5325	Standard
+#		'ABEU02000270.1'	5311	Standard
+#		'ABEU02000266.1'	5297	Standard
+#		'ABEU02000325.1'	5253	Standard
+#		'ABEU02000326.1'	5253	Standard
+#		'ABEU02000267.1'	5244	Standard
+#		'ABEU02000269.1'	5170	Standard
+#		'ABEU02000271.1'	5145	Standard
+#		'ABEU02000273.1'	5096	Standard
+#		'ABEU02000274.1'	5034	Standard
+#		'ABEU02000275.1'	5025	Standard
+#		'ABEU02000276.1'	5025	Standard
+#		'ABEU02000288.1'	5009	Standard
+#		'ABEU02000278.1'	4939	Standard
+#		'ABEU02000324.1'	4918	Standard
+#		'ABEU02000279.1'	4907	Standard
+#		'ABEU02000280.1'	4898	Standard
+#		'ABEU02000281.1'	4873	Standard
+#		'ABEU02000283.1'	4841	Standard
+#		'ABEU02000284.1'	4827	Standard
+#		'ABEU02000285.1'	4822	Standard
+#		'ABEU02000315.1'	4768	Standard
+#		'ABEU02000286.1'	4749	Standard
+#		'ABEU02000287.1'	4747	Standard
+#		'ABEU02000294.1'	4747	Standard
+#		'ABEU02000289.1'	4731	Standard
+#		'ABEU02000290.1'	4704	Standard
+#		'ABEU02000292.1'	4682	Standard
+#		'ABEU02000293.1'	4681	Standard
+#		'ABEU02000295.1'	4659	Standard
+#		'ABEU02000030.1'	4531	Standard
+#		'ABEU02000296.1'	4487	Standard
+#		'ABEU02000297.1'	4475	Standard
+#		'ABEU02000300.1'	4460	Standard
+#		'ABEU02000301.1'	4409	Standard
+#		'ABEU02000313.1'	4401	Standard
+#		'ABEU02000302.1'	4394	Standard
+#		'ABEU02000303.1'	4388	Standard
+#		'ABEU02000304.1'	4387	Standard
+#		'ABEU02000305.1'	4378	Standard
+#		'ABEU02000306.1'	4370	Standard
+#		'ABEU02000308.1'	4334	Standard
+#		'ABEU02000309.1'	4331	Standard
+#		'ABEU02000310.1'	4329	Standard
+#		'ABEU02000311.1'	4327	Standard
+#		'ABEU02000073.1'	4319	Standard
+#		'ABEU02000312.1'	4280	Standard
+#		'ABEU02000316.1'	4242	Standard
+#		'ABEU02000317.1'	4241	Standard
+#		'ABEU02000318.1'	4188	Standard
+#		'ABEU02000319.1'	4183	Standard
+#		'ABEU02000320.1'	4156	Standard
+#		'ABEU02000335.1'	4152	Standard
+#		'ABEU02000323.1'	4081	Standard
+#		'ABEU02000337.1'	4059	Standard
+#		'ABEU02000336.1'	4051	Standard
+#		'ABEU02000328.1'	4011	Standard
+#		'ABEU02000339.1'	3985	Standard
+#		'ABEU02000329.1'	3983	Standard
+#		'ABEU02000357.1'	3949	Standard
+#		'ABEU02000331.1'	3925	Standard
+#		'ABEU02000332.1'	3905	Standard
+#		'ABEU02000029.1'	3901	Standard
+#		'ABEU02000333.1'	3887	Standard
+#		'ABEU02000342.1'	3878	Standard
+#		'ABEU02000334.1'	3876	Standard
+#		'ABEU02000340.1'	3871	Standard
+#		'ABEU02000346.1'	3865	Standard
+#		'ABEU02000348.1'	3862	Standard
+#		'ABEU02000338.1'	3836	Standard
+#		'ABEU02000033.1'	3834	Standard
+#		'ABEU02000344.1'	3789	Standard
+#		'ABEU02000059.1'	3771	Standard
+#		'ABEU02000352.1'	3714	Standard
+#		'ABEU02000063.1'	3707	Standard
+#		'ABEU02000343.1'	3706	Standard
+#		'ABEU02000053.1'	3688	Standard
+#		'ABEU02000354.1'	3688	Standard
+#		'ABEU02000345.1'	3674	Standard
+#		'ABEU02000353.1'	3652	Standard
+#		'ABEU02000036.1'	3611	Standard
+#		'ABEU02000349.1'	3597	Standard
+#		'ABEU02000042.1'	3578	Standard
+#		'ABEU02000056.1'	3578	Standard
+#		'ABEU02000045.1'	3570	Standard
+#		'ABEU02000350.1'	3562	Standard
+#		'ABEU02000356.1'	3545	Standard
+#		'ABEU02000043.1'	3536	Standard
+#		'ABEU02000038.1'	3516	Standard
+#		'ABEU02000044.1'	3504	Standard
+#		'ABEU02000046.1'	3482	Standard
+#		'ABEU02000051.1'	3463	Standard
+#		'ABEU02000083.1'	3462	Standard
+#		'ABEU02000355.1'	3460	Standard
+#		'ABEU02000054.1'	3452	Standard
+#		'ABEU02000037.1'	3421	Standard
+#		'ABEU02000066.1'	3376	Standard
+#		'ABEU02000031.1'	3368	Standard
+#		'ABEU02000057.1'	3344	Standard
+#		'ABEU02000062.1'	3307	Standard
+#		'ABEU02000034.1'	3281	Standard
+#		'ABEU02000050.1'	3243	Standard
+#		'ABEU02000048.1'	3184	Standard
+#		'ABEU02000047.1'	3164	Standard
+#		'ABEU02000040.1'	3141	Standard
+#		'ABEU02000060.1'	3133	Standard
+#		'ABEU02000052.1'	3112	Standard
+#		'ABEU02000070.1'	3093	Standard
+#		'ABEU02000067.1'	3076	Standard
+#		'ABEU02000049.1'	2975	Standard
+#		'ABEU02000075.1'	2952	Standard
+#		'ABEU02000058.1'	2910	Standard
+#		'ABEU02000078.1'	2885	Standard
+#		'ABEU02000074.1'	2878	Standard
+#		'ABEU02000082.1'	2878	Standard
+#		'ABEU02000064.1'	2117	Standard
+#		'ABEU02000068.1'	2019	Standard
+#		'ABEU02000069.1'	2008	Standard
+#		'ABEU02000071.1'	1921	Standard
+#		'ABEU02000076.1'	1495	Standard
+#		'ABEU02000079.1'	1337	Standard
+#		'ABEU02000080.1'	1324	Standard
+#		'ABEU02000084.1'	1209	Standard
+#		'ABEU02000085.1'	1127	Standard
+#		'ABEU02000086.1'	1046	Standard
+#		'ABEU02000087.1'	1006	Standard
+#-----------------------------------------------
+
+00:00:52 Caracterizing exons by splicing (stage 1) : 
+	....................................................................................................
+	100000	..............................................................
+00:00:53 Caracterizing exons by splicing (stage 2) : 
+	....................................................................................................
+	100000	..............................................................00:00:53 done.
+00:00:53 [Optional] Rare amino acid annotations
+WARNING_FILE_NOT_FOUND: Rare Amino Acid analysis: Cannot read protein sequence file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/protein.fa', nothing done.
+00:00:53 Saving database
+00:01:57 Saving sequences for chromosome 'CM009316.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009316.1.bin'
+00:02:01 Saving sequences for chromosome 'CM009317.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009317.1.bin'
+00:02:05 Saving sequences for chromosome 'CM009318.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009318.1.bin'
+00:02:09 Saving sequences for chromosome 'CM009319.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009319.1.bin'
+00:02:12 Saving sequences for chromosome 'CM009320.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009320.1.bin'
+00:02:17 Saving sequences for chromosome 'CM009321.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009321.1.bin'
+00:02:20 Saving sequences for chromosome 'CM009322.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009322.1.bin'
+00:02:22 Saving sequences for chromosome 'CM009323.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009323.1.bin'
+00:02:26 Saving sequences for chromosome 'CM009324.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009324.1.bin'
+00:02:30 Saving sequences for chromosome 'CM009325.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009325.1.bin'
+00:02:33 Saving sequences for chromosome 'CM009326.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009326.1.bin'
+00:02:35 Saving sequences for chromosome 'CM009327.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009327.1.bin'
+00:02:39 Saving sequences for chromosome 'CM009328.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009328.1.bin'
+00:02:41 Saving sequences for chromosome 'CM009329.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009329.1.bin'
+00:02:44 Saving sequences for chromosome 'CM009330.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009330.1.bin'
+00:02:46 Saving sequences for chromosome 'CM009331.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009331.1.bin'
+00:02:48 Saving sequences for chromosome 'CM009332.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009332.1.bin'
+00:02:50 Saving sequences for chromosome 'CM009333.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009333.1.bin'
+00:02:52 Saving sequences for chromosome 'CM009334.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009334.1.bin'
+00:02:54 Saving sequences for chromosome 'CM009335.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009335.1.bin'
+00:02:56 Saving sequences for chromosome 'CM009336.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009336.1.bin'
+00:02:58 Saving sequences for chromosome 'CM009337.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009337.1.bin'
+00:03:00 Saving sequences for chromosome 'CM009338.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009338.1.bin'
+00:03:01 Saving sequences for chromosome 'CM009339.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009339.1.bin'
+00:03:03 Saving sequences for chromosome 'CM009340.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009340.1.bin'
+00:03:05 Saving sequences for chromosome 'CM009341.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009341.1.bin'
+00:03:07 Saving sequences for chromosome 'CM009342.1' to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.CM009342.1.bin'
+00:03:07 Saving sequences for small chromosmes to file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/sequence.bin'
+00:03:08 [Optional] Reading regulation elements: GFF
+WARNING_FILE_NOT_FOUND: Cannot read optional regulation file '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/regulation.gff', nothing done.
+00:03:08 [Optional] Reading regulation elements: BED 
+00:03:08 Cannot find optional regulation dir '/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/regulation.bed/', nothing done.
+00:03:08 [Optional] Reading motifs: GFF
+WARNING_FILE_NOT_FOUND: Cannot open PWMs file /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-8/annotation/./data/Phypa_V3/pwms.bin. Nothing done
+00:03:08 Done
+00:03:08 Logging
+00:03:09 Checking for updates...
+00:03:09 Done.

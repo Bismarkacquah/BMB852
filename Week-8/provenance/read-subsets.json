@@ -1,0 +1,130 @@
+{
+  "ERR8982183": {
+    "run": "ERR8982183",
+    "sample": "SAMEA13207854",
+    "title": "Control#1",
+    "pairs": 20000000,
+    "selection": "first N paired records; not random sampling",
+    "mates": [
+      {
+        "mate": 1,
+        "records": 20000000,
+        "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/003/ERR8982183/ERR8982183_1.fastq.gz",
+        "path": "samples/ERR8982183/raw/ERR8982183_1.fastq.gz",
+        "read_id_sha256": "8da36389c3c36633eb2827ea1d8cd908f8c9c70c548ae9d54d790e375ec8365e",
+        "sha256": "6a557c28f32798e833bad27dabc54001c7a17ee27c4b1fbb833a2abf73dee9c7"
+      },
+      {
+        "mate": 2,
+        "records": 20000000,
+        "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/003/ERR8982183/ERR8982183_2.fastq.gz",
+        "path": "samples/ERR8982183/raw/ERR8982183_2.fastq.gz",
+        "read_id_sha256": "8da36389c3c36633eb2827ea1d8cd908f8c9c70c548ae9d54d790e375ec8365e",
+        "sha256": "8ec164d7aaa511fe88f0aa50328a534cfefe8a7d085c0141502cd22f2efcfebc"
+      }
+    ]
+  },
+  "ERR8982184": {
+    "run": "ERR8982184",
+    "sample": "SAMEA13207855",
+    "title": "Control#2",
+    "pairs": 20000000,
+    "selection": "first N paired records; not random sampling",
+    "mates": [
+      {
+        "mate": 1,
+        "records": 20000000,
+        "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/004/ERR8982184/ERR8982184_1.fastq.gz",
+        "path": "samples/ERR8982184/raw/ERR8982184_1.fastq.gz",
+        "read_id_sha256": "c02b420a030798f1c4354ab6a7ae6e18a13cf92db1820271e4803f0105e0300d",
+        "sha256": "e4f2a7fa2827046f856e5811690f5945825006a78ee3e628c53a27bcfc67a379"
+      },
+      {
+        "mate": 2,
+        "records": 20000000,
+        "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/004/ERR8982184/ERR8982184_2.fastq.gz",
+        "path": "samples/ERR8982184/raw/ERR8982184_2.fastq.gz",
+        "read_id_sha256": "c02b420a030798f1c4354ab6a7ae6e18a13cf92db1820271e4803f0105e0300d",
+        "sha256": "0c775d8d68f5256fda30f86ccbe8f90bf55623ac8b59bf13293dac0376377447"
+      }
+    ]
+  },
+  "ERR8982185": {
+    "run": "ERR8982185",
+    "pairs": 20000000,
+    "selection": "first N records of each ENA mate file",
+    "transfer": "ordered HTTP byte ranges, four workers per mate",
+    "mates": [
+      {
+        "mate": 1,
+        "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/005/ERR8982185/ERR8982185_1.fastq.gz",
+        "records": 20000000,
+        "bases": 3014616752,
+        "read_id_sha256": "3799a069afdca35bf0bbc38c03848a41ac1885130739d8772f9d29ee6a5edc80",
+        "path": "data/raw/ERR8982185_1.fastq.gz",
+        "compressed_sha256": "5b2ca7ca2bb74413b4ef31f484e4c2941af31c15e13fd724e3a4e9b493563223",
+        "compressed_bytes": 2076106351
+      },
+      {
+        "mate": 2,
+        "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/005/ERR8982185/ERR8982185_2.fastq.gz",
+        "records": 20000000,
+        "bases": 3007076824,
+        "read_id_sha256": "3799a069afdca35bf0bbc38c03848a41ac1885130739d8772f9d29ee6a5edc80",
+        "path": "data/raw/ERR8982185_2.fastq.gz",
+        "compressed_sha256": "ee26cdf076e455847d9f68ea65abb3147490e619f4702f31d9df6a54dbd4a814",
+        "compressed_bytes": 2223270197
+      }
+    ]
+  },
+  "ERR8982186": {
+    "run": "ERR8982186",
+    "sample": "SAMEA13207857",
+    "title": "CRIS1#2",
+    "pairs": 20000000,
+    "selection": "first N paired records; not random sampling",
+    "mates": [
+      {
+        "mate": 1,
+        "records": 20000000,
+        "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/006/ERR8982186/ERR8982186_1.fastq.gz",
+        "path": "samples/ERR8982186/raw/ERR8982186_1.fastq.gz",
+        "read_id_sha256": "68a1c65685be05ea283a8824c1ee1fe6ddc46bf637ae61d1d12192dd9f39442f",
+        "sha256": "86408898cfd8848fff78ec999623831637f09e6f0a89e9cc45556dc8d3b05003"
+      },
+      {
+        "mate": 2,
+        "records": 20000000,
+        "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/006/ERR8982186/ERR8982186_2.fastq.gz",
+        "path": "samples/ERR8982186/raw/ERR8982186_2.fastq.gz",
+        "read_id_sha256": "68a1c65685be05ea283a8824c1ee1fe6ddc46bf637ae61d1d12192dd9f39442f",
+        "sha256": "576c032354b3664baa2f87b3d5d087aee439f2927d57e5e43cd9200ad0e98cce"
+      }
+    ]
+  },
+  "ERR8982187": {
+    "run": "ERR8982187",
+    "sample": "SAMEA13207858",
+    "title": "CRIS2#1",
+    "pairs": 20000000,
+    "selection": "first N paired records; not random sampling",
+    "mates": [
+      {
+        "mate": 1,
+        "records": 20000000,
+        "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/007/ERR8982187/ERR8982187_1.fastq.gz",
+        "path": "samples/ERR8982187/raw/ERR8982187_1.fastq.gz",
+        "read_id_sha256": "1a39823e75f4561886fc024722bd0774f63f60016e7d24b66c10328a421d1e41",
+        "sha256": "01b5edb7f99067423c4893435accacb67f3404d0410adf1ba30fa02654b402b0"
+      },
+      {
+        "mate": 2,
+        "records": 20000000,
+        "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/007/ERR8982187/ERR8982187_2.fastq.gz",
+        "path": "samples/ERR8982187/raw/ERR8982187_2.fastq.gz",
+        "read_id_sha256": "1a39823e75f4561886fc024722bd0774f63f60016e7d24b66c10328a421d1e41",
+        "sha256": "f66e4319cdb06060490003eb41315ef8a1a7f67432e3e113dc9eb1a2cc4fc8f8"
+      }
+    ]
+  }
+}
