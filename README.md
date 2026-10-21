@@ -16,3 +16,4 @@ Each folder contains that week's assignment, results, and supporting files.
 - **[Week 6](Week-6/)**: Structural variant analysis
 - **[Week 7](Week-7/)**: Variant calling, IGV views, and VCF statistics
 - **[Week 8](Week-8/)**: Five-sample variant-effect analysis
+- **[Week 9](Week-9/)**: Design-driven variant calling for ten samples

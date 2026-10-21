@@ -1,0 +1,9 @@
+Tested 2026-10-21.
+Clean copy contained only Makefile, design.tsv, and scripts/.
+Public reference download passed its SHA-256 check.
+Commands: make check; make test; make -j2.
+10 samples; 10,000 read pairs each; 561 merged allele records.
+Sample order, exact allele union, and sample genotypes passed.
+Independent VCF data rows and sample header exactly matched the earlier run.
+Repeating make -j2 did not download reads, align, call variants, or merge again.
+All 11 generated VCF checksums passed (10 individual plus merged).

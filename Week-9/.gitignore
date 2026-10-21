@@ -1,0 +1,5 @@
+reference/
+output/
+__pycache__/
+*.part
+/run.log
