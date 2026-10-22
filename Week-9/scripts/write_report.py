@@ -71,6 +71,15 @@ summary=[
     f'- Measured mean reference depths range from **{min(depths):.2f}× to {max(depths):.2f}×**, with **{min(breadths):.2f}–{max(breadths):.2f}%** of the full reference covered at mapping quality ≥20. This supports variant detection while leaving local low-depth uncertainty.',
     f'- **{analysis["shared_all_samples"]:,} records** have retained calls in all ten samples. Missing calls remain unknown. Neither shared variants nor unequal call counts establish editing-induced mutations.', '',
     '![Measured coverage](results/coverage.svg)', '',
+    '## IGV analysis of the merged VCF', '',
+    'The top track is the merged ten-sample VCF; the ten BAM tracks below show the supporting reads. Red rectangles mark the loci discussed here. Open the images at full size to read the run labels.', '',
+    f'### Shared SNP: {examples[0]["chrom"]}:{examples[0]["pos"]:,} {examples[0]["ref"]}>{examples[0]["alt"]}', '',
+    '![Merged VCF and all ten samples at the SNP](results/igv/example_1.boxed.png)', '',
+    'All ten samples have a retained alternate call at this SNP, including both controls. The aligned reads support the same change across study groups. This is consistent with a shared difference from the reference; it does not establish an editing-induced mutation.', '',
+    f'### Shared deletion: {examples[1]["chrom"]}:{examples[1]["pos"]:,} {examples[1]["ref"]}>{examples[1]["alt"]}', '',
+    '![Merged VCF and all ten samples at the deletion](results/igv/example_2.boxed.png)', '',
+    'The AT>A allele represents deletion of the T immediately after the retained A anchor. All ten samples carry a retained alternate call. The boxed read gaps support the deletion, although some reads retain reference support. The complete per-sample GT, DP, and AD values are in [the read-support tables](FINDINGS.md#example-2-abeu02000041125818-ata).', '',
+    '[Regional IGV view](results/igv/regional.png) shows the surrounding coverage, including shared gaps. Missing calls and uncovered positions remain unknown. See [the detailed IGV analysis](FINDINGS.md#igv-read-evidence) for all ten samples and interpretation limits.', '',
     'See [IGV findings and read-support tables](FINDINGS.md), [per-sample counts](results/summary.tsv), [merged VCF](results/merged.vcf.gz), and [validation](results/validation.json). The [10,000-pair smoke test](results/smoke/) is archived separately and is not the biological analysis. `make smoke` checks the short computational path only.', '',
     'Study metadata and reuse records are in [provenance](provenance/README.md). The selected subset and moderate coverage do not support reproducing the original study’s off-target conclusions without common-site genotyping, callable-site filtering, and appropriate controls.', '']
 (root/'README.md').write_text('\n'.join(summary))
