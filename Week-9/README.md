@@ -39,6 +39,24 @@ The workflow downloads and checks the reference, indexes it, verifies synchroniz
 
 ![Measured coverage](results/coverage.svg)
 
+## IGV analysis of the merged VCF
+
+The top track is the merged ten-sample VCF; the ten BAM tracks below show the supporting reads. Red rectangles mark the loci discussed here. Open the images at full size to read the run labels.
+
+### Shared SNP: ABEU02000029.1:3,386 G>T
+
+![Merged VCF and all ten samples at the SNP](results/igv/example_1.boxed.png)
+
+All ten samples have a retained alternate call at this SNP, including both controls. The aligned reads support the same change across study groups. This is consistent with a shared difference from the reference; it does not establish an editing-induced mutation.
+
+### Shared deletion: ABEU02000041.1:25,818 AT>A
+
+![Merged VCF and all ten samples at the deletion](results/igv/example_2.boxed.png)
+
+The AT>A allele represents deletion of the T immediately after the retained A anchor. All ten samples carry a retained alternate call. The boxed read gaps support the deletion, although some reads retain reference support. The complete per-sample GT, DP, and AD values are in [the read-support tables](FINDINGS.md#example-2-abeu02000041125818-ata).
+
+[Regional IGV view](results/igv/regional.png) shows the surrounding coverage, including shared gaps. Missing calls and uncovered positions remain unknown. See [the detailed IGV analysis](FINDINGS.md#igv-read-evidence) for all ten samples and interpretation limits.
+
 See [IGV findings and read-support tables](FINDINGS.md), [per-sample counts](results/summary.tsv), [merged VCF](results/merged.vcf.gz), and [validation](results/validation.json). The [10,000-pair smoke test](results/smoke/) is archived separately and is not the biological analysis. `make smoke` checks the short computational path only.
 
 Study metadata and reuse records are in [provenance](provenance/README.md). The selected subset and moderate coverage do not support reproducing the original study’s off-target conclusions without common-site genotyping, callable-site filtering, and appropriate controls.
