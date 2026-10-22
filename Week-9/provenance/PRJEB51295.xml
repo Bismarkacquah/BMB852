@@ -1,0 +1,55 @@
+<PROJECT_SET>
+<PROJECT accession="PRJEB51295" alias="E-MTAB-11497" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>PRJEB51295</PRIMARY_ID>
+    <SECONDARY_ID>ERP135905</SECONDARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-11497</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <NAME>Genome-wide specificity of genome editing by both CRISPR-Cas9 and TALEN in the model plant Physcomitrium patens.</NAME>
+  <TITLE>Genome-wide specificity of genome editing by both CRISPR-Cas9 and TALEN in the model plant Physcomitrium patens.</TITLE>
+  <DESCRIPTION>CRISPRs and TALENs are efficient systems for gene editing in many organisms including plants. In many cases the CRISPR-Cas or TALEN modules are expressed in the plant cell only transiently. Theoretically, transient expression of the editing modules should limit unexpected effects compared to stable transformation. However, very few studies have measured the off-target and unpredicted effects of editing strategies on the plant genome, and none of them have compared these two major editing systems. We conducted a comprehensive genome-wide investigation of off-target mutations using either a CRISPR-Cas9 or a TALEN strategy. We observed a similar number of SNVs and InDels for the two editing strategies compared to control non-transfected plants, with an average of 8.25 SNVs and 19.5 InDels for the CRISPR-edited plants, and an average of 17.5 SNVs and 32 InDels for the TALEN-edited plants. Interestingly, a comparable number of SNVs and InDels could be detected in the PEG-treated control plants. This shows that except for the on-target modifications, the gene editing tools used in this study did not show a significant off-target activity nor unpredicted effects on the genome, and that the PEG treatment in itself was probably the main source of mutations found in the edited plants.</DESCRIPTION>
+  <SUBMISSION_PROJECT>
+    <SEQUENCING_PROJECT/>
+  </SUBMISSION_PROJECT>
+  <PROJECT_LINKS>
+    <PROJECT_LINK>
+      <URL_LINK>
+        <URL>http://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-11497</URL>
+        <LABEL>E-MTAB-11497 in ArrayExpress</LABEL>
+      </URL_LINK>
+    </PROJECT_LINK>
+    <PROJECT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA9461602</ID>
+      </XREF_LINK>
+    </PROJECT_LINK>
+    <PROJECT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB51295&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </PROJECT_LINK>
+    <PROJECT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB51295&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </PROJECT_LINK>
+  </PROJECT_LINKS>
+  <PROJECT_ATTRIBUTES>
+    <PROJECT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </PROJECT_ATTRIBUTE>
+    <PROJECT_ATTRIBUTE>
+      <TAG>ENA-FIRST-PUBLIC</TAG>
+      <VALUE>2022-03-03</VALUE>
+    </PROJECT_ATTRIBUTE>
+    <PROJECT_ATTRIBUTE>
+      <TAG>ENA-LAST-UPDATE</TAG>
+      <VALUE>2022-03-03</VALUE>
+    </PROJECT_ATTRIBUTE>
+  </PROJECT_ATTRIBUTES>
+</PROJECT>
+</PROJECT_SET>

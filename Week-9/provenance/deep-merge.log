@@ -1,0 +1,11 @@
+python3 scripts/workflow.py validate --design "design.csv"
+Validated 10 unique samples
+python3 scripts/workflow.py parameters --reference "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" --threads "3" --output "output-deep/parameters.json"
+bcftools merge -m none -Oz -o "output-deep/merged.vcf.gz.part" output-deep/ERR8982183/calls.vcf.gz output-deep/ERR8982184/calls.vcf.gz output-deep/ERR8982185/calls.vcf.gz output-deep/ERR8982186/calls.vcf.gz output-deep/ERR8982187/calls.vcf.gz output-deep/ERR8982188/calls.vcf.gz output-deep/ERR8982189/calls.vcf.gz output-deep/ERR8982190/calls.vcf.gz output-deep/ERR8982191/calls.vcf.gz output-deep/ERR8982192/calls.vcf.gz
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+mv "output-deep/merged.vcf.gz.part" "output-deep/merged.vcf.gz"
+bcftools index -f "output-deep/merged.vcf.gz"
+python3 scripts/workflow.py summarize --design "design.csv" --output "output-deep"
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+Validated 10 samples and 47442 merged alleles
+sha256sum output-deep/ERR8982183/calls.vcf.gz output-deep/ERR8982184/calls.vcf.gz output-deep/ERR8982185/calls.vcf.gz output-deep/ERR8982186/calls.vcf.gz output-deep/ERR8982187/calls.vcf.gz output-deep/ERR8982188/calls.vcf.gz output-deep/ERR8982189/calls.vcf.gz output-deep/ERR8982190/calls.vcf.gz output-deep/ERR8982191/calls.vcf.gz output-deep/ERR8982192/calls.vcf.gz "output-deep/merged.vcf.gz" > "output-deep/vcf.sha256"

@@ -1,0 +1,42 @@
+new
+setSleepInterval 1000
+genome /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna
+snapshotDirectory /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-9/output-deep/igv
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-9/output-deep/merged.vcf.gz
+maxPanelHeight 4200
+setSequenceShowTranslation false
+expand
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-9/output-deep/igv/bams/ERR8982183.bam
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-9/output-deep/igv/bams/ERR8982184.bam
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-9/output-deep/igv/bams/ERR8982185.bam
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-9/output-deep/igv/bams/ERR8982186.bam
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-9/output-deep/igv/bams/ERR8982187.bam
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-9/output-deep/igv/bams/ERR8982188.bam
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-9/output-deep/igv/bams/ERR8982189.bam
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-9/output-deep/igv/bams/ERR8982190.bam
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-9/output-deep/igv/bams/ERR8982191.bam
+load /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-9/output-deep/igv/bams/ERR8982192.bam
+expand
+colorBy READ_STRAND
+scrollToTop
+setTrackHeight 260 merged.vcf.gz
+setTrackHeight 160 ERR8982183.bam
+setTrackHeight 160 ERR8982184.bam
+setTrackHeight 160 ERR8982185.bam
+setTrackHeight 160 ERR8982186.bam
+setTrackHeight 160 ERR8982187.bam
+setTrackHeight 160 ERR8982188.bam
+setTrackHeight 160 ERR8982189.bam
+setTrackHeight 160 ERR8982190.bam
+setTrackHeight 160 ERR8982191.bam
+setTrackHeight 160 ERR8982192.bam
+goto ABEU02000029.1:3346-3426
+sort BASE ABEU02000029.1:3386
+snapshot example_1.png
+goto ABEU02000041.1:25778-25858
+sort BASE ABEU02000041.1:25818
+snapshot example_2.png
+goto ABEU02000029.1:886-5886
+snapshot regional.png
+saveSession /mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-9/output-deep/igv/ten_samples.session.xml
+exit

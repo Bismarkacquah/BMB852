@@ -1,8 +1,14 @@
 {
   "reference_sha256": "eda3922af8c6711133b05f3261118e5d75adebd3aebc8d47cb9e4cd8b11bc3b4",
-  "threads": 2,
+  "threads": 3,
   "min_MQ": 20,
   "min_BQ": 20,
   "min_QUAL": 20,
-  "min_DP": 3
+  "min_DP": 3,
+  "trim_quality": "20,20",
+  "trim_min_length": 30,
+  "adapters": [
+    "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA",
+    "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT"
+  ]
 }

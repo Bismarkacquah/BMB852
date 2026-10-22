@@ -1,0 +1,10 @@
+Updated CSV smoke verification, 2026-10-21.
+Source: isolated Week9-reproduction-check checkout with independently downloaded/indexed reference.
+make test: 4 tests passed.
+make sample SAMPLE=ERR8982183 DESIGN=design.smoke.csv OUT=output-updated-smoke: passed.
+make -j2 batch DESIGN=design.smoke.csv OUT=output-updated-smoke: 10 samples, 10,000 paired records each, 561 merged records.
+Adapter/quality trimming enabled with the same parameters as the deep workflow.
+Exact allele union, sample order, and carried genotypes passed.
+Repeated batch invocation performed only validation/parameter checks; no downloads, alignments, calls, or merging.
+All ten sample VCF checksums and the merged VCF checksum passed.
+This is computational smoke evidence, not full-depth biological analysis.
