@@ -1,0 +1,33 @@
+python3 scripts/test_design.py
+.ERR8982183: reuse completed mate 1
+ERR8982183: reuse completed mate 2
+.....ERR8982183: reuse completed mate 1
+ERR8982183: reuse completed mate 2
+..
+----------------------------------------------------------------------
+Ran 8 tests in 0.033s
+
+OK
+python3 scripts/workflow.py validate --design "design.csv"
+Validated 10 unique samples
+python3 scripts/workflow.py parameters --reference "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" --threads "3" --output "output-deep/parameters.json"
+output-deep/ERR8982183/calls.vcf.gz: OK
+output-deep/ERR8982184/calls.vcf.gz: OK
+output-deep/ERR8982185/calls.vcf.gz: OK
+output-deep/ERR8982186/calls.vcf.gz: OK
+output-deep/ERR8982187/calls.vcf.gz: OK
+output-deep/ERR8982188/calls.vcf.gz: OK
+output-deep/ERR8982189/calls.vcf.gz: OK
+output-deep/ERR8982190/calls.vcf.gz: OK
+output-deep/ERR8982191/calls.vcf.gz: OK
+output-deep/ERR8982192/calls.vcf.gz: OK
+output-deep/merged.vcf.gz: OK
+results/merged.vcf.gz: OK
+results/igv/example_1.boxed.png: OK
+results/igv/example_1.png: OK
+results/igv/example_2.boxed.png: OK
+results/igv/example_2.png: OK
+results/igv/regional.png: OK
+results/coverage.svg: OK
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+PASS: ten samples; 47,442 alleles; exact union/genotypes; VCF and figure checksums; no em dashes.

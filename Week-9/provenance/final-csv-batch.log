@@ -1,0 +1,67 @@
+python3 scripts/workflow.py validate --design "design.smoke.csv"
+Validated 10 unique samples
+python3 scripts/workflow.py parameters --reference "reference/Phypa_V3.fa" --threads "2" --output "output-final-smoke/parameters.json"
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982184" --output "output-final-smoke/ERR8982184"
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982185" --output "output-final-smoke/ERR8982185"
+ERR8982185: downloading mate 1, attempt 1
+ERR8982185: downloading mate 2, attempt 1
+ERR8982184: downloading mate 1, attempt 1
+ERR8982184: downloading mate 2, attempt 1
+bash scripts/call_from_design.sh "ERR8982184" "reference/Phypa_V3.fa" "output-final-smoke/ERR8982184" "2" "design.smoke.csv"
+bash scripts/call_from_design.sh "ERR8982185" "reference/Phypa_V3.fa" "output-final-smoke/ERR8982185" "2" "design.smoke.csv"
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982186" --output "output-final-smoke/ERR8982186"
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982187" --output "output-final-smoke/ERR8982187"
+ERR8982186: downloading mate 1, attempt 1
+ERR8982186: downloading mate 2, attempt 1
+ERR8982187: downloading mate 1, attempt 1
+ERR8982187: downloading mate 2, attempt 1
+bash scripts/call_from_design.sh "ERR8982186" "reference/Phypa_V3.fa" "output-final-smoke/ERR8982186" "2" "design.smoke.csv"
+bash scripts/call_from_design.sh "ERR8982187" "reference/Phypa_V3.fa" "output-final-smoke/ERR8982187" "2" "design.smoke.csv"
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982188" --output "output-final-smoke/ERR8982188"
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982189" --output "output-final-smoke/ERR8982189"
+ERR8982188: downloading mate 1, attempt 1
+ERR8982188: downloading mate 2, attempt 1
+ERR8982189: downloading mate 1, attempt 1
+ERR8982189: downloading mate 2, attempt 1
+ERR8982189 mate 2, attempt 1 failed: <urlopen error [Errno 111] Connection refused>
+ERR8982189: downloading mate 2, attempt 2
+bash scripts/call_from_design.sh "ERR8982188" "reference/Phypa_V3.fa" "output-final-smoke/ERR8982188" "2" "design.smoke.csv"
+bash scripts/call_from_design.sh "ERR8982189" "reference/Phypa_V3.fa" "output-final-smoke/ERR8982189" "2" "design.smoke.csv"
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982190" --output "output-final-smoke/ERR8982190"
+ERR8982190: downloading mate 1, attempt 1
+ERR8982190: downloading mate 2, attempt 1
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982191" --output "output-final-smoke/ERR8982191"
+ERR8982191: downloading mate 1, attempt 1
+ERR8982191: downloading mate 2, attempt 1
+bash scripts/call_from_design.sh "ERR8982190" "reference/Phypa_V3.fa" "output-final-smoke/ERR8982190" "2" "design.smoke.csv"
+bash scripts/call_from_design.sh "ERR8982191" "reference/Phypa_V3.fa" "output-final-smoke/ERR8982191" "2" "design.smoke.csv"
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982192" --output "output-final-smoke/ERR8982192"
+ERR8982192: downloading mate 1, attempt 1
+ERR8982192: downloading mate 2, attempt 1
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+bcftools index -f "output-final-smoke/ERR8982184/calls.vcf.gz"
+bcftools index -f "output-final-smoke/ERR8982185/calls.vcf.gz"
+bcftools index -f "output-final-smoke/ERR8982186/calls.vcf.gz"
+bcftools index -f "output-final-smoke/ERR8982187/calls.vcf.gz"
+bcftools index -f "output-final-smoke/ERR8982188/calls.vcf.gz"
+bcftools index -f "output-final-smoke/ERR8982189/calls.vcf.gz"
+bcftools index -f "output-final-smoke/ERR8982190/calls.vcf.gz"
+bcftools index -f "output-final-smoke/ERR8982191/calls.vcf.gz"
+bash scripts/call_from_design.sh "ERR8982192" "reference/Phypa_V3.fa" "output-final-smoke/ERR8982192" "2" "design.smoke.csv"
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+bcftools index -f "output-final-smoke/ERR8982192/calls.vcf.gz"
+bcftools merge -m none -Oz -o "output-final-smoke/merged.vcf.gz.part" output-final-smoke/ERR8982183/calls.vcf.gz output-final-smoke/ERR8982184/calls.vcf.gz output-final-smoke/ERR8982185/calls.vcf.gz output-final-smoke/ERR8982186/calls.vcf.gz output-final-smoke/ERR8982187/calls.vcf.gz output-final-smoke/ERR8982188/calls.vcf.gz output-final-smoke/ERR8982189/calls.vcf.gz output-final-smoke/ERR8982190/calls.vcf.gz output-final-smoke/ERR8982191/calls.vcf.gz output-final-smoke/ERR8982192/calls.vcf.gz
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+mv "output-final-smoke/merged.vcf.gz.part" "output-final-smoke/merged.vcf.gz"
+bcftools index -f "output-final-smoke/merged.vcf.gz"
+python3 scripts/workflow.py summarize --design "design.smoke.csv" --output "output-final-smoke"
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+Validated 10 samples and 561 merged alleles
+sha256sum output-final-smoke/ERR8982183/calls.vcf.gz output-final-smoke/ERR8982184/calls.vcf.gz output-final-smoke/ERR8982185/calls.vcf.gz output-final-smoke/ERR8982186/calls.vcf.gz output-final-smoke/ERR8982187/calls.vcf.gz output-final-smoke/ERR8982188/calls.vcf.gz output-final-smoke/ERR8982189/calls.vcf.gz output-final-smoke/ERR8982190/calls.vcf.gz output-final-smoke/ERR8982191/calls.vcf.gz output-final-smoke/ERR8982192/calls.vcf.gz "output-final-smoke/merged.vcf.gz" > "output-final-smoke/vcf.sha256"

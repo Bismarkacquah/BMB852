@@ -1,0 +1,433 @@
+{
+  "ERR8982183": {
+    "sample": "ERR8982183",
+    "pairs": 20000000,
+    "bam_sha256": "42e643d7e1ac85afb5d0d97a091217467c82ae9e35848e6843f08880c1f8f1d6",
+    "reference_sha256": "eda3922af8c6711133b05f3261118e5d75adebd3aebc8d47cb9e4cd8b11bc3b4",
+    "source_manifest": {
+      "run": "ERR8982183",
+      "sample": "SAMEA13207854",
+      "title": "Control#1",
+      "pairs": 20000000,
+      "selection": "first N paired records; not random sampling",
+      "mates": [
+        {
+          "mate": 1,
+          "records": 20000000,
+          "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/003/ERR8982183/ERR8982183_1.fastq.gz",
+          "read_id_sha256": "8da36389c3c36633eb2827ea1d8cd908f8c9c70c548ae9d54d790e375ec8365e",
+          "sha256": "6a557c28f32798e833bad27dabc54001c7a17ee27c4b1fbb833a2abf73dee9c7"
+        },
+        {
+          "mate": 2,
+          "records": 20000000,
+          "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/003/ERR8982183/ERR8982183_2.fastq.gz",
+          "read_id_sha256": "8da36389c3c36633eb2827ea1d8cd908f8c9c70c548ae9d54d790e375ec8365e",
+          "sha256": "8ec164d7aaa511fe88f0aa50328a534cfefe8a7d085c0141502cd22f2efcfebc"
+        }
+      ]
+    },
+    "read_preprocessing": "cutadapt Illumina adapters; -q 20,20 -m 30",
+    "alignment": "BWA MEM; sample-specific read group; coordinate-sorted BAM",
+    "verification": "quickcheck, all SQ lengths, sample RG, paired read IDs and counts, BAM SHA-256",
+    "verified_trimming": {
+      "sample": "ERR8982183",
+      "input_pairs": 20000000,
+      "retained_pairs": 20000000,
+      "cutadapt_version": "5.2",
+      "parameters": {
+        "-a": "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA",
+        "-A": "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT",
+        "-q": "20,20",
+        "-m": "30"
+      },
+      "original_threads": 1
+    },
+    "bwa_batch_bases": 40000000,
+    "original_bwa_threads": 4
+  },
+  "ERR8982184": {
+    "sample": "ERR8982184",
+    "pairs": 20000000,
+    "bam_sha256": "68516bbad7c92c0dd56dca0ce248f5ebeaea14a27416c743831fcd886d8d59fc",
+    "reference_sha256": "eda3922af8c6711133b05f3261118e5d75adebd3aebc8d47cb9e4cd8b11bc3b4",
+    "source_manifest": {
+      "run": "ERR8982184",
+      "sample": "SAMEA13207855",
+      "title": "Control#2",
+      "pairs": 20000000,
+      "selection": "first N paired records; not random sampling",
+      "mates": [
+        {
+          "mate": 1,
+          "records": 20000000,
+          "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/004/ERR8982184/ERR8982184_1.fastq.gz",
+          "read_id_sha256": "c02b420a030798f1c4354ab6a7ae6e18a13cf92db1820271e4803f0105e0300d",
+          "sha256": "e4f2a7fa2827046f856e5811690f5945825006a78ee3e628c53a27bcfc67a379"
+        },
+        {
+          "mate": 2,
+          "records": 20000000,
+          "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/004/ERR8982184/ERR8982184_2.fastq.gz",
+          "read_id_sha256": "c02b420a030798f1c4354ab6a7ae6e18a13cf92db1820271e4803f0105e0300d",
+          "sha256": "0c775d8d68f5256fda30f86ccbe8f90bf55623ac8b59bf13293dac0376377447"
+        }
+      ]
+    },
+    "read_preprocessing": "cutadapt Illumina adapters; -q 20,20 -m 30",
+    "alignment": "BWA MEM; sample-specific read group; coordinate-sorted BAM",
+    "verification": "quickcheck, all SQ lengths, sample RG, paired read IDs and counts, BAM SHA-256",
+    "verified_trimming": {
+      "sample": "ERR8982184",
+      "input_pairs": 20000000,
+      "retained_pairs": 19998411,
+      "cutadapt_version": "5.2",
+      "parameters": {
+        "-a": "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA",
+        "-A": "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT",
+        "-q": "20,20",
+        "-m": "30"
+      },
+      "original_threads": 3
+    },
+    "bwa_batch_bases": 30000000,
+    "original_bwa_threads": 3
+  },
+  "ERR8982185": {
+    "sample": "ERR8982185",
+    "pairs": 20000000,
+    "bam_sha256": "44756cf9dada47f9de0a7c6d0426c56b4ec86af4feb51890300c73b2793613e6",
+    "reference_sha256": "eda3922af8c6711133b05f3261118e5d75adebd3aebc8d47cb9e4cd8b11bc3b4",
+    "source_manifest": {
+      "run": "ERR8982185",
+      "pairs": 20000000,
+      "selection": "first N records of each ENA mate file",
+      "transfer": "ordered HTTP byte ranges, four workers per mate",
+      "mates": [
+        {
+          "mate": 1,
+          "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/005/ERR8982185/ERR8982185_1.fastq.gz",
+          "records": 20000000,
+          "bases": 3014616752,
+          "read_id_sha256": "3799a069afdca35bf0bbc38c03848a41ac1885130739d8772f9d29ee6a5edc80",
+          "compressed_sha256": "5b2ca7ca2bb74413b4ef31f484e4c2941af31c15e13fd724e3a4e9b493563223",
+          "compressed_bytes": 2076106351
+        },
+        {
+          "mate": 2,
+          "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/005/ERR8982185/ERR8982185_2.fastq.gz",
+          "records": 20000000,
+          "bases": 3007076824,
+          "read_id_sha256": "3799a069afdca35bf0bbc38c03848a41ac1885130739d8772f9d29ee6a5edc80",
+          "compressed_sha256": "ee26cdf076e455847d9f68ea65abb3147490e619f4702f31d9df6a54dbd4a814",
+          "compressed_bytes": 2223270197
+        }
+      ]
+    },
+    "read_preprocessing": "cutadapt Illumina adapters; -q 20,20 -m 30",
+    "alignment": "BWA MEM; sample-specific read group; coordinate-sorted BAM",
+    "verification": "quickcheck, all SQ lengths, sample RG, paired read IDs and counts, BAM SHA-256",
+    "verified_trimming": {
+      "sample": "ERR8982185",
+      "input_pairs": 20000000,
+      "retained_pairs": 19977564,
+      "cutadapt_version": "5.2",
+      "parameters": {
+        "-a": "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA",
+        "-A": "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT",
+        "-q": "20,20",
+        "-m": "30"
+      },
+      "original_threads": 4
+    },
+    "bwa_batch_bases": 40000000,
+    "original_bwa_threads": 4
+  },
+  "ERR8982186": {
+    "sample": "ERR8982186",
+    "pairs": 20000000,
+    "bam_sha256": "d9ca941bdd468b42f9eebb3200eebd5c5e897fe3a00b09e6d05745bd3e454811",
+    "reference_sha256": "eda3922af8c6711133b05f3261118e5d75adebd3aebc8d47cb9e4cd8b11bc3b4",
+    "source_manifest": {
+      "run": "ERR8982186",
+      "sample": "SAMEA13207857",
+      "title": "CRIS1#2",
+      "pairs": 20000000,
+      "selection": "first N paired records; not random sampling",
+      "mates": [
+        {
+          "mate": 1,
+          "records": 20000000,
+          "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/006/ERR8982186/ERR8982186_1.fastq.gz",
+          "read_id_sha256": "68a1c65685be05ea283a8824c1ee1fe6ddc46bf637ae61d1d12192dd9f39442f",
+          "sha256": "86408898cfd8848fff78ec999623831637f09e6f0a89e9cc45556dc8d3b05003"
+        },
+        {
+          "mate": 2,
+          "records": 20000000,
+          "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/006/ERR8982186/ERR8982186_2.fastq.gz",
+          "read_id_sha256": "68a1c65685be05ea283a8824c1ee1fe6ddc46bf637ae61d1d12192dd9f39442f",
+          "sha256": "576c032354b3664baa2f87b3d5d087aee439f2927d57e5e43cd9200ad0e98cce"
+        }
+      ]
+    },
+    "read_preprocessing": "cutadapt Illumina adapters; -q 20,20 -m 30",
+    "alignment": "BWA MEM; sample-specific read group; coordinate-sorted BAM",
+    "verification": "quickcheck, all SQ lengths, sample RG, paired read IDs and counts, BAM SHA-256",
+    "verified_trimming": {
+      "sample": "ERR8982186",
+      "input_pairs": 20000000,
+      "retained_pairs": 19982513,
+      "cutadapt_version": "5.2",
+      "parameters": {
+        "-a": "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA",
+        "-A": "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT",
+        "-q": "20,20",
+        "-m": "30"
+      },
+      "original_threads": 4
+    },
+    "bwa_batch_bases": 40000000,
+    "original_bwa_threads": 4
+  },
+  "ERR8982187": {
+    "sample": "ERR8982187",
+    "pairs": 20000000,
+    "bam_sha256": "c0d36b019ed17790734c7858fba783754d4980f6baff8e6c19e995de79944419",
+    "reference_sha256": "eda3922af8c6711133b05f3261118e5d75adebd3aebc8d47cb9e4cd8b11bc3b4",
+    "source_manifest": {
+      "run": "ERR8982187",
+      "sample": "SAMEA13207858",
+      "title": "CRIS2#1",
+      "pairs": 20000000,
+      "selection": "first N paired records; not random sampling",
+      "mates": [
+        {
+          "mate": 1,
+          "records": 20000000,
+          "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/007/ERR8982187/ERR8982187_1.fastq.gz",
+          "read_id_sha256": "1a39823e75f4561886fc024722bd0774f63f60016e7d24b66c10328a421d1e41",
+          "sha256": "01b5edb7f99067423c4893435accacb67f3404d0410adf1ba30fa02654b402b0"
+        },
+        {
+          "mate": 2,
+          "records": 20000000,
+          "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/007/ERR8982187/ERR8982187_2.fastq.gz",
+          "read_id_sha256": "1a39823e75f4561886fc024722bd0774f63f60016e7d24b66c10328a421d1e41",
+          "sha256": "f66e4319cdb06060490003eb41315ef8a1a7f67432e3e113dc9eb1a2cc4fc8f8"
+        }
+      ]
+    },
+    "read_preprocessing": "cutadapt Illumina adapters; -q 20,20 -m 30",
+    "alignment": "BWA MEM; sample-specific read group; coordinate-sorted BAM",
+    "verification": "quickcheck, all SQ lengths, sample RG, paired read IDs and counts, BAM SHA-256",
+    "verified_trimming": {
+      "sample": "ERR8982187",
+      "input_pairs": 20000000,
+      "retained_pairs": 19984262,
+      "cutadapt_version": "5.2",
+      "parameters": {
+        "-a": "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA",
+        "-A": "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT",
+        "-q": "20,20",
+        "-m": "30"
+      },
+      "original_threads": 3
+    },
+    "bwa_batch_bases": 30000000,
+    "original_bwa_threads": 3
+  },
+  "ERR8982188": {
+    "design": {
+      "sample_id": "ERR8982188",
+      "label": "CRIS2#2",
+      "group": "CRIS2",
+      "biosample": "SAMEA13207859",
+      "read1": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/008/ERR8982188/ERR8982188_1.fastq.gz",
+      "read2": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/008/ERR8982188/ERR8982188_2.fastq.gz",
+      "pairs": "20000000",
+      "ploidy": "1",
+      "read1_bytes": "7800394045",
+      "read2_bytes": "9066890519",
+      "bwa_batch_bases": "30000000"
+    },
+    "id_sha256": "9e31794a51f7d0693b98d34b8da147655d16d4ce4fe1b7f6bf833b54b961596b",
+    "sha256": {
+      "read1.fastq.gz": "2400c4cdd0b301bef60a3d7fbc49fadabb395e18e07d1fb1733e5c1c49fcd3e6",
+      "read2.fastq.gz": "41af856fe4bcc39294bf74ffdb59973c0a93b435708a998f183af03c8cd72729"
+    },
+    "mates": [
+      {
+        "sample_id": "ERR8982188",
+        "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/008/ERR8982188/ERR8982188_1.fastq.gz",
+        "records": 20000000,
+        "source_bytes": 7800394045,
+        "mate": 1,
+        "name": "read1.fastq.gz",
+        "sha256": "2400c4cdd0b301bef60a3d7fbc49fadabb395e18e07d1fb1733e5c1c49fcd3e6",
+        "id_sha256": "9e31794a51f7d0693b98d34b8da147655d16d4ce4fe1b7f6bf833b54b961596b",
+        "bases": 2990078111
+      },
+      {
+        "sample_id": "ERR8982188",
+        "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/008/ERR8982188/ERR8982188_2.fastq.gz",
+        "records": 20000000,
+        "source_bytes": 9066890519,
+        "mate": 2,
+        "name": "read2.fastq.gz",
+        "sha256": "41af856fe4bcc39294bf74ffdb59973c0a93b435708a998f183af03c8cd72729",
+        "id_sha256": "9e31794a51f7d0693b98d34b8da147655d16d4ce4fe1b7f6bf833b54b961596b",
+        "bases": 2982983825
+      }
+    ]
+  },
+  "ERR8982189": {
+    "design": {
+      "sample_id": "ERR8982189",
+      "label": "PEG#1",
+      "group": "PEG",
+      "biosample": "SAMEA13207860",
+      "read1": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/009/ERR8982189/ERR8982189_1.fastq.gz",
+      "read2": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/009/ERR8982189/ERR8982189_2.fastq.gz",
+      "pairs": "20000000",
+      "ploidy": "1",
+      "read1_bytes": "3432866472",
+      "read2_bytes": "3645746071"
+    },
+    "id_sha256": "9210ec951d2fb1a8ae0480086a24023dc407447e30a17b2e95596d9f4265dc4f",
+    "sha256": {
+      "read1.fastq.gz": "43ef17e466855a12e25677e6cde90c1d45613b6d508e56242390f903a498bb30",
+      "read2.fastq.gz": "7e37a0938c148c254100143df32173803d33ca5e70e7c0275f7f62434ad4814e"
+    },
+    "mates": [
+      {
+        "mate": 1,
+        "name": "read1.fastq.gz",
+        "sha256": "43ef17e466855a12e25677e6cde90c1d45613b6d508e56242390f903a498bb30",
+        "id_sha256": "9210ec951d2fb1a8ae0480086a24023dc407447e30a17b2e95596d9f4265dc4f",
+        "bases": 2788947065
+      },
+      {
+        "mate": 2,
+        "name": "read2.fastq.gz",
+        "sha256": "7e37a0938c148c254100143df32173803d33ca5e70e7c0275f7f62434ad4814e",
+        "id_sha256": "9210ec951d2fb1a8ae0480086a24023dc407447e30a17b2e95596d9f4265dc4f",
+        "bases": 2664910340
+      }
+    ]
+  },
+  "ERR8982190": {
+    "design": {
+      "sample_id": "ERR8982190",
+      "label": "PEG#2",
+      "group": "PEG",
+      "biosample": "SAMEA13207861",
+      "read1": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/000/ERR8982190/ERR8982190_1.fastq.gz",
+      "read2": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/000/ERR8982190/ERR8982190_2.fastq.gz",
+      "pairs": "20000000",
+      "ploidy": "1",
+      "read1_bytes": "3352084962",
+      "read2_bytes": "3810963595"
+    },
+    "id_sha256": "863a2120b014c235f7ec098a96286603c2af635ddb47becfe5ecd1e32c4b9b1c",
+    "sha256": {
+      "read1.fastq.gz": "84d80e563a982ba6fa89ea9740f08f630efd8e984e462d81b43400bc5af1d4b9",
+      "read2.fastq.gz": "3cf6ea1ea424de29448f03e7ca5b42866399d225832ae8b29ac8d54b6dfdcfee"
+    },
+    "mates": [
+      {
+        "mate": 1,
+        "name": "read1.fastq.gz",
+        "sha256": "84d80e563a982ba6fa89ea9740f08f630efd8e984e462d81b43400bc5af1d4b9",
+        "id_sha256": "863a2120b014c235f7ec098a96286603c2af635ddb47becfe5ecd1e32c4b9b1c",
+        "bases": 2977873863
+      },
+      {
+        "mate": 2,
+        "name": "read2.fastq.gz",
+        "sha256": "3cf6ea1ea424de29448f03e7ca5b42866399d225832ae8b29ac8d54b6dfdcfee",
+        "id_sha256": "863a2120b014c235f7ec098a96286603c2af635ddb47becfe5ecd1e32c4b9b1c",
+        "bases": 2963145824
+      }
+    ]
+  },
+  "ERR8982191": {
+    "design": {
+      "sample_id": "ERR8982191",
+      "label": "PEG-DNA#1",
+      "group": "PEG-DNA",
+      "biosample": "SAMEA13207862",
+      "read1": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/001/ERR8982191/ERR8982191_1.fastq.gz",
+      "read2": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/001/ERR8982191/ERR8982191_2.fastq.gz",
+      "pairs": "20000000",
+      "ploidy": "1",
+      "read1_bytes": "3011508450",
+      "read2_bytes": "3425105543"
+    },
+    "id_sha256": "26c0b6affc424ada195529ba14d0c92cccb0acaf77c0bb3e8884cf08b0209767",
+    "sha256": {
+      "read1.fastq.gz": "17e0676561ed7f654d44c432ea3bec559acb4b08773f87b85477f743c6e1af2e",
+      "read2.fastq.gz": "0504fe8c0d5522985d112d5defd044f9ea5296db327911281c7a5054b06b6094"
+    },
+    "mates": [
+      {
+        "mate": 1,
+        "name": "read1.fastq.gz",
+        "sha256": "17e0676561ed7f654d44c432ea3bec559acb4b08773f87b85477f743c6e1af2e",
+        "id_sha256": "26c0b6affc424ada195529ba14d0c92cccb0acaf77c0bb3e8884cf08b0209767",
+        "bases": 2957983509
+      },
+      {
+        "mate": 2,
+        "name": "read2.fastq.gz",
+        "sha256": "0504fe8c0d5522985d112d5defd044f9ea5296db327911281c7a5054b06b6094",
+        "id_sha256": "26c0b6affc424ada195529ba14d0c92cccb0acaf77c0bb3e8884cf08b0209767",
+        "bases": 2946017392
+      }
+    ]
+  },
+  "ERR8982192": {
+    "design": {
+      "sample_id": "ERR8982192",
+      "label": "TAL#1",
+      "group": "TAL",
+      "biosample": "SAMEA13207863",
+      "read1": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/002/ERR8982192/ERR8982192_1.fastq.gz",
+      "read2": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/002/ERR8982192/ERR8982192_2.fastq.gz",
+      "pairs": "20000000",
+      "ploidy": "1",
+      "read1_bytes": "3825802357",
+      "read2_bytes": "4378771779",
+      "bwa_batch_bases": "30000000"
+    },
+    "id_sha256": "2c2b9a1e07acbd03b9fe7ef8d9dfff17d1a8eb4088be03a78ae40d41064d02f7",
+    "sha256": {
+      "read1.fastq.gz": "ba63b6c84db8730c506b2820a6817204ce3d5dca2877276c55769c9c7b5facb2",
+      "read2.fastq.gz": "333469359b24e724cd1a8a646ac1fe4a82a7ea3afb111ec4a33ded5849f9523c"
+    },
+    "mates": [
+      {
+        "sample_id": "ERR8982192",
+        "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/002/ERR8982192/ERR8982192_1.fastq.gz",
+        "records": 20000000,
+        "source_bytes": 3825802357,
+        "mate": 1,
+        "name": "read1.fastq.gz",
+        "sha256": "ba63b6c84db8730c506b2820a6817204ce3d5dca2877276c55769c9c7b5facb2",
+        "id_sha256": "2c2b9a1e07acbd03b9fe7ef8d9dfff17d1a8eb4088be03a78ae40d41064d02f7",
+        "bases": 2992393642
+      },
+      {
+        "sample_id": "ERR8982192",
+        "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR898/002/ERR8982192/ERR8982192_2.fastq.gz",
+        "records": 20000000,
+        "source_bytes": 4378771779,
+        "mate": 2,
+        "name": "read2.fastq.gz",
+        "sha256": "333469359b24e724cd1a8a646ac1fe4a82a7ea3afb111ec4a33ded5849f9523c",
+        "id_sha256": "2c2b9a1e07acbd03b9fe7ef8d9dfff17d1a8eb4088be03a78ae40d41064d02f7",
+        "bases": 2986336618
+      }
+    ]
+  }
+}

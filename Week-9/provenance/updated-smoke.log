@@ -1,0 +1,71 @@
+python3 scripts/workflow.py validate --design "design.smoke.csv"
+Validated 10 unique samples
+python3 scripts/workflow.py parameters --reference "reference/Phypa_V3.fa" --threads "2" --output "output-updated-smoke/parameters.json"
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982183" --output "output-updated-smoke/ERR8982183"
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982184" --output "output-updated-smoke/ERR8982184"
+ERR8982183: downloading mate 1
+ERR8982184: downloading mate 1
+ERR8982183: downloading mate 2
+ERR8982184: downloading mate 2
+bash scripts/call_sample.sh "ERR8982184" "reference/Phypa_V3.fa" "output-updated-smoke/ERR8982184" "2" "design.smoke.csv"
+bash scripts/call_sample.sh "ERR8982183" "reference/Phypa_V3.fa" "output-updated-smoke/ERR8982183" "2" "design.smoke.csv"
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982185" --output "output-updated-smoke/ERR8982185"
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982186" --output "output-updated-smoke/ERR8982186"
+ERR8982185: downloading mate 1
+ERR8982185: downloading mate 2
+ERR8982186: downloading mate 1
+ERR8982186: downloading mate 2
+bash scripts/call_sample.sh "ERR8982185" "reference/Phypa_V3.fa" "output-updated-smoke/ERR8982185" "2" "design.smoke.csv"
+bash scripts/call_sample.sh "ERR8982186" "reference/Phypa_V3.fa" "output-updated-smoke/ERR8982186" "2" "design.smoke.csv"
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982187" --output "output-updated-smoke/ERR8982187"
+ERR8982187: downloading mate 1
+ERR8982187: downloading mate 2
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982188" --output "output-updated-smoke/ERR8982188"
+ERR8982188: downloading mate 1
+ERR8982188: downloading mate 2
+bash scripts/call_sample.sh "ERR8982187" "reference/Phypa_V3.fa" "output-updated-smoke/ERR8982187" "2" "design.smoke.csv"
+bash scripts/call_sample.sh "ERR8982188" "reference/Phypa_V3.fa" "output-updated-smoke/ERR8982188" "2" "design.smoke.csv"
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982189" --output "output-updated-smoke/ERR8982189"
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982190" --output "output-updated-smoke/ERR8982190"
+ERR8982189: downloading mate 1
+ERR8982189: downloading mate 2
+ERR8982190: downloading mate 1
+ERR8982190: downloading mate 2
+bash scripts/call_sample.sh "ERR8982189" "reference/Phypa_V3.fa" "output-updated-smoke/ERR8982189" "2" "design.smoke.csv"
+bash scripts/call_sample.sh "ERR8982190" "reference/Phypa_V3.fa" "output-updated-smoke/ERR8982190" "2" "design.smoke.csv"
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982191" --output "output-updated-smoke/ERR8982191"
+python3 scripts/workflow.py reads --design "design.smoke.csv" --sample "ERR8982192" --output "output-updated-smoke/ERR8982192"
+ERR8982191: downloading mate 1
+ERR8982191: downloading mate 2
+ERR8982192: downloading mate 1
+ERR8982192: downloading mate 2
+bash scripts/call_sample.sh "ERR8982192" "reference/Phypa_V3.fa" "output-updated-smoke/ERR8982192" "2" "design.smoke.csv"
+bash scripts/call_sample.sh "ERR8982191" "reference/Phypa_V3.fa" "output-updated-smoke/ERR8982191" "2" "design.smoke.csv"
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+bcftools index -f "output-updated-smoke/ERR8982183/calls.vcf.gz"
+bcftools index -f "output-updated-smoke/ERR8982184/calls.vcf.gz"
+bcftools index -f "output-updated-smoke/ERR8982185/calls.vcf.gz"
+bcftools index -f "output-updated-smoke/ERR8982186/calls.vcf.gz"
+bcftools index -f "output-updated-smoke/ERR8982187/calls.vcf.gz"
+bcftools index -f "output-updated-smoke/ERR8982188/calls.vcf.gz"
+bcftools index -f "output-updated-smoke/ERR8982189/calls.vcf.gz"
+bcftools index -f "output-updated-smoke/ERR8982190/calls.vcf.gz"
+bcftools index -f "output-updated-smoke/ERR8982192/calls.vcf.gz"
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+bcftools index -f "output-updated-smoke/ERR8982191/calls.vcf.gz"
+bcftools merge -m none -Oz -o "output-updated-smoke/merged.vcf.gz.part" output-updated-smoke/ERR8982183/calls.vcf.gz output-updated-smoke/ERR8982184/calls.vcf.gz output-updated-smoke/ERR8982185/calls.vcf.gz output-updated-smoke/ERR8982186/calls.vcf.gz output-updated-smoke/ERR8982187/calls.vcf.gz output-updated-smoke/ERR8982188/calls.vcf.gz output-updated-smoke/ERR8982189/calls.vcf.gz output-updated-smoke/ERR8982190/calls.vcf.gz output-updated-smoke/ERR8982191/calls.vcf.gz output-updated-smoke/ERR8982192/calls.vcf.gz
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+mv "output-updated-smoke/merged.vcf.gz.part" "output-updated-smoke/merged.vcf.gz"
+bcftools index -f "output-updated-smoke/merged.vcf.gz"
+python3 scripts/workflow.py summarize --design "design.smoke.csv" --output "output-updated-smoke"
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+Validated 10 samples and 561 merged alleles
+sha256sum output-updated-smoke/ERR8982183/calls.vcf.gz output-updated-smoke/ERR8982184/calls.vcf.gz output-updated-smoke/ERR8982185/calls.vcf.gz output-updated-smoke/ERR8982186/calls.vcf.gz output-updated-smoke/ERR8982187/calls.vcf.gz output-updated-smoke/ERR8982188/calls.vcf.gz output-updated-smoke/ERR8982189/calls.vcf.gz output-updated-smoke/ERR8982190/calls.vcf.gz output-updated-smoke/ERR8982191/calls.vcf.gz output-updated-smoke/ERR8982192/calls.vcf.gz "output-updated-smoke/merged.vcf.gz" > "output-updated-smoke/vcf.sha256"

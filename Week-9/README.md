@@ -1,34 +1,44 @@
-# Week 9 Assignment
+# Week 9 assignment
 
-## Design-driven variant calling
+## Project and design
 
-This workflow processes ten paired-end *Physcomitrium patens* runs from [PRJEB51295](https://www.ebi.ac.uk/ena/browser/view/PRJEB51295), using the Week 7 reference, [GCA_000002425.2](https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_000002425.2/). Each row in [design.tsv](design.tsv) specifies a sample ID, study label, group, BioSample, two public FASTQ URLs, read-pair count, and ploidy.
+[PRJEB51295](https://www.ebi.ac.uk/ena/browser/view/PRJEB51295) investigates genome-wide specificity of CRISPR-Cas9 and TALEN editing in *Physcomitrium patens*. The archive contains 14 runs. This analysis selects ten: two controls, four CRIS-labelled samples, two PEG samples, one PEG-DNA sample, and one TAL-labelled sample. These are an unbalanced subset, not a complete replication of the original study.
 
-## Run
+The [design.csv](design.csv) records sample labels, BioSamples, paired FASTQ URLs and sizes, read-pair counts, and ploidy. All samples use the same Week 7 reference, **GCA_000002425.2 (Phypa V3)**, and **20 million read pairs each**. Haploid calling is an explicit assumption.
 
-Use a Linux/WSL Bash terminal with the existing **bioinfo environment active**, internet access, and several GB of free disk space. No additional tools or automatic installation steps are required.
+## Reproduce
+
+Use Linux/WSL with the existing bioinfo environment active. Additional prerequisites are **cutadapt 5.2**, **IGV 2.19.8 with Java 21 and a working display**, and **matplotlib 3.10.8** for boxed screenshots. Install prerequisites yourself; the workflow installs no software. Allow roughly 150 GB of free space and hours of processing for a fresh ten-sample run.
 
 ```bash
 git clone https://github.com/Bismarkacquah/BMB852.git
 cd BMB852/Week-9
 make check
-make test
-make -j2
-cat output/summary.tsv
+make samples
+make -j2 batch THREADS=3
 ```
 
-The [Makefile](Makefile) downloads and checks the exact reference, prepares its indexes, downloads synchronized paired-read subsets, aligns each sample, calls and filters variants, and merges the sample VCFs. Two samples run concurrently, with two threads per sample by default. Use `make` for serial sample processing or `make -j2 THREADS=4` to change the per-sample thread count.
+All ten samples, **ERR8982183 through ERR8982192**, are already in `design.csv` at 20 million read pairs each. No manual sample selection or earlier-week files are needed. Plain `make` also runs and merges all ten. Use `make sample SAMPLE=ERR8982185 THREADS=3` for the original Week 7 sample, or `make help` for available commands.
 
-The final files are `output/merged.vcf.gz`, its `.csi` index, `output/summary.tsv`, and `output/validation.json`. Logs and read manifests are saved in each sample directory. `output/vcf.sha256` records VCF checksums. Repeating `make` reuses completed work; changing the design or analysis scripts rebuilds the affected outputs. Failed commands stop the workflow rather than marking a failed stage complete.
+Optional figure regeneration after the batch finishes:
 
-To change samples or depth, edit the design rows, or use `make DESIGN=my_design.tsv OUT=my_output`. Sample IDs must be unique; the design requires at least two samples for merging. Preserve the tab-separated columns. The reference checksum and analysis settings are recorded in `output/parameters.json`. No earlier-week files are needed.
+```bash
+export IGV_DIR=/absolute/path/to/IGV_Linux_2.19.8
+make report THREADS=3 PLOT_PYTHON=python3
+```
+
+`sample` calls variants for one design row; `batch` processes every row and merges the VCFs. `report` measures coverage, regenerates IGV screenshots, and writes this report using paths from your checkout. Set `PLOT_PYTHON` to an existing interpreter with matplotlib. Two samples can run concurrently; use `make batch THREADS=3` for serial sample processing.
+
+The workflow downloads and checks the reference, indexes it, verifies synchronized read subsets, trims adapters/low-quality ends, aligns reads, calls and normalizes variants, and retains QUAL ≥20 and DP ≥3. Logs and manifests are under `output/SAMPLE/`. The merged VCF is `output/merged.vcf.gz`; validation is `output/validation.json`. Repeating the commands reuses completed targets. Edit the CSV or use `DESIGN=other.csv OUT=other_output` to change the input design.
 
 ## Findings
 
-The ten-sample demonstration used the first **10,000 read pairs per run** and produced **561 distinct merged allele records**. The workflow verified sample order, the exact union of sample alleles, and preservation of sample genotypes. Missing calls remain unknown, rather than being converted to reference genotypes.
+- **47,442 merged allele records** across ten samples: 38,682 SNPs and 8,760 indels. Other record types: 0.
+- Measured mean reference depths range from **7.82× to 8.73×**, with **95.89–96.56%** of the full reference covered at mapping quality ≥20. This supports variant detection while leaving local low-depth uncertainty.
+- **7,833 records** have retained calls in all ten samples. Missing calls remain unknown. Neither shared variants nor unequal call counts establish editing-induced mutations.
 
-This small, deterministic subset tests automation and reproducibility. It is much shallower than Week 8 and is unsuitable for comparing mutation burdens or identifying treatment-specific changes. The `pairs` column can be increased for deeper analysis; doing so increases download, storage, and processing time. The `ploidy=1` setting follows the earlier moss analysis and remains an explicit assumption.
+![Measured coverage](results/coverage.svg)
 
-An isolated copy successfully downloaded its own reference and reads and reproduced the same VCF data. Repeating `make -j2` reused completed work. See the [verification record](provenance/verification.txt).
+See [IGV findings and read-support tables](FINDINGS.md), [per-sample counts](results/summary.tsv), [merged VCF](results/merged.vcf.gz), and [validation](results/validation.json). The [10,000-pair smoke test](results/smoke/) is archived separately and is not the biological analysis. `make smoke` checks the short computational path only.
 
-See the [recorded sample counts](results/summary.tsv), [merged VCF](results/merged.vcf.gz), [merge validation](results/validation.json), and [data provenance and filtering settings](provenance/README.md).
+Study metadata and reuse records are in [provenance](provenance/README.md). The selected subset and moderate coverage do not support reproducing the original study’s off-target conclusions without common-site genotyping, callable-site filtering, and appropriate controls.

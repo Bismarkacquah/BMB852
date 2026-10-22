@@ -1,0 +1,27 @@
+{
+  "ERR8982183": {
+    "original_bwa_threads": 4,
+    "bwa_batch_bases": 40000000,
+    "fresh_run_option": "-K 40000000"
+  },
+  "ERR8982184": {
+    "original_bwa_threads": 3,
+    "bwa_batch_bases": 30000000,
+    "fresh_run_option": "-K 30000000"
+  },
+  "ERR8982185": {
+    "original_bwa_threads": 4,
+    "bwa_batch_bases": 40000000,
+    "fresh_run_option": "-K 40000000"
+  },
+  "ERR8982186": {
+    "original_bwa_threads": 4,
+    "bwa_batch_bases": 40000000,
+    "fresh_run_option": "-K 40000000"
+  },
+  "ERR8982187": {
+    "original_bwa_threads": 3,
+    "bwa_batch_bases": 30000000,
+    "fresh_run_option": "-K 30000000"
+  }
+}

@@ -1,5 +1,11 @@
 reference/
 output/
+output-*/
 __pycache__/
 *.part
 /run.log
+
+# Local scheduling state; scientific validation is retained separately.
+/provenance/deep-adopt.json
+/provenance/deep-status.json
+/provenance/deep-supervisor*.log
