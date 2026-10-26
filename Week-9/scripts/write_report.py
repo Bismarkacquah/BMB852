@@ -53,36 +53,7 @@ depths=[c['mean_depth'] for c in coverage]
 breadths=[c['coverage_percent'] for c in coverage]
 read_pairs={int(r['pairs']) for r in rows}
 assert read_pairs=={20000000}
-summary=[
-    '# Week 9 assignment', '',
-    '## Project and design', '',
-    '[PRJEB51295](https://www.ebi.ac.uk/ena/browser/view/PRJEB51295) investigates genome-wide specificity of CRISPR-Cas9 and TALEN editing in *Physcomitrium patens*. The archive contains 14 runs. This analysis selects ten: two controls, four CRIS-labelled samples, two PEG samples, one PEG-DNA sample, and one TAL-labelled sample. These are an unbalanced subset, not a complete replication of the original study.', '',
-    'The [design.csv](design.csv) records sample labels, BioSamples, paired FASTQ URLs and sizes, read-pair counts, and ploidy. All samples use the same Week 7 reference, **GCA_000002425.2 (Phypa V3)**, and **20 million read pairs each**. Haploid calling is an explicit assumption.', '',
-    '## Reproduce', '',
-    'Use Linux/WSL with the existing bioinfo environment active. Additional prerequisites are **cutadapt 5.2**, **IGV 2.19.8 with Java 21 and a working display**, and **matplotlib 3.10.8** for boxed screenshots. Install prerequisites yourself; the workflow installs no software. Allow roughly 150 GB of free space and hours of processing for a fresh ten-sample run.', '',
-    '```bash\ngit clone https://github.com/Bismarkacquah/BMB852.git\ncd BMB852/Week-9\nmake check\nmake samples\nmake -j2 batch THREADS=3\n```', '',
-    'All ten samples, **ERR8982183 through ERR8982192**, are already in `design.csv` at 20 million read pairs each. No manual sample selection or earlier-week files are needed. Plain `make` also runs and merges all ten. Use `make sample SAMPLE=ERR8982185 THREADS=3` for the original Week 7 sample, or `make help` for available commands.', '',
-    'Optional figure regeneration after the batch finishes:', '',
-    '```bash\nexport IGV_DIR=/absolute/path/to/IGV_Linux_2.19.8\nmake report THREADS=3 PLOT_PYTHON=python3\n```', '',
-    '`sample` calls variants for one design row; `batch` processes every row and merges the VCFs. `report` measures coverage, regenerates IGV screenshots, and writes this report using paths from your checkout. Set `PLOT_PYTHON` to an existing interpreter with matplotlib. Two samples can run concurrently; use `make batch THREADS=3` for serial sample processing.', '',
-    'The workflow downloads and checks the reference, indexes it, verifies synchronized read subsets, trims adapters/low-quality ends, aligns reads, calls and normalizes variants, and retains QUAL ≥20 and DP ≥3. Logs and manifests are under `output/SAMPLE/`. The merged VCF is `output/merged.vcf.gz`; validation is `output/validation.json`. Repeating the commands reuses completed targets. Edit the CSV or use `DESIGN=other.csv OUT=other_output` to change the input design.', '',
-    '## Findings', '',
-    f'- **{analysis["merged_records"]:,} merged allele records** across ten samples: {analysis["variant_types"].get("SNP",0):,} SNPs and {analysis["variant_types"].get("indel",0):,} indels. Other record types: {analysis["variant_types"].get("other",0):,}.',
-    f'- Measured mean reference depths range from **{min(depths):.2f}× to {max(depths):.2f}×**, with **{min(breadths):.2f}–{max(breadths):.2f}%** of the full reference covered at mapping quality ≥20. This supports variant detection while leaving local low-depth uncertainty.',
-    f'- **{analysis["shared_all_samples"]:,} records** have retained calls in all ten samples. Missing calls remain unknown. Neither shared variants nor unequal call counts establish editing-induced mutations.', '',
-    '![Measured coverage](results/coverage.svg)', '',
-    '## IGV analysis of the merged VCF', '',
-    'The top track is the merged ten-sample VCF; the ten BAM tracks below show the supporting reads. Red rectangles mark the loci discussed here. Open the images at full size to read the run labels.', '',
-    f'### Shared SNP: {examples[0]["chrom"]}:{examples[0]["pos"]:,} {examples[0]["ref"]}>{examples[0]["alt"]}', '',
-    '![Merged VCF and all ten samples at the SNP](results/igv/example_1.boxed.png)', '',
-    'All ten samples have a retained alternate call at this SNP, including both controls. The aligned reads support the same change across study groups. This is consistent with a shared difference from the reference; it does not establish an editing-induced mutation.', '',
-    f'### Shared deletion: {examples[1]["chrom"]}:{examples[1]["pos"]:,} {examples[1]["ref"]}>{examples[1]["alt"]}', '',
-    '![Merged VCF and all ten samples at the deletion](results/igv/example_2.boxed.png)', '',
-    'The AT>A allele represents deletion of the T immediately after the retained A anchor. All ten samples carry a retained alternate call. The boxed read gaps support the deletion, although some reads retain reference support. The complete per-sample GT, DP, and AD values are in [the read-support tables](FINDINGS.md#example-2-abeu02000041125818-ata).', '',
-    '[Regional IGV view](results/igv/regional.png) shows the surrounding coverage, including shared gaps. Missing calls and uncovered positions remain unknown. See [the detailed IGV analysis](FINDINGS.md#igv-read-evidence) for all ten samples and interpretation limits.', '',
-    'See [IGV findings and read-support tables](FINDINGS.md), [per-sample counts](results/summary.tsv), [merged VCF](results/merged.vcf.gz), and [validation](results/validation.json). The [10,000-pair smoke test](results/smoke/) is archived separately and is not the biological analysis. `make smoke` checks the short computational path only.', '',
-    'Study metadata and reuse records are in [provenance](provenance/README.md). The selected subset and moderate coverage do not support reproducing the original study’s off-target conclusions without common-site genotyping, callable-site filtering, and appropriate controls.', '']
-(root/'README.md').write_text('\n'.join(summary))
+# Keep the concise, hand-maintained README when regenerating detailed results.
 findings=['# Week 9 findings', '',
           'All results below use the ten 20-million-pair samples. The old smoke-test findings are not mixed into this analysis.', '',
           '## Coverage and retained calls', '',
