@@ -31,7 +31,7 @@ All ten BAMs and the merged VCF are loaded against the same reference. Each BAM 
 
 ![Ten-sample SNP evidence](results/igv/example_1.boxed.png)
 
-This SNP has retained calls in **10/10 samples**. The rectangle identifies its exact position, rather than neighboring mismatch columns. Read support is summarized below; `.` means an unknown genotype in the variant-only merge.
+This SNP has retained calls in **10/10 samples**. Read support is shown below. GT `1` is an alternate haploid call; DP is usable read depth; AD lists reference and alternate read counts.
 
 | Sample | Label | GT | Usable DP | AD (REF,ALT) | Quality-filtered BAM depth |
 |---|---|---|---:|---|---:|
@@ -46,18 +46,15 @@ This SNP has retained calls in **10/10 samples**. The rectangle identifies its e
 | ERR8982191 | PEG-DNA#1 | `1` | 8 | `0,8` | 10 |
 | ERR8982192 | TAL#1 | `1` | 8 | `0,8` | 8 |
 
-Retained calls occur in these study-label groups: **CRIS1, CRIS2, Control, PEG, PEG-DNA, TAL**. Presence across groups is consistent with a shared difference from the chosen reference, rather than evidence of an editing-specific change. Missing calls elsewhere cannot be interpreted as confirmed reference genotypes.
+Both controls and all treatment groups carry this variant. It is a shared difference from the reference, not evidence that editing caused it.
 
-Position depth without base/mapping-quality thresholds ranges from 4 to 20 reads across samples, using SAMtools depth with its default flag filters. Examples are limited to moderate read density so the ten-track view remains readable.
-
-Usable DP/AD comes from the variant caller. The separate BAM depth uses base quality ≥20 and mapping quality ≥20; overlap handling and filtering can make it differ from caller DP. These are read-support observations, not experimental confirmation or functional-effect predictions.
-
+DP and AD come from the variant caller. BAM depth uses base and mapping quality >=20; different read filters can produce different depths.
 
 ### Example 2: ABEU02000041.1:25,818 AT>A
 
 ![Ten-sample indel evidence](results/igv/example_2.boxed.png)
 
-This indel has retained calls in **10/10 samples**. The rectangle identifies its exact position, rather than neighboring mismatch columns. Read support is summarized below; `.` means an unknown genotype in the variant-only merge.
+This deletion removes the T after the retained A anchor (AT>A). It has retained calls in **10/10 samples**. Read support is shown below. GT `1` is an alternate haploid call; DP is usable read depth; AD lists reference and alternate read counts.
 
 | Sample | Label | GT | Usable DP | AD (REF,ALT) | Quality-filtered BAM depth |
 |---|---|---|---:|---|---:|
@@ -72,12 +69,9 @@ This indel has retained calls in **10/10 samples**. The rectangle identifies its
 | ERR8982191 | PEG-DNA#1 | `1` | 3 | `0,3` | 4 |
 | ERR8982192 | TAL#1 | `1` | 15 | `1,14` | 17 |
 
-Retained calls occur in these study-label groups: **CRIS1, CRIS2, Control, PEG, PEG-DNA, TAL**. Presence across groups is consistent with a shared difference from the chosen reference, rather than evidence of an editing-specific change. Missing calls elsewhere cannot be interpreted as confirmed reference genotypes.
+Both controls and all treatment groups carry this variant. It is a shared difference from the reference, not evidence that editing caused it.
 
-Position depth without base/mapping-quality thresholds ranges from 7 to 24 reads across samples, using SAMtools depth with its default flag filters. Examples are limited to moderate read density so the ten-track view remains readable.
-
-Usable DP/AD comes from the variant caller. The separate BAM depth uses base quality ≥20 and mapping quality ≥20; overlap handling and filtering can make it differ from caller DP. These are read-support observations, not experimental confirmation or functional-effect predictions.
-
+DP and AD come from the variant caller. BAM depth uses base and mapping quality >=20; different read filters can produce different depths.
 
 ## Regional context
 
@@ -91,7 +85,7 @@ This is a selected, unbalanced subset of an editing-specificity study. Prefix sa
 
 ## 1. Design file
 
-design.csv contains sample IDs, labels, groups, BioSamples, paired FASTQ links, file sizes, read-pair limits, ploidy, and alignment settings for ERR8982183–ERR8982192. Each sample uses 20 million read pairs and the Phypa V3 reference (GCA_000002425.2). Variants are called as haploid.
+`design.csv` contains sample IDs, labels, groups, BioSamples, paired FASTQ links, file sizes, read-pair limits, ploidy, and alignment settings for ERR8982183–ERR8982192. Each sample uses 20 million read pairs and the Phypa V3 reference (GCA_000002425.2). Variants are called as haploid.
 
 ## 2. Run the Makefile
 
@@ -124,3 +118,18 @@ cat output/summary.tsv
 ```
 
 The saved full run has ten samples and 47,442 merged records. Validation should report `true` for both allele-union and genotype checks; exact counts can vary with tool versions. Saved full-run files are in `results/`; new runs write to `output/`.
+
+To run the full analysis in a new output directory:
+
+```bash
+make -j2 batch OUT=output-fresh THREADS=3
+```
+
+To regenerate the IGV figures after the full batch, additionally provide **IGV 2.19.8**, **Java 21 with a working display**, and **matplotlib 3.10.8**:
+
+```bash
+export IGV_DIR=/absolute/path/to/IGV_Linux_2.19.8
+make report THREADS=3 PLOT_PYTHON=python3
+```
+
+Set `PLOT_PYTHON` to an interpreter with matplotlib. Use the same `OUT` value as the batch when regenerating figures from another output directory.
