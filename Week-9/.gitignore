@@ -14,7 +14,8 @@ __pycache__/
 /provenance/
 /results/smoke/
 /results/smoke-original/
-/results/igv/
+/results/igv/*
+!/results/igv/regional.png
 /results/analysis.json
 /results/coverage.json
 /results/coverage.svg
