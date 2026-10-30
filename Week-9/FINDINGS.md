@@ -40,6 +40,12 @@ The validation checks establish that the merge retained the expected allele unio
 
 Local read review can help assess depth, read placement, and allele support. The individual screenshots are omitted from this submission to keep the findings concise.
 
+## Regional coverage
+
+![Regional coverage across all ten samples](results/igv/regional.png)
+
+This 5-kb window shows local coverage across all ten samples. Check coverage continuity and read placement before interpreting a variant. Tracks can autoscale independently, so compare their numeric scales rather than apparent bar heights. Coverage gaps cannot be treated as confirmed reference-matching regions.
+
 ## Interpretation limits
 
 This is a selected, unbalanced subset of an editing-specificity study. Prefix sampling is deterministic rather than random. Moderate coverage can miss variants, and variant-only merging does not establish which alleles are absent. Common-site genotyping and comparable callable regions are needed before testing group differences. The original study conclusions are context, not conclusions independently established by this exercise.
