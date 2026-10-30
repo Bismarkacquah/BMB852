@@ -1,7 +1,0 @@
-python3 scripts/workflow.py validate --design "design.csv"
-Validated 10 unique samples
-python3 scripts/workflow.py parameters --reference "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" --threads "3" --output "output-deep/parameters.json"
-python3 scripts/workflow.py reads --design "design.csv" --sample "ERR8982183" --output "output-deep/ERR8982183"
-ERR8982183: verified recorded pre-existing alignment
-bash scripts/call_sample.sh "ERR8982183" "../Week-5/fasta/GCA_000002425.2_Phypa_V3_genomic.fna" "output-deep/ERR8982183" "3" "design.csv"
-[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float

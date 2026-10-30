@@ -1,3 +1,0 @@
-python3 scripts/workflow.py validate --design "design.tsv"
-Validated 10 unique samples
-python3 scripts/workflow.py parameters --reference "reference/Phypa_V3.fa" --threads "2" --output "output/parameters.json"
