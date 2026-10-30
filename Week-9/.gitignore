@@ -9,3 +9,15 @@ __pycache__/
 /provenance/deep-adopt.json
 /provenance/deep-status.json
 /provenance/deep-supervisor*.log
+
+# Local archives and optional generated reports are not part of the submission.
+/provenance/
+/results/smoke/
+/results/smoke-original/
+/results/igv/
+/results/analysis.json
+/results/coverage.json
+/results/coverage.svg
+/results/igv_examples.json
+/scripts/prefetch.py
+/scripts/import_alignment.py

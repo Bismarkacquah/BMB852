@@ -1,6 +1,0 @@
-make "output-updated-smoke/ERR8982183/calls.vcf.gz"
-make[1]: Entering directory '/mnt/c/Users/bisma/Desktop/BMMB852/Week9-reproduction-check'
-python3 scripts/workflow.py validate --design "design.smoke.csv"
-Validated 10 unique samples
-python3 scripts/workflow.py parameters --reference "reference/Phypa_V3.fa" --threads "2" --output "output-updated-smoke/parameters.json"
-make[1]: Leaving directory '/mnt/c/Users/bisma/Desktop/BMMB852/Week9-reproduction-check'
