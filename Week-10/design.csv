@@ -1,0 +1,9 @@
+sample_id,group,replicate,role,assay,mark,background,bioproject,organism,layout,reads,fastq_url,source_bytes
+DRR151571,DMSO,1,background,ChIP_seq,H3,,PRJDB7369,Physcomitrium_patens,SINGLE,2000000,https://ftp.sra.ebi.ac.uk/vol1/fastq/DRR151/DRR151571/DRR151571.fastq.gz,1552897834
+DRR151572,DMSO,1,signal,ChIP_seq,H3K4me3,DRR151571,PRJDB7369,Physcomitrium_patens,SINGLE,2000000,https://ftp.sra.ebi.ac.uk/vol1/fastq/DRR151/DRR151572/DRR151572.fastq.gz,274352356
+DRR151574,Estradiol,1,background,ChIP_seq,H3,,PRJDB7369,Physcomitrium_patens,SINGLE,2000000,https://ftp.sra.ebi.ac.uk/vol1/fastq/DRR151/DRR151574/DRR151574.fastq.gz,1261516313
+DRR151575,Estradiol,1,signal,ChIP_seq,H3K4me3,DRR151574,PRJDB7369,Physcomitrium_patens,SINGLE,2000000,https://ftp.sra.ebi.ac.uk/vol1/fastq/DRR151/DRR151575/DRR151575.fastq.gz,1209984578
+DRR151577,DMSO,2,background,ChIP_seq,H3,,PRJDB7369,Physcomitrium_patens,SINGLE,2000000,https://ftp.sra.ebi.ac.uk/vol1/fastq/DRR151/DRR151577/DRR151577.fastq.gz,1802869370
+DRR151578,DMSO,2,signal,ChIP_seq,H3K4me3,DRR151577,PRJDB7369,Physcomitrium_patens,SINGLE,2000000,https://ftp.sra.ebi.ac.uk/vol1/fastq/DRR151/DRR151578/DRR151578.fastq.gz,228548378
+DRR151580,Estradiol,2,background,ChIP_seq,H3,,PRJDB7369,Physcomitrium_patens,SINGLE,2000000,https://ftp.sra.ebi.ac.uk/vol1/fastq/DRR151/DRR151580/DRR151580.fastq.gz,1609621382
+DRR151581,Estradiol,2,signal,ChIP_seq,H3K4me3,DRR151580,PRJDB7369,Physcomitrium_patens,SINGLE,2000000,https://ftp.sra.ebi.ac.uk/vol1/fastq/DRR151/DRR151581/DRR151581.fastq.gz,1555259925

@@ -1,0 +1,20 @@
+[
+  {
+    "group": "DMSO",
+    "replicate1": "DRR151572",
+    "replicate2": "DRR151578",
+    "peaks1": 28615,
+    "peaks2": 25433,
+    "supported1": 10906,
+    "supported2": 10906
+  },
+  {
+    "group": "Estradiol",
+    "replicate1": "DRR151575",
+    "replicate2": "DRR151581",
+    "peaks1": 26742,
+    "peaks2": 25660,
+    "supported1": 11568,
+    "supported2": 11568
+  }
+]

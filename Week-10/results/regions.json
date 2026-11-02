@@ -1,0 +1,18 @@
+{
+  "agreement": {
+    "chrom": "CM009339.1",
+    "start": 8861288,
+    "end": 8865510,
+    "peak_start_0based": 8862788,
+    "peak_end": 8864010,
+    "group": "DMSO"
+  },
+  "disagreement": {
+    "chrom": "CM009335.1",
+    "start": 3058141,
+    "end": 3061487,
+    "peak_start_0based": 3059641,
+    "peak_end": 3059987,
+    "group": "DMSO"
+  }
+}
