@@ -1,0 +1,55 @@
+{
+  "libraries_checked": 8,
+  "all_bams_pass_quickcheck": true,
+  "all_read_limits": 2000000,
+  "peak_counts_match_files": true,
+  "peak_intervals_within_reference": true,
+  "bedtools_reciprocal_matches": {
+    "DMSO": 10906,
+    "Estradiol": 11568
+  },
+  "igv_screenshots": {
+    "agreement": {
+      "width": 1074,
+      "height": 774
+    },
+    "disagreement": {
+      "width": 1074,
+      "height": 774
+    }
+  },
+  "visual_review": "All four coverage tracks and four peak tracks visible in both regions.",
+  "verification_scope": "Saved run, checked after final IGV rendering on 2026-11-01.",
+  "saved_file_sha256": {
+    "agreement.png": "7231725d8b1c3b6b2ceb95d98af4051367725d9b788ce68386b9a4fde9bcc880",
+    "disagreement.png": "8e6d3d7ad0db620f1c113e1ee4e394344679b42f437e7953e5115a550fd25c1a",
+    "DRR151572.narrowPeak": "afc340109953ead5b140d4c1e29eb220a91686b6879b338173a80919596d945c",
+    "DRR151575.narrowPeak": "b4138f88cc2d354c3619fbc6b5c8b72d0645d03e5a6f3c3e83fcaac7f297e836",
+    "DRR151578.narrowPeak": "290fdc2de76fb6b63faa5fbcf9255fa0434c1dd3ba24ac975823506575afb328",
+    "DRR151581.narrowPeak": "016b62728ff298a51f49a6348be908196554490e25980d361b5564419d6f2cdc"
+  },
+  "saved_run_design_sha256": "e5a6fbeeaf8b9c80df8f2c09c00bd5cde6268e940fa5a6a7459192c883d86c9e",
+  "submission_design_sha256": "49907571e8724b39c564e7a000bdbd2decc93eced053e51384841e7117383811",
+  "metadata_update": "Only organism/assay label spelling and CSV formatting changed after the run; accessions, groups, replicates, URLs, backgrounds, and read limits are unchanged.",
+  "sample_inputs_and_assignments_match_saved_run": true,
+  "parallel_dispatch_check": {
+    "background_jobs": 4,
+    "signal_jobs": 4,
+    "all_exit_zero": true,
+    "scope": "Isolated fixture with precompleted targets; no sequencing analysis rerun",
+    "gnu_parallel": "20261022"
+  },
+  "design_reconstruction_check": {
+    "source": "ENA PRJDB7369 run metadata",
+    "fresh_csv_matches_submission_byte_for_byte": true,
+    "bootstrap_without_existing_design_passed": true,
+    "invalid_design_checks_rejected": [
+      "wrong organism",
+      "duplicate library",
+      "duplicate replicate assignment",
+      "space in label",
+      "wrong background",
+      "missing replicate"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "samtools": "samtools 1.24",
+  "cutadapt": "5.2",
+  "macs3": "macs3 3.1.0",
+  "bedtools": "bedtools v2.31.1",
+  "bwa": "\nProgram: bwa (alignment via Burrows-Wheeler transformation)\nVersion: 0.7.19-r1273\nContact: Heng Li <hli@ds.dfci.harvard.edu>\n\nUsage:   bwa <command> [options]\n\nCommand: index         index sequences in the FASTA format\n         mem           BWA-MEM algorithm\n         fastmap       identify super-maximal exact matches\n         pemerge       merge overlapping paired ends (EXPERIMENTAL)\n         aln           gapped/ungapped alignment\n         samse         generate alignment (single ended)\n         sampe         generate alignment (paired ended)\n         bwasw         BWA-SW for long queries (DEPRECATED)\n\n         shm           manage indices in shared memory\n         fa2pac        convert FASTA to PAC format\n         pac2bwt       generate BWT from PAC\n         pac2bwtgen    alternative algorithm for generating BWT\n         bwtupdate     update .bwt to the new format\n         bwt2sa        generate SA from BWT and Occ\n\nNote: To use BWA, you need to first index the genome with `bwa index'.\n      There are three alignment algorithms in BWA: `mem', `bwasw', and\n      `aln/samse/sampe'. If you are not sure which to use, try `bwa mem'\n      first. Please `man ./bwa.1' for the manual.\n\n",
+  "python": "3.14.7 | packaged by conda-forge | (main, Sep  2 2026, 21:08:32) [GCC 15.3.0]",
+  "reference_sha256": "eda3922af8c6711133b05f3261118e5d75adebd3aebc8d47cb9e4cd8b11bc3b4",
+  "settings": {
+    "design_sha256": "e5a6fbeeaf8b9c80df8f2c09c00bd5cde6268e940fa5a6a7459192c883d86c9e",
+    "reference": "/mnt/c/Users/bisma/Desktop/BMMB852/.github-week7/Week-10/reference/Phypa_V3.fa",
+    "threads": 4,
+    "gsize": 330000000,
+    "qvalue": 0.05,
+    "extension": 150
+  }
+}
