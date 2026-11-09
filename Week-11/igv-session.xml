@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Session genome="fasta/chr22.genome.fa" locus="chr22:39309999-39323000" version="8">
+    <Resources>
+        <Resource path="bw/UHR_3.bw" type="bw"/>
+        <Resource path="bw/UHR_1.bw" type="bw"/>
+        <Resource path="bw/UHR_2.bw" type="bw"/>
+        <Resource path="bw/HBR_1.bw" type="bw"/>
+        <Resource path="gtf/chr22.gtf" type="gtf"/>
+        <Resource path="bw/HBR_3.bw" type="bw"/>
+        <Resource path="bw/HBR_2.bw" type="bw"/>
+    </Resources>
+    <Panel height="483" name="DataPanel" width="1117">
+        <Track attributeKey="HBR_1.bw" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="45,105,190" displayMode="SQUISHED" fontSize="10" height="70" id="bw/HBR_1.bw" name="HBR_1.bw" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="600.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="HBR_2.bw" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="45,105,190" displayMode="SQUISHED" fontSize="10" height="70" id="bw/HBR_2.bw" name="HBR_2.bw" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="600.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="HBR_3.bw" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="45,105,190" displayMode="SQUISHED" fontSize="10" height="70" id="bw/HBR_3.bw" name="HBR_3.bw" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="600.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="UHR_1.bw" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="215,85,45" displayMode="SQUISHED" fontSize="10" height="70" id="bw/UHR_1.bw" name="UHR_1.bw" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="600.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="UHR_2.bw" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="215,85,45" displayMode="SQUISHED" fontSize="10" height="70" id="bw/UHR_2.bw" name="UHR_2.bw" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="600.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="UHR_3.bw" autoScale="false" clazz="org.broad.igv.track.DataSourceTrack" color="215,85,45" displayMode="SQUISHED" fontSize="10" height="70" id="bw/UHR_3.bw" name="UHR_3.bw" renderer="BAR_CHART" visible="true" windowFunction="mean">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="600.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+    </Panel>
+    <Panel height="1160" name="FeaturePanel" width="1117">
+        <Track attributeKey="Reference sequence" clazz="org.broad.igv.track.SequenceTrack" displayMode="SQUISHED" fontSize="10" id="Reference sequence" name="Reference sequence" sequenceTranslationStrandValue="+" shouldShowTranslation="false" visible="true"/>
+        <Track attributeKey="chr22.gtf" clazz="org.broad.igv.track.FeatureTrack" displayMode="EXPANDED" fontSize="10" groupByStrand="false" id="gtf/chr22.gtf" name="chr22.gtf" visible="true"/>
+    </Panel>
+    <PanelLayout dividerFractions="0.8818181818181818"/>
+    <HiddenAttributes>
+        <Attribute name="DATA FILE"/>
+        <Attribute name="DATA TYPE"/>
+        <Attribute name="NAME"/>
+    </HiddenAttributes>
+</Session>

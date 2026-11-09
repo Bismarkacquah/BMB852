@@ -1,0 +1,10 @@
+.coverage-env/
+.coverage-reader/
+rnaseq-tutorial-2026.tar.gz
+fastq/
+fasta/
+gtf/
+bam/
+bw/
+bw-cpm/
+*.log
