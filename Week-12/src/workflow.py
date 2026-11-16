@@ -1,5 +1,8 @@
 """Prepare the teaching dataset and run Salmon for six single-end libraries."""
 import argparse
+import csv
+import hashlib
+import json
 import shutil
 import subprocess
 import tarfile
@@ -40,6 +43,14 @@ def prepare(data, source, samples):
                     destination.parent.mkdir(parents=True, exist_ok=True)
                     with bundle.extractfile(member) as src, open(destination, "wb") as dst:
                         shutil.copyfileobj(src, dst)
+    checksums = {}
+    for path in paths:
+        digest = hashlib.sha256()
+        with open(data / path, "rb") as handle:
+            for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+                digest.update(chunk)
+        checksums[path] = digest.hexdigest()
+    Path("input_checksums.json").write_text(json.dumps(checksums, indent=2) + "\n")
 
 
 def main():
@@ -60,10 +71,22 @@ def main():
              "-i", "index", "--keepDuplicates", "-p", args.threads])
     else:
         Path("quant").mkdir(exist_ok=True)
+        version = subprocess.check_output([args.salmon, "--version"], text=True).strip()
+        Path("software_versions.txt").write_text(version + "\n")
         for sample in samples:
             run([args.salmon, "quant", "-i", "index", "-l", "A", "-r",
                  data / f"fastq/{sample}_R1.fq", "-o", Path("quant") / sample,
                  "-p", args.threads, "--fldMean", "200", "--fldSD", "80"])
+        Path("results").mkdir(exist_ok=True)
+        with open("results/quantification_summary.csv", "w", newline="") as handle:
+            writer = csv.writer(handle, lineterminator="\n")
+            writer.writerow(["Sample", "Processed", "Mapped", "Percent", "Library", "Converged"])
+            for sample in samples:
+                meta = json.loads((Path("quant") / sample / "aux_info/meta_info.json").read_text())
+                writer.writerow([sample, meta["num_processed"], meta["num_mapped"],
+                                 round(meta["percent_mapped"], 2),
+                                 meta.get("detected_library_type", ",".join(meta["library_types"])),
+                                 meta.get("em_converged", "not reported")])
 
 
 if __name__ == "__main__":
