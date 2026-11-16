@@ -93,12 +93,10 @@ Here are all the SYNGR1 transcripts. Adding each sample column gives the gene to
 
 ## Working with AI
 
-I used AI to help write the Makefile and Python scripts, then asked it to adapt the layout and example checks from Victoria's work to my samples. Specifying `NumReads`, keeping decimal values, and matching transcript IDs helped keep the code focused on the assignment. The gene names came from the local GTF, and the results were checked against my own Salmon output.
+I used AI to help write the Makefile and Python scripts and add example checks using my samples. Specifying `NumReads`, keeping decimal values, and matching transcript IDs helped keep the code focused on the assignment. The gene names came from the local GTF, and the results were checked against my own Salmon output.
 
 ## Challenges
 
 The assignment link redirected to the handbook's computer-setup page, so I used the existing course dataset and Salmon's transcript-quantification workflow. I could not verify the intended tutorial instructions.
 
 I also had to keep the Windows file paths consistent with WSL and make sure the transcript IDs matched the GTF. It was important to use counts rather than TPM and avoid rounding fractional values before adding them by gene.
-
-The organization and example checks were adapted from [Victoria's Week 12 work](https://github.com/VAbramRepo/appbio-2026/tree/main/week12). Her gene matrix uses featureCounts; my gene matrix sums Salmon transcript estimates as requested in this assignment.
