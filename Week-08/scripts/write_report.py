@@ -124,12 +124,7 @@ lines += ['#### Regional view', '', '![Five-sample regional coverage and read al
           'This analysis compares retained variants and predicts their transcript consequences using the same reference as Week 7. Differences in call counts can arise from coverage, library properties, alignment quality, or filtering as well as biological variation. Prefix sampling is not random, and a haploid calling model was inferred rather than measured separately for each sample.', '',
           'The selected control/CRIS sample groups are unbalanced. Neither their study labels nor the presence of a predicted HIGH-impact call proves an effect of CRISPR editing. Missing genotypes remain unknown. Candidate interpretation needs read-level review and, for causal claims, additional experimental evidence.', '',
           'IGV images were generated programmatically and checked for valid, nonempty PNG files. Their existence alone does not establish visual review or biological validation; inspect the figures and reopen the saved session to review the evidence.', '',
-          '## Provenance and references', '',
-          '- [Sample metadata](samples.tsv), [ENA metadata archive](provenance/study-runs.tsv), and [verified fifth sample](provenance/fifth-sample-verified.tsv).',
-          '- [Archived read-subset manifests](provenance/read-subsets.json), including source URLs, mate synchronization hashes, selected counts, and downloaded-file hashes.',
-          '- [Merge checksums](provenance/merged.sha256), [tool versions](provenance/all-tool-versions.txt), [SnpEff software hashes](provenance/snpeff-software.sha256), and [pipeline status](provenance/pipeline-status.json).',
-          '- [Week 8 assignment](https://www.biostarhandbook.com/courses/2026/appbio/variants/variant-effect-prediction-assignment/); workflow requirements supplied in chat because the course page requires login.',
-          '- [BCFtools](https://samtools.github.io/bcftools/bcftools.html), [SnpEff database construction](https://pcingola.github.io/SnpEff/snpeff/build_db/), and [IGV batch documentation](https://igv.org/doc/desktop/UserGuide/tools/batch/).', '']
+          ]
 insert = ['## Whole merged VCF overview', '',
           'Every merged allele record and all 31 observed call patterns are visualized in the [whole-VCF analysis](results/WHOLE_VCF_ANALYSIS.md). It includes all 214 contigs with calls, pairwise retained-call similarity, and interpretation of shared versus missing calls.', '',
           '![All five samples: callset similarity and every call pattern](png/09_all_call_patterns.png)', '',
