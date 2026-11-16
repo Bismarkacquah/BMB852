@@ -1,0 +1,10 @@
+data/
+index/
+__pycache__/
+*.log
+quant/*/*
+!quant/*/quant.sf
+!quant/*/cmd_info.json
+!quant/*/aux_info/
+quant/*/aux_info/*
+!quant/*/aux_info/meta_info.json
