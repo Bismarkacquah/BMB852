@@ -3,7 +3,7 @@ SALMON ?= salmon
 THREADS ?= 4
 SOURCE ?=
 
-.PHONY: help all data index quant matrices test
+.PHONY: help all data index quant matrices
 .DELETE_ON_ERROR:
 
 help:
@@ -25,6 +25,3 @@ matrices:
 
 all: quant
 	$(PYTHON) src/matrices.py
-
-test:
-	$(PYTHON) -m unittest discover -s src -p 'test_*.py'

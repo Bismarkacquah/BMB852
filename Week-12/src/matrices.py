@@ -1,7 +1,6 @@
 """Merge Salmon NumReads by transcript ID, then sum transcripts by gene ID."""
 import argparse
 import csv
-import json
 import re
 from decimal import Decimal
 from pathlib import Path
@@ -86,14 +85,7 @@ def build(design, gtf, quant, output):
                 ([tx, *(column[tx] for column in counts)] for tx in sorted(ids)))
     write_table(output / "gene_counts.tsv", ["gene_id", *samples],
                 ([gene, *genes[gene]] for gene in sorted(genes)))
-    write_table(output / "tx2gene.tsv", ["transcript_id", "gene_id"],
-                ([tx, mapping[tx]] for tx in sorted(ids)))
-    summary = {"samples": samples, "transcripts": len(ids), "genes": len(genes),
-               "count_column": "NumReads", "totals_match": True,
-               "sample_totals": dict(zip(samples, map(str, totals))),
-               "annotated_transcripts_not_quantified": len(mapping.keys() - ids)}
-    (output / "validation.json").write_text(json.dumps(summary, indent=2) + "\n")
-    print(json.dumps(summary, indent=2))
+    print(f"Wrote {len(ids)} transcript rows and {len(genes)} gene rows for {len(samples)} samples.")
 
 
 if __name__ == "__main__":

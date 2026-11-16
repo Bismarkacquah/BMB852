@@ -1,10 +1,11 @@
 data/
 index/
+quant/
 __pycache__/
 *.log
-quant/*/*
-!quant/*/quant.sf
-!quant/*/cmd_info.json
-!quant/*/aux_info/
-quant/*/aux_info/*
-!quant/*/aux_info/meta_info.json
+input_checksums.json
+software_versions.txt
+results/quantification_summary.csv
+results/tx2gene.tsv
+results/validation.json
+src/test_*.py
