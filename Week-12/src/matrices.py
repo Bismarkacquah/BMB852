@@ -59,7 +59,7 @@ def write_table(path, header, rows):
         writer.writerows(rows)
 
 
-def build(design, gtf, quant, output):
+def build(design, gtf, quant, output, level="both"):
     samples = sample_names(design)
     mapping = transcript_genes(gtf)
     counts = [read_quant(Path(quant) / sample / "quant.sf") for sample in samples]
@@ -81,10 +81,12 @@ def build(design, gtf, quant, output):
         raise ValueError("Transcript and gene totals differ")
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
-    write_table(output / "transcript_counts.tsv", ["transcript_id", *samples],
-                ([tx, *(column[tx] for column in counts)] for tx in sorted(ids)))
-    write_table(output / "gene_counts.tsv", ["gene_id", *samples],
-                ([gene, *genes[gene]] for gene in sorted(genes)))
+    if level in ("both", "transcript"):
+        write_table(output / "transcript_counts.tsv", ["transcript_id", *samples],
+                    ([tx, *(column[tx] for column in counts)] for tx in sorted(ids)))
+    if level in ("both", "gene"):
+        write_table(output / "gene_counts.tsv", ["gene_id", *samples],
+                    ([gene, *genes[gene]] for gene in sorted(genes)))
     print(f"Wrote {len(ids)} transcript rows and {len(genes)} gene rows for {len(samples)} samples.")
 
 
@@ -94,5 +96,6 @@ if __name__ == "__main__":
     parser.add_argument("--gtf", default="data/gtf/chr22.gtf")
     parser.add_argument("--quant", default="results/metadata/quant")
     parser.add_argument("--output", default="results")
+    parser.add_argument("--level", choices=["both", "gene", "transcript"], default="both")
     args = parser.parse_args()
-    build(args.design, args.gtf, args.quant, args.output)
+    build(args.design, args.gtf, args.quant, args.output, args.level)
