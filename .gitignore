@@ -1,0 +1,12 @@
+/Week-12/data/
+/Week-12/index/
+/Week-12/results/metadata/quant/*/*
+!/Week-12/results/metadata/quant/*/cmd_info.json
+!/Week-12/results/metadata/quant/*/aux_info/
+/Week-12/results/metadata/quant/*/aux_info/*
+!/Week-12/results/metadata/quant/*/aux_info/meta_info.json
+/Week-12/**/__pycache__/
+/Week-12/*.log
+/Week-12/results/tx2gene.tsv
+/Week-12/results/validation.json
+/Week-12/src/test_*.py

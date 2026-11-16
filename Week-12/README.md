@@ -15,7 +15,7 @@ Install Python 3.9 or newer, GNU Make, and Salmon. I used Ubuntu through WSL wit
 make all
 ```
 
-This downloads the data, builds the Salmon index, quantifies the samples, and writes both matrices to `results/`. Sample names are in `design.csv`. The scripts are in `src/`: `workflow.py` runs the quantification, and `matrices.py` creates the matrices.
+This downloads the data, builds the Salmon index, quantifies the samples, and writes both matrices to `results/`. Sample names are in `src/design.csv`. The scripts are in `src/`: `workflow.py` runs the quantification, and `matrices.py` creates the matrices.
 
 To rebuild only the matrices after quantification, run:
 
@@ -36,9 +36,9 @@ make matrices
 
 All six runs converged and reported the library type as `SR`. These mapping rates are for the chr22 teaching reference.
 
-The [run summary](results/quantification_summary.csv) is also saved as a CSV. Each sample folder in [quant/](quant/) contains `cmd_info.json` with the command settings and `aux_info/meta_info.json` with the run statistics. The Salmon version is saved in [software_versions.txt](software_versions.txt).
+The [run summary](results/quantification_summary.csv) is also saved as a CSV. Each sample folder in [results/metadata/quant/](results/metadata/quant/) contains `cmd_info.json` with the command settings and `aux_info/meta_info.json` with the run statistics. The Salmon version is saved in [software_versions.txt](results/metadata/software_versions.txt).
 
-The [input checksums](input_checksums.json) record SHA-256 hashes for the transcript FASTA, GTF, and six FASTQ files. Running `make all` regenerates the checksums and run summary along with the matrices.
+The [input checksums](results/metadata/input_checksums.json) record SHA-256 hashes for the transcript FASTA, GTF, and six FASTQ files. Running `make all` regenerates the checksums and run summary along with the matrices.
 
 ## Working with AI
 

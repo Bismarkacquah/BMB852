@@ -90,9 +90,9 @@ def build(design, gtf, quant, output):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--design", default="design.csv")
+    parser.add_argument("--design", default="src/design.csv")
     parser.add_argument("--gtf", default="data/gtf/chr22.gtf")
-    parser.add_argument("--quant", default="quant")
+    parser.add_argument("--quant", default="results/metadata/quant")
     parser.add_argument("--output", default="results")
     args = parser.parse_args()
     build(args.design, args.gtf, args.quant, args.output)
